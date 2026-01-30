@@ -46,6 +46,14 @@ QVariant ConfigModel::data(const QModelIndex &index, int role) const
         }
     }
 
+    if (role == Qt::ToolTipRole)
+    {
+        // Only show tooltip on value column (column 2)
+        if (index.column() == 2 && !entry.descriptionZh.isEmpty())
+            return entry.descriptionZh;
+        return QVariant();
+    }
+
     if (role == Qt::TextAlignmentRole)
     {
         switch (index.column())

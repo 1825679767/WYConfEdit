@@ -2,8 +2,10 @@
 #include "editentrydialog.h"
 
 #include <QApplication>
+#include <QCloseEvent>
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QHeaderView>
@@ -17,6 +19,7 @@
 #include <QPushButton>
 #include <QScreen>
 #include <QSet>
+#include <QSettings>
 #include <QTableView>
 #include <QVBoxLayout>
 
@@ -68,6 +71,11 @@ void MainWindow::buildUi()
     QLabel *appTitle = new QLabel("WY配置编辑器", this);
     appTitle->setObjectName("AppTitle");
     topBarLayout->addWidget(appTitle);
+
+    // File path label
+    m_filePathLabel = new QLabel(this);
+    m_filePathLabel->setObjectName("FilePathLabel");
+    topBarLayout->addWidget(m_filePathLabel);
 
     topBarLayout->addStretch();
 
@@ -222,6 +230,11 @@ void MainWindow::applyGlobalStyles()
             color: rgba(80, 60, 80, 0.9);
             font-size: 18px;
             font-weight: 600;
+        }
+        QLabel#FilePathLabel {
+            color: rgba(80, 60, 80, 0.5);
+            font-size: 13px;
+            margin-left: 12px;
         }
         QPushButton#WindowButton {
             background-color: rgba(80, 60, 80, 0.08);
@@ -505,8 +518,18 @@ void MainWindow::loadDefaultFiles()
     QString base = QDir::currentPath();
     m_translationPath = QDir(base).filePath("translation.yaml");
 
-    // Only load translation file, user needs to manually open config file
+    // Load translation file
     loadTranslation(m_translationPath);
+
+    // Try to load last opened config file
+    QString lastFile = loadLastOpenedFile();
+    if (!lastFile.isEmpty() && QFileInfo::exists(lastFile))
+    {
+        loadConfig(lastFile);
+        mergeTranslations();
+        refreshSectionFilter();
+        updateFilePathLabel();
+    }
 }
 
 void MainWindow::loadConfig(const QString &path)
@@ -518,7 +541,10 @@ void MainWindow::loadConfig(const QString &path)
         return;
     }
     m_confPath = path;
+    m_configDirty = false;
     m_model->setEntries(&m_parser.entries());
+    saveLastOpenedFile();
+    updateFilePathLabel();
 }
 
 void MainWindow::loadTranslation(const QString &path)
@@ -676,8 +702,12 @@ void MainWindow::openEditDialog(int sourceRow)
             refreshSectionFilter();
         }
 
+        if (valueChanged)
+        {
+            m_configDirty = true;
+        }
+
         m_model->notifyRowChanged(sourceRow);
-        (void)valueChanged;
     }
 }
 
@@ -694,12 +724,19 @@ void MainWindow::onOpenConfig()
 
 void MainWindow::onSaveAll()
 {
+    if (m_confPath.isEmpty())
+    {
+        QMessageBox::warning(this, "保存", "请先打开一个配置文件。");
+        return;
+    }
+
     QString error;
     if (!m_parser.save(m_confPath, &error))
     {
         QMessageBox::warning(this, "保存配置", error);
         return;
     }
+    m_configDirty = false;
 
     if (m_translationDirty)
     {
@@ -751,4 +788,71 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
         m_dragging = false;
     }
     QMainWindow::mouseReleaseEvent(event);
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (hasUnsavedChanges())
+    {
+        QMessageBox msgBox(this);
+        msgBox.setWindowTitle("未保存的更改");
+        msgBox.setText("有未保存的更改，是否保存后退出？");
+        msgBox.setIcon(QMessageBox::Question);
+
+        QPushButton *saveBtn = msgBox.addButton("保存", QMessageBox::AcceptRole);
+        QPushButton *discardBtn = msgBox.addButton("不保存", QMessageBox::DestructiveRole);
+        QPushButton *cancelBtn = msgBox.addButton("取消", QMessageBox::RejectRole);
+        msgBox.setDefaultButton(saveBtn);
+
+        msgBox.exec();
+
+        if (msgBox.clickedButton() == saveBtn)
+        {
+            onSaveAll();
+            event->accept();
+        }
+        else if (msgBox.clickedButton() == discardBtn)
+        {
+            event->accept();
+        }
+        else
+        {
+            event->ignore();
+        }
+    }
+    else
+    {
+        event->accept();
+    }
+}
+
+void MainWindow::updateFilePathLabel()
+{
+    if (m_confPath.isEmpty())
+    {
+        m_filePathLabel->setText("");
+    }
+    else
+    {
+        QFileInfo fileInfo(m_confPath);
+        m_filePathLabel->setText(QString("- %1").arg(fileInfo.fileName()));
+        m_filePathLabel->setToolTip(m_confPath);
+    }
+}
+
+void MainWindow::saveLastOpenedFile()
+{
+    QSettings settings("WY", "ConfEdit");
+    settings.setValue("lastOpenedFile", m_confPath);
+}
+
+QString MainWindow::loadLastOpenedFile()
+{
+    QSettings settings("WY", "ConfEdit");
+    return settings.value("lastOpenedFile").toString();
+}
+
+bool MainWindow::hasUnsavedChanges() const
+{
+    return m_configDirty || m_translationDirty;
 }
