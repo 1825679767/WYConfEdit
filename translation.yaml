@@ -1,201 +1,3182 @@
-# translation.yaml (batch 1: 50)
+# translation.yaml (all keys, no translation)
 - key: RealmID
-  section: 数据库与连接
-  name_zh: 服务器标识ID
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: RealmID
+  description_zh: |
+    描述：此配置所使用的服务器（Realm）ID。
+    重要：RealmID 必须与认证数据库中的 realmlist 表一致。
+    默认值：1。
 - key: WorldServerPort
-  section: 数据库与连接
-  name_zh: 世界服端口
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: WorldServerPort
+  description_zh: |
+    描述：访问世界服务器的 TCP 端口。
+    默认值：8085。
 - key: BindIP
-  section: 数据库与连接
-  name_zh: 绑定IP
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: BindIP
+  description_zh: |
+    描述：绑定世界服务器到指定 IP/主机名。
+    默认值：\"0.0.0.0\"（绑定本机所有 IP）。
 - key: LoginDatabaseInfo
-  section: 数据库与连接
-  name_zh: 认证库连接
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: LoginDatabaseInfo
+  description_zh: |
+    描述：世界服务器的数据库连接设置。
+    示例：\"hostname;port;username;password;database\"。
+    示例：\".;somenumber;username;password;database\"（Windows 命名管道；需在 my.ini 的 [mysqld] 启用 enable-named-pipe）。
+    示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
+    默认值：\"127.0.0.1;3306;acore;acore;acore_auth\"（LoginDatabaseInfo）。
 - key: WorldDatabaseInfo
-  section: 数据库与连接
-  name_zh: 世界库连接
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: WorldDatabaseInfo
+  description_zh: |
+    描述：世界服务器的数据库连接设置。
+    示例：\"hostname;port;username;password;database\"。
+    示例：\".;somenumber;username;password;database\"（Windows 命名管道；需在 my.ini 的 [mysqld] 启用 enable-named-pipe）。
+    示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
+    默认值：\"127.0.0.1;3306;acore;acore;acore_world\"（WorldDatabaseInfo）。
 - key: CharacterDatabaseInfo
-  section: 数据库与连接
-  name_zh: 角色库连接
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: CharacterDatabaseInfo
+  description_zh: |
+    描述：世界服务器的数据库连接设置。
+    示例：\"hostname;port;username;password;database\"。
+    示例：\".;somenumber;username;password;database\"（Windows 命名管道；需在 my.ini 的 [mysqld] 启用 enable-named-pipe）。
+    示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
+    默认值：\"127.0.0.1;3306;acore;acore;acore_characters\"（CharacterDatabaseInfo）。
 - key: LoginDatabase.WorkerThreads
-  section: 数据库与连接
-  name_zh: 认证库工作线程
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: LoginDatabase.WorkerThreads
+  description_zh: |
+    描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
+    说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
+    默认值：1（LoginDatabase.WorkerThreads）。
 - key: WorldDatabase.WorkerThreads
-  section: 数据库与连接
-  name_zh: 世界库工作线程
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: WorldDatabase.WorkerThreads
+  description_zh: |
+    描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
+    说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
+    默认值：1（WorldDatabase.WorkerThreads）。
 - key: CharacterDatabase.WorkerThreads
-  section: 数据库与连接
-  name_zh: 角色库工作线程
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: CharacterDatabase.WorkerThreads
+  description_zh: |
+    描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
+    说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
+    默认值：1（CharacterDatabase.WorkerThreads）。
 - key: LoginDatabase.SynchThreads
-  section: 数据库与连接
-  name_zh: 认证库同步连接数
-  description_zh: 
+  section: DATABASE & CONNECTIONS
+  name_zh: LoginDatabase.SynchThreads
+  description_zh: |
+    描述：用于处理同步请求的 MySQL 连接数量。
+    默认值：1（LoginDatabase.SynchThreads）。
 - key: WorldDatabase.SynchThreads
-  section: 数据库与连接
+  section: DATABASE & CONNECTIONS
   name_zh: WorldDatabase.SynchThreads
-  description_zh: 
+  description_zh: |
+    描述：用于处理同步请求的 MySQL 连接数量。
+    默认值：1（WorldDatabase.SynchThreads）。
 - key: CharacterDatabase.SynchThreads
-  section: 数据库与连接
+  section: DATABASE & CONNECTIONS
   name_zh: CharacterDatabase.SynchThreads
-  description_zh: 
+  description_zh: |
+    描述：用于处理同步请求的 MySQL 连接数量。
+    默认值：1（CharacterDatabase.SynchThreads）。
 - key: MaxPingTime
-  section: 数据库与连接
+  section: DATABASE & CONNECTIONS
   name_zh: MaxPingTime
-  description_zh: 
+  description_zh: |
+    描述：数据库 ping 之间的时间间隔（分钟）。
+    默认值：30。
 - key: Database.Reconnect.Seconds
-  section: 数据库与连接
+  section: DATABASE & CONNECTIONS
   name_zh: Database.Reconnect.Seconds
-  description_zh: 
+  description_zh: |
+    描述：每次重连尝试之间的间隔秒数，以及总共尝试次数。
+    默认值：每 15 秒尝试一次，共 20 次。
 - key: Database.Reconnect.Attempts
-  section: 数据库与连接
+  section: DATABASE & CONNECTIONS
   name_zh: Database.Reconnect.Attempts
-  description_zh: 
+  description_zh: |
+    描述：每次重连尝试之间的间隔秒数，以及总共尝试次数。
+    默认值：每 15 秒尝试一次，共 20 次。
 - key: DataDir
-  section: 目录
+  section: DIRECTORIES
   name_zh: DataDir
-  description_zh: 
+  description_zh: |
+    描述：数据目录设置。
+    重要：DataDir 需要用引号包裹，因为路径可能包含空格。
+    示例："@prefix@\home\youruser\azerothcore\data"。
+    默认值："."。
 - key: LogsDir
-  section: 目录
+  section: DIRECTORIES
   name_zh: LogsDir
-  description_zh: 
+  description_zh: |
+    描述：日志目录设置。
+    重要：LogsDir 需要用引号包裹，因为路径可能包含空格。日志目录必须存在，否则不会创建日志文件。
+    示例："/home/youruser/azerothcore/logs"。
+    默认值：""（日志文件存放在当前路径）。
 - key: TempDir
-  section: 目录
+  section: DIRECTORIES
   name_zh: TempDir
-  description_zh: 
+  description_zh: |
+    描述：临时目录设置。
+    重要：TempDir 需要用引号包裹，因为路径可能包含空格。TempDir 目录必须存在，否则服务器无法正常工作。
+    示例："/home/youruser/azerothcore/temp"。
+    默认值：""（临时文件存放在当前路径）。
 - key: CMakeCommand
-  section: 目录
+  section: DIRECTORIES
   name_zh: CMakeCommand
-  description_zh: 
+  description_zh: |
+    描述：CMake 可执行文件的路径。
+    说明：如果留空，则使用内置的 CMAKE_COMMAND。
+    示例："C:/Program Files/CMake/bin/cmake.exe"；"/usr/bin/cmake"。
+    默认值：""。
 - key: BuildDirectory
-  section: 目录
+  section: DIRECTORIES
   name_zh: BuildDirectory
-  description_zh: 
+  description_zh: |
+    描述：构建目录的路径。
+    说明：如果留空，则使用内置的 CMAKE_BINARY_DIR。
+    示例："../AzerothCore"。
+    默认值：""。
 - key: SourceDirectory
-  section: 目录
+  section: DIRECTORIES
   name_zh: SourceDirectory
-  description_zh: 
+  description_zh: |
+    描述：AzerothCore 源码目录的路径。
+    说明：如果留空，则使用内置的 CMAKE_SOURCE_DIR。
+    示例："../azerothcore-wotlk"。
+    默认值：""。
 - key: MySQLExecutable
-  section: 目录
+  section: DIRECTORIES
   name_zh: MySQLExecutable
-  description_zh: 
+  description_zh: |
+    描述：MySQL CLI 可执行文件的路径。
+    说明：如果留空，则使用 CMake 中的内置路径。
+    示例："C:/Program Files/MySQL/MySQL Server 8.0/bin/mysql.exe"；"mysql.exe"；"/usr/bin/mysql"。
+    默认值：""。
 - key: PidFile
-  section: 目录
+  section: DIRECTORIES
   name_zh: PidFile
-  description_zh: 
+  description_zh: |
+    描述：世界服务器 PID 文件。
+    示例："./world.pid"（启用）。
+    默认值：""（禁用）。
 - key: Console.Enable
-  section: 控制台
+  section: CONSOLE
   name_zh: Console.Enable
-  description_zh: 
+  description_zh: |
+    描述：启用控制台。
+    默认值：1（启用）；0（禁用）。
 - key: BeepAtStart
-  section: 控制台
+  section: CONSOLE
   name_zh: BeepAtStart
-  description_zh: 
+  description_zh: |
+    描述：世界服务器启动完成时发出蜂鸣声（Unix/Linux）。
+    默认值：1（启用）；0（禁用）。
 - key: FlashAtStart
-  section: 控制台
+  section: CONSOLE
   name_zh: FlashAtStart
-  description_zh: 
+  description_zh: |
+    描述：世界服务器启动完成时任务栏闪烁提示（仅 Windows）。
+    默认值：1（启用）；0（禁用）。
 - key: Updates.EnableDatabases
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.EnableDatabases
-  description_zh: 
+  description_zh: |
+    描述：用于指定需要更新的数据库掩码。
+    可用标志：DATABASE_LOGIN=1（认证库），DATABASE_CHARACTER=2（角色库），DATABASE_WORLD=4（世界库）。
+    默认值：7（全部启用）；4（仅世界库）；0（全部禁用）。
 - key: Updates.AutoSetup
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.AutoSetup
-  description_zh: 
+  description_zh: |
+    描述：自动初始化空数据库。
+    默认值：1（启用）；0（禁用）。
 - key: Updates.Redundancy
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.Redundancy
-  description_zh: 
+  description_zh: |
+    描述：通过哈希执行数据冗余检查，检测 SQL 更新变更并重新应用。
+    默认值：1（启用）；0（禁用）。
 - key: Updates.ArchivedRedundancy
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.ArchivedRedundancy
-  description_zh: 
+  description_zh: |
+    描述：检查已归档更新的哈希（会降低启动速度）。
+    默认值：0（禁用）；1（启用）。
 - key: Updates.AllowRehash
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.AllowRehash
-  description_zh: 
+  description_zh: |
+    描述：当数据库中缺少文件哈希时，将当前文件哈希写入数据库。
+    说明：用于标记文件为已应用但不知道其哈希的情况。
+    默认值：1（启用）；0（禁用）。
 - key: Updates.CleanDeadRefMaxCount
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.CleanDeadRefMaxCount
-  description_zh: 
+  description_zh: |
+    描述：清理孤立/失效引用（当更新文件被移除或重命名时可能产生）。
+    说明：仅当缺失更新数量 ≤ Updates.CleanDeadRefMaxCount 才会执行清理，以防错误状态导致清空更新历史。
+    默认值：3（启用）；0（禁用）；-1（启用，无限制）。
 - key: Updates.ExceptionShutdownDelay
-  section: 自动更新
+  section: AUTOUPDATER
   name_zh: Updates.ExceptionShutdownDelay
-  description_zh: 
+  description_zh: |
+    描述：发生致命异常（如 SQL 更新失败）后，等待关闭服务器的时间（毫秒）。
+    默认值：10000（10 秒）。
+    说明：0 表示立即关闭。
 - key: Network.Threads
-  section: 网络
+  section: NETWORK
   name_zh: Network.Threads
-  description_zh: 
+  description_zh: |
+    描述：网络线程数量。
+    默认值：1（建议每 1000 个连接 1 个线程）。
 - key: Network.OutKBuff
-  section: 网络
+  section: NETWORK
   name_zh: Network.OutKBuff
-  description_zh: 
+  description_zh: |
+    描述：输出内核缓冲区使用的内存大小（字节，参见 SO_SNDBUF 选项）。
+    默认值：-1（使用系统默认设置）。
 - key: Network.OutUBuff
-  section: 网络
+  section: NETWORK
   name_zh: Network.OutUBuff
-  description_zh: 
+  description_zh: |
+    描述：每个连接在用户态预留的输出缓冲区大小（字节）。
+    默认值：4096。
 - key: Network.TcpNodelay
-  section: 网络
+  section: NETWORK
   name_zh: Network.TcpNodelay
-  description_zh: 
+  description_zh: |
+    描述：TCP Nagle 算法设置。
+    默认值：0（启用，流量更小、延迟更高）；1（禁用，流量更大、延迟更低，TCP_NO_DELAY）。
 - key: Network.EnableProxyProtocol
-  section: 网络
+  section: NETWORK
   name_zh: Network.EnableProxyProtocol
-  description_zh: 
+  description_zh: |
+    描述：启用 Proxy Protocol v2。
+    说明：当服务器位于代理/负载均衡之后时，需要在服务器和代理/负载均衡两端同时启用，以获取真实玩家 IP。
+    示例：1（启用）。
+    默认值：0（禁用）。
 - key: Network.UseSocketActivation
-  section: 网络
+  section: NETWORK
   name_zh: Network.UseSocketActivation
-  description_zh: 
+  description_zh: |
+    描述：[仅 Linux] 启用 systemd socket activation 支持。
+    说明：启用后由 systemd 传入监听 socket，服务器将使用该 socket 而不是自行创建并绑定。
+    说明：启用后服务器关闭时，realm 不会自动标记为离线。
+    默认值：0（禁用）。
 - key: Ra.Enable
-  section: 远程访问
+  section: REMOTE ACCESS
   name_zh: Ra.Enable
-  description_zh: 
+  description_zh: |
+    描述：启用远程控制台（telnet）。
+    默认值：0（禁用）；1（启用）。
 - key: Ra.IP
-  section: 远程访问
+  section: REMOTE ACCESS
   name_zh: Ra.IP
-  description_zh: 
+  description_zh: |
+    描述：远程访问绑定的 IP/主机名。
+    默认值：\"0.0.0.0\"（绑定本机所有 IP）。
 - key: Ra.Port
-  section: 远程访问
+  section: REMOTE ACCESS
   name_zh: Ra.Port
-  description_zh: 
+  description_zh: |
+    描述：远程控制台的 TCP 端口。
+    默认值：3443。
 - key: Ra.MinLevel
-  section: 远程访问
+  section: REMOTE ACCESS
   name_zh: Ra.MinLevel
-  description_zh: 
+  description_zh: |
+    描述：使用远程控制台所需的最低安全等级。
+    默认值：3。
 - key: SOAP.Enabled
-  section: 远程访问
+  section: REMOTE ACCESS
   name_zh: SOAP.Enabled
-  description_zh: 
+  description_zh: |
+    描述：启用 SOAP 服务。
+    默认值：0（禁用）；1（启用）。
 - key: SOAP.IP
   section: SOAP.IP
   name_zh: SOAP.IP
-  description_zh: 
+  description_zh: |
+    描述：SOAP 服务绑定的 IP/主机名。
+    默认值：\"127.0.0.1\"（仅本机）。
 - key: SOAP.Port
   section: SOAP.IP
   name_zh: SOAP.Port
-  description_zh: 
+  description_zh: |
+    描述：SOAP 服务的 TCP 端口。
+    默认值：7878。
 - key: TOTPMasterSecret
-  section: 加密
+  section: CRYPTOGRAPHY
   name_zh: TOTPMasterSecret
-  description_zh: 
+  description_zh: |
+    描述：authserver 用于解密数据库中 TOTP 密钥的主密钥。
+    说明：仅在需要使用游戏内 2FA 管理命令（.account 2fa）时设置，否则可留空。
+    说明：若与 authserver 设置不匹配，相关命令会被自动禁用。
 - key: ThreadPool
-  section: 性能
+  section: PERFORMANCE
   name_zh: ThreadPool
-  description_zh: 
+  description_zh: |
+    描述：全局线程池使用的线程数量。
+    说明：线程池用于信号处理、远程访问、数据库保活 ping、核心卡死检测、世界套接字网络等。
+    默认值：2。
 - key: UseProcessors
-  section: 性能
+  section: PERFORMANCE
   name_zh: UseProcessors
-  description_zh: 
+  description_zh: |
+    描述：多处理器系统的处理器掩码（Windows/Linux）。
+    示例：三核系统：1（第 1 核）；2（第 2 核）；4（第 3 核）；6（第 2+3 核，因为 2|4=6）。
+    默认值：0（由 OS 选择）；1+（指定处理器掩码值）。
 - key: ProcessPriority
-  section: 性能
+  section: PERFORMANCE
   name_zh: ProcessPriority
+  description_zh: |
+    描述：Windows 系统进程优先级设置。
+    默认值：1（高）；0（普通）。
+- key: Compression
+  section: PERFORMANCE
+  name_zh: Compression
+  description_zh: |
+    描述：客户端更新包压缩级别。
+    范围：1-9。
+    默认值：1（速度）；9（最佳压缩）。
+- key: PacketLogFile
+  section: LOGGING
+  name_zh: PacketLogFile
+  description_zh: |
+    描述：世界服务器的二进制封包日志文件。
+    说明：文件扩展名必须为 .pkt，才能被 WowPacketParser 解析。
+    示例："World.pkt"（启用）。
+    默认值：""（禁用）。
+- key: LogDB.Opt.ClearInterval
+  section: LOGGING
+  name_zh: LogDB.Opt.ClearInterval
+  description_zh: |
+    描述：用于清理 logs 表旧记录的 WUPDATE_CLEANDB 定时器间隔（分钟）。
+    默认值：10（10 分钟）；1+。
+- key: LogDB.Opt.ClearTime
+  section: LOGGING
+  name_zh: LogDB.Opt.ClearTime
+  description_zh: |
+    描述：logs 表旧记录的保留时间（秒）。
+    默认值：1209600（启用，14 天）；0（禁用，不清理）。
+- key: RecordUpdateTimeDiffInterval
+  section: LOGGING
+  name_zh: RecordUpdateTimeDiffInterval
+  description_zh: |
+    描述：将更新耗时差值写入日志的时间间隔（毫秒）。
+    说明：Update diff 可作为性能指标。Diff < 300：性能好；Diff > 600：性能差，可能由 CPU 占用过高引起。
+    默认值：300000（启用，5 分钟）；0（禁用）。
+- key: MinRecordUpdateTimeDiff
+  section: LOGGING
+  name_zh: MinRecordUpdateTimeDiff
+  description_zh: |
+    描述：仅记录大于该值的更新耗时差值。
+    默认值：100。
+- key: IPLocationFile
+  section: LOGGING
+  name_zh: IPLocationFile
+  description_zh: |
+    描述：IP2Location 数据库 CSV 文件路径。
+    示例："C:/acore/IP2LOCATION-LITE-DB1.CSV"；"/home/acore/IP2LOCATION-LITE-DB1.CSV"。
+    默认值：""（禁用）。
+- key: AllowLoggingIPAddressesInDatabase
+  section: LOGGING
+  name_zh: AllowLoggingIPAddressesInDatabase
+  description_zh: |
+    描述：是否允许将 IP 地址记录到数据库。
+    默认值：1（启用）；0（禁用）。
+- key: Allow.IP.Based.Action.Logging
+  section: LOGGING
+  name_zh: Allow.IP.Based.Action.Logging
+  description_zh: |
+    描述：基于当前会话 IP 记录操作（例如账户登录/登出等）。
+    默认值：0（禁用）；1（启用）。
+- key: Appender.Console
+  section: LOGGING
+  name_zh: Appender.Console
+  description_zh: |
+    描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3。
+    Type：0-无；1-控制台；2-文件；3-数据库。
+    LogLevel：0-禁用；1-致命；2-错误；3-警告；4-信息；5-调试；6-跟踪。
+    Flags：0-无；1-前置时间戳；2-前置日志级别；4-前置日志过滤类型；8-文件名追加时间戳（仅 Type=2）；16-覆盖写入前备份旧文件（仅 Mode=w）。
+    Colors（Type=Console 时 optional1）：格式 "fatal error warn info debug trace"。0-黑 1-红 2-绿 3-棕 4-蓝 5-洋红 6-青 7-灰 8-黄 9-浅红 10-浅绿 11-浅蓝 12-浅洋红 13-浅青 14-白。
+    File（Type=File 时 optional1）：日志文件名，可用一个“%s”生成动态文件名。
+    Mode（Type=File 时 optional2）：a-追加；w-覆盖。
+    MaxFileSize（Type=File 时 optional3）：日志文件最大大小（字节，64 位无符号），最大 4294967295（4GB），留空表示不限制。注意：动态文件名不支持。
+- key: Appender.Server
+  section: LOGGING
+  name_zh: Appender.Server
+  description_zh: |
+    描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
+- key: Appender.Errors
+  section: LOGGING
+  name_zh: Appender.Errors
+  description_zh: |
+    描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
+- key: Appender.NpcBots
+  section: LOGGING
+  name_zh: Appender.NpcBots
+  description_zh: |
+    描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
+- key: Logger.root
+  section: LOGGING
+  name_zh: Logger.root
+  description_zh: |
+    描述：日志记录器配置，定义“记录什么”，格式：LogLevel,AppenderList。
+    LogLevel：0-禁用；1-致命；2-错误；3-警告；4-信息；5-调试；6-跟踪。
+    AppenderList：使用的输出器列表（空格分隔）。
+- key: Logger.diff
+  section: LOGGING
+  name_zh: Logger.diff
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.mmaps
+  section: LOGGING
+  name_zh: Logger.mmaps
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.scripts.hotswap
+  section: LOGGING
+  name_zh: Logger.scripts.hotswap
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.server
+  section: LOGGING
+  name_zh: Logger.server
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.sql.sql
+  section: LOGGING
+  name_zh: Logger.sql.sql
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.sql.updates
+  section: LOGGING
+  name_zh: Logger.sql.updates
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.sql
+  section: LOGGING
+  name_zh: Logger.sql
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.time.update
+  section: LOGGING
+  name_zh: Logger.time.update
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.module
+  section: LOGGING
+  name_zh: Logger.module
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.spells.scripts
+  section: LOGGING
+  name_zh: Logger.spells.scripts
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Logger.npcbots
+  section: LOGGING
+  name_zh: Logger.npcbots
+  description_zh: |
+    描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
+- key: Log.Async.Enable
+  section: LOGGING
+  name_zh: Log.Async.Enable
+  description_zh: |
+    描述：启用异步日志消息记录。
+    默认值：0（禁用）；1（启用）。
+- key: Metric.Enable
+  section: METRIC
+  name_zh: Metric.Enable
+  description_zh: |
+    描述：启用向指标数据库发送统计数据。
+    默认值：0（禁用）；1（启用）。
+- key: Metric.InfluxDB.Connection
+  section: METRIC
+  name_zh: Metric.InfluxDB.Connection
+  description_zh: |
+    描述：InfluxDB 连接设置。
+    说明：InfluxDB v1 仅需填写 Metric.InfluxDB.Connection。
+    示例：Metric.InfluxDB.Connection = "hostname;port;database"。
+    说明：InfluxDB v2 需要填写所有字段（Connection、v2、Org、Bucket、Token）。
+    注意：当前 Grafana 无法使用提供的 JSON 文件可视化 InfluxDB v2 数据。
+- key: Metric.InfluxDB.v2
+  section: METRIC
+  name_zh: Metric.InfluxDB.v2
+  description_zh: |
+    描述：是否启用 InfluxDB v2 模式。
+    默认值：0（禁用）；1（启用）。
+- key: Metric.InfluxDB.Org
+  section: METRIC
+  name_zh: Metric.InfluxDB.Org
+  description_zh: |
+    描述：InfluxDB v2 的组织（Org）。
+- key: Metric.InfluxDB.Bucket
+  section: METRIC
+  name_zh: Metric.InfluxDB.Bucket
+  description_zh: |
+    描述：InfluxDB v2 的 Bucket。
+- key: Metric.InfluxDB.Token
+  section: METRIC
+  name_zh: Metric.InfluxDB.Token
+  description_zh: |
+    描述：InfluxDB v2 的访问 Token。
+- key: Metric.Interval
+  section: METRIC
+  name_zh: Metric.Interval
+  description_zh: |
+    描述：每批次数据发送的间隔（秒）。
+    说明：间隔越长，批次越大；批次过大可能被拒绝。
+    默认值：1 秒。
+- key: Metric.OverallStatusInterval
+  section: METRIC
+  name_zh: Metric.OverallStatusInterval
+  description_zh: |
+    描述：采集世界服务器整体状态数据的间隔（秒）。
+    默认值：1 秒。
+- key: BirthdayTime
+  section: SERVER
+  name_zh: BirthdayTime
+  description_zh: |
+    描述：项目诞生日期（Unix 时间戳）。
+    默认值：1222964635（2008-10-02）。
+- key: PlayerLimit
+  section: SERVER
+  name_zh: PlayerLimit
+  description_zh: |
+    描述：世界中允许的最大玩家数量（不包含版主、GM、管理员）。
+    重要：若要仅允许版主/GM/管理员进入，请使用认证库 auth.realmlist.allowedSecurityLevel。
+    默认值：1000（启用）；1+（启用）；0（禁用上限）。
+- key: World.RealmAvailability
+  section: SERVER
+  name_zh: World.RealmAvailability
+  description_zh: |
+    描述：是否允许玩家正常进入该服务器。
+    说明：即使禁用，仍可创建角色。
+    默认值：1（启用）；0（禁用）。
+- key: GameType
+  section: 8  - (RPPVP)
+  name_zh: GameType
+  description_zh: |
+    描述：服务器类型（Realm Type）。
+    默认值：0（普通）。
+    取值：1（PVP），4（普通），6（RP），8（RPPVP），16（FFA_PVP：除休息区/圣地外全区域自由 PVP）。
+- key: RealmZone
+  section: 8  - (RPPVP)
+  name_zh: RealmZone
+  description_zh: |
+    描述：服务器区域（影响角色名称允许的字符集等）。
+    默认值：1（开发服 - 任意语言）。
+    取值：2（美国 - 扩展拉丁），3（大洋洲 - 扩展拉丁），4（拉美 - 扩展拉丁），5（锦标赛 - 创建时基础拉丁，登录时任意），6（韩国 - 东亚），7（锦标赛 - 创建时基础拉丁，登录时任意），8（英文 - 扩展拉丁），9（德语 - 扩展拉丁），10（法语 - 扩展拉丁），11（西班牙语 - 扩展拉丁），12（俄语 - 西里尔），13（锦标赛 - 创建时基础拉丁，登录时任意），14（台湾 - 东亚），15（锦标赛 - 创建时基础拉丁，登录时任意），16（中国 - 东亚），17（CN1 - 创建时基础拉丁，登录时任意），18（CN2 - 创建时基础拉丁，登录时任意），19（CN3 - 创建时基础拉丁，登录时任意），20（CN4 - 创建时基础拉丁，登录时任意），21（CN5 - 创建时基础拉丁，登录时任意），22（CN6 - 创建时基础拉丁，登录时任意），23（CN7 - 创建时基础拉丁，登录时任意），24（CN8 - 创建时基础拉丁，登录时任意），25（锦标赛 - 创建时基础拉丁，登录时任意），26（测试服 - 任意语言），27（锦标赛 - 创建时基础拉丁，登录时任意），28（QA 服 - 任意语言），29（CN9 - 创建时基础拉丁，登录时任意）。
+- key: DBC.Locale
+  section: 8  - (RPPVP)
+  name_zh: DBC.Locale
+  description_zh: |
+    描述：DBC 语言设置。
+    默认值：255（自动检测）。
+    取值：0（英文），1（韩文），2（法文），3（德文），4（中文），5（繁体中文/台湾），6（西班牙文），7（西班牙文-墨西哥），8（俄文）。
+- key: Expansion
+  section: 8  - (RPPVP)
+  name_zh: Expansion
+  description_zh: |
+    描述：允许服务器使用资料片内容（地图文件、客户端兼容性、职业/种族创建等）。
+    默认值：2（资料片 2）。
+    取值：1（资料片 1），0（禁用资料片内容，忽略资料片相关内容）。
+- key: ClientCacheVersion
+  section: 8  - (RPPVP)
+  name_zh: ClientCacheVersion
+  description_zh: |
+    描述：客户端缓存版本号，用于触发客户端缓存重置。
+    说明：设置为与数据库不同且近期未使用的值即可触发。
+    默认值：0（使用 world 数据库 version.cache_id 中的值）。
+- key: SessionAddDelay
+  section: 8  - (RPPVP)
+  name_zh: SessionAddDelay
+  description_zh: |
+    描述：认证协议处理后，网络线程在将连接加入世界会话映射前的休眠时间（微秒）。
+    默认值：10000（10 毫秒，0.01 秒）。
+- key: CloseIdleConnections
+  section: 8  - (RPPVP)
+  name_zh: CloseIdleConnections
+  description_zh: |
+    描述：自动关闭空闲连接。
+    说明：SocketTimeOutTime 与 SocketTimeOutTimeActive 决定何时判定连接空闲。
+    默认值：1（启用，自动关闭空闲连接）；0（禁用）。
+- key: SocketTimeOutTime
+  section: 8  - (RPPVP)
+  name_zh: SocketTimeOutTime
+  description_zh: |
+    描述：角色选择界面空闲连接断开时间（毫秒）。
+    默认值：900000（15 分钟）。
+- key: SocketTimeOutTimeActive
+  section: 8  - (RPPVP)
+  name_zh: SocketTimeOutTimeActive
+  description_zh: |
+    描述：已登录世界后的空闲连接断开时间（毫秒）。
+    说明：客户端每 30 秒发送一次 keepalive；不建议设置 ≤ 30 秒。
+    默认值：60000（1 分钟）。
+- key: MaxOverspeedPings
+  section: 8  - (RPPVP)
+  name_zh: MaxOverspeedPings
+  description_zh: |
+    描述：超速 ping 计数达到上限后断开角色连接。
+    默认值：2（启用，最小值）；3+（启用，踢出前检查更多次）；0（禁用）。
+- key: DisconnectToleranceInterval
+  section: 8  - (RPPVP)
+  name_zh: DisconnectToleranceInterval
+  description_zh: |
+    描述：断线后允许跳过排队的时间（秒）。
+    默认值：0。
+- key: EnableLoginAfterDC
+  section: 8  - (RPPVP)
+  name_zh: EnableLoginAfterDC
+  description_zh: |
+    描述：异常断线后是否允许玩家重新登录到仍在世界中的角色。
+    说明：未正常登出时角色会在世界中保留 1 分钟，可防止 Alt+F4 等滥用（如跳过首领机制、PVP 逃脱）。
+    默认值：1（点击“进入世界”可重新进入）；0（点击进入会提示错误并需等待角色移除）。
+- key: MinWorldUpdateTime
+  section: 8  - (RPPVP)
+  name_zh: MinWorldUpdateTime
+  description_zh: |
+    描述：世界更新 Tick 之间的最小时间（毫秒，适用于大多空闲服务器）。
+    默认值：1（0.001 秒）。
+- key: UpdateUptimeInterval
+  section: 8  - (RPPVP)
+  name_zh: UpdateUptimeInterval
+  description_zh: |
+    描述：更新服务器在线时长的周期（分钟）。
+    默认值：10（10 分钟）；1+。
+- key: MaxCoreStuckTime
+  section: 8  - (RPPVP)
+  name_zh: MaxCoreStuckTime
+  description_zh: |
+    描述：当服务器冻结时强制崩溃前的等待时间（秒）（FreezeDetector）。
+    默认值：0（禁用）；10+（启用，建议 30+）。
+    注意：启用且设置过低可能导致意外崩溃。
+- key: SaveRespawnTimeImmediately
+  section: 8  - (RPPVP)
+  name_zh: SaveRespawnTimeImmediately
+  description_zh: |
+    描述：在生物死亡或游戏对象使用/打开时立即保存复活时间。
+    默认值：1（启用，立即保存）；0（禁用，网格卸载时保存）。
+- key: Server.LoginInfo
+  section: 8  - (RPPVP)
+  name_zh: Server.LoginInfo
+  description_zh: |
+    描述：登录时显示核心版本信息（.server info）。
+    默认值：0（禁用）；1（启用）。
+- key: ShowKickInWorld
+  section: 8  - (RPPVP)
+  name_zh: ShowKickInWorld
+  description_zh: |
+    描述：玩家被踢出时是否向全服广播消息。
+    默认值：0（禁用）；1（启用）。
+- key: ShowMuteInWorld
+  section: 8  - (RPPVP)
+  name_zh: ShowMuteInWorld
+  description_zh: |
+    描述：玩家被禁言时是否向全服广播消息。
+    默认值：0（禁用）；1（启用）。
+- key: ShowBanInWorld
+  section: 8  - (RPPVP)
+  name_zh: ShowBanInWorld
+  description_zh: |
+    描述：玩家被封禁时是否向全服广播消息。
+    默认值：0（禁用）；1（启用）。
+- key: MaxWhoListReturns
+  section: 8  - (RPPVP)
+  name_zh: MaxWhoListReturns
+  description_zh: |
+    描述：/who 列表与界面返回的最大玩家数量。
+    默认值：49（稳定）。
+- key: PreventAFKLogout
+  section: 8  - (RPPVP)
+  name_zh: PreventAFKLogout
+  description_zh: |
+    描述：防止玩家因 AFK 而被登出。
+    默认值：0（禁用）；1（启用，仅在圣地不登出）；2（启用，所有区域不登出）。
+- key: PacketSpoof.BanMode
+  section: PACKET SPOOF PROTECTION SETTINGS
+  name_zh: PacketSpoof.BanMode
+  description_zh: |
+    描述：当 PacketSpoof.Policy=2 时，决定封禁方式。
+    取值：0（封账号），1（封 IP）。
+    说明：不支持按角色封禁。
+- key: PacketSpoof.BanDuration
+  section: PACKET SPOOF PROTECTION SETTINGS
+  name_zh: PacketSpoof.BanDuration
+  description_zh: |
+    描述：封禁时长（秒），仅当 PacketSpoof.Policy=2 时有效。
+    默认值：86400（1 天）。
+    说明：0 表示永久封禁。
+- key: Warden.Enabled
+  section: WARDEN SETTINGS
+  name_zh: Warden.Enabled
+  description_zh: |
+    描述：启用 Warden 反作弊系统。
+    默认值：1（启用）；0（禁用）。
+- key: Warden.NumMemChecks
+  section: WARDEN SETTINGS
+  name_zh: Warden.NumMemChecks
+  description_zh: |
+    描述：每个周期发送给客户端的内存检查数量。
+    默认值：3（启用）；0（禁用）。
+- key: Warden.NumLuaChecks
+  section: WARDEN SETTINGS
+  name_zh: Warden.NumLuaChecks
+  description_zh: |
+    描述：每个周期发送给客户端的 LUA 检查数量。
+    默认值：1（启用）；0（禁用）。
+- key: Warden.NumOtherChecks
+  section: WARDEN SETTINGS
+  name_zh: Warden.NumOtherChecks
+  description_zh: |
+    描述：每个周期追加的除内存检查外的其他检查数量。
+    默认值：7（启用）；0（禁用）。
+- key: Warden.ClientResponseDelay
+  section: WARDEN SETTINGS
+  name_zh: Warden.ClientResponseDelay
+  description_zh: |
+    描述：客户端未响应前允许的时间（秒）。
+    默认值：600（10 分钟）。
+    说明：0 表示不踢出。
+- key: Warden.ClientCheckHoldOff
+  section: WARDEN SETTINGS
+  name_zh: Warden.ClientCheckHoldOff
+  description_zh: |
+    描述：发送下一次检查请求前的等待时间（秒）。
+    说明：数值越小，流量及客户端/服务端负载越高。
+    默认值：30（30 秒）；0（尽快发送）。
+- key: Warden.ClientCheckFailAction
+  section: WARDEN SETTINGS
+  name_zh: Warden.ClientCheckFailAction
+  description_zh: |
+    描述：客户端检查失败时的默认处理动作。
+    说明：可在 characters 数据库的 warden_action 表中为单项检查覆盖。
+    默认值：0（禁用，仅记录日志）；1（踢出）；2（封禁）。
+- key: Warden.BanDuration
+  section: WARDEN SETTINGS
+  name_zh: Warden.BanDuration
+  description_zh: |
+    描述：当 ClientCheckFailAction 设为封禁时的封禁时长（秒）。
+    默认值：86400（24 小时）。
+    说明：0 表示永久封禁。
+- key: AutoBroadcast.On
+  section: AUTO BROADCAST
+  name_zh: AutoBroadcast.On
+  description_zh: |
+    描述：启用自动公告。
+    默认值：0（禁用）；1（启用）。
+- key: AutoBroadcast.Center
+  section: AUTO BROADCAST
+  name_zh: AutoBroadcast.Center
+  description_zh: |
+    描述：自动公告显示方式。
+    默认值：0（公告/Announce）；1（通知/Notify）；2（两者都显示）。
+- key: AutoBroadcast.Timer
+  section: AUTO BROADCAST
+  name_zh: AutoBroadcast.Timer
+  description_zh: |
+    描述：自动公告计时器间隔（毫秒）。
+    默认值：60000（60 秒）。
+- key: AutoBroadcast.MinDisableLevel
+  section: AUTO BROADCAST
+  name_zh: AutoBroadcast.MinDisableLevel
+  description_zh: |
+    描述：启用 EnablePlayerSettings 时，允许禁用自动公告所需的最低等级。
+    默认值：0（不允许禁用）。
+- key: Visibility.GroupMode
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.GroupMode
+  description_zh: |
+    描述：组内可见性模式，决定哪些组可看见同团队/队伍/阵营的隐身角色。
+    默认值：1（团队 Raid）；0（小队 Party）；2（阵营 Faction）。
+- key: Visibility.Distance.Continents
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.Distance.Continents
+  description_zh: |
+    描述：大陆地图的可见距离（码），用于看到其他玩家/游戏对象。
+    说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
+    约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
+    默认值：100。
+- key: Visibility.Distance.Instances
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.Distance.Instances
+  description_zh: |
+    描述：副本地图的可见距离（码），用于看到其他玩家/游戏对象。
+    说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
+    约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
+    默认值：170。
+- key: Visibility.Distance.BGArenas
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.Distance.BGArenas
+  description_zh: |
+    描述：战场/竞技场的可见距离（码），用于看到其他玩家/游戏对象。
+    说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
+    约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
+    默认值：250。
+- key: Visibility.ObjectSparkles
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.ObjectSparkles
+  description_zh: |
+    描述：是否显示与任务相关游戏对象的闪光效果。
+    默认值：1（显示闪光）；0（隐藏闪光）。
+- key: Visibility.ObjectQuestMarkers
+  section: VISIBILITY AND DISTANCES
+  name_zh: Visibility.ObjectQuestMarkers
+  description_zh: |
+    描述：是否在游戏对象上显示任务标记（类似任务 NPC 头顶图标）。
+    默认值：1（显示，2.3 版本之后行为）；0（隐藏，2.3 之前行为）。
+- key: MapUpdateInterval
+  section: MAPS
+  name_zh: MapUpdateInterval
+  description_zh: |
+    描述：地图更新周期（毫秒）。
+    默认值：10（0.01 秒）。
+- key: MapUpdate.Threads
+  section: MAPS
+  name_zh: MapUpdate.Threads
+  description_zh: |
+    描述：用于更新地图的线程数量。
+    默认值：1。
+- key: MoveMaps.Enable
+  section: MAPS
+  name_zh: MoveMaps.Enable
+  description_zh: |
+    描述：启用/禁用使用 mmaps 的寻路（推荐开启）。
+    默认值：0（禁用）；1（启用）。
+- key: vmap.enableLOS
+  section: MAPS
+  name_zh: vmap.enableLOS
+  description_zh: |
+    描述：是否启用 vmap 的视线（LOS）计算。
+    默认值：1（启用）；0（禁用）。
+- key: vmap.enableHeight
+  section: MAPS
+  name_zh: vmap.enableHeight
+  description_zh: |
+    描述：是否启用 vmap 的高度计算。
+    默认值：1（启用）；0（禁用）。
+- key: vmap.petLOS
+  section: MAPS
+  name_zh: vmap.petLOS
+  description_zh: 
+- key: vmap.BlizzlikePvPLOS
+  section: MAPS
+  name_zh: vmap.BlizzlikePvPLOS
+  description_zh: 
+- key: vmap.BlizzlikeLOSInOpenWorld
+  section: MAPS
+  name_zh: vmap.BlizzlikeLOSInOpenWorld
+  description_zh: 
+- key: vmap.enableIndoorCheck
+  section: MAPS
+  name_zh: vmap.enableIndoorCheck
+  description_zh: 
+- key: DetectPosCollision
+  section: MAPS
+  name_zh: DetectPosCollision
+  description_zh: 
+- key: CheckGameObjectLoS
+  section: MAPS
+  name_zh: CheckGameObjectLoS
+  description_zh: 
+- key: PreloadAllNonInstancedMapGrids
+  section: MAPS
+  name_zh: PreloadAllNonInstancedMapGrids
+  description_zh: 
+- key: DontCacheRandomMovementPaths
+  section: MAPS
+  name_zh: DontCacheRandomMovementPaths
+  description_zh: 
+- key: ActivateWeather
+  section: WEATHER
+  name_zh: ActivateWeather
+  description_zh: 
+- key: ChangeWeatherInterval
+  section: WEATHER
+  name_zh: ChangeWeatherInterval
+  description_zh: 
+- key: AllowTickets
+  section: TICKETS
+  name_zh: AllowTickets
+  description_zh: 
+- key: LevelReq.Ticket
+  section: TICKETS
+  name_zh: LevelReq.Ticket
+  description_zh: 
+- key: DeletedCharacterTicketTrace
+  section: TICKETS
+  name_zh: DeletedCharacterTicketTrace
+  description_zh: 
+- key: AllowPlayerCommands
+  section: COMMAND
+  name_zh: AllowPlayerCommands
+  description_zh: 
+- key: Command.LookupMaxResults
+  section: COMMAND
+  name_zh: Command.LookupMaxResults
+  description_zh: 
+- key: Die.Command.Mode
+  section: COMMAND
+  name_zh: Die.Command.Mode
+  description_zh: 
+- key: GM.LoginState
+  section: GAME MASTER
+  name_zh: GM.LoginState
+  description_zh: 
+- key: GM.Visible
+  section: GAME MASTER
+  name_zh: GM.Visible
+  description_zh: 
+- key: GM.Chat
+  section: GAME MASTER
+  name_zh: GM.Chat
+  description_zh: 
+- key: GM.WhisperingTo
+  section: GAME MASTER
+  name_zh: GM.WhisperingTo
+  description_zh: 
+- key: GM.InGMList.Level
+  section: GAME MASTER
+  name_zh: GM.InGMList.Level
+  description_zh: 
+- key: GM.InWhoList.Level
+  section: GAME MASTER
+  name_zh: GM.InWhoList.Level
+  description_zh: 
+- key: GM.StartLevel
+  section: GAME MASTER
+  name_zh: GM.StartLevel
+  description_zh: 
+- key: GM.AllowInvite
+  section: GAME MASTER
+  name_zh: GM.AllowInvite
+  description_zh: 
+- key: GM.AllowFriend
+  section: GAME MASTER
+  name_zh: GM.AllowFriend
+  description_zh: 
+- key: GM.LowerSecurity
+  section: GAME MASTER
+  name_zh: GM.LowerSecurity
+  description_zh: 
+- key: GM.TicketSystem.ChanceOfGMSurvey
+  section: GAME MASTER
+  name_zh: GM.TicketSystem.ChanceOfGMSurvey
+  description_zh: 
+- key: DisableWaterBreath
+  section: CHEAT
+  name_zh: DisableWaterBreath
+  description_zh: 
+- key: AllFlightPaths
+  section: CHEAT
+  name_zh: AllFlightPaths
+  description_zh: 
+- key: InstantFlightPaths
+  section: CHEAT
+  name_zh: InstantFlightPaths
+  description_zh: 
+- key: AlwaysMaxSkillForLevel
+  section: CHEAT
+  name_zh: AlwaysMaxSkillForLevel
+  description_zh: 
+- key: AlwaysMaxWeaponSkill
+  section: CHEAT
+  name_zh: AlwaysMaxWeaponSkill
+  description_zh: 
+- key: PlayerStart.AllReputation
+  section: CHEAT
+  name_zh: PlayerStart.AllReputation
+  description_zh: 
+- key: PlayerStart.CustomSpells
+  section: CHEAT
+  name_zh: PlayerStart.CustomSpells
+  description_zh: 
+- key: PlayerStart.MapsExplored
+  section: CHEAT
+  name_zh: PlayerStart.MapsExplored
+  description_zh: 
+- key: InstantLogout
+  section: CHEAT
+  name_zh: InstantLogout
+  description_zh: 
+- key: PlayerSaveInterval
+  section: CHARACTER DATABASE
+  name_zh: PlayerSaveInterval
+  description_zh: 
+- key: PlayerSave.Stats.MinLevel
+  section: CHARACTER DATABASE
+  name_zh: PlayerSave.Stats.MinLevel
+  description_zh: 
+- key: PlayerSave.Stats.SaveOnlyOnLogout
+  section: CHARACTER DATABASE
+  name_zh: PlayerSave.Stats.SaveOnlyOnLogout
+  description_zh: 
+- key: CleanCharacterDB
+  section: CHARACTER DATABASE
+  name_zh: CleanCharacterDB
+  description_zh: 
+- key: PersistentCharacterCleanFlags
+  section: CHARACTER DATABASE
+  name_zh: PersistentCharacterCleanFlags
+  description_zh: 
+- key: ValidateSkillLearnedBySpells
+  section: CHARACTER DATABASE
+  name_zh: ValidateSkillLearnedBySpells
+  description_zh: 
+- key: CharDelete.Method
+  section: CHARACTER DELETE
+  name_zh: CharDelete.Method
+  description_zh: 
+- key: CharDelete.MinLevel
+  section: CHARACTER DELETE
+  name_zh: CharDelete.MinLevel
+  description_zh: 
+- key: CharDelete.KeepDays
+  section: CHARACTER DELETE
+  name_zh: CharDelete.KeepDays
+  description_zh: 
+- key: MinPlayerName
+  section: CHARACTER CREATION
+  name_zh: MinPlayerName
+  description_zh: 
+- key: MinPetName
+  section: CHARACTER CREATION
+  name_zh: MinPetName
+  description_zh: 
+- key: DeclinedNames
+  section: CHARACTER CREATION
+  name_zh: DeclinedNames
+  description_zh: 
+- key: StrictNames.Reserved
+  section: CHARACTER CREATION
+  name_zh: StrictNames.Reserved
+  description_zh: 
+- key: StrictNames.Profanity
+  section: CHARACTER CREATION
+  name_zh: StrictNames.Profanity
+  description_zh: 
+- key: StrictPlayerNames
+  section: CHARACTER CREATION
+  name_zh: StrictPlayerNames
+  description_zh: 
+- key: StrictPetNames
+  section: CHARACTER CREATION
+  name_zh: StrictPetNames
+  description_zh: 
+- key: CharacterCreating.Disabled
+  section: CHARACTER CREATION
+  name_zh: CharacterCreating.Disabled
+  description_zh: 
+- key: CharacterCreating.Disabled.RaceMask
+  section: CHARACTER CREATION
+  name_zh: CharacterCreating.Disabled.RaceMask
+  description_zh: 
+- key: CharacterCreating.Disabled.ClassMask
+  section: CHARACTER CREATION
+  name_zh: CharacterCreating.Disabled.ClassMask
+  description_zh: 
+- key: CharactersPerAccount
+  section: CHARACTER CREATION
+  name_zh: CharactersPerAccount
+  description_zh: 
+- key: CharactersPerRealm
+  section: CHARACTER CREATION
+  name_zh: CharactersPerRealm
+  description_zh: 
+- key: HeroicCharactersPerRealm
+  section: CHARACTER CREATION
+  name_zh: HeroicCharactersPerRealm
+  description_zh: 
+- key: CharacterCreating.MinLevelForHeroicCharacter
+  section: CHARACTER CREATION
+  name_zh: CharacterCreating.MinLevelForHeroicCharacter
+  description_zh: 
+- key: StartPlayerLevel
+  section: CHARACTER CREATION
+  name_zh: StartPlayerLevel
+  description_zh: 
+- key: StartHeroicPlayerLevel
+  section: CHARACTER CREATION
+  name_zh: StartHeroicPlayerLevel
+  description_zh: 
+- key: SkipCinematics
+  section: CHARACTER CREATION
+  name_zh: SkipCinematics
+  description_zh: 
+- key: StartPlayerMoney
+  section: CHARACTER CREATION
+  name_zh: StartPlayerMoney
+  description_zh: 
+- key: StartHeroicPlayerMoney
+  section: CHARACTER CREATION
+  name_zh: StartHeroicPlayerMoney
+  description_zh: 
+- key: PlayerStart.String
+  section: CHARACTER CREATION
+  name_zh: PlayerStart.String
+  description_zh: 
+- key: EnablePlayerSettings
+  section: CHARACTER
+  name_zh: EnablePlayerSettings
+  description_zh: 
+- key: MaxPlayerLevel
+  section: CHARACTER
+  name_zh: MaxPlayerLevel
+  description_zh: 
+- key: MinDualSpecLevel
+  section: CHARACTER
+  name_zh: MinDualSpecLevel
+  description_zh: 
+- key: WaterBreath.Timer
+  section: CHARACTER
+  name_zh: WaterBreath.Timer
+  description_zh: 
+- key: EnableLowLevelRegenBoost
+  section: CHARACTER
+  name_zh: EnableLowLevelRegenBoost
+  description_zh: 
+- key: Rate.MoveSpeed.Player
+  section: CHARACTER
+  name_zh: Rate.MoveSpeed.Player
+  description_zh: 
+- key: Rate.MoveSpeed.NPC
+  section: CHARACTER
+  name_zh: Rate.MoveSpeed.NPC
+  description_zh: 
+- key: Rate.Damage.Fall
+  section: CHARACTER
+  name_zh: Rate.Damage.Fall
+  description_zh: 
+- key: Rate.Talent
+  section: CHARACTER
+  name_zh: Rate.Talent
+  description_zh: 
+- key: Rate.Talent.Pet
+  section: CHARACTER
+  name_zh: Rate.Talent.Pet
+  description_zh: 
+- key: Rate.Health
+  section: CHARACTER
+  name_zh: Rate.Health
+  description_zh: 
+- key: Rate.Mana
+  section: CHARACTER
+  name_zh: Rate.Mana
+  description_zh: 
+- key: Rate.Rage.Income
+  section: CHARACTER
+  name_zh: Rate.Rage.Income
+  description_zh: 
+- key: Rate.Rage.Loss
+  section: CHARACTER
+  name_zh: Rate.Rage.Loss
+  description_zh: 
+- key: Rate.RunicPower.Income
+  section: CHARACTER
+  name_zh: Rate.RunicPower.Income
+  description_zh: 
+- key: Rate.RunicPower.Loss
+  section: CHARACTER
+  name_zh: Rate.RunicPower.Loss
+  description_zh: 
+- key: Rate.Focus
+  section: CHARACTER
+  name_zh: Rate.Focus
+  description_zh: 
+- key: Rate.Energy
+  section: CHARACTER
+  name_zh: Rate.Energy
+  description_zh: 
+- key: Rate.Loyalty
+  section: CHARACTER
+  name_zh: Rate.Loyalty
+  description_zh: 
+- key: Rate.Rest.InGame
+  section: CHARACTER
+  name_zh: Rate.Rest.InGame
+  description_zh: 
+- key: Rate.Rest.Offline.InTavernOrCity
+  section: CHARACTER
+  name_zh: Rate.Rest.Offline.InTavernOrCity
+  description_zh: 
+- key: Rate.Rest.Offline.InWilderness
+  section: CHARACTER
+  name_zh: Rate.Rest.Offline.InWilderness
+  description_zh: 
+- key: Rate.Rest.MaxBonus
+  section: CHARACTER
+  name_zh: Rate.Rest.MaxBonus
+  description_zh: 
+- key: Rate.MissChanceMultiplier.TargetCreature
+  section: CHARACTER
+  name_zh: Rate.MissChanceMultiplier.TargetCreature
+  description_zh: 
+- key: Rate.MissChanceMultiplier.TargetPlayer
+  section: CHARACTER
+  name_zh: Rate.MissChanceMultiplier.TargetPlayer
+  description_zh: 
+- key: Rate.MissChanceMultiplier.OnlyAffectsPlayer
+  section: CHARACTER
+  name_zh: Rate.MissChanceMultiplier.OnlyAffectsPlayer
+  description_zh: 
+- key: LevelReq.Trade
+  section: CHARACTER
+  name_zh: LevelReq.Trade
+  description_zh: 
+- key: NoResetTalentsCost
+  section: CHARACTER
+  name_zh: NoResetTalentsCost
+  description_zh: 
+- key: ToggleXP.Cost
+  section: CHARACTER
+  name_zh: ToggleXP.Cost
+  description_zh: 
+- key: SpellQueue.Enabled
+  section: CHARACTER
+  name_zh: SpellQueue.Enabled
+  description_zh: 
+- key: SpellQueue.Window
+  section: CHARACTER
+  name_zh: SpellQueue.Window
+  description_zh: 
+- key: MaxPrimaryTradeSkill
+  section: SKILL
+  name_zh: MaxPrimaryTradeSkill
+  description_zh: 
+- key: SkillChance.Prospecting
+  section: SKILL
+  name_zh: SkillChance.Prospecting
+  description_zh: 
+- key: SkillChance.Milling
+  section: SKILL
+  name_zh: SkillChance.Milling
+  description_zh: 
+- key: Rate.Skill.Discovery
+  section: SKILL
+  name_zh: Rate.Skill.Discovery
+  description_zh: 
+- key: SkillGain.Crafting
+  section: SKILL
+  name_zh: SkillGain.Crafting
+  description_zh: 
+- key: SkillGain.Defense
+  section: SKILL
+  name_zh: SkillGain.Defense
+  description_zh: 
+- key: SkillGain.Gathering
+  section: SKILL
+  name_zh: SkillGain.Gathering
+  description_zh: 
+- key: SkillGain.Weapon
+  section: SKILL
+  name_zh: SkillGain.Weapon
+  description_zh: 
+- key: SkillChance.Orange
+  section: SKILL
+  name_zh: SkillChance.Orange
+  description_zh: 
+- key: SkillChance.Yellow
+  section: SKILL
+  name_zh: SkillChance.Yellow
+  description_zh: 
+- key: SkillChance.Green
+  section: SKILL
+  name_zh: SkillChance.Green
+  description_zh: 
+- key: SkillChance.Grey
+  section: SKILL
+  name_zh: SkillChance.Grey
+  description_zh: 
+- key: SkillChance.MiningSteps
+  section: SKILL
+  name_zh: SkillChance.MiningSteps
+  description_zh: 
+- key: SkillChance.SkinningSteps
+  section: SKILL
+  name_zh: SkillChance.SkinningSteps
+  description_zh: 
+- key: OffhandCheckAtSpellUnlearn
+  section: SKILL
+  name_zh: OffhandCheckAtSpellUnlearn
+  description_zh: 
+- key: Stats.Limits.Enable
+  section: STATS
+  name_zh: Stats.Limits.Enable
+  description_zh: 
+- key: Stats.Limits.Dodge
+  section: STATS
+  name_zh: Stats.Limits.Dodge
+  description_zh: 
+- key: Stats.Limits.Parry
+  section: STATS
+  name_zh: Stats.Limits.Parry
+  description_zh: 
+- key: Stats.Limits.Block
+  section: STATS
+  name_zh: Stats.Limits.Block
+  description_zh: 
+- key: Stats.Limits.Crit
+  section: STATS
+  name_zh: Stats.Limits.Crit
+  description_zh: 
+- key: Rate.Reputation.Gain
+  section: REPUTATION
+  name_zh: Rate.Reputation.Gain
+  description_zh: 
+- key: Rate.Reputation.LowLevel.Kill
+  section: REPUTATION
+  name_zh: Rate.Reputation.LowLevel.Kill
+  description_zh: 
+- key: Rate.Reputation.LowLevel.Quest
+  section: REPUTATION
+  name_zh: Rate.Reputation.LowLevel.Quest
+  description_zh: 
+- key: Rate.Reputation.RecruitAFriendBonus
+  section: REPUTATION
+  name_zh: Rate.Reputation.RecruitAFriendBonus
+  description_zh: 
+- key: Rate.Reputation.Gain.WSG
+  section: REPUTATION
+  name_zh: Rate.Reputation.Gain.WSG
+  description_zh: 
+- key: Rate.Reputation.Gain.AB
+  section: REPUTATION
+  name_zh: Rate.Reputation.Gain.AB
+  description_zh: 
+- key: Rate.Reputation.Gain.AV
+  section: REPUTATION
+  name_zh: Rate.Reputation.Gain.AV
+  description_zh: 
+- key: MaxGroupXPDistance
+  section: EXPERIENCE
+  name_zh: MaxGroupXPDistance
+  description_zh: 
+- key: Rate.XP.Kill
+  section: EXPERIENCE
+  name_zh: Rate.XP.Kill
+  description_zh: 
+- key: Rate.XP.Quest
+  section: EXPERIENCE
+  name_zh: Rate.XP.Quest
+  description_zh: 
+- key: Rate.XP.Quest.DF
+  section: EXPERIENCE
+  name_zh: Rate.XP.Quest.DF
+  description_zh: 
+- key: Rate.XP.Explore
+  section: EXPERIENCE
+  name_zh: Rate.XP.Explore
+  description_zh: 
+- key: Rate.XP.Pet
+  section: EXPERIENCE
+  name_zh: Rate.XP.Pet
+  description_zh: 
+- key: Rate.XP.BattlegroundKillAV
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillAV
+  description_zh: 
+- key: Rate.XP.BattlegroundKillWSG
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillWSG
+  description_zh: 
+- key: Rate.XP.BattlegroundKillAB
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillAB
+  description_zh: 
+- key: Rate.XP.BattlegroundKillEOTS
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillEOTS
+  description_zh: 
+- key: Rate.XP.BattlegroundKillSOTA
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillSOTA
+  description_zh: 
+- key: Rate.XP.BattlegroundKillIC
+  section: EXPERIENCE
+  name_zh: Rate.XP.BattlegroundKillIC
+  description_zh: 
+- key: Rate.Pet.LevelXP
+  section: EXPERIENCE
+  name_zh: Rate.Pet.LevelXP
+  description_zh: 
+- key: MaxHonorPoints
+  section: CURRENCY
+  name_zh: MaxHonorPoints
+  description_zh: 
+- key: MaxHonorPointsMoneyPerPoint
+  section: CURRENCY
+  name_zh: MaxHonorPointsMoneyPerPoint
+  description_zh: 
+- key: StartHonorPoints
+  section: CURRENCY
+  name_zh: StartHonorPoints
+  description_zh: 
+- key: HonorPointsAfterDuel
+  section: CURRENCY
+  name_zh: HonorPointsAfterDuel
+  description_zh: 
+- key: Rate.Honor
+  section: CURRENCY
+  name_zh: Rate.Honor
+  description_zh: 
+- key: MaxArenaPoints
+  section: CURRENCY
+  name_zh: MaxArenaPoints
+  description_zh: 
+- key: StartArenaPoints
+  section: CURRENCY
+  name_zh: StartArenaPoints
+  description_zh: 
+- key: Arena.LegacyArenaPoints
+  section: CURRENCY
+  name_zh: Arena.LegacyArenaPoints
+  description_zh: 
+- key: Rate.ArenaPoints
+  section: CURRENCY
+  name_zh: Rate.ArenaPoints
+  description_zh: 
+- key: PvPToken.Enable
+  section: CURRENCY
+  name_zh: PvPToken.Enable
+  description_zh: 
+- key: PvPToken.MapAllowType
+  section: CURRENCY
+  name_zh: PvPToken.MapAllowType
+  description_zh: 
+- key: PvPToken.ItemID
+  section: CURRENCY
+  name_zh: PvPToken.ItemID
+  description_zh: 
+- key: PvPToken.ItemCount
+  section: CURRENCY
+  name_zh: PvPToken.ItemCount
+  description_zh: 
+- key: DurabilityLoss.InPvP
+  section: DURABILITY
+  name_zh: DurabilityLoss.InPvP
+  description_zh: 
+- key: DurabilityLoss.OnDeath
+  section: DURABILITY
+  name_zh: DurabilityLoss.OnDeath
+  description_zh: 
+- key: DurabilityLossChance.Damage
+  section: DURABILITY
+  name_zh: DurabilityLossChance.Damage
+  description_zh: 
+- key: DurabilityLossChance.Absorb
+  section: DURABILITY
+  name_zh: DurabilityLossChance.Absorb
+  description_zh: 
+- key: DurabilityLossChance.Parry
+  section: DURABILITY
+  name_zh: DurabilityLossChance.Parry
+  description_zh: 
+- key: DurabilityLossChance.Block
+  section: DURABILITY
+  name_zh: DurabilityLossChance.Block
+  description_zh: 
+- key: Death.SicknessLevel
+  section: DEATH
+  name_zh: Death.SicknessLevel
+  description_zh: 
+- key: Death.CorpseReclaimDelay.PvP
+  section: DEATH
+  name_zh: Death.CorpseReclaimDelay.PvP
+  description_zh: 
+- key: Death.CorpseReclaimDelay.PvE
+  section: DEATH
+  name_zh: Death.CorpseReclaimDelay.PvE
+  description_zh: 
+- key: Death.Bones.World
+  section: DEATH
+  name_zh: Death.Bones.World
+  description_zh: 
+- key: Death.Bones.BattlegroundOrArena
+  section: DEATH
+  name_zh: Death.Bones.BattlegroundOrArena
+  description_zh: 
+- key: Pet.RankMod.Health
+  section: PET
+  name_zh: Pet.RankMod.Health
+  description_zh: 
+- key: ItemDelete.Method
+  section: ITEM DELETE
+  name_zh: ItemDelete.Method
+  description_zh: 
+- key: ItemDelete.Vendor
+  section: ITEM DELETE
+  name_zh: ItemDelete.Vendor
+  description_zh: 
+- key: ItemDelete.Quality
+  section: ITEM DELETE
+  name_zh: ItemDelete.Quality
+  description_zh: 
+- key: ItemDelete.ItemLevel
+  section: ITEM DELETE
+  name_zh: ItemDelete.ItemLevel
+  description_zh: 
+- key: ItemDelete.KeepDays
+  section: ITEM DELETE
+  name_zh: ItemDelete.KeepDays
+  description_zh: 
+- key: DBC.EnforceItemAttributes
+  section: ITEM
+  name_zh: DBC.EnforceItemAttributes
+  description_zh: 
+- key: Rate.Drop.Item.Poor
+  section: ITEM
+  name_zh: Rate.Drop.Item.Poor
+  description_zh: 
+- key: Rate.Drop.Item.Normal
+  section: ITEM
+  name_zh: Rate.Drop.Item.Normal
+  description_zh: 
+- key: Rate.Drop.Item.Uncommon
+  section: ITEM
+  name_zh: Rate.Drop.Item.Uncommon
+  description_zh: 
+- key: Rate.Drop.Item.Rare
+  section: ITEM
+  name_zh: Rate.Drop.Item.Rare
+  description_zh: 
+- key: Rate.Drop.Item.Epic
+  section: ITEM
+  name_zh: Rate.Drop.Item.Epic
+  description_zh: 
+- key: Rate.Drop.Item.Legendary
+  section: ITEM
+  name_zh: Rate.Drop.Item.Legendary
+  description_zh: 
+- key: Rate.Drop.Item.Artifact
+  section: ITEM
+  name_zh: Rate.Drop.Item.Artifact
+  description_zh: 
+- key: Rate.Drop.Item.Referenced
+  section: ITEM
+  name_zh: Rate.Drop.Item.Referenced
+  description_zh: 
+- key: Rate.Drop.Money
+  section: ITEM
+  name_zh: Rate.Drop.Money
+  description_zh: 
+- key: Rate.Drop.Item.ReferencedAmount
+  section: ITEM
+  name_zh: Rate.Drop.Item.ReferencedAmount
+  description_zh: 
+- key: Rate.Drop.Item.GroupAmount
+  section: ITEM
+  name_zh: Rate.Drop.Item.GroupAmount
+  description_zh: 
+- key: LootNeedBeforeGreedILvlRestriction
+  section: ITEM
+  name_zh: LootNeedBeforeGreedILvlRestriction
+  description_zh: 
+- key: Item.SetItemTradeable
+  section: ITEM
+  name_zh: Item.SetItemTradeable
+  description_zh: 
+- key: Quests.EnableQuestTracker
+  section: QUEST
+  name_zh: Quests.EnableQuestTracker
+  description_zh: 
+- key: QuestPOI.Enabled
+  section: QUEST
+  name_zh: QuestPOI.Enabled
+  description_zh: 
+- key: Quests.LowLevelHideDiff
+  section: QUEST
+  name_zh: Quests.LowLevelHideDiff
+  description_zh: 
+- key: Quests.HighLevelHideDiff
+  section: QUEST
+  name_zh: Quests.HighLevelHideDiff
+  description_zh: 
+- key: Quests.IgnoreRaid
+  section: QUEST
+  name_zh: Quests.IgnoreRaid
+  description_zh: 
+- key: Quests.IgnoreAutoAccept
+  section: QUEST
+  name_zh: Quests.IgnoreAutoAccept
+  description_zh: 
+- key: Quests.IgnoreAutoComplete
+  section: QUEST
+  name_zh: Quests.IgnoreAutoComplete
+  description_zh: 
+- key: Rate.RewardQuestMoney
+  section: QUEST
+  name_zh: Rate.RewardQuestMoney
+  description_zh: 
+- key: Rate.RewardBonusMoney
+  section: QUEST
+  name_zh: Rate.RewardBonusMoney
+  description_zh: 
+- key: MonsterSight
+  section: CREATURE
+  name_zh: MonsterSight
+  description_zh: 
+- key: Rate.Creature.Aggro
+  section: CREATURE
+  name_zh: Rate.Creature.Aggro
+  description_zh: 
+- key: CreatureFamilyFleeAssistanceRadius
+  section: CREATURE
+  name_zh: CreatureFamilyFleeAssistanceRadius
+  description_zh: 
+- key: CreatureLeashRadius
+  section: CREATURE
+  name_zh: CreatureLeashRadius
+  description_zh: 
+- key: CreatureFamilyAssistanceRadius
+  section: CREATURE
+  name_zh: CreatureFamilyAssistanceRadius
+  description_zh: 
+- key: CreatureFamilyAssistanceDelay
+  section: CREATURE
+  name_zh: CreatureFamilyAssistanceDelay
+  description_zh: 
+- key: CreatureFamilyAssistancePeriod
+  section: CREATURE
+  name_zh: CreatureFamilyAssistancePeriod
+  description_zh: 
+- key: CreatureFamilyFleeDelay
+  section: CREATURE
+  name_zh: CreatureFamilyFleeDelay
+  description_zh: 
+- key: WorldBossLevelDiff
+  section: CREATURE
+  name_zh: WorldBossLevelDiff
+  description_zh: 
+- key: Corpse.Decay.NORMAL
+  section: CREATURE
+  name_zh: Corpse.Decay.NORMAL
+  description_zh: 
+- key: Corpse.Decay.RARE
+  section: CREATURE
+  name_zh: Corpse.Decay.RARE
+  description_zh: 
+- key: Corpse.Decay.ELITE
+  section: CREATURE
+  name_zh: Corpse.Decay.ELITE
+  description_zh: 
+- key: Corpse.Decay.RAREELITE
+  section: CREATURE
+  name_zh: Corpse.Decay.RAREELITE
+  description_zh: 
+- key: Corpse.Decay.WORLDBOSS
+  section: CREATURE
+  name_zh: Corpse.Decay.WORLDBOSS
+  description_zh: 
+- key: Rate.Corpse.Decay.Looted
+  section: CREATURE
+  name_zh: Rate.Corpse.Decay.Looted
+  description_zh: 
+- key: Rate.Creature.Normal.Damage
+  section: CREATURE
+  name_zh: Rate.Creature.Normal.Damage
+  description_zh: 
+- key: Rate.Creature.Elite.Elite.Damage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.Elite.Damage
+  description_zh: 
+- key: Rate.Creature.Elite.RARE.Damage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RARE.Damage
+  description_zh: 
+- key: Rate.Creature.Elite.RAREELITE.Damage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RAREELITE.Damage
+  description_zh: 
+- key: Rate.Creature.Elite.WORLDBOSS.Damage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.WORLDBOSS.Damage
+  description_zh: 
+- key: Rate.Creature.Normal.SpellDamage
+  section: CREATURE
+  name_zh: Rate.Creature.Normal.SpellDamage
+  description_zh: 
+- key: Rate.Creature.Elite.Elite.SpellDamage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.Elite.SpellDamage
+  description_zh: 
+- key: Rate.Creature.Elite.RARE.SpellDamage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RARE.SpellDamage
+  description_zh: 
+- key: Rate.Creature.Elite.RAREELITE.SpellDamage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RAREELITE.SpellDamage
+  description_zh: 
+- key: Rate.Creature.Elite.WORLDBOSS.SpellDamage
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.WORLDBOSS.SpellDamage
+  description_zh: 
+- key: Rate.Creature.Normal.HP
+  section: CREATURE
+  name_zh: Rate.Creature.Normal.HP
+  description_zh: 
+- key: Rate.Creature.Elite.Elite.HP
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.Elite.HP
+  description_zh: 
+- key: Rate.Creature.Elite.RARE.HP
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RARE.HP
+  description_zh: 
+- key: Rate.Creature.Elite.RAREELITE.HP
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.RAREELITE.HP
+  description_zh: 
+- key: Rate.Creature.Elite.WORLDBOSS.HP
+  section: CREATURE
+  name_zh: Rate.Creature.Elite.WORLDBOSS.HP
+  description_zh: 
+- key: ListenRange.Say
+  section: CREATURE
+  name_zh: ListenRange.Say
+  description_zh: 
+- key: ListenRange.TextEmote
+  section: CREATURE
+  name_zh: ListenRange.TextEmote
+  description_zh: 
+- key: ListenRange.Yell
+  section: CREATURE
+  name_zh: ListenRange.Yell
+  description_zh: 
+- key: Creature.RepositionAgainstNpcs
+  section: CREATURE
+  name_zh: Creature.RepositionAgainstNpcs
+  description_zh: 
+- key: Creature.MovingStopTimeForPlayer
+  section: CREATURE
+  name_zh: Creature.MovingStopTimeForPlayer
+  description_zh: 
+- key: WaypointMovementStopTimeForPlayer
+  section: CREATURE
+  name_zh: WaypointMovementStopTimeForPlayer
+  description_zh: 
+- key: NpcEvadeIfTargetIsUnreachable
+  section: CREATURE
+  name_zh: NpcEvadeIfTargetIsUnreachable
+  description_zh: 
+- key: NpcRegenHPIfTargetIsUnreachable
+  section: CREATURE
+  name_zh: NpcRegenHPIfTargetIsUnreachable
+  description_zh: 
+- key: NpcRegenHPTimeIfTargetIsUnreachable
+  section: CREATURE
+  name_zh: NpcRegenHPTimeIfTargetIsUnreachable
+  description_zh: 
+- key: Creatures.CustomIDs
+  section: CREATURE
+  name_zh: Creatures.CustomIDs
+  description_zh: 
+- key: Rate.SellValue.Item.Poor
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Poor
+  description_zh: 
+- key: Rate.SellValue.Item.Normal
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Normal
+  description_zh: 
+- key: Rate.SellValue.Item.Uncommon
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Uncommon
+  description_zh: 
+- key: Rate.SellValue.Item.Rare
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Rare
+  description_zh: 
+- key: Rate.SellValue.Item.Epic
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Epic
+  description_zh: 
+- key: Rate.SellValue.Item.Legendary
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Legendary
+  description_zh: 
+- key: Rate.SellValue.Item.Artifact
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Artifact
+  description_zh: 
+- key: Rate.SellValue.Item.Heirloom
+  section: VENDOR
+  name_zh: Rate.SellValue.Item.Heirloom
+  description_zh: 
+- key: Rate.BuyValue.Item.Poor
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Poor
+  description_zh: 
+- key: Rate.BuyValue.Item.Normal
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Normal
+  description_zh: 
+- key: Rate.BuyValue.Item.Uncommon
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Uncommon
+  description_zh: 
+- key: Rate.BuyValue.Item.Rare
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Rare
+  description_zh: 
+- key: Rate.BuyValue.Item.Epic
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Epic
+  description_zh: 
+- key: Rate.BuyValue.Item.Legendary
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Legendary
+  description_zh: 
+- key: Rate.BuyValue.Item.Artifact
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Artifact
+  description_zh: 
+- key: Rate.BuyValue.Item.Heirloom
+  section: VENDOR
+  name_zh: Rate.BuyValue.Item.Heirloom
+  description_zh: 
+- key: Rate.RepairCost
+  section: VENDOR
+  name_zh: Rate.RepairCost
+  description_zh: 
+- key: LeaveGroupOnLogout.Enabled
+  section: GROUP
+  name_zh: LeaveGroupOnLogout.Enabled
+  description_zh: 
+- key: Group.Raid.LevelRestriction
+  section: GROUP
+  name_zh: Group.Raid.LevelRestriction
+  description_zh: 
+- key: Group.RandomRollMaximum
+  section: GROUP
+  name_zh: Group.RandomRollMaximum
+  description_zh: 
+- key: Instance.GMSummonPlayer
+  section: INSTANCE
+  name_zh: Instance.GMSummonPlayer
+  description_zh: 
+- key: Instance.IgnoreLevel
+  section: INSTANCE
+  name_zh: Instance.IgnoreLevel
+  description_zh: 
+- key: Instance.IgnoreRaid
+  section: INSTANCE
+  name_zh: Instance.IgnoreRaid
+  description_zh: 
+- key: Instance.ResetTimeHour
+  section: INSTANCE
+  name_zh: Instance.ResetTimeHour
+  description_zh: 
+- key: Instance.ResetTimeRelativeTimestamp
+  section: INSTANCE
+  name_zh: Instance.ResetTimeRelativeTimestamp
+  description_zh: 
+- key: Rate.InstanceResetTime
+  section: INSTANCE
+  name_zh: Rate.InstanceResetTime
+  description_zh: 
+- key: Instance.UnloadDelay
+  section: INSTANCE
+  name_zh: Instance.UnloadDelay
+  description_zh: 
+- key: AccountInstancesPerHour
+  section: INSTANCE
+  name_zh: AccountInstancesPerHour
+  description_zh: 
+- key: Instance.SharedNormalHeroicId
+  section: INSTANCE
+  name_zh: Instance.SharedNormalHeroicId
+  description_zh: 
+- key: DungeonAccessRequirements.PrintMode
+  section: INSTANCE
+  name_zh: DungeonAccessRequirements.PrintMode
+  description_zh: 
+- key: DungeonAccessRequirements.PortalAvgIlevelCheck
+  section: INSTANCE
+  name_zh: DungeonAccessRequirements.PortalAvgIlevelCheck
+  description_zh: 
+- key: DungeonAccessRequirements.OptionalStringID
+  section: INSTANCE
+  name_zh: DungeonAccessRequirements.OptionalStringID
+  description_zh: 
+- key: JoinBGAndLFG.Enable
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: JoinBGAndLFG.Enable
+  description_zh: 
+- key: DungeonFinder.OptionsMask
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: DungeonFinder.OptionsMask
+  description_zh: 
+- key: LFG.Location.All
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: LFG.Location.All
+  description_zh: 
+- key: LFG.MaxKickCount
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: LFG.MaxKickCount
+  description_zh: 
+- key: LFG.KickPreventionTimer
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: LFG.KickPreventionTimer
+  description_zh: 
+- key: DungeonAccessRequirements.LFGLevelDBCOverride
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: DungeonAccessRequirements.LFGLevelDBCOverride
+  description_zh: 
+- key: DungeonFinder.CastDeserter
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: DungeonFinder.CastDeserter
+  description_zh: 
+- key: DungeonFinder.AllowCompleted
+  section: DUNGEON AND BATTLEGROUND FINDER
+  name_zh: DungeonFinder.AllowCompleted
+  description_zh: 
+- key: MinCharterName
+  section: CHARTER
+  name_zh: MinCharterName
+  description_zh: 
+- key: StrictCharterNames
+  section: CHARTER
+  name_zh: StrictCharterNames
+  description_zh: 
+- key: Guild.EventLogRecordsCount
+  section: GUILD
+  name_zh: Guild.EventLogRecordsCount
+  description_zh: 
+- key: Guild.ResetHour
+  section: GUILD
+  name_zh: Guild.ResetHour
+  description_zh: 
+- key: Guild.BankEventLogRecordsCount
+  section: GUILD
+  name_zh: Guild.BankEventLogRecordsCount
+  description_zh: 
+- key: MinPetitionSigns
+  section: GUILD
+  name_zh: MinPetitionSigns
+  description_zh: 
+- key: Guild.CharterCost
+  section: GUILD
+  name_zh: Guild.CharterCost
+  description_zh: 
+- key: Guild.AllowMultipleGuildMaster
+  section: GUILD
+  name_zh: Guild.AllowMultipleGuildMaster
+  description_zh: 
+- key: Guild.BankInitialTabs
+  section: GUILD
+  name_zh: Guild.BankInitialTabs
+  description_zh: 
+- key: Guild.BankTabCost0
+  section: GUILD
+  name_zh: Guild.BankTabCost0
+  description_zh: 
+- key: Guild.BankTabCost1
+  section: GUILD
+  name_zh: Guild.BankTabCost1
+  description_zh: 
+- key: Guild.BankTabCost2
+  section: GUILD
+  name_zh: Guild.BankTabCost2
+  description_zh: 
+- key: Guild.BankTabCost3
+  section: GUILD
+  name_zh: Guild.BankTabCost3
+  description_zh: 
+- key: Guild.BankTabCost4
+  section: GUILD
+  name_zh: Guild.BankTabCost4
+  description_zh: 
+- key: Guild.BankTabCost5
+  section: GUILD
+  name_zh: Guild.BankTabCost5
+  description_zh: 
+- key: Guild.MemberLimit
+  section: GUILD
+  name_zh: Guild.MemberLimit
+  description_zh: 
+- key: FFAPvPTimer
+  section: FFAPVP
+  name_zh: FFAPvPTimer
+  description_zh: 
+- key: OutdoorPvPCaptureRate
+  section: OUTDOORPVP
+  name_zh: OutdoorPvPCaptureRate
+  description_zh: 
+- key: Wintergrasp.Enable
+  section: WINTERGRASP
+  name_zh: Wintergrasp.Enable
+  description_zh: 
+- key: Wintergrasp.PlayerMax
+  section: WINTERGRASP
+  name_zh: Wintergrasp.PlayerMax
+  description_zh: 
+- key: Wintergrasp.PlayerMin
+  section: WINTERGRASP
+  name_zh: Wintergrasp.PlayerMin
+  description_zh: 
+- key: Wintergrasp.PlayerMinLvl
+  section: WINTERGRASP
+  name_zh: Wintergrasp.PlayerMinLvl
+  description_zh: 
+- key: Wintergrasp.BattleTimer
+  section: WINTERGRASP
+  name_zh: Wintergrasp.BattleTimer
+  description_zh: 
+- key: Wintergrasp.NoBattleTimer
+  section: WINTERGRASP
+  name_zh: Wintergrasp.NoBattleTimer
+  description_zh: 
+- key: Wintergrasp.CrashRestartTimer
+  section: WINTERGRASP
+  name_zh: Wintergrasp.CrashRestartTimer
+  description_zh: 
+- key: Battleground.PrepTime
+  section: BATTLEGROUND
+  name_zh: Battleground.PrepTime
+  description_zh: 
+- key: Battleground.CastDeserter
+  section: BATTLEGROUND
+  name_zh: Battleground.CastDeserter
+  description_zh: 
+- key: Battleground.QueueAnnouncer.Enable
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.Enable
+  description_zh: 
+- key: Battleground.QueueAnnouncer.Limit.MinLevel
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.Limit.MinLevel
+  description_zh: 
+- key: Battleground.QueueAnnouncer.Limit.MinPlayers
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.Limit.MinPlayers
+  description_zh: 
+- key: Battleground.QueueAnnouncer.SpamProtection.Delay
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.SpamProtection.Delay
+  description_zh: 
+- key: Battleground.QueueAnnouncer.PlayerOnly
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.PlayerOnly
+  description_zh: 
+- key: Battleground.QueueAnnouncer.Timed
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.Timed
+  description_zh: 
+- key: Battleground.QueueAnnouncer.Timer
+  section: BATTLEGROUND
+  name_zh: Battleground.QueueAnnouncer.Timer
+  description_zh: 
+- key: Battleground.PrematureFinishTimer
+  section: BATTLEGROUND
+  name_zh: Battleground.PrematureFinishTimer
+  description_zh: 
+- key: Battleground.PremadeGroupWaitForMatch
+  section: BATTLEGROUND
+  name_zh: Battleground.PremadeGroupWaitForMatch
+  description_zh: 
+- key: Battleground.GiveXPForKills
+  section: BATTLEGROUND
+  name_zh: Battleground.GiveXPForKills
+  description_zh: 
+- key: Battleground.Random.ResetHour
+  section: BATTLEGROUND
+  name_zh: Battleground.Random.ResetHour
+  description_zh: 
+- key: Battleground.StoreStatistics.Enable
+  section: BATTLEGROUND
+  name_zh: Battleground.StoreStatistics.Enable
+  description_zh: 
+- key: Battleground.TrackDeserters.Enable
+  section: BATTLEGROUND
+  name_zh: Battleground.TrackDeserters.Enable
+  description_zh: 
+- key: Battleground.InvitationType
+  section: BATTLEGROUND
+  name_zh: Battleground.InvitationType
+  description_zh: 
+- key: Battleground.ReportAFK.Timer
+  section: BATTLEGROUND
+  name_zh: Battleground.ReportAFK.Timer
+  description_zh: 
+- key: Battleground.ReportAFK
+  section: BATTLEGROUND
+  name_zh: Battleground.ReportAFK
+  description_zh: 
+- key: Battleground.DisableQuestShareInBG
+  section: BATTLEGROUND
+  name_zh: Battleground.DisableQuestShareInBG
+  description_zh: 
+- key: Battleground.DisableReadyCheckInBG
+  section: BATTLEGROUND
+  name_zh: Battleground.DisableReadyCheckInBG
+  description_zh: 
+- key: Battleground.RewardWinnerHonorFirst
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardWinnerHonorFirst
+  description_zh: 
+- key: Battleground.RewardWinnerArenaFirst
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardWinnerArenaFirst
+  description_zh: 
+- key: Battleground.RewardWinnerHonorLast
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardWinnerHonorLast
+  description_zh: 
+- key: Battleground.RewardWinnerArenaLast
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardWinnerArenaLast
+  description_zh: 
+- key: Battleground.RewardLoserHonorFirst
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardLoserHonorFirst
+  description_zh: 
+- key: Battleground.RewardLoserHonorLast
+  section: BATTLEGROUND
+  name_zh: Battleground.RewardLoserHonorLast
+  description_zh: 
+- key: Battleground.PlayerRespawn
+  section: BATTLEGROUND
+  name_zh: Battleground.PlayerRespawn
+  description_zh: 
+- key: Battleground.RestorationBuffRespawn
+  section: BATTLEGROUND
+  name_zh: Battleground.RestorationBuffRespawn
+  description_zh: 
+- key: Battleground.BerserkingBuffRespawn
+  section: BATTLEGROUND
+  name_zh: Battleground.BerserkingBuffRespawn
+  description_zh: 
+- key: Battleground.SpeedBuffRespawn
+  section: BATTLEGROUND
+  name_zh: Battleground.SpeedBuffRespawn
+  description_zh: 
+- key: Battleground.Override.LowLevels.MinPlayers
+  section: BATTLEGROUND
+  name_zh: Battleground.Override.LowLevels.MinPlayers
+  description_zh: 
+- key: Battleground.Warsong.Flags
+  section: BATTLEGROUND
+  name_zh: Battleground.Warsong.Flags
+  description_zh: 
+- key: Battleground.Arathi.CapturePoints
+  section: BATTLEGROUND
+  name_zh: Battleground.Arathi.CapturePoints
+  description_zh: 
+- key: Battleground.Alterac.Reinforcements
+  section: BATTLEGROUND
+  name_zh: Battleground.Alterac.Reinforcements
+  description_zh: 
+- key: Battleground.Alterac.ReputationOnBossDeath
+  section: BATTLEGROUND
+  name_zh: Battleground.Alterac.ReputationOnBossDeath
+  description_zh: 
+- key: Battleground.EyeOfTheStorm.CapturePoints
+  section: BATTLEGROUND
+  name_zh: Battleground.EyeOfTheStorm.CapturePoints
+  description_zh: 
+- key: Arena.PrepTime
+  section: ARENA
+  name_zh: Arena.PrepTime
+  description_zh: 
+- key: Arena.MaxRatingDifference
+  section: ARENA
+  name_zh: Arena.MaxRatingDifference
+  description_zh: 
+- key: Arena.RatingDiscardTimer
+  section: ARENA
+  name_zh: Arena.RatingDiscardTimer
+  description_zh: 
+- key: Arena.PreviousOpponentsDiscardTimer
+  section: ARENA
+  name_zh: Arena.PreviousOpponentsDiscardTimer
+  description_zh: 
+- key: Arena.AutoDistributePoints
+  section: ARENA
+  name_zh: Arena.AutoDistributePoints
+  description_zh: 
+- key: Arena.AutoDistributeInterval
+  section: ARENA
+  name_zh: Arena.AutoDistributeInterval
+  description_zh: 
+- key: Arena.GamesRequired
+  section: ARENA
+  name_zh: Arena.GamesRequired
+  description_zh: 
+- key: Arena.QueueAnnouncer.Enable
+  section: ARENA
+  name_zh: Arena.QueueAnnouncer.Enable
+  description_zh: 
+- key: Arena.QueueAnnouncer.PlayerOnly
+  section: ARENA
+  name_zh: Arena.QueueAnnouncer.PlayerOnly
+  description_zh: 
+- key: Arena.QueueAnnouncer.Detail
+  section: ARENA
+  name_zh: Arena.QueueAnnouncer.Detail
+  description_zh: 
+- key: Arena.ArenaStartRating
+  section: ARENA
+  name_zh: Arena.ArenaStartRating
+  description_zh: 
+- key: Arena.LegacyArenaStartRating
+  section: ARENA
+  name_zh: Arena.LegacyArenaStartRating
+  description_zh: 
+- key: Arena.ArenaStartPersonalRating
+  section: ARENA
+  name_zh: Arena.ArenaStartPersonalRating
+  description_zh: 
+- key: Arena.ArenaStartMatchmakerRating
+  section: ARENA
+  name_zh: Arena.ArenaStartMatchmakerRating
+  description_zh: 
+- key: Arena.ArenaWinRatingModifier1
+  section: ARENA
+  name_zh: Arena.ArenaWinRatingModifier1
+  description_zh: 
+- key: Arena.ArenaWinRatingModifier2
+  section: ARENA
+  name_zh: Arena.ArenaWinRatingModifier2
+  description_zh: 
+- key: Arena.ArenaLoseRatingModifier
+  section: ARENA
+  name_zh: Arena.ArenaLoseRatingModifier
+  description_zh: 
+- key: Arena.ArenaMatchmakerRatingModifier
+  section: ARENA
+  name_zh: Arena.ArenaMatchmakerRatingModifier
+  description_zh: 
+- key: ArenaTeam.CharterCost.2v2
+  section: ARENA
+  name_zh: ArenaTeam.CharterCost.2v2
+  description_zh: 
+- key: ArenaTeam.CharterCost.3v3
+  section: ARENA
+  name_zh: ArenaTeam.CharterCost.3v3
+  description_zh: 
+- key: ArenaTeam.CharterCost.5v5
+  section: ARENA
+  name_zh: ArenaTeam.CharterCost.5v5
+  description_zh: 
+- key: MaxAllowedMMRDrop
+  section: ARENA
+  name_zh: MaxAllowedMMRDrop
+  description_zh: 
+- key: MailDeliveryDelay
+  section: MAIL
+  name_zh: MailDeliveryDelay
+  description_zh: 
+- key: LevelReq.Mail
+  section: MAIL
+  name_zh: LevelReq.Mail
+  description_zh: 
+- key: IsContinentTransport.Enabled
+  section: TRANSPORT
+  name_zh: IsContinentTransport.Enabled
+  description_zh: 
+- key: IsPreloadedContinentTransport.Enabled
+  section: TRANSPORT
+  name_zh: IsPreloadedContinentTransport.Enabled
+  description_zh: 
+- key: StrictChannelNames
+  section: CHAT CHANNEL
+  name_zh: StrictChannelNames
+  description_zh: 
+- key: AddonChannel
+  section: CHAT CHANNEL
+  name_zh: AddonChannel
+  description_zh: 
+- key: ChatFakeMessagePreventing
+  section: CHAT CHANNEL
+  name_zh: ChatFakeMessagePreventing
+  description_zh: 
+- key: ChatStrictLinkChecking.Severity
+  section: CHAT CHANNEL
+  name_zh: ChatStrictLinkChecking.Severity
+  description_zh: 
+- key: ChatStrictLinkChecking.Kick
+  section: CHAT CHANNEL
+  name_zh: ChatStrictLinkChecking.Kick
+  description_zh: 
+- key: ChatFlood.MessageCount
+  section: CHAT CHANNEL
+  name_zh: ChatFlood.MessageCount
+  description_zh: 
+- key: ChatFlood.MessageDelay
+  section: CHAT CHANNEL
+  name_zh: ChatFlood.MessageDelay
+  description_zh: 
+- key: ChatFlood.AddonMessageCount
+  section: CHAT CHANNEL
+  name_zh: ChatFlood.AddonMessageCount
+  description_zh: 
+- key: ChatFlood.AddonMessageDelay
+  section: CHAT CHANNEL
+  name_zh: ChatFlood.AddonMessageDelay
+  description_zh: 
+- key: ChatFlood.MuteTime
+  section: CHAT CHANNEL
+  name_zh: ChatFlood.MuteTime
+  description_zh: 
+- key: Chat.MuteFirstLogin
+  section: CHAT CHANNEL
+  name_zh: Chat.MuteFirstLogin
+  description_zh: 
+- key: Chat.MuteTimeFirstLogin
+  section: CHAT CHANNEL
+  name_zh: Chat.MuteTimeFirstLogin
+  description_zh: 
+- key: Channel.RestrictedLfg
+  section: CHAT CHANNEL
+  name_zh: Channel.RestrictedLfg
+  description_zh: 
+- key: Channel.SilentlyGMJoin
+  section: CHAT CHANNEL
+  name_zh: Channel.SilentlyGMJoin
+  description_zh: 
+- key: Channel.ModerationGMLevel
+  section: CHAT CHANNEL
+  name_zh: Channel.ModerationGMLevel
+  description_zh: 
+- key: ChatLevelReq.Channel
+  section: CHAT CHANNEL
+  name_zh: ChatLevelReq.Channel
+  description_zh: 
+- key: ChatLevelReq.Whisper
+  section: CHAT CHANNEL
+  name_zh: ChatLevelReq.Whisper
+  description_zh: 
+- key: ChatLevelReq.Say
+  section: CHAT CHANNEL
+  name_zh: ChatLevelReq.Say
+  description_zh: 
+- key: PartyLevelReq
+  section: CHAT CHANNEL
+  name_zh: PartyLevelReq
+  description_zh: 
+- key: PreserveCustomChannels
+  section: CHAT CHANNEL
+  name_zh: PreserveCustomChannels
+  description_zh: 
+- key: PreserveCustomChannelDuration
+  section: CHAT CHANNEL
+  name_zh: PreserveCustomChannelDuration
+  description_zh: 
+- key: AllowTwoSide.Accounts
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Accounts
+  description_zh: 
+- key: AllowTwoSide.Interaction.Calendar
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Calendar
+  description_zh: 
+- key: AllowTwoSide.Interaction.Chat
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Chat
+  description_zh: 
+- key: AllowTwoSide.Interaction.Emote
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Emote
+  description_zh: 
+- key: AllowTwoSide.Interaction.Channel
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Channel
+  description_zh: 
+- key: AllowTwoSide.Interaction.Group
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Group
+  description_zh: 
+- key: AllowTwoSide.Interaction.Guild
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Guild
+  description_zh: 
+- key: AllowTwoSide.Interaction.Arena
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Arena
+  description_zh: 
+- key: AllowTwoSide.Interaction.Auction
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Auction
+  description_zh: 
+- key: AllowTwoSide.Interaction.Mail
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Interaction.Mail
+  description_zh: 
+- key: AllowTwoSide.WhoList
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.WhoList
+  description_zh: 
+- key: AllowTwoSide.AddFriend
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.AddFriend
+  description_zh: 
+- key: AllowTwoSide.Trade
+  section: FACTION INTERACTION
+  name_zh: AllowTwoSide.Trade
+  description_zh: 
+- key: TalentsInspecting
+  section: FACTION INTERACTION
+  name_zh: TalentsInspecting
+  description_zh: 
+- key: ChangeFaction.MaxMoney
+  section: FACTION INTERACTION
+  name_zh: ChangeFaction.MaxMoney
+  description_zh: 
+- key: RecruitAFriend.MaxLevel
+  section: RECRUIT A FRIEND
+  name_zh: RecruitAFriend.MaxLevel
+  description_zh: 
+- key: RecruitAFriend.MaxDifference
+  section: RECRUIT A FRIEND
+  name_zh: RecruitAFriend.MaxDifference
+  description_zh: 
+- key: MaxRecruitAFriendBonusDistance
+  section: RECRUIT A FRIEND
+  name_zh: MaxRecruitAFriendBonusDistance
+  description_zh: 
+- key: Calendar.DeleteOldEventsHour
+  section: CALENDAR
+  name_zh: Calendar.DeleteOldEventsHour
+  description_zh: 
+- key: Event.Announce
+  section: GAME EVENT
+  name_zh: Event.Announce
+  description_zh: 
+- key: Sunsreach.CounterMax
+  section: WORLD STATE
+  name_zh: Sunsreach.CounterMax
+  description_zh: 
+- key: ScourgeInvasion.CounterFirst
+  section: WORLD STATE
+  name_zh: ScourgeInvasion.CounterFirst
+  description_zh: 
+- key: ScourgeInvasion.CounterSecond
+  section: WORLD STATE
+  name_zh: ScourgeInvasion.CounterSecond
+  description_zh: 
+- key: ScourgeInvasion.CounterThird
+  section: WORLD STATE
+  name_zh: ScourgeInvasion.CounterThird
+  description_zh: 
+- key: AuctionHouse.WorkerThreads
+  section: AUCTION HOUSE
+  name_zh: AuctionHouse.WorkerThreads
+  description_zh: 
+- key: LevelReq.Auction
+  section: AUCTION HOUSE
+  name_zh: LevelReq.Auction
+  description_zh: 
+- key: Rate.Auction.Time
+  section: AUCTION HOUSE
+  name_zh: Rate.Auction.Time
+  description_zh: 
+- key: Rate.Auction.Deposit
+  section: AUCTION HOUSE
+  name_zh: Rate.Auction.Deposit
+  description_zh: 
+- key: Rate.Auction.Cut
+  section: AUCTION HOUSE
+  name_zh: Rate.Auction.Cut
+  description_zh: 
+- key: PlayerDump.DisallowPaths
+  section: PLAYER DUMP
+  name_zh: PlayerDump.DisallowPaths
+  description_zh: 
+- key: PlayerDump.DisallowOverwrite
+  section: PLAYER DUMP
+  name_zh: PlayerDump.DisallowOverwrite
+  description_zh: 
+- key: ICC.Buff.Horde
+  section: CUSTOM
+  name_zh: ICC.Buff.Horde
+  description_zh: 
+- key: ICC.Buff.Alliance
+  section: CUSTOM
+  name_zh: ICC.Buff.Alliance
+  description_zh: 
+- key: WipeGunshipBlizzlike.Enable
+  section: CUSTOM
+  name_zh: WipeGunshipBlizzlike.Enable
+  description_zh: 
+- key: Minigob.Manabonk.Enable
+  section: CUSTOM
+  name_zh: Minigob.Manabonk.Enable
+  description_zh: 
+- key: Calculate.Creature.Zone.Area.Data
+  section: CUSTOM
+  name_zh: Calculate.Creature.Zone.Area.Data
+  description_zh: 
+- key: Calculate.Gameoject.Zone.Area.Data
+  section: CUSTOM
+  name_zh: Calculate.Gameoject.Zone.Area.Data
+  description_zh: 
+- key: TeleportTimeoutNear
+  section: CUSTOM
+  name_zh: TeleportTimeoutNear
+  description_zh: 
+- key: TeleportTimeoutFar
+  section: CUSTOM
+  name_zh: TeleportTimeoutFar
+  description_zh: 
+- key: DailyRBGArenaPoints.MinLevel
+  section: CUSTOM
+  name_zh: DailyRBGArenaPoints.MinLevel
+  description_zh: 
+- key: MunchingBlizzlike.Enabled
+  section: CUSTOM
+  name_zh: MunchingBlizzlike.Enabled
+  description_zh: 
+- key: Daze.Enabled
+  section: CUSTOM
+  name_zh: Daze.Enabled
+  description_zh: 
+- key: InfiniteAmmo.Enabled
+  section: CUSTOM
+  name_zh: InfiniteAmmo.Enabled
+  description_zh: 
+- key: Debug.Battleground
+  section: DEBUG
+  name_zh: Debug.Battleground
+  description_zh: 
+- key: Debug.Arena
+  section: DEBUG
+  name_zh: Debug.Arena
+  description_zh: 
+- key: Respawn.DynamicRateCreature
+  section: DYNAMIC RESPAWN SETTINGS
+  name_zh: Respawn.DynamicRateCreature
+  description_zh: 
+- key: Respawn.DynamicMinimumCreature
+  section: DYNAMIC RESPAWN SETTINGS
+  name_zh: Respawn.DynamicMinimumCreature
+  description_zh: 
+- key: Respawn.DynamicRateGameObject
+  section: DYNAMIC RESPAWN SETTINGS
+  name_zh: Respawn.DynamicRateGameObject
+  description_zh: 
+- key: Respawn.DynamicMinimumGameObject
+  section: DYNAMIC RESPAWN SETTINGS
+  name_zh: Respawn.DynamicMinimumGameObject
+  description_zh: 
+- key: NpcBot.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable
+  description_zh: 
+- key: NpcBot.LogToDB
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.LogToDB
+  description_zh: 
+- key: NpcBot.MaxBots
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MaxBots
+  description_zh: 
+- key: NpcBot.MaxBotsPerClass
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MaxBotsPerClass
+  description_zh: 
+- key: NpcBot.MaxBotsPerAccount
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MaxBotsPerAccount
+  description_zh: 
+- key: NpcBot.Botgiver.FilterRaces
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Botgiver.FilterRaces
+  description_zh: 
+- key: NpcBot.SharedOwnership.Options
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.SharedOwnership.Options
+  description_zh: 
+- key: NpcBot.SharedOwnership.MaxOwners
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.SharedOwnership.MaxOwners
+  description_zh: 
+- key: NpcBot.BaseFollowDistance
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.BaseFollowDistance
+  description_zh: 
+- key: NpcBot.XpReduction.Amount
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.XpReduction.Amount
+  description_zh: 
+- key: NpcBot.XpReduction.StartingNumber
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.XpReduction.StartingNumber
+  description_zh: 
+- key: NpcBot.XpReduction.Blizzlike.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.XpReduction.Blizzlike.Enable
+  description_zh: 
+- key: NpcBot.XpReduction.Blizzlike.GroupOnly
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.XpReduction.Blizzlike.GroupOnly
+  description_zh: 
+- key: NpcBot.MoneyShare.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MoneyShare.Enable
+  description_zh: 
+- key: NpcBot.MoneyShare.GroupOnly
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MoneyShare.GroupOnly
+  description_zh: 
+- key: NpcBot.MountLevel.60
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MountLevel.60
+  description_zh: 
+- key: NpcBot.MountLevel.100
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.MountLevel.100
+  description_zh: 
+- key: NpcBot.HealTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HealTargetIconMask
+  description_zh: 
+- key: NpcBot.TankTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.TankTargetIconMask
+  description_zh: 
+- key: NpcBot.OffTankTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.OffTankTargetIconMask
+  description_zh: 
+- key: NpcBot.DPSTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.DPSTargetIconMask
+  description_zh: 
+- key: NpcBot.RangedDPSTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.RangedDPSTargetIconMask
+  description_zh: 
+- key: NpcBot.NoDPSTargetIconMask
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.NoDPSTargetIconMask
+  description_zh: 
+- key: NpcBot.Mult.Damage.Physical
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Physical
+  description_zh: 
+- key: NpcBot.Mult.Damage.Spell
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Spell
+  description_zh: 
+- key: NpcBot.Mult.Healing
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Healing
+  description_zh: 
+- key: NpcBot.Mult.HP
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.HP
+  description_zh: 
+- key: NpcBot.Mult.Wanderer.Damage
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Wanderer.Damage
+  description_zh: 
+- key: NpcBot.Mult.Wanderer.Healing
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Wanderer.Healing
+  description_zh: 
+- key: NpcBot.Mult.Wanderer.HP
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Wanderer.HP
+  description_zh: 
+- key: NpcBot.Mult.Wanderer.Speed
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Wanderer.Speed
+  description_zh: 
+- key: NpcBot.Mult.Damage.Warrior
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Warrior
+  description_zh: 
+- key: NpcBot.Mult.Damage.Paladin
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Paladin
+  description_zh: 
+- key: NpcBot.Mult.Damage.Hunter
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Hunter
+  description_zh: 
+- key: NpcBot.Mult.Damage.Rogue
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Rogue
+  description_zh: 
+- key: NpcBot.Mult.Damage.Priest
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Priest
+  description_zh: 
+- key: NpcBot.Mult.Damage.DeathKnight
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.DeathKnight
+  description_zh: 
+- key: NpcBot.Mult.Damage.Shaman
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Shaman
+  description_zh: 
+- key: NpcBot.Mult.Damage.Mage
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Mage
+  description_zh: 
+- key: NpcBot.Mult.Damage.Warlock
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Warlock
+  description_zh: 
+- key: NpcBot.Mult.Damage.Druid
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Druid
+  description_zh: 
+- key: NpcBot.Mult.Damage.Blademaster
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Blademaster
+  description_zh: 
+- key: NpcBot.Mult.Damage.ObsidianDestroyer
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.ObsidianDestroyer
+  description_zh: 
+- key: NpcBot.Mult.Damage.Archmage
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Archmage
+  description_zh: 
+- key: NpcBot.Mult.Damage.Dreadlord
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Dreadlord
+  description_zh: 
+- key: NpcBot.Mult.Damage.SpellBreaker
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.SpellBreaker
+  description_zh: 
+- key: NpcBot.Mult.Damage.DarkRanger
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.DarkRanger
+  description_zh: 
+- key: NpcBot.Mult.Damage.Necromancer
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Necromancer
+  description_zh: 
+- key: NpcBot.Mult.Damage.SeaWitch
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.SeaWitch
+  description_zh: 
+- key: NpcBot.Mult.Damage.CryptLord
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.CryptLord
+  description_zh: 
+- key: NpcBot.Mult.Damage.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Damage.Levels
+  description_zh: 
+- key: NpcBot.Mult.Healing.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.Healing.Levels
+  description_zh: 
+- key: NpcBot.Mult.HP.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.HP.Levels
+  description_zh: 
+- key: NpcBot.Mult.MP.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Mult.MP.Levels
+  description_zh: 
+- key: NpcBot.Enable.Dungeon
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable.Dungeon
+  description_zh: 
+- key: NpcBot.Enable.Raid
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable.Raid
+  description_zh: 
+- key: NpcBot.Enable.BG
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable.BG
+  description_zh: 
+- key: NpcBot.Enable.Arena
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable.Arena
+  description_zh: 
+- key: NpcBot.Enable.DungeonFinder
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Enable.DungeonFinder
+  description_zh: 
+- key: NpcBot.DisableInstances
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.DisableInstances
+  description_zh: 
+- key: NpcBot.Limit.Dungeon
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Limit.Dungeon
+  description_zh: 
+- key: NpcBot.Limit.Raid
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Limit.Raid
+  description_zh: 
+- key: NpcBot.HideSpawns
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HideSpawns
+  description_zh: 
+- key: NpcBot.Cost.Hire
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Cost.Hire
+  description_zh: 
+- key: NpcBot.Cost.Rent
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Cost.Rent
+  description_zh: 
+- key: NpcBot.UpdateDelay.Base
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.UpdateDelay.Base
+  description_zh: 
+- key: NpcBot.EngageDelay.DPS
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EngageDelay.DPS
+  description_zh: 
+- key: NpcBot.EngageDelay.Heal
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EngageDelay.Heal
+  description_zh: 
+- key: NpcBot.PvP
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.PvP
+  description_zh: 
+- key: NpcBot.Movements.InterruptFood
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Movements.InterruptFood
+  description_zh: 
+- key: NpcBot.EquipmentDisplay.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EquipmentDisplay.Enable
+  description_zh: 
+- key: NpcBot.EquipmentDisplay.ShowCloak
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EquipmentDisplay.ShowCloak
+  description_zh: 
+- key: NpcBot.EquipmentDisplay.ShowHelm
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EquipmentDisplay.ShowHelm
+  description_zh: 
+- key: NpcBot.Transmog.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Transmog.Enable
+  description_zh: 
+- key: NpcBot.Transmog.MixArmorClasses
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Transmog.MixArmorClasses
+  description_zh: 
+- key: NpcBot.Transmog.MixWeaponClasses
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Transmog.MixWeaponClasses
+  description_zh: 
+- key: NpcBot.Transmog.MixWeaponInventoryTypes
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Transmog.MixWeaponInventoryTypes
+  description_zh: 
+- key: NpcBot.Transmog.UseEquipmentSlots
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Transmog.UseEquipmentSlots
+  description_zh: 
+- key: NpcBot.Gossip.ShowEquipmentListItems
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Gossip.ShowEquipmentListItems
+  description_zh: 
+- key: NpcBot.GearBank.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.GearBank.Enable
+  description_zh: 
+- key: NpcBot.GearBank.Capacity
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.GearBank.Capacity
+  description_zh: 
+- key: NpcBot.GearBank.EquipmentSets
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.GearBank.EquipmentSets
+  description_zh: 
+- key: NpcBot.Classes.Warrior.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Warrior.Enable
+  description_zh: 
+- key: NpcBot.Classes.Paladin.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Paladin.Enable
+  description_zh: 
+- key: NpcBot.Classes.Hunter.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Hunter.Enable
+  description_zh: 
+- key: NpcBot.Classes.Rogue.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Rogue.Enable
+  description_zh: 
+- key: NpcBot.Classes.Priest.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Priest.Enable
+  description_zh: 
+- key: NpcBot.Classes.DeathKnight.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.DeathKnight.Enable
+  description_zh: 
+- key: NpcBot.Classes.Shaman.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Shaman.Enable
+  description_zh: 
+- key: NpcBot.Classes.Mage.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Mage.Enable
+  description_zh: 
+- key: NpcBot.Classes.Warlock.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Warlock.Enable
+  description_zh: 
+- key: NpcBot.Classes.Druid.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Druid.Enable
+  description_zh: 
+- key: NpcBot.Classes.Blademaster.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Blademaster.Enable
+  description_zh: 
+- key: NpcBot.Classes.ObsidianDestroyer.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.ObsidianDestroyer.Enable
+  description_zh: 
+- key: NpcBot.Classes.Archmage.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Archmage.Enable
+  description_zh: 
+- key: NpcBot.Classes.Dreadlord.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Dreadlord.Enable
+  description_zh: 
+- key: NpcBot.Classes.SpellBreaker.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.SpellBreaker.Enable
+  description_zh: 
+- key: NpcBot.Classes.DarkRanger.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.DarkRanger.Enable
+  description_zh: 
+- key: NpcBot.Classes.Necromancer.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.Necromancer.Enable
+  description_zh: 
+- key: NpcBot.Classes.SeaWitch.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.SeaWitch.Enable
+  description_zh: 
+- key: NpcBot.Classes.CryptLord.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Classes.CryptLord.Enable
+  description_zh: 
+- key: NpcBot.Stats.Limits.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Stats.Limits.Enable
+  description_zh: 
+- key: NpcBot.Stats.Limits.Dodge
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Stats.Limits.Dodge
+  description_zh: 
+- key: NpcBot.Stats.Limits.Parry
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Stats.Limits.Parry
+  description_zh: 
+- key: NpcBot.Stats.Limits.Block
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Stats.Limits.Block
+  description_zh: 
+- key: NpcBot.Stats.Limits.Crit
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Stats.Limits.Crit
+  description_zh: 
+- key: NpcBot.InfoPacketsLimit
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.InfoPacketsLimit
+  description_zh: 
+- key: NpcBot.OwnershipExpireTime
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.OwnershipExpireTime
+  description_zh: 
+- key: NpcBot.OwnershipExpireMode
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.OwnershipExpireMode
+  description_zh: 
+- key: NpcBot.EnrageOnDismiss
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.EnrageOnDismiss
+  description_zh: 
+- key: NpcBot.WanderingBots.Continents.Count
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Continents.Count
+  description_zh: 
+- key: NpcBot.WanderingBots.Continents.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Continents.Levels
+  description_zh: 
+- key: NpcBot.WanderingBots.Continents.Maps
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Continents.Maps
+  description_zh: 
+- key: NpcBot.WanderingBots.Continents.XPGain
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Continents.XPGain
+  description_zh: 
+- key: NpcBot.WanderingBots.KillReward.Money
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.KillReward.Money
+  description_zh: 
+- key: NpcBot.WanderingBots.KillReward.ItemCount
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.KillReward.ItemCount
+  description_zh: 
+- key: NpcBot.WanderingBots.KillReward.ItemQuality
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.KillReward.ItemQuality
+  description_zh: 
+- key: NpcBot.WanderingBots.MaxItemLevel.Levels
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.MaxItemLevel.Levels
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.CapLevel
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.CapLevel
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.CapLevelByFirstPlayer
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.CapLevelByFirstPlayer
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AV
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AV
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.WS
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.WS
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AB
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AB
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.EY
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.EY
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.SA
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.SA
+  description_zh: 
+- key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.IC
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.IC
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Warrior.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Warrior.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Paladin.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Paladin.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Hunter.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Hunter.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Rogue.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Rogue.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Priest.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Priest.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.DeathKnight.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.DeathKnight.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Shaman.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Shaman.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Mage.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Mage.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Warlock.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Warlock.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Druid.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Druid.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Blademaster.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Blademaster.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.ObsidianDestroyer.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.ObsidianDestroyer.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Archmage.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Archmage.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Dreadlord.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Dreadlord.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.SpellBreaker.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.SpellBreaker.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.DarkRanger.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.DarkRanger.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.Necromancer.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.Necromancer.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.SeaWitch.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.SeaWitch.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.Classes.CryptLord.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.Classes.CryptLord.Enable
+  description_zh: 
+- key: NpcBot.WanderingBots.SkipTarget.Questgiver
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.SkipTarget.Questgiver
+  description_zh: 
+- key: NpcBot.WanderingBots.SkipTarget.Flightmaster
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.WanderingBots.SkipTarget.Flightmaster
+  description_zh: 
+- key: NpcBot.HK.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HK.Enable
+  description_zh: 
+- key: NpcBot.HK.Message.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HK.Message.Enable
+  description_zh: 
+- key: NpcBot.HK.Achievements.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HK.Achievements.Enable
+  description_zh: 
+- key: NpcBot.HK.Rate.Honor
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.HK.Rate.Honor
+  description_zh: 
+- key: NpcBot.Premade.Enable
+  section: NPCBOT CONFIGURATION
+  name_zh: NpcBot.Premade.Enable
   description_zh: 

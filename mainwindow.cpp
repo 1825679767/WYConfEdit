@@ -7,6 +7,7 @@
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QHeaderView>
+#include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
@@ -14,6 +15,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPushButton>
+#include <QScreen>
 #include <QSet>
 #include <QTableView>
 #include <QVBoxLayout>
@@ -56,7 +58,14 @@ void MainWindow::buildUi()
     topBarLayout->setContentsMargins(20, 0, 12, 0);
     topBarLayout->setSpacing(8);
 
-    QLabel *appTitle = new QLabel("配置编辑器", this);
+    // Logo icon
+    QLabel *logoLabel = new QLabel(this);
+    QIcon logoIcon(":/logo.ico");
+    logoLabel->setPixmap(logoIcon.pixmap(28, 28));
+    logoLabel->setFixedSize(28, 28);
+    topBarLayout->addWidget(logoLabel);
+
+    QLabel *appTitle = new QLabel("WY配置编辑器", this);
     appTitle->setObjectName("AppTitle");
     topBarLayout->addWidget(appTitle);
 
@@ -65,11 +74,13 @@ void MainWindow::buildUi()
     QPushButton *minButton = new QPushButton("—", this);
     minButton->setObjectName("WindowButton");
     minButton->setFixedSize(36, 36);
+    minButton->setCursor(Qt::PointingHandCursor);
     topBarLayout->addWidget(minButton);
 
     QPushButton *closeButton = new QPushButton("×", this);
     closeButton->setObjectName("CloseButton");
     closeButton->setFixedSize(36, 36);
+    closeButton->setCursor(Qt::PointingHandCursor);
     topBarLayout->addWidget(closeButton);
 
     containerLayout->addWidget(m_topBar);
@@ -117,10 +128,12 @@ void MainWindow::buildUi()
 
     QPushButton *openButton = new QPushButton("打开配置", this);
     openButton->setObjectName("GhostButton");
+    openButton->setCursor(Qt::PointingHandCursor);
     toolbarLayout->addWidget(openButton);
 
     QPushButton *saveButton = new QPushButton("保存", this);
     saveButton->setObjectName("PrimaryButton");
+    saveButton->setCursor(Qt::PointingHandCursor);
     toolbarLayout->addWidget(saveButton);
 
     rightLayout->addLayout(toolbarLayout);
@@ -148,16 +161,30 @@ void MainWindow::buildUi()
     rootLayout->addWidget(container);
 
     setCentralWidget(central);
-    setFixedSize(1200, 800);
+
+    // Calculate window size based on screen resolution
+    QScreen *screen = QApplication::primaryScreen();
+    QRect screenGeometry = screen->availableGeometry();
+    int screenWidth = screenGeometry.width();
+    int screenHeight = screenGeometry.height();
+
+    // Target: 60% of screen width, 75% of screen height
+    // with min/max constraints
+    int windowWidth = qBound(1000, static_cast<int>(screenWidth * 0.6), 1600);
+    int windowHeight = qBound(700, static_cast<int>(screenHeight * 0.75), 1000);
+
+    setFixedSize(windowWidth, windowHeight);
 
     m_model = new ConfigModel(this);
     m_proxy = new ConfigFilterProxy(this);
     m_proxy->setSourceModel(m_model);
     m_table->setModel(m_proxy);
 
-    m_table->horizontalHeader()->resizeSection(0, 250);
-    m_table->horizontalHeader()->resizeSection(1, 200);
-    m_table->horizontalHeader()->resizeSection(2, 150);
+    // Calculate column widths based on window width
+    int tableWidth = windowWidth - 250; // Subtract left panel and margins
+    m_table->horizontalHeader()->resizeSection(0, static_cast<int>(tableWidth * 0.35));
+    m_table->horizontalHeader()->resizeSection(1, static_cast<int>(tableWidth * 0.25));
+    m_table->horizontalHeader()->resizeSection(2, static_cast<int>(tableWidth * 0.20));
 
     connect(m_searchEdit, &QLineEdit::textChanged,
             this, &MainWindow::onSearchChanged);
@@ -395,7 +422,7 @@ void MainWindow::applyGlobalStyles()
         }
         QDialog#EditEntryDialog {
             background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                stop:0 #a8edea, stop:0.4 #fff0f5, stop:0.7 #f5e6f0, stop:1 #fff5f8);
+                stop:0 #d4f5f3, stop:0.4 #fff8fa, stop:0.7 #faf5f8, stop:1 #fffafb);
             border: 1px solid rgba(255, 255, 255, 0.8);
             border-radius: 20px;
         }
@@ -426,6 +453,10 @@ void MainWindow::applyGlobalStyles()
         QDialog#EditEntryDialog QLineEdit:read-only {
             background-color: rgba(255, 255, 255, 0.25);
             color: rgba(80, 60, 80, 0.5);
+        }
+        QDialog#EditEntryDialog QLineEdit#KeyEdit {
+            color: rgba(60, 40, 60, 0.9);
+            font-weight: bold;
         }
         QDialog#EditEntryDialog QPlainTextEdit {
             background-color: rgba(255, 255, 255, 0.5);
@@ -472,13 +503,10 @@ void MainWindow::applyGlobalStyles()
 void MainWindow::loadDefaultFiles()
 {
     QString base = QDir::currentPath();
-    m_confPath = QDir(base).filePath("worldserver.conf");
     m_translationPath = QDir(base).filePath("translation.yaml");
 
-    loadConfig(m_confPath);
+    // Only load translation file, user needs to manually open config file
     loadTranslation(m_translationPath);
-    mergeTranslations();
-    refreshSectionFilter();
 }
 
 void MainWindow::loadConfig(const QString &path)

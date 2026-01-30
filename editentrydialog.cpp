@@ -1,6 +1,7 @@
 #include "editentrydialog.h"
 #include "confparser.h"
 
+#include <QApplication>
 #include <QFormLayout>
 #include <QFrame>
 #include <QHBoxLayout>
@@ -8,6 +9,7 @@
 #include <QLineEdit>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QScreen>
 #include <QVBoxLayout>
 
 EditEntryDialog::EditEntryDialog(QWidget *parent)
@@ -15,9 +17,21 @@ EditEntryDialog::EditEntryDialog(QWidget *parent)
 {
     setObjectName("EditEntryDialog");
     setWindowTitle("编辑配置项");
-    setFixedSize(500, 450);
     setModal(true);
     setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
+
+    // Calculate dialog size based on screen resolution
+    QScreen *screen = QApplication::primaryScreen();
+    QRect screenGeometry = screen->availableGeometry();
+    int screenWidth = screenGeometry.width();
+    int screenHeight = screenGeometry.height();
+
+    // Target: 35% of screen width, 50% of screen height
+    // with min/max constraints
+    int dialogWidth = qBound(450, static_cast<int>(screenWidth * 0.35), 600);
+    int dialogHeight = qBound(400, static_cast<int>(screenHeight * 0.5), 550);
+
+    setFixedSize(dialogWidth, dialogHeight);
 
     buildUi();
 }
@@ -34,6 +48,7 @@ void EditEntryDialog::buildUi()
     formLayout->setLabelAlignment(Qt::AlignRight);
 
     m_keyEdit = new QLineEdit(this);
+    m_keyEdit->setObjectName("KeyEdit");
     m_keyEdit->setReadOnly(true);
     m_keyEdit->setPlaceholderText("配置键名");
     formLayout->addRow("键名:", m_keyEdit);
@@ -65,10 +80,12 @@ void EditEntryDialog::buildUi()
 
     m_cancelButton = new QPushButton("取消", this);
     m_cancelButton->setObjectName("GhostButton");
+    m_cancelButton->setCursor(Qt::PointingHandCursor);
     buttonLayout->addWidget(m_cancelButton);
 
     m_applyButton = new QPushButton("应用", this);
     m_applyButton->setObjectName("PrimaryButton");
+    m_applyButton->setCursor(Qt::PointingHandCursor);
     buttonLayout->addWidget(m_applyButton);
 
     mainLayout->addLayout(buttonLayout);
