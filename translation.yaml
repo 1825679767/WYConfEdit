@@ -1,26 +1,26 @@
 # translation.yaml (all keys, no translation)
 - key: RealmID
-  section: DATABASE & CONNECTIONS
-  name_zh: RealmID
+  section: 数据库与连接
+  name_zh: 服务器标识ID
   description_zh: |
     描述：此配置所使用的服务器（Realm）ID。
     重要：RealmID 必须与认证数据库中的 realmlist 表一致。
     默认值：1。
 - key: WorldServerPort
-  section: DATABASE & CONNECTIONS
-  name_zh: WorldServerPort
+  section: 数据库与连接
+  name_zh: 世界服务器端口
   description_zh: |
     描述：访问世界服务器的 TCP 端口。
     默认值：8085。
 - key: BindIP
-  section: DATABASE & CONNECTIONS
-  name_zh: BindIP
+  section: 数据库与连接
+  name_zh: 绑定IP
   description_zh: |
     描述：绑定世界服务器到指定 IP/主机名。
     默认值：\"0.0.0.0\"（绑定本机所有 IP）。
 - key: LoginDatabaseInfo
-  section: DATABASE & CONNECTIONS
-  name_zh: LoginDatabaseInfo
+  section: 数据库与连接
+  name_zh: 登录数据库连接
   description_zh: |
     描述：世界服务器的数据库连接设置。
     示例：\"hostname;port;username;password;database\"。
@@ -28,8 +28,8 @@
     示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
     默认值：\"127.0.0.1;3306;acore;acore;acore_auth\"（LoginDatabaseInfo）。
 - key: WorldDatabaseInfo
-  section: DATABASE & CONNECTIONS
-  name_zh: WorldDatabaseInfo
+  section: 数据库与连接
+  name_zh: 世界数据库连接
   description_zh: |
     描述：世界服务器的数据库连接设置。
     示例：\"hostname;port;username;password;database\"。
@@ -37,8 +37,8 @@
     示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
     默认值：\"127.0.0.1;3306;acore;acore;acore_world\"（WorldDatabaseInfo）。
 - key: CharacterDatabaseInfo
-  section: DATABASE & CONNECTIONS
-  name_zh: CharacterDatabaseInfo
+  section: 数据库与连接
+  name_zh: 角色数据库连接
   description_zh: |
     描述：世界服务器的数据库连接设置。
     示例：\"hostname;port;username;password;database\"。
@@ -46,360 +46,360 @@
     示例：\".;/path/to/unix_socket;username;password;database\"（Unix/Linux 套接字）。
     默认值：\"127.0.0.1;3306;acore;acore;acore_characters\"（CharacterDatabaseInfo）。
 - key: LoginDatabase.WorkerThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: LoginDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 登录数据库工作线程
   description_zh: |
     描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
     说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
     默认值：1（LoginDatabase.WorkerThreads）。
 - key: WorldDatabase.WorkerThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: WorldDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 世界数据库工作线程
   description_zh: |
     描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
     说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
     默认值：1（WorldDatabase.WorkerThreads）。
 - key: CharacterDatabase.WorkerThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: CharacterDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 角色数据库工作线程
   description_zh: |
     描述：用于处理异步（延迟）MySQL 语句的工作线程数量。
     说明：每个工作线程对应一条 MySQL 连接，并在 MySQL 服务端也有对应线程。
     默认值：1（CharacterDatabase.WorkerThreads）。
 - key: LoginDatabase.SynchThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: LoginDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: 登录数据库同步线程
   description_zh: |
     描述：用于处理同步请求的 MySQL 连接数量。
     默认值：1（LoginDatabase.SynchThreads）。
 - key: WorldDatabase.SynchThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: WorldDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: 世界数据库同步线程
   description_zh: |
     描述：用于处理同步请求的 MySQL 连接数量。
     默认值：1（WorldDatabase.SynchThreads）。
 - key: CharacterDatabase.SynchThreads
-  section: DATABASE & CONNECTIONS
-  name_zh: CharacterDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: 角色数据库同步线程
   description_zh: |
     描述：用于处理同步请求的 MySQL 连接数量。
     默认值：1（CharacterDatabase.SynchThreads）。
 - key: MaxPingTime
-  section: DATABASE & CONNECTIONS
-  name_zh: MaxPingTime
+  section: 数据库与连接
+  name_zh: 最大Ping间隔
   description_zh: |
     描述：数据库 ping 之间的时间间隔（分钟）。
     默认值：30。
 - key: Database.Reconnect.Seconds
-  section: DATABASE & CONNECTIONS
-  name_zh: Database.Reconnect.Seconds
+  section: 数据库与连接
+  name_zh: 数据库重连间隔秒
   description_zh: |
     描述：每次重连尝试之间的间隔秒数，以及总共尝试次数。
     默认值：每 15 秒尝试一次，共 20 次。
 - key: Database.Reconnect.Attempts
-  section: DATABASE & CONNECTIONS
-  name_zh: Database.Reconnect.Attempts
+  section: 数据库与连接
+  name_zh: 数据库重连次数
   description_zh: |
     描述：每次重连尝试之间的间隔秒数，以及总共尝试次数。
     默认值：每 15 秒尝试一次，共 20 次。
 - key: DataDir
-  section: DIRECTORIES
-  name_zh: DataDir
+  section: 目录
+  name_zh: 数据目录
   description_zh: |
     描述：数据目录设置。
     重要：DataDir 需要用引号包裹，因为路径可能包含空格。
     示例："@prefix@\home\youruser\azerothcore\data"。
     默认值："."。
 - key: LogsDir
-  section: DIRECTORIES
-  name_zh: LogsDir
+  section: 目录
+  name_zh: 日志目录
   description_zh: |
     描述：日志目录设置。
     重要：LogsDir 需要用引号包裹，因为路径可能包含空格。日志目录必须存在，否则不会创建日志文件。
     示例："/home/youruser/azerothcore/logs"。
     默认值：""（日志文件存放在当前路径）。
 - key: TempDir
-  section: DIRECTORIES
-  name_zh: TempDir
+  section: 目录
+  name_zh: 临时目录
   description_zh: |
     描述：临时目录设置。
     重要：TempDir 需要用引号包裹，因为路径可能包含空格。TempDir 目录必须存在，否则服务器无法正常工作。
     示例："/home/youruser/azerothcore/temp"。
     默认值：""（临时文件存放在当前路径）。
 - key: CMakeCommand
-  section: DIRECTORIES
-  name_zh: CMakeCommand
+  section: 目录
+  name_zh: CMake命令
   description_zh: |
     描述：CMake 可执行文件的路径。
     说明：如果留空，则使用内置的 CMAKE_COMMAND。
     示例："C:/Program Files/CMake/bin/cmake.exe"；"/usr/bin/cmake"。
     默认值：""。
 - key: BuildDirectory
-  section: DIRECTORIES
-  name_zh: BuildDirectory
+  section: 目录
+  name_zh: 构建目录
   description_zh: |
     描述：构建目录的路径。
     说明：如果留空，则使用内置的 CMAKE_BINARY_DIR。
     示例："../AzerothCore"。
     默认值：""。
 - key: SourceDirectory
-  section: DIRECTORIES
-  name_zh: SourceDirectory
+  section: 目录
+  name_zh: 源码目录
   description_zh: |
     描述：AzerothCore 源码目录的路径。
     说明：如果留空，则使用内置的 CMAKE_SOURCE_DIR。
     示例："../azerothcore-wotlk"。
     默认值：""。
 - key: MySQLExecutable
-  section: DIRECTORIES
-  name_zh: MySQLExecutable
+  section: 目录
+  name_zh: MySQL可执行文件
   description_zh: |
     描述：MySQL CLI 可执行文件的路径。
     说明：如果留空，则使用 CMake 中的内置路径。
     示例："C:/Program Files/MySQL/MySQL Server 8.0/bin/mysql.exe"；"mysql.exe"；"/usr/bin/mysql"。
     默认值：""。
 - key: PidFile
-  section: DIRECTORIES
-  name_zh: PidFile
+  section: 目录
+  name_zh: PID文件
   description_zh: |
     描述：世界服务器 PID 文件。
     示例："./world.pid"（启用）。
     默认值：""（禁用）。
 - key: Console.Enable
-  section: CONSOLE
-  name_zh: Console.Enable
+  section: 控制台
+  name_zh: 启用控制台
   description_zh: |
     描述：启用控制台。
     默认值：1（启用）；0（禁用）。
 - key: BeepAtStart
-  section: CONSOLE
-  name_zh: BeepAtStart
+  section: 控制台
+  name_zh: 启动蜂鸣
   description_zh: |
     描述：世界服务器启动完成时发出蜂鸣声（Unix/Linux）。
     默认值：1（启用）；0（禁用）。
 - key: FlashAtStart
-  section: CONSOLE
-  name_zh: FlashAtStart
+  section: 控制台
+  name_zh: 启动闪烁提示
   description_zh: |
     描述：世界服务器启动完成时任务栏闪烁提示（仅 Windows）。
     默认值：1（启用）；0（禁用）。
 - key: Updates.EnableDatabases
-  section: AUTOUPDATER
-  name_zh: Updates.EnableDatabases
+  section: 自动更新
+  name_zh: 启用更新数据库
   description_zh: |
     描述：用于指定需要更新的数据库掩码。
     可用标志：DATABASE_LOGIN=1（认证库），DATABASE_CHARACTER=2（角色库），DATABASE_WORLD=4（世界库）。
     默认值：7（全部启用）；4（仅世界库）；0（全部禁用）。
 - key: Updates.AutoSetup
-  section: AUTOUPDATER
-  name_zh: Updates.AutoSetup
+  section: 自动更新
+  name_zh: 自动初始化数据库
   description_zh: |
     描述：自动初始化空数据库。
     默认值：1（启用）；0（禁用）。
 - key: Updates.Redundancy
-  section: AUTOUPDATER
-  name_zh: Updates.Redundancy
+  section: 自动更新
+  name_zh: 更新冗余检查
   description_zh: |
     描述：通过哈希执行数据冗余检查，检测 SQL 更新变更并重新应用。
     默认值：1（启用）；0（禁用）。
 - key: Updates.ArchivedRedundancy
-  section: AUTOUPDATER
-  name_zh: Updates.ArchivedRedundancy
+  section: 自动更新
+  name_zh: 归档更新冗余检查
   description_zh: |
     描述：检查已归档更新的哈希（会降低启动速度）。
     默认值：0（禁用）；1（启用）。
 - key: Updates.AllowRehash
-  section: AUTOUPDATER
-  name_zh: Updates.AllowRehash
+  section: 自动更新
+  name_zh: 允许重建哈希
   description_zh: |
     描述：当数据库中缺少文件哈希时，将当前文件哈希写入数据库。
     说明：用于标记文件为已应用但不知道其哈希的情况。
     默认值：1（启用）；0（禁用）。
 - key: Updates.CleanDeadRefMaxCount
-  section: AUTOUPDATER
-  name_zh: Updates.CleanDeadRefMaxCount
+  section: 自动更新
+  name_zh: 清理失效引用上限
   description_zh: |
     描述：清理孤立/失效引用（当更新文件被移除或重命名时可能产生）。
     说明：仅当缺失更新数量 ≤ Updates.CleanDeadRefMaxCount 才会执行清理，以防错误状态导致清空更新历史。
     默认值：3（启用）；0（禁用）；-1（启用，无限制）。
 - key: Updates.ExceptionShutdownDelay
-  section: AUTOUPDATER
-  name_zh: Updates.ExceptionShutdownDelay
+  section: 自动更新
+  name_zh: 异常关服延迟
   description_zh: |
     描述：发生致命异常（如 SQL 更新失败）后，等待关闭服务器的时间（毫秒）。
     默认值：10000（10 秒）。
     说明：0 表示立即关闭。
 - key: Network.Threads
-  section: NETWORK
-  name_zh: Network.Threads
+  section: 网络
+  name_zh: 网络线程数
   description_zh: |
     描述：网络线程数量。
     默认值：1（建议每 1000 个连接 1 个线程）。
 - key: Network.OutKBuff
-  section: NETWORK
-  name_zh: Network.OutKBuff
+  section: 网络
+  name_zh: 内核输出缓冲区
   description_zh: |
     描述：输出内核缓冲区使用的内存大小（字节，参见 SO_SNDBUF 选项）。
     默认值：-1（使用系统默认设置）。
 - key: Network.OutUBuff
-  section: NETWORK
-  name_zh: Network.OutUBuff
+  section: 网络
+  name_zh: 用户态输出缓冲区
   description_zh: |
     描述：每个连接在用户态预留的输出缓冲区大小（字节）。
     默认值：4096。
 - key: Network.TcpNodelay
-  section: NETWORK
-  name_zh: Network.TcpNodelay
+  section: 网络
+  name_zh: TCP_Nodelay
   description_zh: |
     描述：TCP Nagle 算法设置。
     默认值：0（启用，流量更小、延迟更高）；1（禁用，流量更大、延迟更低，TCP_NO_DELAY）。
 - key: Network.EnableProxyProtocol
-  section: NETWORK
-  name_zh: Network.EnableProxyProtocol
+  section: 网络
+  name_zh: 启用ProxyProtocol
   description_zh: |
     描述：启用 Proxy Protocol v2。
     说明：当服务器位于代理/负载均衡之后时，需要在服务器和代理/负载均衡两端同时启用，以获取真实玩家 IP。
     示例：1（启用）。
     默认值：0（禁用）。
 - key: Network.UseSocketActivation
-  section: NETWORK
-  name_zh: Network.UseSocketActivation
+  section: 网络
+  name_zh: 使用Socket激活
   description_zh: |
     描述：[仅 Linux] 启用 systemd socket activation 支持。
     说明：启用后由 systemd 传入监听 socket，服务器将使用该 socket 而不是自行创建并绑定。
     说明：启用后服务器关闭时，realm 不会自动标记为离线。
     默认值：0（禁用）。
 - key: Ra.Enable
-  section: REMOTE ACCESS
-  name_zh: Ra.Enable
+  section: 远程访问
+  name_zh: 启用远程控制台
   description_zh: |
     描述：启用远程控制台（telnet）。
     默认值：0（禁用）；1（启用）。
 - key: Ra.IP
-  section: REMOTE ACCESS
-  name_zh: Ra.IP
+  section: 远程访问
+  name_zh: 远程控制台IP
   description_zh: |
     描述：远程访问绑定的 IP/主机名。
     默认值：\"0.0.0.0\"（绑定本机所有 IP）。
 - key: Ra.Port
-  section: REMOTE ACCESS
-  name_zh: Ra.Port
+  section: 远程访问
+  name_zh: 远程控制台端口
   description_zh: |
     描述：远程控制台的 TCP 端口。
     默认值：3443。
 - key: Ra.MinLevel
-  section: REMOTE ACCESS
-  name_zh: Ra.MinLevel
+  section: 远程访问
+  name_zh: 远程控制台最低等级
   description_zh: |
     描述：使用远程控制台所需的最低安全等级。
     默认值：3。
 - key: SOAP.Enabled
-  section: REMOTE ACCESS
-  name_zh: SOAP.Enabled
+  section: 远程访问
+  name_zh: 启用SOAP
   description_zh: |
     描述：启用 SOAP 服务。
     默认值：0（禁用）；1（启用）。
 - key: SOAP.IP
-  section: SOAP.IP
-  name_zh: SOAP.IP
+  section: 远程访问
+  name_zh: SOAP绑定IP
   description_zh: |
     描述：SOAP 服务绑定的 IP/主机名。
     默认值：\"127.0.0.1\"（仅本机）。
 - key: SOAP.Port
-  section: SOAP.IP
-  name_zh: SOAP.Port
+  section: 远程访问
+  name_zh: SOAP端口
   description_zh: |
     描述：SOAP 服务的 TCP 端口。
     默认值：7878。
 - key: TOTPMasterSecret
-  section: CRYPTOGRAPHY
-  name_zh: TOTPMasterSecret
+  section: 加密
+  name_zh: TOTP主密钥
   description_zh: |
     描述：authserver 用于解密数据库中 TOTP 密钥的主密钥。
     说明：仅在需要使用游戏内 2FA 管理命令（.account 2fa）时设置，否则可留空。
     说明：若与 authserver 设置不匹配，相关命令会被自动禁用。
 - key: ThreadPool
-  section: PERFORMANCE
-  name_zh: ThreadPool
+  section: 性能
+  name_zh: 线程池线程数
   description_zh: |
     描述：全局线程池使用的线程数量。
     说明：线程池用于信号处理、远程访问、数据库保活 ping、核心卡死检测、世界套接字网络等。
     默认值：2。
 - key: UseProcessors
-  section: PERFORMANCE
-  name_zh: UseProcessors
+  section: 性能
+  name_zh: CPU掩码
   description_zh: |
     描述：多处理器系统的处理器掩码（Windows/Linux）。
     示例：三核系统：1（第 1 核）；2（第 2 核）；4（第 3 核）；6（第 2+3 核，因为 2|4=6）。
     默认值：0（由 OS 选择）；1+（指定处理器掩码值）。
 - key: ProcessPriority
-  section: PERFORMANCE
-  name_zh: ProcessPriority
+  section: 性能
+  name_zh: 进程优先级
   description_zh: |
     描述：Windows 系统进程优先级设置。
     默认值：1（高）；0（普通）。
 - key: Compression
-  section: PERFORMANCE
-  name_zh: Compression
+  section: 性能
+  name_zh: 压缩级别
   description_zh: |
     描述：客户端更新包压缩级别。
     范围：1-9。
     默认值：1（速度）；9（最佳压缩）。
 - key: PacketLogFile
-  section: LOGGING
-  name_zh: PacketLogFile
+  section: 日志
+  name_zh: 封包日志文件
   description_zh: |
     描述：世界服务器的二进制封包日志文件。
     说明：文件扩展名必须为 .pkt，才能被 WowPacketParser 解析。
     示例："World.pkt"（启用）。
     默认值：""（禁用）。
 - key: LogDB.Opt.ClearInterval
-  section: LOGGING
-  name_zh: LogDB.Opt.ClearInterval
+  section: 日志
+  name_zh: 日志库清理间隔
   description_zh: |
     描述：用于清理 logs 表旧记录的 WUPDATE_CLEANDB 定时器间隔（分钟）。
     默认值：10（10 分钟）；1+。
 - key: LogDB.Opt.ClearTime
-  section: LOGGING
-  name_zh: LogDB.Opt.ClearTime
+  section: 日志
+  name_zh: 日志库保留时间
   description_zh: |
     描述：logs 表旧记录的保留时间（秒）。
     默认值：1209600（启用，14 天）；0（禁用，不清理）。
 - key: RecordUpdateTimeDiffInterval
-  section: LOGGING
-  name_zh: RecordUpdateTimeDiffInterval
+  section: 日志
+  name_zh: 更新耗时记录间隔
   description_zh: |
     描述：将更新耗时差值写入日志的时间间隔（毫秒）。
     说明：Update diff 可作为性能指标。Diff < 300：性能好；Diff > 600：性能差，可能由 CPU 占用过高引起。
     默认值：300000（启用，5 分钟）；0（禁用）。
 - key: MinRecordUpdateTimeDiff
-  section: LOGGING
-  name_zh: MinRecordUpdateTimeDiff
+  section: 日志
+  name_zh: 最小记录耗时
   description_zh: |
     描述：仅记录大于该值的更新耗时差值。
     默认值：100。
 - key: IPLocationFile
-  section: LOGGING
-  name_zh: IPLocationFile
+  section: 日志
+  name_zh: IP位置库文件
   description_zh: |
     描述：IP2Location 数据库 CSV 文件路径。
     示例："C:/acore/IP2LOCATION-LITE-DB1.CSV"；"/home/acore/IP2LOCATION-LITE-DB1.CSV"。
     默认值：""（禁用）。
 - key: AllowLoggingIPAddressesInDatabase
-  section: LOGGING
-  name_zh: AllowLoggingIPAddressesInDatabase
+  section: 日志
+  name_zh: 允许记录IP到数据库
   description_zh: |
     描述：是否允许将 IP 地址记录到数据库。
     默认值：1（启用）；0（禁用）。
 - key: Allow.IP.Based.Action.Logging
-  section: LOGGING
-  name_zh: Allow.IP.Based.Action.Logging
+  section: 日志
+  name_zh: 基于IP记录操作
   description_zh: |
     描述：基于当前会话 IP 记录操作（例如账户登录/登出等）。
     默认值：0（禁用）；1（启用）。
 - key: Appender.Console
-  section: LOGGING
-  name_zh: Appender.Console
+  section: 日志
+  name_zh: 输出器-控制台
   description_zh: |
     描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3。
     Type：0-无；1-控制台；2-文件；3-数据库。
@@ -410,97 +410,97 @@
     Mode（Type=File 时 optional2）：a-追加；w-覆盖。
     MaxFileSize（Type=File 时 optional3）：日志文件最大大小（字节，64 位无符号），最大 4294967295（4GB），留空表示不限制。注意：动态文件名不支持。
 - key: Appender.Server
-  section: LOGGING
-  name_zh: Appender.Server
+  section: 日志
+  name_zh: 输出器-服务器
   description_zh: |
     描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
 - key: Appender.Errors
-  section: LOGGING
-  name_zh: Appender.Errors
+  section: 日志
+  name_zh: 输出器-错误
   description_zh: |
     描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
 - key: Appender.NpcBots
-  section: LOGGING
-  name_zh: Appender.NpcBots
+  section: 日志
+  name_zh: 输出器-NpcBots
   description_zh: |
     描述：日志输出器配置，格式：Type,LogLevel,Flags,optional1,optional2,optional3（详见 Appender.Console 说明）。
 - key: Logger.root
-  section: LOGGING
-  name_zh: Logger.root
+  section: 日志
+  name_zh: 记录器-根
   description_zh: |
     描述：日志记录器配置，定义“记录什么”，格式：LogLevel,AppenderList。
     LogLevel：0-禁用；1-致命；2-错误；3-警告；4-信息；5-调试；6-跟踪。
     AppenderList：使用的输出器列表（空格分隔）。
 - key: Logger.diff
-  section: LOGGING
-  name_zh: Logger.diff
+  section: 日志
+  name_zh: 记录器-更新差值
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.mmaps
-  section: LOGGING
-  name_zh: Logger.mmaps
+  section: 日志
+  name_zh: 记录器-寻路地图
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.scripts.hotswap
-  section: LOGGING
-  name_zh: Logger.scripts.hotswap
+  section: 日志
+  name_zh: 记录器-脚本热更
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.server
-  section: LOGGING
-  name_zh: Logger.server
+  section: 日志
+  name_zh: 记录器-服务器
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.sql.sql
-  section: LOGGING
-  name_zh: Logger.sql.sql
+  section: 日志
+  name_zh: 记录器-SQL语句
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.sql.updates
-  section: LOGGING
-  name_zh: Logger.sql.updates
+  section: 日志
+  name_zh: 记录器-SQL更新
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.sql
-  section: LOGGING
-  name_zh: Logger.sql
+  section: 日志
+  name_zh: 记录器-SQL
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.time.update
-  section: LOGGING
-  name_zh: Logger.time.update
+  section: 日志
+  name_zh: 记录器-更新时间
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.module
-  section: LOGGING
-  name_zh: Logger.module
+  section: 日志
+  name_zh: 记录器-模块
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.spells.scripts
-  section: LOGGING
-  name_zh: Logger.spells.scripts
+  section: 日志
+  name_zh: 记录器-法术脚本
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Logger.npcbots
-  section: LOGGING
-  name_zh: Logger.npcbots
+  section: 日志
+  name_zh: 记录器-NpcBots
   description_zh: |
     描述：日志记录器配置，格式：LogLevel,AppenderList（详见 Logger.root 说明）。
 - key: Log.Async.Enable
-  section: LOGGING
-  name_zh: Log.Async.Enable
+  section: 日志
+  name_zh: 异步日志
   description_zh: |
     描述：启用异步日志消息记录。
     默认值：0（禁用）；1（启用）。
 - key: Metric.Enable
-  section: METRIC
-  name_zh: Metric.Enable
+  section: 指标
+  name_zh: 启用指标
   description_zh: |
     描述：启用向指标数据库发送统计数据。
     默认值：0（禁用）；1（启用）。
 - key: Metric.InfluxDB.Connection
-  section: METRIC
-  name_zh: Metric.InfluxDB.Connection
+  section: 指标
+  name_zh: InfluxDB连接
   description_zh: |
     描述：InfluxDB 连接设置。
     说明：InfluxDB v1 仅需填写 Metric.InfluxDB.Connection。
@@ -508,615 +508,615 @@
     说明：InfluxDB v2 需要填写所有字段（Connection、v2、Org、Bucket、Token）。
     注意：当前 Grafana 无法使用提供的 JSON 文件可视化 InfluxDB v2 数据。
 - key: Metric.InfluxDB.v2
-  section: METRIC
-  name_zh: Metric.InfluxDB.v2
+  section: 指标
+  name_zh: InfluxDB v2模式
   description_zh: |
     描述：是否启用 InfluxDB v2 模式。
     默认值：0（禁用）；1（启用）。
 - key: Metric.InfluxDB.Org
-  section: METRIC
-  name_zh: Metric.InfluxDB.Org
+  section: 指标
+  name_zh: InfluxDB组织
   description_zh: |
     描述：InfluxDB v2 的组织（Org）。
 - key: Metric.InfluxDB.Bucket
-  section: METRIC
-  name_zh: Metric.InfluxDB.Bucket
+  section: 指标
+  name_zh: InfluxDB桶
   description_zh: |
     描述：InfluxDB v2 的 Bucket。
 - key: Metric.InfluxDB.Token
-  section: METRIC
-  name_zh: Metric.InfluxDB.Token
+  section: 指标
+  name_zh: InfluxDB令牌
   description_zh: |
     描述：InfluxDB v2 的访问 Token。
 - key: Metric.Interval
-  section: METRIC
-  name_zh: Metric.Interval
+  section: 指标
+  name_zh: 指标发送间隔
   description_zh: |
     描述：每批次数据发送的间隔（秒）。
     说明：间隔越长，批次越大；批次过大可能被拒绝。
     默认值：1 秒。
 - key: Metric.OverallStatusInterval
-  section: METRIC
-  name_zh: Metric.OverallStatusInterval
+  section: 指标
+  name_zh: 整体状态采集间隔
   description_zh: |
     描述：采集世界服务器整体状态数据的间隔（秒）。
     默认值：1 秒。
 - key: BirthdayTime
-  section: SERVER
-  name_zh: BirthdayTime
+  section: 服务器
+  name_zh: 项目诞生时间
   description_zh: |
     描述：项目诞生日期（Unix 时间戳）。
     默认值：1222964635（2008-10-02）。
 - key: PlayerLimit
-  section: SERVER
-  name_zh: PlayerLimit
+  section: 服务器
+  name_zh: 最大玩家数
   description_zh: |
     描述：世界中允许的最大玩家数量（不包含版主、GM、管理员）。
     重要：若要仅允许版主/GM/管理员进入，请使用认证库 auth.realmlist.allowedSecurityLevel。
     默认值：1000（启用）；1+（启用）；0（禁用上限）。
 - key: World.RealmAvailability
-  section: SERVER
-  name_zh: World.RealmAvailability
+  section: 服务器
+  name_zh: 服务器可用性
   description_zh: |
     描述：是否允许玩家正常进入该服务器。
     说明：即使禁用，仍可创建角色。
     默认值：1（启用）；0（禁用）。
 - key: GameType
-  section: 8  - (RPPVP)
-  name_zh: GameType
+  section: 服务器
+  name_zh: 服务器类型
   description_zh: |
     描述：服务器类型（Realm Type）。
     默认值：0（普通）。
     取值：1（PVP），4（普通），6（RP），8（RPPVP），16（FFA_PVP：除休息区/圣地外全区域自由 PVP）。
 - key: RealmZone
-  section: 8  - (RPPVP)
-  name_zh: RealmZone
+  section: 服务器
+  name_zh: 服务器区域
   description_zh: |
     描述：服务器区域（影响角色名称允许的字符集等）。
     默认值：1（开发服 - 任意语言）。
     取值：2（美国 - 扩展拉丁），3（大洋洲 - 扩展拉丁），4（拉美 - 扩展拉丁），5（锦标赛 - 创建时基础拉丁，登录时任意），6（韩国 - 东亚），7（锦标赛 - 创建时基础拉丁，登录时任意），8（英文 - 扩展拉丁），9（德语 - 扩展拉丁），10（法语 - 扩展拉丁），11（西班牙语 - 扩展拉丁），12（俄语 - 西里尔），13（锦标赛 - 创建时基础拉丁，登录时任意），14（台湾 - 东亚），15（锦标赛 - 创建时基础拉丁，登录时任意），16（中国 - 东亚），17（CN1 - 创建时基础拉丁，登录时任意），18（CN2 - 创建时基础拉丁，登录时任意），19（CN3 - 创建时基础拉丁，登录时任意），20（CN4 - 创建时基础拉丁，登录时任意），21（CN5 - 创建时基础拉丁，登录时任意），22（CN6 - 创建时基础拉丁，登录时任意），23（CN7 - 创建时基础拉丁，登录时任意），24（CN8 - 创建时基础拉丁，登录时任意），25（锦标赛 - 创建时基础拉丁，登录时任意），26（测试服 - 任意语言），27（锦标赛 - 创建时基础拉丁，登录时任意），28（QA 服 - 任意语言），29（CN9 - 创建时基础拉丁，登录时任意）。
 - key: DBC.Locale
-  section: 8  - (RPPVP)
-  name_zh: DBC.Locale
+  section: 服务器
+  name_zh: DBC语言
   description_zh: |
     描述：DBC 语言设置。
     默认值：255（自动检测）。
     取值：0（英文），1（韩文），2（法文），3（德文），4（中文），5（繁体中文/台湾），6（西班牙文），7（西班牙文-墨西哥），8（俄文）。
 - key: Expansion
-  section: 8  - (RPPVP)
-  name_zh: Expansion
+  section: 服务器
+  name_zh: 资料片开关
   description_zh: |
     描述：允许服务器使用资料片内容（地图文件、客户端兼容性、职业/种族创建等）。
     默认值：2（资料片 2）。
     取值：1（资料片 1），0（禁用资料片内容，忽略资料片相关内容）。
 - key: ClientCacheVersion
-  section: 8  - (RPPVP)
-  name_zh: ClientCacheVersion
+  section: 服务器
+  name_zh: 客户端缓存版本
   description_zh: |
     描述：客户端缓存版本号，用于触发客户端缓存重置。
     说明：设置为与数据库不同且近期未使用的值即可触发。
     默认值：0（使用 world 数据库 version.cache_id 中的值）。
 - key: SessionAddDelay
-  section: 8  - (RPPVP)
-  name_zh: SessionAddDelay
+  section: 服务器
+  name_zh: 会话加入延迟
   description_zh: |
     描述：认证协议处理后，网络线程在将连接加入世界会话映射前的休眠时间（微秒）。
     默认值：10000（10 毫秒，0.01 秒）。
 - key: CloseIdleConnections
-  section: 8  - (RPPVP)
-  name_zh: CloseIdleConnections
+  section: 服务器
+  name_zh: 关闭空闲连接
   description_zh: |
     描述：自动关闭空闲连接。
     说明：SocketTimeOutTime 与 SocketTimeOutTimeActive 决定何时判定连接空闲。
     默认值：1（启用，自动关闭空闲连接）；0（禁用）。
 - key: SocketTimeOutTime
-  section: 8  - (RPPVP)
-  name_zh: SocketTimeOutTime
+  section: 服务器
+  name_zh: 角色选择超时
   description_zh: |
     描述：角色选择界面空闲连接断开时间（毫秒）。
     默认值：900000（15 分钟）。
 - key: SocketTimeOutTimeActive
-  section: 8  - (RPPVP)
-  name_zh: SocketTimeOutTimeActive
+  section: 服务器
+  name_zh: 游戏内空闲超时
   description_zh: |
     描述：已登录世界后的空闲连接断开时间（毫秒）。
     说明：客户端每 30 秒发送一次 keepalive；不建议设置 ≤ 30 秒。
     默认值：60000（1 分钟）。
 - key: MaxOverspeedPings
-  section: 8  - (RPPVP)
-  name_zh: MaxOverspeedPings
+  section: 服务器
+  name_zh: 超速Ping上限
   description_zh: |
     描述：超速 ping 计数达到上限后断开角色连接。
     默认值：2（启用，最小值）；3+（启用，踢出前检查更多次）；0（禁用）。
 - key: DisconnectToleranceInterval
-  section: 8  - (RPPVP)
-  name_zh: DisconnectToleranceInterval
+  section: 服务器
+  name_zh: 断线容忍时间
   description_zh: |
     描述：断线后允许跳过排队的时间（秒）。
     默认值：0。
 - key: EnableLoginAfterDC
-  section: 8  - (RPPVP)
-  name_zh: EnableLoginAfterDC
+  section: 服务器
+  name_zh: 断线后允许登录
   description_zh: |
     描述：异常断线后是否允许玩家重新登录到仍在世界中的角色。
     说明：未正常登出时角色会在世界中保留 1 分钟，可防止 Alt+F4 等滥用（如跳过首领机制、PVP 逃脱）。
     默认值：1（点击“进入世界”可重新进入）；0（点击进入会提示错误并需等待角色移除）。
 - key: MinWorldUpdateTime
-  section: 8  - (RPPVP)
-  name_zh: MinWorldUpdateTime
+  section: 服务器
+  name_zh: 最小世界更新间隔
   description_zh: |
     描述：世界更新 Tick 之间的最小时间（毫秒，适用于大多空闲服务器）。
     默认值：1（0.001 秒）。
 - key: UpdateUptimeInterval
-  section: 8  - (RPPVP)
-  name_zh: UpdateUptimeInterval
+  section: 服务器
+  name_zh: 在线时长更新间隔
   description_zh: |
     描述：更新服务器在线时长的周期（分钟）。
     默认值：10（10 分钟）；1+。
 - key: MaxCoreStuckTime
-  section: 8  - (RPPVP)
-  name_zh: MaxCoreStuckTime
+  section: 服务器
+  name_zh: 核心卡死超时
   description_zh: |
     描述：当服务器冻结时强制崩溃前的等待时间（秒）（FreezeDetector）。
     默认值：0（禁用）；10+（启用，建议 30+）。
     注意：启用且设置过低可能导致意外崩溃。
 - key: SaveRespawnTimeImmediately
-  section: 8  - (RPPVP)
-  name_zh: SaveRespawnTimeImmediately
+  section: 服务器
+  name_zh: 立即保存复活时间
   description_zh: |
     描述：在生物死亡或游戏对象使用/打开时立即保存复活时间。
     默认值：1（启用，立即保存）；0（禁用，网格卸载时保存）。
 - key: Server.LoginInfo
-  section: 8  - (RPPVP)
-  name_zh: Server.LoginInfo
+  section: 服务器
+  name_zh: 登录显示版本信息
   description_zh: |
     描述：登录时显示核心版本信息（.server info）。
     默认值：0（禁用）；1（启用）。
 - key: ShowKickInWorld
-  section: 8  - (RPPVP)
-  name_zh: ShowKickInWorld
+  section: 服务器
+  name_zh: 全服广播踢出
   description_zh: |
     描述：玩家被踢出时是否向全服广播消息。
     默认值：0（禁用）；1（启用）。
 - key: ShowMuteInWorld
-  section: 8  - (RPPVP)
-  name_zh: ShowMuteInWorld
+  section: 服务器
+  name_zh: 全服广播禁言
   description_zh: |
     描述：玩家被禁言时是否向全服广播消息。
     默认值：0（禁用）；1（启用）。
 - key: ShowBanInWorld
-  section: 8  - (RPPVP)
-  name_zh: ShowBanInWorld
+  section: 服务器
+  name_zh: 全服广播封禁
   description_zh: |
     描述：玩家被封禁时是否向全服广播消息。
     默认值：0（禁用）；1（启用）。
 - key: MaxWhoListReturns
-  section: 8  - (RPPVP)
-  name_zh: MaxWhoListReturns
+  section: 服务器
+  name_zh: /who最大返回数
   description_zh: |
     描述：/who 列表与界面返回的最大玩家数量。
     默认值：49（稳定）。
 - key: PreventAFKLogout
-  section: 8  - (RPPVP)
-  name_zh: PreventAFKLogout
+  section: 服务器
+  name_zh: 防止AFK登出
   description_zh: |
     描述：防止玩家因 AFK 而被登出。
     默认值：0（禁用）；1（启用，仅在圣地不登出）；2（启用，所有区域不登出）。
 - key: PacketSpoof.BanMode
-  section: PACKET SPOOF PROTECTION SETTINGS
-  name_zh: PacketSpoof.BanMode
+  section: 封包伪造防护
+  name_zh: 封禁方式
   description_zh: |
     描述：当 PacketSpoof.Policy=2 时，决定封禁方式。
     取值：0（封账号），1（封 IP）。
     说明：不支持按角色封禁。
 - key: PacketSpoof.BanDuration
-  section: PACKET SPOOF PROTECTION SETTINGS
-  name_zh: PacketSpoof.BanDuration
+  section: 封包伪造防护
+  name_zh: 封禁时长
   description_zh: |
     描述：封禁时长（秒），仅当 PacketSpoof.Policy=2 时有效。
     默认值：86400（1 天）。
     说明：0 表示永久封禁。
 - key: Warden.Enabled
-  section: WARDEN SETTINGS
-  name_zh: Warden.Enabled
+  section: Warden设置
+  name_zh: 启用Warden
   description_zh: |
     描述：启用 Warden 反作弊系统。
     默认值：1（启用）；0（禁用）。
 - key: Warden.NumMemChecks
-  section: WARDEN SETTINGS
-  name_zh: Warden.NumMemChecks
+  section: Warden设置
+  name_zh: 内存检查数量
   description_zh: |
     描述：每个周期发送给客户端的内存检查数量。
     默认值：3（启用）；0（禁用）。
 - key: Warden.NumLuaChecks
-  section: WARDEN SETTINGS
-  name_zh: Warden.NumLuaChecks
+  section: Warden设置
+  name_zh: Lua检查数量
   description_zh: |
     描述：每个周期发送给客户端的 LUA 检查数量。
     默认值：1（启用）；0（禁用）。
 - key: Warden.NumOtherChecks
-  section: WARDEN SETTINGS
-  name_zh: Warden.NumOtherChecks
+  section: Warden设置
+  name_zh: 其他检查数量
   description_zh: |
     描述：每个周期追加的除内存检查外的其他检查数量。
     默认值：7（启用）；0（禁用）。
 - key: Warden.ClientResponseDelay
-  section: WARDEN SETTINGS
-  name_zh: Warden.ClientResponseDelay
+  section: Warden设置
+  name_zh: 客户端响应超时
   description_zh: |
     描述：客户端未响应前允许的时间（秒）。
     默认值：600（10 分钟）。
     说明：0 表示不踢出。
 - key: Warden.ClientCheckHoldOff
-  section: WARDEN SETTINGS
-  name_zh: Warden.ClientCheckHoldOff
+  section: Warden设置
+  name_zh: 检查请求间隔
   description_zh: |
     描述：发送下一次检查请求前的等待时间（秒）。
     说明：数值越小，流量及客户端/服务端负载越高。
     默认值：30（30 秒）；0（尽快发送）。
 - key: Warden.ClientCheckFailAction
-  section: WARDEN SETTINGS
-  name_zh: Warden.ClientCheckFailAction
+  section: Warden设置
+  name_zh: 检查失败处理
   description_zh: |
     描述：客户端检查失败时的默认处理动作。
     说明：可在 characters 数据库的 warden_action 表中为单项检查覆盖。
     默认值：0（禁用，仅记录日志）；1（踢出）；2（封禁）。
 - key: Warden.BanDuration
-  section: WARDEN SETTINGS
-  name_zh: Warden.BanDuration
+  section: Warden设置
+  name_zh: Warden封禁时长
   description_zh: |
     描述：当 ClientCheckFailAction 设为封禁时的封禁时长（秒）。
     默认值：86400（24 小时）。
     说明：0 表示永久封禁。
 - key: AutoBroadcast.On
-  section: AUTO BROADCAST
-  name_zh: AutoBroadcast.On
+  section: 自动公告
+  name_zh: 启用自动公告
   description_zh: |
     描述：启用自动公告。
     默认值：0（禁用）；1（启用）。
 - key: AutoBroadcast.Center
-  section: AUTO BROADCAST
-  name_zh: AutoBroadcast.Center
+  section: 自动公告
+  name_zh: 公告显示方式
   description_zh: |
     描述：自动公告显示方式。
     默认值：0（公告/Announce）；1（通知/Notify）；2（两者都显示）。
 - key: AutoBroadcast.Timer
-  section: AUTO BROADCAST
-  name_zh: AutoBroadcast.Timer
+  section: 自动公告
+  name_zh: 公告间隔
   description_zh: |
     描述：自动公告计时器间隔（毫秒）。
     默认值：60000（60 秒）。
 - key: AutoBroadcast.MinDisableLevel
-  section: AUTO BROADCAST
-  name_zh: AutoBroadcast.MinDisableLevel
+  section: 自动公告
+  name_zh: 允许禁用最低等级
   description_zh: |
     描述：启用 EnablePlayerSettings 时，允许禁用自动公告所需的最低等级。
     默认值：0（不允许禁用）。
 - key: Visibility.GroupMode
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.GroupMode
+  section: 可见性与距离
+  name_zh: 组内可见性模式
   description_zh: |
     描述：组内可见性模式，决定哪些组可看见同团队/队伍/阵营的隐身角色。
     默认值：1（团队 Raid）；0（小队 Party）；2（阵营 Faction）。
 - key: Visibility.Distance.Continents
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.Distance.Continents
+  section: 可见性与距离
+  name_zh: 大陆可见距离
   description_zh: |
     描述：大陆地图的可见距离（码），用于看到其他玩家/游戏对象。
     说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
     约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
     默认值：100。
 - key: Visibility.Distance.Instances
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.Distance.Instances
+  section: 可见性与距离
+  name_zh: 副本可见距离
   description_zh: |
     描述：副本地图的可见距离（码），用于看到其他玩家/游戏对象。
     说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
     约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
     默认值：170。
 - key: Visibility.Distance.BGArenas
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.Distance.BGArenas
+  section: 可见性与距离
+  name_zh: 战场竞技场可见距离
   description_zh: |
     描述：战场/竞技场的可见距离（码），用于看到其他玩家/游戏对象。
     说明：正式服大陆约 100 码；副本约 170；战场/竞技场约 250。
     约束：最大 250；最小值为最大仇恨半径（45）× Rate.Creature.Aggro。
     默认值：250。
 - key: Visibility.ObjectSparkles
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.ObjectSparkles
+  section: 可见性与距离
+  name_zh: 任务物体闪光
   description_zh: |
     描述：是否显示与任务相关游戏对象的闪光效果。
     默认值：1（显示闪光）；0（隐藏闪光）。
 - key: Visibility.ObjectQuestMarkers
-  section: VISIBILITY AND DISTANCES
-  name_zh: Visibility.ObjectQuestMarkers
+  section: 可见性与距离
+  name_zh: 任务物体标记
   description_zh: |
     描述：是否在游戏对象上显示任务标记（类似任务 NPC 头顶图标）。
     默认值：1（显示，2.3 版本之后行为）；0（隐藏，2.3 之前行为）。
 - key: MapUpdateInterval
-  section: MAPS
-  name_zh: MapUpdateInterval
+  section: 地图
+  name_zh: 地图更新间隔
   description_zh: |
     描述：地图更新周期（毫秒）。
     默认值：10（0.01 秒）。
 - key: MapUpdate.Threads
-  section: MAPS
-  name_zh: MapUpdate.Threads
+  section: 地图
+  name_zh: 地图更新线程
   description_zh: |
     描述：用于更新地图的线程数量。
     默认值：1。
 - key: MoveMaps.Enable
-  section: MAPS
-  name_zh: MoveMaps.Enable
+  section: 地图
+  name_zh: 启用寻路地图
   description_zh: |
     描述：启用/禁用使用 mmaps 的寻路（推荐开启）。
     默认值：0（禁用）；1（启用）。
 - key: vmap.enableLOS
-  section: MAPS
-  name_zh: vmap.enableLOS
+  section: 地图
+  name_zh: VMap视线检测
   description_zh: |
     描述：是否启用 vmap 的视线（LOS）计算。
     默认值：1（启用）；0（禁用）。
 - key: vmap.enableHeight
-  section: MAPS
-  name_zh: vmap.enableHeight
+  section: 地图
+  name_zh: VMap高度检测
   description_zh: |
     描述：是否启用 vmap 的高度计算。
     默认值：1（启用）；0（禁用）。
 - key: vmap.petLOS
-  section: MAPS
-  name_zh: vmap.petLOS
+  section: 地图
+  name_zh: 宠物视线检测
   description_zh: |
     描述：为宠物进行视线（LOS）检查，避免其隔墙攻击。
     默认值：1（启用，每次宠物攻击都进行 LOS 检查）；0（禁用，CPU 占用略低）。
 - key: vmap.BlizzlikePvPLOS
-  section: MAPS
-  name_zh: vmap.BlizzlikePvPLOS
+  section: 地图
+  name_zh: 战场视线检测
   description_zh: |
     描述：为战场/竞技场中的游戏对象与装饰物（如 WSG 树桩）进行视线（LOS）检查。
     默认值：1（启用，玩家可透过树桩等对象施法）。
     说明：0（禁用，玩家不能透过树桩等对象施法）。
 - key: vmap.BlizzlikeLOSInOpenWorld
-  section: MAPS
-  name_zh: vmap.BlizzlikeLOSInOpenWorld
+  section: 地图
+  name_zh: 开放世界视线检测
   description_zh: |
     描述：在开放世界中对游戏对象进行视线（LOS）检查。
     默认值：1（启用，玩家可透过树桩等对象施法）。
     说明：0（禁用，玩家不能透过树桩等对象施法）。
 - key: vmap.enableIndoorCheck
-  section: MAPS
-  name_zh: vmap.enableIndoorCheck
+  section: 地图
+  name_zh: VMap室内检测
   description_zh: |
     描述：基于 VMap 的室内检查，用于移除仅限户外的光环（如坐骑等）。
     默认值：1（启用）；0（禁用，CPU 占用略低）。
 - key: DetectPosCollision
-  section: MAPS
-  name_zh: DetectPosCollision
+  section: 地图
+  name_zh: 位置碰撞检测
   description_zh: |
     描述：对最终移动位置、召唤位置等进行可见碰撞检测（墙体仅在启用 vmap 时检查）。
     默认值：1（启用）；0（禁用，位置精度较低但 CPU 占用更少）。
 - key: CheckGameObjectLoS
-  section: MAPS
-  name_zh: CheckGameObjectLoS
+  section: 地图
+  name_zh: 物体视线检测
   description_zh: |
     描述：将动态游戏对象（门、箱子等）纳入视线（LOS）检查。
     说明：会略微增加 CPU 占用。
     默认值：1（启用）；0（禁用，可能导致某些首领战异常）。
 - key: PreloadAllNonInstancedMapGrids
-  section: MAPS
-  name_zh: PreloadAllNonInstancedMapGrids
+  section: 地图
+  name_zh: 预加载非副本网格
   description_zh: |
     描述：预加载所有非副本地图的全部网格。
     说明：会显著增加内存占用（约 9GB）并延长启动时间，但在高玩家量服务器上可提升性能。
     说明：同时会在启动时激活所有被标记为 active 的生物（如地狱火半岛的魔能机甲）。
     默认值：0（禁用）；1（启用）。
 - key: DontCacheRandomMovementPaths
-  section: MAPS
-  name_zh: DontCacheRandomMovementPaths
+  section: 地图
+  name_zh: 禁止缓存随机路径
   description_zh: |
     描述：是否禁止缓存随机移动路径（由 MoveMaps 计算）。
     说明：缓存可节省 CPU，但可能占用大量内存；人口较多服务器建议内存充足时设为 0。
     默认值：0（缓存路径，内存占用更高）；1（不缓存，CPU 占用更高）。
 - key: ActivateWeather
-  section: WEATHER
-  name_zh: ActivateWeather
+  section: 天气
+  name_zh: 启用天气系统
   description_zh: |
     描述：启用天气系统。
     默认值：1（启用）；0（禁用）。
 - key: ChangeWeatherInterval
-  section: WEATHER
-  name_zh: ChangeWeatherInterval
+  section: 天气
+  name_zh: 天气更新间隔
   description_zh: |
     描述：天气更新间隔（毫秒）。
     默认值：600000（10 分钟）。
 - key: AllowTickets
-  section: TICKETS
-  name_zh: AllowTickets
+  section: 工单
+  name_zh: 允许提交工单
   description_zh: |
     描述：允许/禁止提交新工单（GM Ticket）。
     默认值：1（启用）；0（禁用）。
 - key: LevelReq.Ticket
-  section: TICKETS
-  name_zh: LevelReq.Ticket
+  section: 工单
+  name_zh: 工单等级要求
   description_zh: |
     描述：角色可提交工单的等级要求。
     默认值：1。
 - key: DeletedCharacterTicketTrace
-  section: TICKETS
-  name_zh: DeletedCharacterTicketTrace
+  section: 工单
+  name_zh: 删除角色工单追踪
   description_zh: |
     描述：保留已删除角色提交的工单追踪信息。
     说明：gm_ticket.playerGuid 将为 0，gm_ticket.comment 中会包含旧 GUID 与角色名。
     默认值：0（禁用）；1（启用）。
 - key: AllowPlayerCommands
-  section: COMMAND
-  name_zh: AllowPlayerCommands
+  section: 命令
+  name_zh: 允许玩家命令
   description_zh: |
     描述：允许玩家使用命令。
     默认值：1（启用）；0（禁用）。
 - key: Command.LookupMaxResults
-  section: COMMAND
-  name_zh: Command.LookupMaxResults
+  section: 命令
+  name_zh: 查询结果上限
   description_zh: |
     描述：.lookup 命令显示的最大结果数。
     默认值：0（无限制）。
 - key: Die.Command.Mode
-  section: COMMAND
-  name_zh: Die.Command.Mode
+  section: 命令
+  name_zh: 死亡命令模式
   description_zh: |
     描述：.die 命令是否触发战利品等效果。
     默认值：1（启用，不触发战利品等）；0（禁用）。
 - key: GM.LoginState
-  section: GAME MASTER
-  name_zh: GM.LoginState
+  section: 游戏管理员
+  name_zh: GM登录状态
   description_zh: |
     描述：GM 登录时的 GM 模式状态。
     默认值：2（上次保存状态）；0（禁用）；1（启用）。
 - key: GM.Visible
-  section: GAME MASTER
-  name_zh: GM.Visible
+  section: 游戏管理员
+  name_zh: GM可见性
   description_zh: |
     描述：GM 登录时的可见性状态。
     默认值：2（上次保存状态）；0（隐身）；1（可见）。
 - key: GM.Chat
-  section: GAME MASTER
-  name_zh: GM.Chat
+  section: 游戏管理员
+  name_zh: GM聊天模式
   description_zh: |
     描述：GM 登录时的 GM 聊天模式。
     默认值：2（上次保存状态）；0（禁用）；1（启用）。
 - key: GM.WhisperingTo
-  section: GAME MASTER
-  name_zh: GM.WhisperingTo
+  section: 游戏管理员
+  name_zh: GM默认密语
   description_zh: |
     描述：GM 是否默认接受玩家密语。
     默认值：2（上次保存状态）；0（不接受）；1（接受）。
 - key: GM.InGMList.Level
-  section: GAME MASTER
-  name_zh: GM.InGMList.Level
+  section: 游戏管理员
+  name_zh: GM列表显示等级
   description_zh: |
     描述：非 GM 状态（.gm off）下，GM 列表可显示的最高 GM 等级。
     默认值：3（任何人）；0（仅玩家）；1（仅版主）；2（仅 GM）。
 - key: GM.InWhoList.Level
-  section: GAME MASTER
-  name_zh: GM.InWhoList.Level
+  section: 游戏管理员
+  name_zh: /who显示GM等级
   description_zh: |
     描述：在 who 列表中可显示的最高 GM 等级（若可见）。
     默认值：3（任何人）；0（仅玩家）；1（仅版主）；2（仅 GM）。
 - key: GM.StartLevel
-  section: GAME MASTER
-  name_zh: GM.StartLevel
+  section: 游戏管理员
+  name_zh: GM起始等级
   description_zh: |
     描述：GM 角色起始等级。
     默认值：1。
 - key: GM.AllowInvite
-  section: GAME MASTER
-  name_zh: GM.AllowInvite
+  section: 游戏管理员
+  name_zh: 允许邀请GM
   description_zh: |
     描述：是否允许玩家邀请 GM 角色入队。
     默认值：0（禁用）；1（启用）。
 - key: GM.AllowFriend
-  section: GAME MASTER
-  name_zh: GM.AllowFriend
+  section: 游戏管理员
+  name_zh: 允许加GM好友
   description_zh: |
     描述：是否允许玩家将 GM 角色加入好友列表。
     默认值：0（禁用）；1（启用）。
 - key: GM.LowerSecurity
-  section: GAME MASTER
-  name_zh: GM.LowerSecurity
+  section: 游戏管理员
+  name_zh: 低权限操作高权限
   description_zh: |
     描述：是否允许较低安全等级使用对更高安全等级角色的命令。
     默认值：0（禁用）；1（启用）。
 - key: GM.TicketSystem.ChanceOfGMSurvey
-  section: GAME MASTER
-  name_zh: GM.TicketSystem.ChanceOfGMSurvey
+  section: 游戏管理员
+  name_zh: 工单问卷概率
   description_zh: |
     描述：工单完成后发送 GM 调查问卷的概率（百分比）。
     默认值：50（启用）；0（禁用）。
 - key: DisableWaterBreath
-  section: CHEAT
-  name_zh: DisableWaterBreath
+  section: 作弊
+  name_zh: 水下呼吸权限
   description_zh: |
     描述：水下呼吸的所需安全等级。
     默认值：4（禁用）。
     取值：0（启用，所有人）；1（启用，版主/GM/管理员）；2（启用，GM/管理员）；3（启用，管理员）。
 - key: AllFlightPaths
-  section: CHEAT
-  name_zh: AllFlightPaths
+  section: 作弊
+  name_zh: 全飞行点
   description_zh: |
     描述：角色创建后自动学会双方阵营所有飞行点。
     默认值：0（禁用）；1（启用）。
 - key: InstantFlightPaths
-  section: CHEAT
-  name_zh: InstantFlightPaths
+  section: 作弊
+  name_zh: 即时飞行
   description_zh: |
     描述：飞行路线是否立即到达目的地。
     默认值：0（禁用）；1（启用）。
     取值：2（启用，但玩家可在每个飞行管理员处切换即时飞行开关）。
 - key: AlwaysMaxSkillForLevel
-  section: CHEAT
-  name_zh: AlwaysMaxSkillForLevel
+  section: 作弊
+  name_zh: 技能自动满级
   description_zh: |
     描述：玩家登录或升级时自动获得当前等级的最高技能等级。
     默认值：0（禁用）；1（启用）。
 - key: AlwaysMaxWeaponSkill
-  section: CHEAT
-  name_zh: AlwaysMaxWeaponSkill
+  section: 作弊
+  name_zh: 武器技能自动满级
   description_zh: |
     描述：玩家登录或升级时自动获得最高武器/防御技能。
     默认值：0（禁用）；1（启用）。
 - key: PlayerStart.AllReputation
-  section: CHEAT
-  name_zh: PlayerStart.AllReputation
+  section: 作弊
+  name_zh: 新角色声望全开
   description_zh: |
     描述：角色创建后自动获得大部分高等级声望（用于物品、坐骑等）。
     默认值：0（禁用）；1（启用）。
 - key: PlayerStart.CustomSpells
-  section: CHEAT
-  name_zh: PlayerStart.CustomSpells
+  section: 作弊
+  name_zh: 新角色自定义法术
   description_zh: |
     描述：角色创建后自动学习 playercreateinfo_spell_custom 表定义的自定义法术。
     默认值：0（禁用）；1（启用）。
 - key: PlayerStart.MapsExplored
-  section: CHEAT
-  name_zh: PlayerStart.MapsExplored
+  section: 作弊
+  name_zh: 新角色地图全开
   description_zh: |
     描述：角色创建后自动探索所有地图。
     默认值：0（禁用）；1（启用）。
 - key: InstantLogout
-  section: CHEAT
-  name_zh: InstantLogout
+  section: 作弊
+  name_zh: 立即登出权限
   description_zh: |
     描述：立即登出的所需安全等级（非战斗、非决斗、非坠落时有效）。
     默认值：1（启用，版主/GM/管理员）。
     取值：0（启用，所有人）；2（启用，GM/管理员）；3（启用，管理员）；4（禁用）。
 - key: PlayerSaveInterval
-  section: CHARACTER DATABASE
-  name_zh: PlayerSaveInterval
+  section: 角色数据库
+  name_zh: 角色保存间隔
   description_zh: |
     描述：角色保存间隔时间（毫秒）。
     默认值：900000（15 分钟）。
 - key: PlayerSave.Stats.MinLevel
-  section: CHARACTER DATABASE
-  name_zh: PlayerSave.Stats.MinLevel
+  section: 角色数据库
+  name_zh: 属性保存最低等级
   description_zh: |
     描述：保存角色属性到数据库（供外部使用）的最低等级。
     默认值：0（禁用，不保存角色属性）；1+（启用，达到该等级后保存）。
 - key: PlayerSave.Stats.SaveOnlyOnLogout
-  section: CHARACTER DATABASE
-  name_zh: PlayerSave.Stats.SaveOnlyOnLogout
+  section: 角色数据库
+  name_zh: 仅登出保存属性
   description_zh: |
     描述：是否仅在登出时保存角色属性。
     默认值：1（启用，仅登出时保存）；0（禁用，每次角色保存时保存）。
 - key: CleanCharacterDB
-  section: CHARACTER DATABASE
-  name_zh: CleanCharacterDB
+  section: 角色数据库
+  name_zh: 清理角色数据库
   description_zh: |
     描述：清理数据库中过期的成就、技能、法术、天赋等。
     默认值：0（禁用）；1（启用）。
 - key: PersistentCharacterCleanFlags
-  section: CHARACTER DATABASE
-  name_zh: PersistentCharacterCleanFlags
+  section: 角色数据库
+  name_zh: 持久清理标志
   description_zh: |
     描述：设置清理后仍保持为“已清理”的角色清理标志（位掩码）。
     取值：CLEANING_FLAG_ACHIEVEMENT_PROGRESS=0x1，CLEANING_FLAG_SKILLS=0x2，CLEANING_FLAG_SPELLS=0x4，CLEANING_FLAG_TALENTS=0x8，CLEANING_FLAG_QUESTSTATUS=0x10。
@@ -1124,3351 +1124,3351 @@
     重要：使用前请先备份数据库。
     默认值：0（下次清理后所有清理方法均会被禁用）。
 - key: ValidateSkillLearnedBySpells
-  section: CHARACTER DATABASE
-  name_zh: ValidateSkillLearnedBySpells
+  section: 角色数据库
+  name_zh: 校验法术合法性
   description_zh: |
     描述：启用后，移除与角色种族/职业不匹配的非法法术。
     默认值：1（启用，强制合法法术）；0（禁用，允许非法法术）。
     注意：禁用后若学习需要修改 DBC 的法术，可能导致角色无法保存到数据库，请自行承担风险。
 - key: CharDelete.Method
-  section: CHARACTER DELETE
-  name_zh: CharDelete.Method
+  section: 角色删除
+  name_zh: 删除方式
   description_zh: |
     描述：角色删除方式。
     默认值：0（彻底从数据库删除角色）。
     取值：1（与账号解绑并释放角色名，游戏内显示为已删除）。
 - key: CharDelete.MinLevel
-  section: CHARACTER DELETE
-  name_zh: CharDelete.MinLevel
+  section: 角色删除
+  name_zh: 解绑最低等级
   description_zh: |
     描述：启用“解绑删除”方式时的等级要求。
     默认值：0（所有等级使用同一方式）；1+（仅指定等级及以上使用解绑方式）。
 - key: CharDelete.KeepDays
-  section: CHARACTER DELETE
-  name_zh: CharDelete.KeepDays
+  section: 角色删除
+  name_zh: 解绑保留天数
   description_zh: |
     描述：解绑角色从数据库移除前的保留天数。
     默认值：30（启用）；0（禁用，不删除任何角色）。
 - key: MinPlayerName
-  section: CHARACTER CREATION
-  name_zh: MinPlayerName
+  section: 角色创建
+  name_zh: 角色名最小长度
   description_zh: |
     描述：角色名最小长度。
     范围：1-12。
     默认值：2。
 - key: MinPetName
-  section: CHARACTER CREATION
-  name_zh: MinPetName
+  section: 角色创建
+  name_zh: 宠物名最小长度
   description_zh: |
     描述：宠物名最小长度。
     范围：1-12。
     默认值：2。
 - key: DeclinedNames
-  section: CHARACTER CREATION
-  name_zh: DeclinedNames
+  section: 角色创建
+  name_zh: 变格名字
   description_zh: |
     描述：允许俄语客户端使用变格名字。
     默认值：0（禁用，仅在俄语 RealmZone 时例外）；1（启用）。
 - key: StrictNames.Reserved
-  section: CHARACTER CREATION
-  name_zh: StrictNames.Reserved
+  section: 角色创建
+  name_zh: 保留词过滤
   description_zh: |
     描述：使用 DBC 中的保留词过滤器，禁止角色/宠物/战团名称包含保留词。
     默认值：1（启用）；0（禁用）。
 - key: StrictNames.Profanity
-  section: CHARACTER CREATION
-  name_zh: StrictNames.Profanity
+  section: 角色创建
+  name_zh: 敏感词过滤
   description_zh: |
     描述：使用 DBC 中的敏感词过滤器，禁止角色/宠物/战团名称包含敏感词。
     默认值：1（启用）；0（禁用）。
 - key: StrictPlayerNames
-  section: CHARACTER CREATION
-  name_zh: StrictPlayerNames
+  section: 角色创建
+  name_zh: 角色名严格限制
   description_zh: |
     描述：限制角色名为特定语言字符集；若使用非法字符将禁止创建并要求改名。
     默认值：0（禁用，仅受服务器时区相关的客户端检查）。
     取值：1（启用，仅基础拉丁字符）；2（启用，严格按 RealmZone；需要客户端字体支持，非官方本地化需将自定义字体放到 clientdir/Fonts）；3（启用，基础拉丁 + 服务器时区相关）。
 - key: StrictPetNames
-  section: CHARACTER CREATION
-  name_zh: StrictPetNames
+  section: 角色创建
+  name_zh: 宠物名严格限制
   description_zh: |
     描述：限制宠物名为特定语言字符集；若使用非法字符将禁止命名。
     默认值：0（禁用，仅受服务器时区相关的客户端检查）。
     取值：1（启用，仅基础拉丁字符）；2（启用，严格按 RealmZone；需要客户端字体支持，非官方本地化需将自定义字体放到 clientdir/Fonts）；3（启用，基础拉丁 + 服务器时区相关）。
 - key: CharacterCreating.Disabled
-  section: CHARACTER CREATION
-  name_zh: CharacterCreating.Disabled
+  section: 角色创建
+  name_zh: 禁用阵营创建
   description_zh: |
     描述：按阵营禁用角色创建。
     默认值：0（启用，允许所有阵营）。
     取值：1（禁用联盟），2（禁用部落），3（禁用双方）。
 - key: CharacterCreating.Disabled.RaceMask
-  section: CHARACTER CREATION
-  name_zh: CharacterCreating.Disabled.RaceMask
+  section: 角色创建
+  name_zh: 禁用种族掩码
   description_zh: |
     描述：禁止创建的种族掩码。
     示例：1536（1024+512，禁用血精灵与德莱尼）。
     默认值：0（启用，允许所有种族）。
     取值：1（禁用人类），2（禁用兽人），4（禁用矮人），8（禁用暗夜精灵），16（禁用亡灵），32（禁用牛头人），64（禁用侏儒），128（禁用巨魔），512（禁用血精灵），1024（禁用德莱尼）。
 - key: CharacterCreating.Disabled.ClassMask
-  section: CHARACTER CREATION
-  name_zh: CharacterCreating.Disabled.ClassMask
+  section: 角色创建
+  name_zh: 禁用职业掩码
   description_zh: |
     描述：禁止创建的职业掩码。
     示例：288（32+256，禁用死亡骑士与术士）。
     默认值：0（启用，允许所有职业）。
     取值：1（禁用战士），2（禁用圣骑士），4（禁用猎人），8（禁用潜行者），16（禁用牧师），32（禁用死亡骑士），64（禁用萨满），128（禁用法师），256（禁用术士），1024（禁用德鲁伊）。
 - key: CharactersPerAccount
-  section: CHARACTER CREATION
-  name_zh: CharactersPerAccount
+  section: 角色创建
+  name_zh: 每账号角色上限
   description_zh: |
     描述：同一账号在 realmlist 中所有服务器的角色数量上限。
     重要：该值必须 ≥ CharactersPerRealm。
     默认值：50。
 - key: CharactersPerRealm
-  section: CHARACTER CREATION
-  name_zh: CharactersPerRealm
+  section: 角色创建
+  name_zh: 每服角色上限
   description_zh: |
     描述：同一账号在当前服务器的角色数量上限。
     范围：1-10。
     默认值：10（客户端限制）。
 - key: HeroicCharactersPerRealm
-  section: CHARACTER CREATION
-  name_zh: HeroicCharactersPerRealm
+  section: 角色创建
+  name_zh: 每服英雄角色上限
   description_zh: |
     描述：同一账号在当前服务器可创建的英雄职业角色数量上限。
     范围：1-10。
     默认值：1。
 - key: CharacterCreating.MinLevelForHeroicCharacter
-  section: CHARACTER CREATION
-  name_zh: CharacterCreating.MinLevelForHeroicCharacter
+  section: 角色创建
+  name_zh: 英雄角色最低等级
   description_zh: |
     描述：创建英雄职业角色所需的账号最低已有角色等级（GM 账号忽略）。
     默认值：55（要求已有至少 55 级角色）。
     取值：0（禁用限制）；1（要求已有至少 1 级角色）。
 - key: StartPlayerLevel
-  section: CHARACTER CREATION
-  name_zh: StartPlayerLevel
+  section: 角色创建
+  name_zh: 新角色起始等级
   description_zh: |
     描述：普通角色创建后的起始等级。
     范围：1-MaxPlayerLevel。
     默认值：1。
 - key: StartHeroicPlayerLevel
-  section: CHARACTER CREATION
-  name_zh: StartHeroicPlayerLevel
+  section: 角色创建
+  name_zh: 英雄角色起始等级
   description_zh: |
     描述：英雄职业角色创建后的起始等级。
     范围：1-MaxPlayerLevel。
     默认值：55。
 - key: SkipCinematics
-  section: CHARACTER CREATION
-  name_zh: SkipCinematics
+  section: 角色创建
+  name_zh: 跳过过场动画
   description_zh: |
     描述：是否跳过新角色首次登录的开场动画。
     说明：可避免自定义出生点坐标导致的开场动画异常。
     默认值：0（每个新角色都播放）；1（同种族仅首个角色播放）；2（所有角色不播放）。
 - key: StartPlayerMoney
-  section: CHARACTER CREATION
-  name_zh: StartPlayerMoney
+  section: 角色创建
+  name_zh: 新角色初始金币
   description_zh: |
     描述：普通角色创建后的初始金钱（铜币）。
     默认值：0；示例：100（1 银币）。
 - key: StartHeroicPlayerMoney
-  section: CHARACTER CREATION
-  name_zh: StartHeroicPlayerMoney
+  section: 角色创建
+  name_zh: 英雄角色初始金币
   description_zh: |
     描述：英雄职业角色创建后的初始金钱（铜币）。
     默认值：2000（20 银币）。
 - key: PlayerStart.String
-  section: CHARACTER CREATION
-  name_zh: PlayerStart.String
+  section: 角色创建
+  name_zh: 新角色登录提示
   description_zh: |
     描述：新角色首次登录时显示的文本。
     默认值：""（禁用）。
 - key: EnablePlayerSettings
-  section: CHARACTER
-  name_zh: EnablePlayerSettings
+  section: 角色
+  name_zh: 启用角色设置
   description_zh: |
     描述：启用角色专属设置。
     默认值：0（禁用）；1（启用）。
 - key: MaxPlayerLevel
-  section: CHARACTER
-  name_zh: MaxPlayerLevel
+  section: 角色
+  name_zh: 最高等级
   description_zh: |
     描述：玩家可达到的最高等级。
     范围：1-255。
     重要：不建议超过 100。
     默认值：80。
 - key: MinDualSpecLevel
-  section: CHARACTER
-  name_zh: MinDualSpecLevel
+  section: 角色
+  name_zh: 双天赋最低等级
   description_zh: |
     描述：双天赋所需最低等级。
     默认值：40。
 - key: WaterBreath.Timer
-  section: CHARACTER
-  name_zh: WaterBreath.Timer
+  section: 角色
+  name_zh: 水下呼吸时间
   description_zh: |
     描述：玩家水下呼吸时长（毫秒）。
     默认值：180000（3 分钟）。
 - key: EnableLowLevelRegenBoost
-  section: CHARACTER
-  name_zh: EnableLowLevelRegenBoost
+  section: 角色
+  name_zh: 低等级回复加成
   description_zh: |
     描述：显著提高 15 级以下玩家的生命与法力回复（3.3 版本新增）。
     默认值：1（启用）；0（禁用）。
 - key: Rate.MoveSpeed.Player
-  section: CHARACTER
-  name_zh: Rate.MoveSpeed.Player
+  section: 角色
+  name_zh: 玩家移动速度倍率
   description_zh: |
     描述：玩家移动速度倍率。
     默认值：1。
 - key: Rate.MoveSpeed.NPC
-  section: CHARACTER
-  name_zh: Rate.MoveSpeed.NPC
+  section: 角色
+  name_zh: NPC移动速度倍率
   description_zh: |
     描述：NPC 移动速度倍率。
     默认值：1。
 - key: Rate.Damage.Fall
-  section: CHARACTER
-  name_zh: Rate.Damage.Fall
+  section: 角色
+  name_zh: 坠落伤害倍率
   description_zh: |
     描述：坠落伤害倍率。
     默认值：1。
 - key: Rate.Talent
-  section: CHARACTER
-  name_zh: Rate.Talent
+  section: 角色
+  name_zh: 天赋点倍率
   description_zh: |
     描述：天赋点获取倍率。
     默认值：1。
 - key: Rate.Talent.Pet
-  section: CHARACTER
-  name_zh: Rate.Talent.Pet
+  section: 角色
+  name_zh: 宠物天赋倍率
   description_zh: |
     描述：宠物天赋点获取倍率。
     默认值：1。
 - key: Rate.Health
-  section: CHARACTER
-  name_zh: Rate.Health
+  section: 角色
+  name_zh: 生命倍率
   description_zh: |
     描述：生命值倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Mana
-  section: CHARACTER
-  name_zh: Rate.Mana
+  section: 角色
+  name_zh: 法力倍率
   description_zh: |
     描述：法力倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Rage.Income
-  section: CHARACTER
-  name_zh: Rate.Rage.Income
+  section: 角色
+  name_zh: 怒气获得倍率
   description_zh: |
     描述：怒气获得倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Rage.Loss
-  section: CHARACTER
-  name_zh: Rate.Rage.Loss
+  section: 角色
+  name_zh: 怒气流失倍率
   description_zh: |
     描述：怒气流失倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.RunicPower.Income
-  section: CHARACTER
-  name_zh: Rate.RunicPower.Income
+  section: 角色
+  name_zh: 符能获得倍率
   description_zh: |
     描述：符文能量获得倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.RunicPower.Loss
-  section: CHARACTER
-  name_zh: Rate.RunicPower.Loss
+  section: 角色
+  name_zh: 符能流失倍率
   description_zh: |
     描述：符文能量流失倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Focus
-  section: CHARACTER
-  name_zh: Rate.Focus
+  section: 角色
+  name_zh: 集中值倍率
   description_zh: |
     描述：集中值倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Energy
-  section: CHARACTER
-  name_zh: Rate.Energy
+  section: 角色
+  name_zh: 能量倍率
   description_zh: |
     描述：能量倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Loyalty
-  section: CHARACTER
-  name_zh: Rate.Loyalty
+  section: 角色
+  name_zh: 忠诚度倍率
   description_zh: |
     描述：忠诚度变化倍率（用于配置生命、法力、怒气、符文能量、集中、能量与忠诚的增减速率）。
     默认值：1。
 - key: Rate.Rest.InGame
-  section: CHARACTER
-  name_zh: Rate.Rest.InGame
+  section: 角色
+  name_zh: 在线休息倍率
   description_zh: |
     描述：在线休息点增长倍率。
     默认值：1。
 - key: Rate.Rest.Offline.InTavernOrCity
-  section: CHARACTER
-  name_zh: Rate.Rest.Offline.InTavernOrCity
+  section: 角色
+  name_zh: 离线旅店休息倍率
   description_zh: |
     描述：离线在旅店/城市的休息点增长倍率。
     默认值：1。
 - key: Rate.Rest.Offline.InWilderness
-  section: CHARACTER
-  name_zh: Rate.Rest.Offline.InWilderness
+  section: 角色
+  name_zh: 离线野外休息倍率
   description_zh: |
     描述：离线在野外的休息点增长倍率。
     默认值：1。
 - key: Rate.Rest.MaxBonus
-  section: CHARACTER
-  name_zh: Rate.Rest.MaxBonus
+  section: 角色
+  name_zh: 休息最大加成
   description_zh: |
     描述：休息点最大加成倍率。
     默认值：1.5。
 - key: Rate.MissChanceMultiplier.TargetCreature
-  section: CHARACTER
-  name_zh: Rate.MissChanceMultiplier.TargetCreature
+  section: 角色
+  name_zh: 命中惩罚倍率-怪物
   description_zh: |
     描述：目标等级比玩家高 ≥3 时的未命中倍率（对目标为生物）。
     公式：命中率 = 94 - (等级差 - 2) × Rate.MissChanceMultiplier。
     说明：倍率越大，未命中越高。
     默认值：11。
 - key: Rate.MissChanceMultiplier.TargetPlayer
-  section: CHARACTER
-  name_zh: Rate.MissChanceMultiplier.TargetPlayer
+  section: 角色
+  name_zh: 命中惩罚倍率-玩家
   description_zh: |
     描述：目标等级比玩家高 ≥3 时的未命中倍率（对目标为玩家）。
     公式：命中率 = 94 - (等级差 - 2) × Rate.MissChanceMultiplier。
     说明：倍率越大，未命中越高。
     默认值：7。
 - key: Rate.MissChanceMultiplier.OnlyAffectsPlayer
-  section: CHARACTER
-  name_zh: Rate.MissChanceMultiplier.OnlyAffectsPlayer
+  section: 角色
+  name_zh: 仅影响玩家命中惩罚
   description_zh: |
     描述：是否仅影响玩家施法者的未命中率。
     说明：当等级差 <3 时，使用线性公式 96 - 等级差 计算命中率。
     默认值：0（同时影响生物与玩家）；1（仅影响玩家）。
 - key: LevelReq.Trade
-  section: CHARACTER
-  name_zh: LevelReq.Trade
+  section: 角色
+  name_zh: 交易等级要求
   description_zh: |
     描述：允许交易的最低等级。
     默认值：1。
 - key: NoResetTalentsCost
-  section: CHARACTER
-  name_zh: NoResetTalentsCost
+  section: 角色
+  name_zh: 重置天赋免费
   description_zh: |
     描述：重置天赋是否免费。
     默认值：0（禁用）；1（启用）。
 - key: ToggleXP.Cost
-  section: CHARACTER
-  name_zh: ToggleXP.Cost
+  section: 角色
+  name_zh: 锁定经验费用
   description_zh: |
     描述：锁定/解锁经验所需花费（铜币）。
     默认值：100000（10 金）。
 - key: SpellQueue.Enabled
-  section: CHARACTER
-  name_zh: SpellQueue.Enabled
+  section: 角色
+  name_zh: 启用施法队列
   description_zh: |
     描述：是否启用施法队列（SpellQueue）。
     默认值：0（禁用）；1（启用）。
 - key: SpellQueue.Window
-  section: CHARACTER
-  name_zh: SpellQueue.Window
+  section: 角色
+  name_zh: 施法队列窗口
   description_zh: |
     描述：允许进入施法队列的窗口时间（毫秒）。
     默认值：400（400ms）。
 - key: MaxPrimaryTradeSkill
-  section: SKILL
-  name_zh: MaxPrimaryTradeSkill
+  section: 技能
+  name_zh: 主专业上限
   description_zh: |
     描述：角色可学习的主专业数量上限。
     范围：0-11。
     默认值：2。
 - key: SkillChance.Prospecting
-  section: SKILL
-  name_zh: SkillChance.Prospecting
+  section: 技能
+  name_zh: 选矿提升技能
   description_zh: |
     描述：是否允许通过选矿提升技能。
     默认值：0（禁用）；1（启用）。
 - key: SkillChance.Milling
-  section: SKILL
-  name_zh: SkillChance.Milling
+  section: 技能
+  name_zh: 研磨提升技能
   description_zh: |
     描述：是否允许通过研磨提升技能。
     默认值：0（禁用）；1（启用）。
 - key: Rate.Skill.Discovery
-  section: SKILL
-  name_zh: Rate.Skill.Discovery
+  section: 技能
+  name_zh: 技能发现倍率
   description_zh: |
     描述：技能发现（配方/图纸等）倍率。
     默认值：1。
 - key: SkillGain.Crafting
-  section: SKILL
-  name_zh: SkillGain.Crafting
+  section: 技能
+  name_zh: 制作技能提升倍率
   description_zh: |
     描述：制造技能提升倍率。
     默认值：1。
 - key: SkillGain.Defense
-  section: SKILL
-  name_zh: SkillGain.Defense
+  section: 技能
+  name_zh: 防御技能提升倍率
   description_zh: |
     描述：防御技能提升倍率。
     默认值：1。
 - key: SkillGain.Gathering
-  section: SKILL
-  name_zh: SkillGain.Gathering
+  section: 技能
+  name_zh: 采集技能提升倍率
   description_zh: |
     描述：采集技能提升倍率。
     默认值：1。
 - key: SkillGain.Weapon
-  section: SKILL
-  name_zh: SkillGain.Weapon
+  section: 技能
+  name_zh: 武器技能提升倍率
   description_zh: |
     描述：武器技能提升倍率。
     默认值：1。
 - key: SkillChance.Orange
-  section: SKILL
-  name_zh: SkillChance.Orange
+  section: 技能
+  name_zh: 橙色提升概率
   description_zh: |
     描述：配方橙色阶段的技能提升概率。
     默认值：100。
 - key: SkillChance.Yellow
-  section: SKILL
-  name_zh: SkillChance.Yellow
+  section: 技能
+  name_zh: 黄色提升概率
   description_zh: |
     描述：配方黄色阶段的技能提升概率。
     默认值：75。
 - key: SkillChance.Green
-  section: SKILL
-  name_zh: SkillChance.Green
+  section: 技能
+  name_zh: 绿色提升概率
   description_zh: |
     描述：配方绿色阶段的技能提升概率。
     默认值：25。
 - key: SkillChance.Grey
-  section: SKILL
-  name_zh: SkillChance.Grey
+  section: 技能
+  name_zh: 灰色提升概率
   description_zh: |
     描述：配方灰色阶段的技能提升概率。
     默认值：0。
 - key: SkillChance.MiningSteps
-  section: SKILL
-  name_zh: SkillChance.MiningSteps
+  section: 技能
+  name_zh: 采矿概率阶梯
   description_zh: |
     描述：采矿技能提升概率随技能等级降低的步进设置。
     默认值：0（禁用）；75（每 75 点技能降低两次）。
 - key: SkillChance.SkinningSteps
-  section: SKILL
-  name_zh: SkillChance.SkinningSteps
+  section: 技能
+  name_zh: 剥皮概率阶梯
   description_zh: |
     描述：剥皮技能提升概率随技能等级降低的步进设置。
     默认值：0（禁用）；75（每 75 点技能降低两次）。
 - key: OffhandCheckAtSpellUnlearn
-  section: SKILL
-  name_zh: OffhandCheckAtSpellUnlearn
+  section: 技能
+  name_zh: 取消法术检查副手
   description_zh: |
     描述：取消学习某些法术时是否重新检查副手武器限制。
     默认值：1（在取消法术时检查副手装备）；0（仅在区域更新时检查）。
 - key: Stats.Limits.Enable
-  section: STATS
-  name_zh: Stats.Limits.Enable
+  section: 属性
+  name_zh: 启用属性上限
   description_zh: |
     描述：启用/禁用属性上限系统。
     默认值：0（禁用）；1（启用）。
 - key: Stats.Limits.Dodge
-  section: STATS
-  name_zh: Stats.Limits.Dodge
+  section: 属性
+  name_zh: 闪避上限
   description_zh: |
     描述：闪避百分比上限。
     默认值：95.0（95%）。
 - key: Stats.Limits.Parry
-  section: STATS
-  name_zh: Stats.Limits.Parry
+  section: 属性
+  name_zh: 招架上限
   description_zh: |
     描述：招架百分比上限。
     默认值：95.0（95%）。
 - key: Stats.Limits.Block
-  section: STATS
-  name_zh: Stats.Limits.Block
+  section: 属性
+  name_zh: 格挡上限
   description_zh: |
     描述：格挡百分比上限。
     默认值：95.0（95%）。
 - key: Stats.Limits.Crit
-  section: STATS
-  name_zh: Stats.Limits.Crit
+  section: 属性
+  name_zh: 暴击上限
   description_zh: |
     描述：暴击百分比上限。
     默认值：95.0（95%）。
 - key: Rate.Reputation.Gain
-  section: REPUTATION
-  name_zh: Rate.Reputation.Gain
+  section: 声望
+  name_zh: 声望获取倍率
   description_zh: |
     描述：声望获取倍率。
     默认值：1。
 - key: Rate.Reputation.LowLevel.Kill
-  section: REPUTATION
-  name_zh: Rate.Reputation.LowLevel.Kill
+  section: 声望
+  name_zh: 低级击杀声望倍率
   description_zh: |
     描述：击杀低等级（灰名）生物的声望获取倍率。
     默认值：1。
 - key: Rate.Reputation.LowLevel.Quest
-  section: REPUTATION
-  name_zh: Rate.Reputation.LowLevel.Quest
+  section: 声望
+  name_zh: 低级任务声望倍率
   description_zh: |
     描述：低等级任务的声望获取倍率。
     默认值：1。
 - key: Rate.Reputation.RecruitAFriendBonus
-  section: REPUTATION
-  name_zh: Rate.Reputation.RecruitAFriendBonus
+  section: 声望
+  name_zh: 招募好友声望加成
   description_zh: |
     描述：战友招募声望加成倍率。
     默认值：0.1。
 - key: Rate.Reputation.Gain.WSG
-  section: REPUTATION
-  name_zh: Rate.Reputation.Gain.WSG
+  section: 声望
+  name_zh: WSG声望加成
   description_zh: |
     描述：战歌峡谷（WSG）声望加成倍率（在全局 Rate.Reputation.Gain 之上叠加）。
     默认值：1。
 - key: Rate.Reputation.Gain.AB
-  section: REPUTATION
-  name_zh: Rate.Reputation.Gain.AB
+  section: 声望
+  name_zh: AB声望加成
   description_zh: |
     描述：阿拉希盆地（AB）声望加成倍率（在全局 Rate.Reputation.Gain 之上叠加）。
     默认值：1。
 - key: Rate.Reputation.Gain.AV
-  section: REPUTATION
-  name_zh: Rate.Reputation.Gain.AV
+  section: 声望
+  name_zh: AV声望加成
   description_zh: |
     描述：奥特兰克山谷（AV）声望加成倍率（在全局 Rate.Reputation.Gain 之上叠加）。
     默认值：1。
 - key: MaxGroupXPDistance
-  section: EXPERIENCE
-  name_zh: MaxGroupXPDistance
+  section: 经验
+  name_zh: 组队经验距离上限
   description_zh: |
     描述：小队成员获得经验时，距离怪物死亡点的最大距离。
     默认值：74。
 - key: Rate.XP.Kill
-  section: EXPERIENCE
-  name_zh: Rate.XP.Kill
+  section: 经验
+  name_zh: 击杀经验倍率
   description_zh: |
     描述：击杀经验倍率（非战场）。
     默认值：1。
 - key: Rate.XP.Quest
-  section: EXPERIENCE
-  name_zh: Rate.XP.Quest
+  section: 经验
+  name_zh: 任务经验倍率
   description_zh: |
     描述：任务经验倍率（非战场）。
     默认值：1。
 - key: Rate.XP.Quest.DF
-  section: EXPERIENCE
-  name_zh: Rate.XP.Quest.DF
+  section: 经验
+  name_zh: 随机副本任务经验倍率
   description_zh: |
     描述：随机副本/LFG 任务经验倍率（非战场）。
     默认值：1。
 - key: Rate.XP.Explore
-  section: EXPERIENCE
-  name_zh: Rate.XP.Explore
+  section: 经验
+  name_zh: 探索经验倍率
   description_zh: |
     描述：探索经验倍率（非战场）。
     默认值：1。
 - key: Rate.XP.Pet
-  section: EXPERIENCE
-  name_zh: Rate.XP.Pet
+  section: 经验
+  name_zh: 宠物经验倍率
   description_zh: |
     描述：宠物经验倍率（非战场）。
     默认值：1。
 - key: Rate.XP.BattlegroundKillAV
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillAV
+  section: 经验
+  name_zh: 战场击杀经验-AV
   description_zh: |
     描述：奥特兰克山谷（AV）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.XP.BattlegroundKillWSG
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillWSG
+  section: 经验
+  name_zh: 战场击杀经验-WSG
   description_zh: |
     描述：战歌峡谷（WSG）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.XP.BattlegroundKillAB
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillAB
+  section: 经验
+  name_zh: 战场击杀经验-AB
   description_zh: |
     描述：阿拉希盆地（AB）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.XP.BattlegroundKillEOTS
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillEOTS
+  section: 经验
+  name_zh: 战场击杀经验-EOTS
   description_zh: |
     描述：风暴之眼（EOTS）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.XP.BattlegroundKillSOTA
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillSOTA
+  section: 经验
+  name_zh: 战场击杀经验-SOTA
   description_zh: |
     描述：远古海滩（SOTA）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.XP.BattlegroundKillIC
-  section: EXPERIENCE
-  name_zh: Rate.XP.BattlegroundKillIC
+  section: 经验
+  name_zh: 战场击杀经验-IC
   description_zh: |
     描述：征服之岛（IC）荣誉击杀经验倍率。
     说明：不受 Rate.XP.Kill 影响，仅当 Battleground.GiveXPForKills=1 时生效。
     默认值：1。
 - key: Rate.Pet.LevelXP
-  section: EXPERIENCE
-  name_zh: Rate.Pet.LevelXP
+  section: 经验
+  name_zh: 宠物升级经验倍率
   description_zh: |
     描述：宠物升级所需经验倍率（数值越低所需经验越少）。
     默认值：0.05。
 - key: MaxHonorPoints
-  section: CURRENCY
-  name_zh: MaxHonorPoints
+  section: 货币
+  name_zh: 最大荣誉点
   description_zh: |
     描述：角色可拥有的最大荣誉点数。
     默认值：75000。
 - key: MaxHonorPointsMoneyPerPoint
-  section: CURRENCY
-  name_zh: MaxHonorPointsMoneyPerPoint
+  section: 货币
+  name_zh: 荣誉溢出换钱比例
   description_zh: |
     描述：超过荣誉上限后，将溢出的荣誉点兑换为铜币的比例。
     说明：按该配置值进行换算。
     默认值：0（禁用）。
 - key: StartHonorPoints
-  section: CURRENCY
-  name_zh: StartHonorPoints
+  section: 货币
+  name_zh: 初始荣誉点
   description_zh: |
     描述：角色创建后的初始荣誉点数。
     默认值：0。
 - key: HonorPointsAfterDuel
-  section: CURRENCY
-  name_zh: HonorPointsAfterDuel
+  section: 货币
+  name_zh: 决斗荣誉点
   description_zh: |
     描述：决斗胜利者获得的荣誉点数。
     默认值：0（禁用）；1+（启用）。
 - key: Rate.Honor
-  section: CURRENCY
-  name_zh: Rate.Honor
+  section: 货币
+  name_zh: 荣誉倍率
   description_zh: |
     描述：荣誉获取倍率。
     默认值：1。
 - key: MaxArenaPoints
-  section: CURRENCY
-  name_zh: MaxArenaPoints
+  section: 货币
+  name_zh: 最大竞技场点
   description_zh: |
     描述：角色可拥有的最大竞技场点数。
     默认值：10000。
 - key: StartArenaPoints
-  section: CURRENCY
-  name_zh: StartArenaPoints
+  section: 货币
+  name_zh: 初始竞技场点
   description_zh: |
     描述：角色创建后的初始竞技场点数。
     默认值：0。
 - key: Arena.LegacyArenaPoints
-  section: CURRENCY
-  name_zh: Arena.LegacyArenaPoints
+  section: 货币
+  name_zh: 旧版竞技场点
   description_zh: |
     描述：在评分 ≤1500 时使用 TBC 赛季 1-5 的竞技场点数计算方式。
     默认值：1（启用）；0（禁用）。
 - key: Rate.ArenaPoints
-  section: CURRENCY
-  name_zh: Rate.ArenaPoints
+  section: 货币
+  name_zh: 竞技场点倍率
   description_zh: |
     描述：竞技场点数获取倍率。
     默认值：1。
 - key: PvPToken.Enable
-  section: CURRENCY
-  name_zh: PvPToken.Enable
+  section: 货币
+  name_zh: 启用PVP代币
   description_zh: |
     描述：击败可获得荣誉的玩家后是否获得代币。
     默认值：0（禁用）；1（启用）。
 - key: PvPToken.MapAllowType
-  section: CURRENCY
-  name_zh: PvPToken.MapAllowType
+  section: 货币
+  name_zh: 代币地图类型
   description_zh: |
     描述：定义可获得代币的地图类型。
     默认值：4（所有地图）。
     取值：3（战场），2（仅 FFA 区域，如古拉巴什竞技场），1（战场与 FFA 区域）。
 - key: PvPToken.ItemID
-  section: CURRENCY
-  name_zh: PvPToken.ItemID
+  section: 货币
+  name_zh: 代币物品ID
   description_zh: |
     描述：启用代币系统后，击败玩家获得的道具 ID。
     默认值：29434（正义徽章）。
 - key: PvPToken.ItemCount
-  section: CURRENCY
-  name_zh: PvPToken.ItemCount
+  section: 货币
+  name_zh: 代币数量
   description_zh: |
     描述：每次击败玩家获得的代币数量。
     默认值：1。
 - key: DurabilityLoss.InPvP
-  section: DURABILITY
-  name_zh: DurabilityLoss.InPvP
+  section: 耐久
+  name_zh: PvP死亡耐久损失
   description_zh: |
     描述：PvP 死亡是否损失耐久。
     默认值：0（禁用）；1（启用）。
 - key: DurabilityLoss.OnDeath
-  section: DURABILITY
-  name_zh: DurabilityLoss.OnDeath
+  section: 耐久
+  name_zh: 死亡耐久损失百分比
   description_zh: |
     描述：死亡时损失的耐久百分比。
     说明：3.3.5 客户端总是显示“物品损失 10% 耐久”的日志信息。
     默认值：10。
 - key: DurabilityLossChance.Damage
-  section: DURABILITY
-  name_zh: DurabilityLossChance.Damage
+  section: 耐久
+  name_zh: 伤害耐久损失概率
   description_zh: |
     描述：受到伤害时某件已装备物品损失耐久的概率。
     默认值：0.5（100/0.5=200，每 200 点伤害损失一件装备耐久）。
 - key: DurabilityLossChance.Absorb
-  section: DURABILITY
-  name_zh: DurabilityLossChance.Absorb
+  section: 耐久
+  name_zh: 吸收耐久损失概率
   description_zh: |
     描述：吸收伤害时某件护甲损失耐久的概率。
     默认值：0.5（100/0.5=200，每 200 点吸收伤害损失一件护甲耐久）。
 - key: DurabilityLossChance.Parry
-  section: DURABILITY
-  name_zh: DurabilityLossChance.Parry
+  section: 耐久
+  name_zh: 招架耐久损失概率
   description_zh: |
     描述：招架攻击时主手武器损失耐久的概率。
     默认值：0.05（100/0.05=2000，每 2000 点被招架伤害损失主手耐久）。
 - key: DurabilityLossChance.Block
-  section: DURABILITY
-  name_zh: DurabilityLossChance.Block
+  section: 耐久
+  name_zh: 格挡耐久损失概率
   description_zh: |
     描述：格挡攻击时盾牌损失耐久的概率。
     默认值：0.05（100/0.05=2000，每 2000 点被格挡伤害损失盾牌耐久）。
 - key: Death.SicknessLevel
-  section: DEATH
-  name_zh: Death.SicknessLevel
+  section: 死亡
+  name_zh: 复活虚弱起始等级
   description_zh: |
     描述：复活虚弱（Resurrection Sickness）起始等级。
     示例：11（1-10 级不受影响；11-19 级持续 1 分钟；20-最高等级持续 10 分钟）。
     默认值：11（启用，见示例）；MaxPlayerLevel+1（禁用）；-10（启用，1 级以上持续 10 分钟）。
 - key: Death.CorpseReclaimDelay.PvP
-  section: DEATH
-  name_zh: Death.CorpseReclaimDelay.PvP
+  section: 死亡
+  name_zh: PvP尸体回收延迟
   description_zh: |
     描述：PvP 死亡时是否增加尸体回收延迟。
     默认值：1（启用）；0（禁用）。
 - key: Death.CorpseReclaimDelay.PvE
-  section: DEATH
-  name_zh: Death.CorpseReclaimDelay.PvE
+  section: 死亡
+  name_zh: PvE尸体回收延迟
   description_zh: |
     描述：PvE 死亡时是否增加尸体回收延迟。
     默认值：1（启用）；0（禁用）。
 - key: Death.Bones.World
-  section: DEATH
-  name_zh: Death.Bones.World
+  section: 死亡
+  name_zh: 世界区域白骨替代
   description_zh: |
     描述：在普通区域复活后是否生成白骨而非尸体。
     默认值：1（启用）；0（禁用）。
 - key: Death.Bones.BattlegroundOrArena
-  section: DEATH
-  name_zh: Death.Bones.BattlegroundOrArena
+  section: 死亡
+  name_zh: 战场/竞技场白骨替代
   description_zh: |
     描述：在战场/竞技场复活后是否生成白骨而非尸体。
     默认值：1（启用）；0（禁用）。
 - key: Pet.RankMod.Health
-  section: PET
-  name_zh: Pet.RankMod.Health
+  section: 宠物
+  name_zh: 宠物生命等级倍率
   description_zh: |
     描述：允许宠物生命值按配置中的等级倍率调整。
     默认值：1（启用）；0（禁用）。
 - key: ItemDelete.Method
-  section: ITEM DELETE
-  name_zh: ItemDelete.Method
+  section: 物品删除
+  name_zh: 物品删除方式
   description_zh: |
     描述：物品删除方式。
     默认值：0（从数据库彻底删除）；1（将物品保存到数据库）。
 - key: ItemDelete.Vendor
-  section: ITEM DELETE
-  name_zh: ItemDelete.Vendor
+  section: 物品删除
+  name_zh: 售卖物品保存
   description_zh: |
     描述：玩家将物品卖给商人时是否保存到数据库。
     默认值：0（禁用）；1（启用）。
 - key: ItemDelete.Quality
-  section: ITEM DELETE
-  name_zh: ItemDelete.Quality
+  section: 物品删除
+  name_zh: 物品保存最低品质
   description_zh: |
     描述：保存到数据库的物品最低品质（>= ItemDelete.Quality）。
     取值：0 灰（Poor），1 白（Common），2 绿（Uncommon），3 蓝（Rare），4 紫（Epic），5 橙（Legendary），6 红（Artifact），7 金（帐号绑定）。
     默认值：3。
 - key: ItemDelete.ItemLevel
-  section: ITEM DELETE
-  name_zh: ItemDelete.ItemLevel
+  section: 物品删除
+  name_zh: 物品保存最低物品等级
   description_zh: |
     描述：保存到数据库的物品最低物品等级（>= ItemDelete.ItemLevel）。
     默认值：80。
 - key: ItemDelete.KeepDays
-  section: ITEM DELETE
-  name_zh: ItemDelete.KeepDays
+  section: 物品删除
+  name_zh: 物品保存天数
   description_zh: |
     描述：物品保存天数（天）。
     默认值：0（禁用，不删除任何物品）；30（启用）。
 - key: DBC.EnforceItemAttributes
-  section: ITEM
-  name_zh: DBC.EnforceItemAttributes
+  section: 物品
+  name_zh: 强制使用DBC物品属性
   description_zh: |
     描述：是否禁止用数据库中的值覆盖 DBC 文件内的物品属性。
     默认值：0（关闭，使用数据库值）；1（开启，强制使用 DBC 值）。
 - key: Rate.Drop.Item.Poor
-  section: ITEM
-  name_zh: Rate.Drop.Item.Poor
+  section: 物品
+  name_zh: 灰色物品掉落倍率
   description_zh: |
     描述：灰色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Normal
-  section: ITEM
-  name_zh: Rate.Drop.Item.Normal
+  section: 物品
+  name_zh: 白色物品掉落倍率
   description_zh: |
     描述：白色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Uncommon
-  section: ITEM
-  name_zh: Rate.Drop.Item.Uncommon
+  section: 物品
+  name_zh: 绿色物品掉落倍率
   description_zh: |
     描述：绿色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Rare
-  section: ITEM
-  name_zh: Rate.Drop.Item.Rare
+  section: 物品
+  name_zh: 蓝色物品掉落倍率
   description_zh: |
     描述：蓝色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Epic
-  section: ITEM
-  name_zh: Rate.Drop.Item.Epic
+  section: 物品
+  name_zh: 紫色物品掉落倍率
   description_zh: |
     描述：紫色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Legendary
-  section: ITEM
-  name_zh: Rate.Drop.Item.Legendary
+  section: 物品
+  name_zh: 橙色物品掉落倍率
   description_zh: |
     描述：橙色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Artifact
-  section: ITEM
-  name_zh: Rate.Drop.Item.Artifact
+  section: 物品
+  name_zh: 红色物品掉落倍率
   description_zh: |
     描述：红色品质物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.Referenced
-  section: ITEM
-  name_zh: Rate.Drop.Item.Referenced
+  section: 物品
+  name_zh: 引用掉落物品倍率
   description_zh: |
     描述：引用掉落表物品掉落倍率。
     默认值：1。
 - key: Rate.Drop.Money
-  section: ITEM
-  name_zh: Rate.Drop.Money
+  section: 物品
+  name_zh: 金币掉落倍率
   description_zh: |
     描述：金币掉落倍率。
     默认值：1。
 - key: Rate.Drop.Item.ReferencedAmount
-  section: ITEM
-  name_zh: Rate.Drop.Item.ReferencedAmount
+  section: 物品
+  name_zh: 引用掉落数量倍率
   description_zh: |
     描述：引用掉落数量倍率（使许多团本首领等掉落更多战利品）。
     默认值：1。
 - key: Rate.Drop.Item.GroupAmount
-  section: ITEM
-  name_zh: Rate.Drop.Item.GroupAmount
+  section: 物品
+  name_zh: 团队掉落数量倍率
   description_zh: |
     描述：分组掉落物品数量倍率（使许多地下城首领等掉落更多战利品）。
     默认值：1。
 - key: LootNeedBeforeGreedILvlRestriction
-  section: ITEM
-  name_zh: LootNeedBeforeGreedILvlRestriction
+  section: 物品
+  name_zh: 随机本需求/贪婪装等限制
   description_zh: |
     描述：在随机副本“需求优先/贪婪”模式下，对低于玩家职业子类的物品进行等级限制。
     默认值：70；0（禁用）。
 - key: Item.SetItemTradeable
-  section: ITEM
-  name_zh: Item.SetItemTradeable
+  section: 物品
+  name_zh: 团队内可交易拾取绑定物品
   description_zh: |
     描述：是否允许团队成员之间交易拾取后绑定（BoP）物品。
     默认值：1（启用，将 BoP 物品设为 2 小时可交易）；0（禁用）。
 - key: Quests.EnableQuestTracker
-  section: QUEST
-  name_zh: Quests.EnableQuestTracker
+  section: 任务
+  name_zh: 任务跟踪器
   description_zh: |
     描述：将任务完成/放弃信息记录到数据库，用于排查任务问题。
     默认值：0（禁用）；1（启用）。
 - key: QuestPOI.Enabled
-  section: QUEST
-  name_zh: QuestPOI.Enabled
+  section: 任务
+  name_zh: 任务POI显示
   description_zh: |
     描述：是否在地图上显示任务 POI 位置。
     默认值：1（启用）；0（禁用）。
 - key: Quests.LowLevelHideDiff
-  section: QUEST
-  name_zh: Quests.LowLevelHideDiff
+  section: 任务
+  name_zh: 低等级任务隐藏差值
   description_zh: |
     描述：任务等级比玩家低多少级时视为低等级并隐藏感叹号提示。
     默认值：4（隐藏低于玩家 4 级以上的任务）。
 - key: Quests.HighLevelHideDiff
-  section: QUEST
-  name_zh: Quests.HighLevelHideDiff
+  section: 任务
+  name_zh: 高等级任务隐藏差值
   description_zh: |
     描述：任务等级比玩家高多少级时视为高等级并隐藏感叹号提示。
     默认值：7（隐藏高于玩家 7 级以上的任务）。
 - key: Quests.IgnoreRaid
-  section: QUEST
-  name_zh: Quests.IgnoreRaid
+  section: 任务
+  name_zh: 团队中完成非团队任务
   description_zh: |
     描述：允许在团队中完成非团队任务。
     默认值：0（禁用）；1（启用）。
 - key: Quests.IgnoreAutoAccept
-  section: QUEST
-  name_zh: Quests.IgnoreAutoAccept
+  section: 任务
+  name_zh: 忽略任务自动接受
   description_zh: |
     描述：忽略任务自动接受标志，客户端需手动接受任务。
     默认值：0（禁用，按数据库设置是否自动接受）；1（启用，客户端不自动接受任何任务）。
 - key: Quests.IgnoreAutoComplete
-  section: QUEST
-  name_zh: Quests.IgnoreAutoComplete
+  section: 任务
+  name_zh: 忽略任务自动完成
   description_zh: |
     描述：忽略任务自动完成标志，客户端需手动完成任务。
     默认值：0（禁用，按数据库设置是否自动完成）；1（启用，客户端不自动完成任何任务）。
 - key: Rate.RewardQuestMoney
-  section: QUEST
-  name_zh: Rate.RewardQuestMoney
+  section: 任务
+  name_zh: 任务奖励金钱倍率
   description_zh: |
     描述：任务奖励金钱倍率（不影响 RewardBonusMoney）。
     默认值：1。
 - key: Rate.RewardBonusMoney
-  section: QUEST
-  name_zh: Rate.RewardBonusMoney
+  section: 任务
+  name_zh: 满级额外奖励金钱倍率
   description_zh: |
     描述：满级时任务额外奖励金钱的倍率。
     默认值：1。
 - key: MonsterSight
-  section: CREATURE
-  name_zh: MonsterSight
+  section: 生物
+  name_zh: 怪物视距
   description_zh: |
     描述：怪物无视等级差的可视距离（码）。
     说明：将 CONFIG_SIGHT_MONSTER 提升至 50 码（原为 20 码）。
     默认值：50.000000。
 - key: Rate.Creature.Aggro
-  section: CREATURE
-  name_zh: Rate.Creature.Aggro
+  section: 生物
+  name_zh: 怪物仇恨半径倍率
   description_zh: |
     描述：怪物仇恨半径倍率。
     默认值：1（100%）；1.5（150%）；0（禁用，0%）。
 - key: CreatureFamilyFleeAssistanceRadius
-  section: CREATURE
-  name_zh: CreatureFamilyFleeAssistanceRadius
+  section: 生物
+  name_zh: 逃跑求援距离
   description_zh: |
     描述：逃跑怪物向其他怪物求援的距离（码）。
     默认值：30（启用）；0（禁用）。
 - key: CreatureLeashRadius
-  section: CREATURE
-  name_zh: CreatureLeashRadius
+  section: 生物
+  name_zh: 怪物脱战拉回距离
   description_zh: |
     描述：怪物脱战拉回的默认距离（码）。
     默认值：30（启用）；0（禁用）。
 - key: CreatureFamilyAssistanceRadius
-  section: CREATURE
-  name_zh: CreatureFamilyAssistanceRadius
+  section: 生物
+  name_zh: 原地求援距离
   description_zh: |
     描述：怪物原地呼叫援助的距离（码）。
     默认值：10（启用）；0（禁用）。
 - key: CreatureFamilyAssistanceDelay
-  section: CREATURE
-  name_zh: CreatureFamilyAssistanceDelay
+  section: 生物
+  name_zh: 求援延迟
   description_zh: |
     描述：怪物呼叫援助前的延迟时间（毫秒）。
     默认值：2000（2 秒）。
 - key: CreatureFamilyAssistancePeriod
-  section: CREATURE
-  name_zh: CreatureFamilyAssistancePeriod
+  section: 生物
+  name_zh: 求援间隔
   description_zh: |
     描述：怪物再次呼叫援助的间隔时间（毫秒）。
     默认值：3000（3 秒）；0（禁用）。
 - key: CreatureFamilyFleeDelay
-  section: CREATURE
-  name_zh: CreatureFamilyFleeDelay
+  section: 生物
+  name_zh: 逃跑持续时间
   description_zh: |
     描述：未获得援助时怪物逃跑的持续时间（毫秒）。
     默认值：7000（7 秒）。
 - key: WorldBossLevelDiff
-  section: CREATURE
-  name_zh: WorldBossLevelDiff
+  section: 生物
+  name_zh: 世界首领等级差
   description_zh: |
     描述：世界首领等级差。
     默认值：3。
 - key: Corpse.Decay.NORMAL
-  section: CREATURE
-  name_zh: Corpse.Decay.NORMAL
+  section: 生物
+  name_zh: 普通尸体腐烂时间
   description_zh: |
     描述：普通怪物尸体未拾取/未剥皮时的腐烂时间（秒）。
     默认值：60（1 分钟）。
 - key: Corpse.Decay.RARE
-  section: CREATURE
-  name_zh: Corpse.Decay.RARE
+  section: 生物
+  name_zh: 稀有尸体腐烂时间
   description_zh: |
     描述：稀有怪物尸体未拾取/未剥皮时的腐烂时间（秒）。
     默认值：300（5 分钟）。
 - key: Corpse.Decay.ELITE
-  section: CREATURE
-  name_zh: Corpse.Decay.ELITE
+  section: 生物
+  name_zh: 精英尸体腐烂时间
   description_zh: |
     描述：精英怪物尸体未拾取/未剥皮时的腐烂时间（秒）。
     默认值：300（5 分钟）。
 - key: Corpse.Decay.RAREELITE
-  section: CREATURE
-  name_zh: Corpse.Decay.RAREELITE
+  section: 生物
+  name_zh: 稀有精英尸体腐烂时间
   description_zh: |
     描述：稀有精英怪物尸体未拾取/未剥皮时的腐烂时间（秒）。
     默认值：300（5 分钟）。
 - key: Corpse.Decay.WORLDBOSS
-  section: CREATURE
-  name_zh: Corpse.Decay.WORLDBOSS
+  section: 生物
+  name_zh: 世界首领尸体腐烂时间
   description_zh: |
     描述：世界首领尸体未拾取/未剥皮时的腐烂时间（秒）。
     默认值：3600（1 小时）。
 - key: Rate.Corpse.Decay.Looted
-  section: CREATURE
-  name_zh: Rate.Corpse.Decay.Looted
+  section: 生物
+  name_zh: 已拾取尸体保留倍率
   description_zh: |
     描述：已被拾取的尸体保留时间倍率（作用于 Corpse.Decay.*）。
     默认值：0.5。
 - key: Rate.Creature.Normal.Damage
-  section: CREATURE
-  name_zh: Rate.Creature.Normal.Damage
+  section: 生物
+  name_zh: 普通怪物近战伤害倍率
   description_zh: |
     描述：普通怪物近战伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.Elite.Damage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.Elite.Damage
+  section: 生物
+  name_zh: 精英怪物近战伤害倍率
   description_zh: |
     描述：精英怪物（Elite）近战伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RARE.Damage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RARE.Damage
+  section: 生物
+  name_zh: 稀有怪物近战伤害倍率
   description_zh: |
     描述：稀有怪物（Rare）近战伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RAREELITE.Damage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RAREELITE.Damage
+  section: 生物
+  name_zh: 稀有精英怪物近战伤害倍率
   description_zh: |
     描述：稀有精英怪物（Rare Elite）近战伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.WORLDBOSS.Damage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.WORLDBOSS.Damage
+  section: 生物
+  name_zh: 世界首领近战伤害倍率
   description_zh: |
     描述：世界首领近战伤害倍率。
     默认值：1。
 - key: Rate.Creature.Normal.SpellDamage
-  section: CREATURE
-  name_zh: Rate.Creature.Normal.SpellDamage
+  section: 生物
+  name_zh: 普通怪物法术伤害倍率
   description_zh: |
     描述：普通怪物法术伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.Elite.SpellDamage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.Elite.SpellDamage
+  section: 生物
+  name_zh: 精英怪物法术伤害倍率
   description_zh: |
     描述：精英怪物（Elite）法术伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RARE.SpellDamage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RARE.SpellDamage
+  section: 生物
+  name_zh: 稀有怪物法术伤害倍率
   description_zh: |
     描述：稀有怪物（Rare）法术伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RAREELITE.SpellDamage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RAREELITE.SpellDamage
+  section: 生物
+  name_zh: 稀有精英怪物法术伤害倍率
   description_zh: |
     描述：稀有精英怪物（Rare Elite）法术伤害倍率。
     默认值：1。
 - key: Rate.Creature.Elite.WORLDBOSS.SpellDamage
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.WORLDBOSS.SpellDamage
+  section: 生物
+  name_zh: 世界首领法术伤害倍率
   description_zh: |
     描述：世界首领法术伤害倍率。
     默认值：1。
 - key: Rate.Creature.Normal.HP
-  section: CREATURE
-  name_zh: Rate.Creature.Normal.HP
+  section: 生物
+  name_zh: 普通怪物生命值倍率
   description_zh: |
     描述：普通怪物生命值倍率。
     默认值：1。
 - key: Rate.Creature.Elite.Elite.HP
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.Elite.HP
+  section: 生物
+  name_zh: 精英怪物生命值倍率
   description_zh: |
     描述：精英怪物（Elite）生命值倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RARE.HP
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RARE.HP
+  section: 生物
+  name_zh: 稀有怪物生命值倍率
   description_zh: |
     描述：稀有怪物（Rare）生命值倍率。
     默认值：1。
 - key: Rate.Creature.Elite.RAREELITE.HP
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.RAREELITE.HP
+  section: 生物
+  name_zh: 稀有精英怪物生命值倍率
   description_zh: |
     描述：稀有精英怪物（Rare Elite）生命值倍率。
     默认值：1。
 - key: Rate.Creature.Elite.WORLDBOSS.HP
-  section: CREATURE
-  name_zh: Rate.Creature.Elite.WORLDBOSS.HP
+  section: 生物
+  name_zh: 世界首领生命值倍率
   description_zh: |
     描述：世界首领生命值倍率。
     默认值：1。
 - key: ListenRange.Say
-  section: CREATURE
-  name_zh: ListenRange.Say
+  section: 生物
+  name_zh: 可听到“说”话距离
   description_zh: |
     描述：玩家可读到怪物/游戏对象“说”话的距离（码）。
     默认值：40。
 - key: ListenRange.TextEmote
-  section: CREATURE
-  name_zh: ListenRange.TextEmote
+  section: 生物
+  name_zh: 可见表情动作距离
   description_zh: |
     描述：玩家可读到怪物/游戏对象表情动作文本的距离（码）。
     默认值：40。
 - key: ListenRange.Yell
-  section: CREATURE
-  name_zh: ListenRange.Yell
+  section: 生物
+  name_zh: 可听到“喊话”距离
   description_zh: |
     描述：玩家可读到怪物/游戏对象“喊话”的距离（码）。
     默认值：300。
 - key: Creature.RepositionAgainstNpcs
-  section: CREATURE
-  name_zh: Creature.RepositionAgainstNpcs
+  section: 生物
+  name_zh: NPC对NPC绕背走位
   description_zh: |
     描述：启用 NPC 对 NPC 战斗中的绕背与走位调整。
     默认值：1（启用，CPU 占用更高但效果更自然）；0（禁用，CPU 占用更低）。
 - key: Creature.MovingStopTimeForPlayer
-  section: CREATURE
-  name_zh: Creature.MovingStopTimeForPlayer
+  section: 生物
+  name_zh: 生物交互后停止移动时间
   description_zh: |
     描述：生物与玩家交互后停止移动的时间（毫秒）。
     默认值：180000。
 - key: WaypointMovementStopTimeForPlayer
-  section: CREATURE
-  name_zh: WaypointMovementStopTimeForPlayer
+  section: 生物
+  name_zh: 路径点生物交互后等待时间
   description_zh: |
     描述：带路径点移动的生物在与玩家交互后等待的时间（秒）。
     默认值：120。
 - key: NpcEvadeIfTargetIsUnreachable
-  section: CREATURE
-  name_zh: NpcEvadeIfTargetIsUnreachable
+  section: 生物
+  name_zh: 目标不可达脱战时间
   description_zh: |
     描述：目标不可达时进入脱战（evade）所需时间（秒）。
     默认值：5。
 - key: NpcRegenHPIfTargetIsUnreachable
-  section: CREATURE
-  name_zh: NpcRegenHPIfTargetIsUnreachable
+  section: 生物
+  name_zh: 目标不可达怪物回血
   description_zh: |
     描述：目标不可达时是否为团队副本中的怪物恢复生命。
     说明：若存在 mmaps/寻路问题建议关闭。
     默认值：1（启用）；0（禁用）。
 - key: NpcRegenHPTimeIfTargetIsUnreachable
-  section: CREATURE
-  name_zh: NpcRegenHPTimeIfTargetIsUnreachable
+  section: 生物
+  name_zh: 目标不可达回血等待
   description_zh: |
     描述：目标不可达时开始恢复生命的等待时间（秒）。
     默认值：10。
 - key: Creatures.CustomIDs
-  section: CREATURE
-  name_zh: Creatures.CustomIDs
+  section: 生物
+  name_zh: 自定义生物ID列表
   description_zh: |
     描述：核心中硬编码了对话的自定义生物 ID 列表（逗号分隔，无空格）。
     说明：使用这些 NPC 时不会从 gossip_menu 表读取数据；验证时会跳过这些 ID。
     示例："190010,55005,999991,25462,98888,601014"（幻化、工会区、1v1 竞技场、跳过 DK、种族特性更换、坐骑模块 NPC）。
     默认值：""。
 - key: Rate.SellValue.Item.Poor
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Poor
+  section: 商人
+  name_zh: 灰色物品出售价格倍率
   description_zh: |
     描述：灰色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Normal
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Normal
+  section: 商人
+  name_zh: 白色物品出售价格倍率
   description_zh: |
     描述：白色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Uncommon
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Uncommon
+  section: 商人
+  name_zh: 绿色物品出售价格倍率
   description_zh: |
     描述：绿色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Rare
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Rare
+  section: 商人
+  name_zh: 蓝色物品出售价格倍率
   description_zh: |
     描述：蓝色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Epic
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Epic
+  section: 商人
+  name_zh: 紫色物品出售价格倍率
   description_zh: |
     描述：紫色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Legendary
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Legendary
+  section: 商人
+  name_zh: 橙色物品出售价格倍率
   description_zh: |
     描述：橙色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Artifact
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Artifact
+  section: 商人
+  name_zh: 红色物品出售价格倍率
   description_zh: |
     描述：红色品质物品出售价格倍率。
     默认值：1。
 - key: Rate.SellValue.Item.Heirloom
-  section: VENDOR
-  name_zh: Rate.SellValue.Item.Heirloom
+  section: 商人
+  name_zh: 传家宝物品出售价格倍率
   description_zh: |
     描述：传家宝物品出售价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Poor
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Poor
+  section: 商人
+  name_zh: 灰色物品购买价格倍率
   description_zh: |
     描述：灰色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Normal
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Normal
+  section: 商人
+  name_zh: 白色物品购买价格倍率
   description_zh: |
     描述：白色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Uncommon
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Uncommon
+  section: 商人
+  name_zh: 绿色物品购买价格倍率
   description_zh: |
     描述：绿色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Rare
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Rare
+  section: 商人
+  name_zh: 蓝色物品购买价格倍率
   description_zh: |
     描述：蓝色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Epic
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Epic
+  section: 商人
+  name_zh: 紫色物品购买价格倍率
   description_zh: |
     描述：紫色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Legendary
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Legendary
+  section: 商人
+  name_zh: 橙色物品购买价格倍率
   description_zh: |
     描述：橙色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Artifact
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Artifact
+  section: 商人
+  name_zh: 红色物品购买价格倍率
   description_zh: |
     描述：红色品质物品购买价格倍率。
     默认值：1。
 - key: Rate.BuyValue.Item.Heirloom
-  section: VENDOR
-  name_zh: Rate.BuyValue.Item.Heirloom
+  section: 商人
+  name_zh: 传家宝物品购买价格倍率
   description_zh: |
     描述：传家宝物品购买价格倍率。
     默认值：1。
 - key: Rate.RepairCost
-  section: VENDOR
-  name_zh: Rate.RepairCost
+  section: 商人
+  name_zh: 修理费用倍率
   description_zh: |
     描述：修理费用倍率。
     默认值：1。
 - key: LeaveGroupOnLogout.Enabled
-  section: GROUP
-  name_zh: LeaveGroupOnLogout.Enabled
+  section: 队伍
+  name_zh: 登出自动离队
   description_zh: |
     描述：玩家登出时是否自动离开队伍（不影响团队或 LFG 队伍）。
     默认值：0（禁用）。
 - key: Group.Raid.LevelRestriction
-  section: GROUP
-  name_zh: Group.Raid.LevelRestriction
+  section: 队伍
+  name_zh: 团队最低等级限制
   description_zh: |
     描述：团队成员所需的最低等级（队员等级需 ≥ 该值）。
     说明：最低等级为 10。
     默认值：10。
 - key: Group.RandomRollMaximum
-  section: GROUP
-  name_zh: Group.RandomRollMaximum
+  section: 队伍
+  name_zh: /roll最大掷骰值
   description_zh: |
     描述：客户端 /roll 命令的最大掷骰值。
     说明：暴雪原味最大值为 1000000。
     默认值：1000000。
 - key: Instance.GMSummonPlayer
-  section: INSTANCE
-  name_zh: Instance.GMSummonPlayer
+  section: 副本
+  name_zh: 副本内GM召唤玩家
   description_zh: |
     描述：副本内 GM 是否可召唤玩家或仅能召唤 GM 账号。
     默认值：0（禁用，仅 GM 账号可被召唤）；1（启用，GM 与普通玩家均可被召唤）。
 - key: Instance.IgnoreLevel
-  section: INSTANCE
-  name_zh: Instance.IgnoreLevel
+  section: 副本
+  name_zh: 忽略副本等级限制
   description_zh: |
     描述：是否忽略进入副本的等级限制。
     默认值：0（禁用）；1（启用）。
 - key: Instance.IgnoreRaid
-  section: INSTANCE
-  name_zh: Instance.IgnoreRaid
+  section: 副本
+  name_zh: 忽略副本团队限制
   description_zh: |
     描述：是否忽略进入副本的团队限制。
     默认值：0（禁用）；1（启用）。
 - key: Instance.ResetTimeHour
-  section: INSTANCE
-  name_zh: Instance.ResetTimeHour
+  section: 副本
+  name_zh: 副本重置小时
   description_zh: |
     描述：全局副本重置发生的小时（0-23）。
     默认值：4（04:00）。
 - key: Instance.ResetTimeRelativeTimestamp
-  section: INSTANCE
-  name_zh: Instance.ResetTimeRelativeTimestamp
+  section: 副本
+  name_zh: 副本重置参考时间戳
   description_zh: |
     描述：用于在游戏内日历中显示有效重置时间的参考时间戳。
     说明：应设置为过去某天的午夜时间戳，且 3 天游玩与 7 天游玩副本均在该日起始重置。
     默认值：1135814400（2005-12-29 00:00:00 GMT，7 天游玩周四重置，3 天游玩在周日/周三等重置）。
 - key: Rate.InstanceResetTime
-  section: INSTANCE
-  name_zh: Rate.InstanceResetTime
+  section: 副本
+  name_zh: 副本重置周期倍率
   description_zh: |
     描述：团队/英雄副本重置周期倍率（DBC 值）。
     说明：值越高重置越慢，越低重置越快；修改后需清理 characters 数据库中的 instance_reset 表。
     默认值：1。
 - key: Instance.UnloadDelay
-  section: INSTANCE
-  name_zh: Instance.UnloadDelay
+  section: 副本
+  name_zh: 副本卸载延迟
   description_zh: |
     描述：副本内无人时，卸载地图的等待时间（毫秒）。
     默认值：1800000（30 分钟）；0（禁用，副本地图保持至重置）。
 - key: AccountInstancesPerHour
-  section: INSTANCE
-  name_zh: AccountInstancesPerHour
+  section: 副本
+  name_zh: 账号每小时副本上限
   description_zh: |
     描述：单账号每小时可进入的不同副本数量上限。
     默认值：5。
 - key: Instance.SharedNormalHeroicId
-  section: INSTANCE
-  name_zh: Instance.SharedNormalHeroicId
+  section: 副本
+  name_zh: 普通/英雄共享锁定
   description_zh: |
     描述：强制 ICC 与 RS 的普通/英雄共享锁定；ToC 不受影响（普通/英雄仍分离）。
     默认值：1（启用）；0（禁用）。
 - key: DungeonAccessRequirements.PrintMode
-  section: INSTANCE
-  name_zh: DungeonAccessRequirements.PrintMode
+  section: 副本
+  name_zh: 副本入口条件提示方式
   description_zh: |
     描述：玩家不满足入口条件时的提示展示方式。
     默认值：1（每次只显示一个条件，类似 LFG）；0（不显示额外信息，仅“未满足要求”）；2（显示全部条件并可点击链接）。
 - key: DungeonAccessRequirements.PortalAvgIlevelCheck
-  section: INSTANCE
-  name_zh: DungeonAccessRequirements.PortalAvgIlevelCheck
+  section: 副本
+  name_zh: 入口平均装等检查
   description_zh: |
     描述：进入副本/团本传送门时是否检查平均装等（过低则拒绝进入，类似 LFG）。
     默认值：0（禁用，原版行为）；1（启用）。
 - key: DungeonAccessRequirements.OptionalStringID
-  section: INSTANCE
-  name_zh: DungeonAccessRequirements.OptionalStringID
+  section: 副本
+  name_zh: 入口条件附加提示ID
   description_zh: |
     描述：在输出入口条件后，是否在聊天中显示一条来自 acore_strings 的额外提示。
     默认值：0（禁用）；1+（启用，填写字符串 ID）。
 - key: JoinBGAndLFG.Enable
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: JoinBGAndLFG.Enable
+  section: 地下城与战场查找器
+  name_zh: 同时排队战场与随机副本
   description_zh: |
     描述：允许同时排队战场与随机副本。
     默认值：0（禁用）；1（启用）。
 - key: DungeonFinder.OptionsMask
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: DungeonFinder.OptionsMask
+  section: 地下城与战场查找器
+  name_zh: 查找器功能选项掩码
   description_zh: |
     描述：随机副本/团队查找器功能选项（位掩码）。
     取值：1（启用地下城查找器），2（启用团队浏览器），4（启用节日首领）。
     默认值：5。
 - key: LFG.Location.All
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: LFG.Location.All
+  section: 地下城与战场查找器
+  name_zh: LFG跨区域搜索
   description_zh: |
     描述：是否允许跨区域/跨地点搜索 LFG。
     默认值：0（禁用）；1（启用）。
 - key: LFG.MaxKickCount
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: LFG.MaxKickCount
+  section: 地下城与战场查找器
+  name_zh: LFG最大踢人次数
   description_zh: |
     描述：LFG 队伍允许的最大踢人次数（最多 3 次）。
     默认值：2；0（禁用，永不允许踢人）。
 - key: LFG.KickPreventionTimer
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: LFG.KickPreventionTimer
+  section: 地下城与战场查找器
+  name_zh: LFG踢人保护时间
   description_zh: |
     描述：新加入 LFG 队伍后不可被踢出的保护时间（秒）。
     默认值：900（15 分钟）；0（禁用）。
 - key: DungeonAccessRequirements.LFGLevelDBCOverride
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: DungeonAccessRequirements.LFGLevelDBCOverride
+  section: 地下城与战场查找器
+  name_zh: LFG等级限制覆盖DBC
   description_zh: |
     描述：是否使用 dungeon_access_requirements 表的 min_level/max_level 来显示或隐藏 LFG 副本。
     默认值：0（禁用）；1（启用）。
 - key: DungeonFinder.CastDeserter
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: DungeonFinder.CastDeserter
+  section: 地下城与战场查找器
+  name_zh: LFG离开施加逃兵
   description_zh: |
     描述：玩家中途离开副本时是否施加“逃兵”状态。
     默认值：1（启用，原版）；0（禁用）。
 - key: DungeonFinder.AllowCompleted
-  section: DUNGEON AND BATTLEGROUND FINDER
-  name_zh: DungeonFinder.AllowCompleted
+  section: 地下城与战场查找器
+  name_zh: LFG允许已完成副本
   description_zh: |
     描述：已完成的英雄副本是否仍可进入 LFG 队列。
     默认值：1（原版，已完成的副本仍可排队）。
     说明：0（经典模式：队伍任一成员当日已完成的副本将被排除，执行日常锁定）。
 - key: MinCharterName
-  section: CHARTER
-  name_zh: MinCharterName
+  section: 契约
+  name_zh: 契约名称最小长度
   description_zh: |
     描述：公会/竞技场战队契约名称最小长度。
     范围：1-24。
     默认值：2。
 - key: StrictCharterNames
-  section: CHARTER
-  name_zh: StrictCharterNames
+  section: 契约
+  name_zh: 契约名称字符限制
   description_zh: |
     描述：限制契约名称为特定语言字符集；若使用非法字符将禁止创建。
     默认值：0（禁用，仅受服务器时区相关的客户端检查）。
     取值：1（启用，仅基础拉丁字符）；2（启用，严格按 RealmZone；需客户端字体支持，非官方本地化需将自定义字体放到 clientdir/Fonts）；3（启用，基础拉丁 + 服务器时区相关）。
 - key: Guild.EventLogRecordsCount
-  section: GUILD
-  name_zh: Guild.EventLogRecordsCount
+  section: 公会
+  name_zh: 公会事件日志条目数
   description_zh: |
     描述：每个公会保留的公会事件日志条目数量。
     说明：超出数量将覆盖旧记录；过大可能影响性能。
     默认值：100。
 - key: Guild.ResetHour
-  section: GUILD
-  name_zh: Guild.ResetHour
+  section: 公会
+  name_zh: 公会重置小时
   description_zh: |
     描述：每日上限重置的小时（0-23）。
     默认值：6（06:00）。
 - key: Guild.BankEventLogRecordsCount
-  section: GUILD
-  name_zh: Guild.BankEventLogRecordsCount
+  section: 公会
+  name_zh: 公会银行日志条目数
   description_zh: |
     描述：每个公会保留的公会银行日志条目数量。
     说明：超出数量将覆盖旧记录；过大可能影响性能。
     默认值：25（最小值）。
 - key: MinPetitionSigns
-  section: GUILD
-  name_zh: MinPetitionSigns
+  section: 公会
+  name_zh: 公会创建所需签名数
   description_zh: |
     描述：创建公会所需的契约签名数量。
     范围：0-9。
     默认值：9。
 - key: Guild.CharterCost
-  section: GUILD
-  name_zh: Guild.CharterCost
+  section: 公会
+  name_zh: 公会契约费用
   description_zh: |
     描述：公会契约价格（铜币）。
     默认值：1000（10 银币）。
 - key: Guild.AllowMultipleGuildMaster
-  section: GUILD
-  name_zh: Guild.AllowMultipleGuildMaster
+  section: 公会
+  name_zh: 允许多个会长
   description_zh: |
     描述：是否允许多个会长（需使用 .guild rank 命令设置）。
     默认值：0（禁用）；1（启用）。
 - key: Guild.BankInitialTabs
-  section: GUILD
-  name_zh: Guild.BankInitialTabs
+  section: 公会
+  name_zh: 公会银行初始页数
   description_zh: |
     描述：公会创建时免费提供的公会银行标签页数量。
     默认值：0（不免费提供）。
     取值：1-6（创建时提供对应数量）。
 - key: Guild.BankTabCost0
-  section: GUILD
-  name_zh: Guild.BankTabCost0
+  section: 公会
+  name_zh: 公会银行第1页费用
   description_zh: |
     描述：公会银行第 1 页购买费用（铜币）。
     默认值：1000000（100 金）。
 - key: Guild.BankTabCost1
-  section: GUILD
-  name_zh: Guild.BankTabCost1
+  section: 公会
+  name_zh: 公会银行第2页费用
   description_zh: |
     描述：公会银行第 2 页购买费用（铜币）。
     默认值：2500000（250 金）。
 - key: Guild.BankTabCost2
-  section: GUILD
-  name_zh: Guild.BankTabCost2
+  section: 公会
+  name_zh: 公会银行第3页费用
   description_zh: |
     描述：公会银行第 3 页购买费用（铜币）。
     默认值：5000000（500 金）。
 - key: Guild.BankTabCost3
-  section: GUILD
-  name_zh: Guild.BankTabCost3
+  section: 公会
+  name_zh: 公会银行第4页费用
   description_zh: |
     描述：公会银行第 4 页购买费用（铜币）。
     默认值：10000000（1000 金）。
 - key: Guild.BankTabCost4
-  section: GUILD
-  name_zh: Guild.BankTabCost4
+  section: 公会
+  name_zh: 公会银行第5页费用
   description_zh: |
     描述：公会银行第 5 页购买费用（铜币）。
     默认值：25000000（2500 金）。
 - key: Guild.BankTabCost5
-  section: GUILD
-  name_zh: Guild.BankTabCost5
+  section: 公会
+  name_zh: 公会银行第6页费用
   description_zh: |
     描述：公会银行第 6 页购买费用（铜币）。
     默认值：50000000（5000 金）。
 - key: Guild.MemberLimit
-  section: GUILD
-  name_zh: Guild.MemberLimit
+  section: 公会
+  name_zh: 公会成员上限
   description_zh: |
     描述：公会成员数量上限（达到后不允许再邀请）。
     默认值：0（禁用）。
 - key: FFAPvPTimer
-  section: FFAPVP
-  name_zh: FFAPvPTimer
+  section: 自由PK
+  name_zh: 自由PK标记移除延迟
   description_zh: |
     描述：离开 FFAPvP 区域后取消 FFAPvP 标记的延迟时间（秒）。
     默认值：30。
 - key: OutdoorPvPCaptureRate
-  section: OUTDOORPVP
-  name_zh: OutdoorPvPCaptureRate
+  section: 野外PVP
+  name_zh: 野外PVP占领速率
   description_zh: |
     描述：野外 PvP 据点占领速率倍率（如东瘟疫之地、地狱火半岛）。
     默认值：1.0。
 - key: Wintergrasp.Enable
-  section: WINTERGRASP
-  name_zh: Wintergrasp.Enable
+  section: 冬拥湖
+  name_zh: 启用冬拥湖
   description_zh: |
     描述：是否启用冬拥湖战场。
     默认值：1（启用，仍属实验性）；0（战场禁用但仍进行世界处理）；2（禁用所有冬拥湖处理）。
 - key: Wintergrasp.PlayerMax
-  section: WINTERGRASP
-  name_zh: Wintergrasp.PlayerMax
+  section: 冬拥湖
+  name_zh: 冬拥湖每阵营最大人数
   description_zh: |
     描述：冬拥湖每阵营最大玩家数。
     默认值：120。
 - key: Wintergrasp.PlayerMin
-  section: WINTERGRASP
-  name_zh: Wintergrasp.PlayerMin
+  section: 冬拥湖
+  name_zh: 冬拥湖每阵营最小人数
   description_zh: |
     描述：冬拥湖每阵营最小玩家数。
     默认值：0。
 - key: Wintergrasp.PlayerMinLvl
-  section: WINTERGRASP
-  name_zh: Wintergrasp.PlayerMinLvl
+  section: 冬拥湖
+  name_zh: 冬拥湖最低等级
   description_zh: |
     描述：参加冬拥湖战斗的最低角色等级。
     默认值：75。
 - key: Wintergrasp.BattleTimer
-  section: WINTERGRASP
-  name_zh: Wintergrasp.BattleTimer
+  section: 冬拥湖
+  name_zh: 冬拥湖战斗时长
   description_zh: |
     描述：冬拥湖战斗持续时间（分钟）。
     默认值：30。
 - key: Wintergrasp.NoBattleTimer
-  section: WINTERGRASP
-  name_zh: Wintergrasp.NoBattleTimer
+  section: 冬拥湖
+  name_zh: 冬拥湖战斗间隔
   description_zh: |
     描述：冬拥湖战斗之间的间隔时间（分钟）。
     默认值：150。
 - key: Wintergrasp.CrashRestartTimer
-  section: WINTERGRASP
-  name_zh: Wintergrasp.CrashRestartTimer
+  section: 冬拥湖
+  name_zh: 冬拥湖崩溃重启延迟
   description_zh: |
     描述：战斗进行中世界服务器崩溃后，重启冬拥湖的延迟时间（分钟）。
     默认值：10。
 - key: Battleground.PrepTime
-  section: BATTLEGROUND
-  name_zh: Battleground.PrepTime
+  section: 战场
+  name_zh: 战场准备时间
   description_zh: |
     描述：战场准备阶段持续时间（秒）。
     默认值：120。
 - key: Battleground.CastDeserter
-  section: BATTLEGROUND
-  name_zh: Battleground.CastDeserter
+  section: 战场
+  name_zh: 战场离开施加逃兵
   description_zh: |
     描述：玩家离开进行中的战场时是否施加“逃兵”状态。
     默认值：1（启用）；0（禁用）。
 - key: Battleground.QueueAnnouncer.Enable
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.Enable
+  section: 战场
+  name_zh: 战场排队公告开关
   description_zh: |
     描述：在聊天中公告战场排队状态。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.QueueAnnouncer.Limit.MinLevel
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.Limit.MinLevel
+  section: 战场
+  name_zh: 排队公告最低等级
   description_zh: |
     描述：从指定等级开始限制队列公告。
     说明：启用后仅在排队人数 ≥ MinPlayers 时公告；80 级仅限制评级战场，低等级仅限制战歌峡谷。
     默认值：0（禁用）；10（全等级启用）；20（20 级及以上）；80（仅 80 级）。
 - key: Battleground.QueueAnnouncer.Limit.MinPlayers
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.Limit.MinPlayers
+  section: 战场
+  name_zh: 排队公告最小人数
   description_zh: |
     描述：启用等级限制时，只有排队人数达到该值才公告。
     默认值：3（至少 3 人才公告）。
 - key: Battleground.QueueAnnouncer.SpamProtection.Delay
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.SpamProtection.Delay
+  section: 战场
+  name_zh: 排队公告防刷延迟
   description_zh: |
     描述：玩家重新加入队列后再次公告的延迟时间（秒）。
     默认值：30。
 - key: Battleground.QueueAnnouncer.PlayerOnly
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.PlayerOnly
+  section: 战场
+  name_zh: 排队公告仅排队玩家
   description_zh: |
     描述：战场队列公告的显示范围。
     默认值：0（系统消息，所有人可见）；1（私密，仅排队玩家可见）。
 - key: Battleground.QueueAnnouncer.Timed
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.Timed
+  section: 战场
+  name_zh: 排队公告定时开关
   description_zh: |
     描述：是否按定时器周期公告战场队列。
     默认值：0（禁用）；1（启用，使用 Battleground.QueueAnnouncer.Timer）。
 - key: Battleground.QueueAnnouncer.Timer
-  section: BATTLEGROUND
-  name_zh: Battleground.QueueAnnouncer.Timer
+  section: 战场
+  name_zh: 排队公告定时间隔
   description_zh: |
     描述：队列公告的定时器间隔（毫秒）。
     默认值：30000（30 秒）。
 - key: Battleground.PrematureFinishTimer
-  section: BATTLEGROUND
-  name_zh: Battleground.PrematureFinishTimer
+  section: 战场
+  name_zh: 战场提前结束等待
   description_zh: |
     描述：一方人数不足时，战场提前结束的等待时间（毫秒）。
     默认值：300000（5 分钟）；0（禁用，不推荐）。
 - key: Battleground.PremadeGroupWaitForMatch
-  section: BATTLEGROUND
-  name_zh: Battleground.PremadeGroupWaitForMatch
+  section: 战场
+  name_zh: 预组队等待匹配时间
   description_zh: |
     描述：预组队伍等待匹配到对立阵营预组队伍的时间（毫秒）。
     默认值：1800000（30 分钟）；0（禁用，不推荐）。
 - key: Battleground.GiveXPForKills
-  section: BATTLEGROUND
-  name_zh: Battleground.GiveXPForKills
+  section: 战场
+  name_zh: 战场击杀给予经验
   description_zh: |
     描述：战场荣誉击杀是否给予经验。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.Random.ResetHour
-  section: BATTLEGROUND
-  name_zh: Battleground.Random.ResetHour
+  section: 战场
+  name_zh: 随机战场重置小时
   description_zh: |
     描述：随机战场全局重置的小时（0-23）。
     默认值：6（06:00）。
 - key: Battleground.StoreStatistics.Enable
-  section: BATTLEGROUND
-  name_zh: Battleground.StoreStatistics.Enable
+  section: 战场
+  name_zh: 保存战场统计
   description_zh: |
     描述：是否在数据库中保存战场比分统计。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.TrackDeserters.Enable
-  section: BATTLEGROUND
-  name_zh: Battleground.TrackDeserters.Enable
+  section: 战场
+  name_zh: 追踪战场逃兵
   description_zh: |
     描述：是否追踪战场逃兵。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.InvitationType
-  section: BATTLEGROUND
-  name_zh: Battleground.InvitationType
+  section: 战场
+  name_zh: 战场邀请类型
   description_zh: |
     描述：战场邀请类型。
     默认值：0（普通，邀请尽可能多的排队玩家，不做阵营平衡）。
     取值：1（实验，不允许一方被邀请过多）；2（实验，尽量平衡队伍人数）。
 - key: Battleground.ReportAFK.Timer
-  section: BATTLEGROUND
-  name_zh: Battleground.ReportAFK.Timer
+  section: 战场
+  name_zh: 可举报AFK等待时间
   description_zh: |
     描述：战斗开始后多少分钟可举报 AFK。
     默认值：4。
 - key: Battleground.ReportAFK
-  section: BATTLEGROUND
-  name_zh: Battleground.ReportAFK
+  section: 战场
+  name_zh: AFK踢出举报次数
   description_zh: |
     描述：踢出 AFK 所需的举报次数。
     范围：1-9。
     默认值：3。
 - key: Battleground.DisableQuestShareInBG
-  section: BATTLEGROUND
-  name_zh: Battleground.DisableQuestShareInBG
+  section: 战场
+  name_zh: 战场禁止共享任务
   description_zh: |
     描述：是否禁止在战场中共享任务。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.DisableReadyCheckInBG
-  section: BATTLEGROUND
-  name_zh: Battleground.DisableReadyCheckInBG
+  section: 战场
+  name_zh: 战场禁止准备确认
   description_zh: |
     描述：是否禁止在战场中发起准备确认。
     默认值：0（禁用）；1（启用）。
 - key: Battleground.RewardWinnerHonorFirst
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardWinnerHonorFirst
+  section: 战场
+  name_zh: 获胜首场荣誉奖励
   description_zh: |
     描述：随机战场/号召作战奖励（获胜首场荣誉）。
     默认值：30。
 - key: Battleground.RewardWinnerArenaFirst
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardWinnerArenaFirst
+  section: 战场
+  name_zh: 获胜首场竞技场点奖励
   description_zh: |
     描述：随机战场/号召作战奖励（获胜首场竞技场点）。
     默认值：25。
 - key: Battleground.RewardWinnerHonorLast
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardWinnerHonorLast
+  section: 战场
+  name_zh: 获胜非首场荣誉奖励
   description_zh: |
     描述：随机战场/号召作战奖励（获胜非首场荣誉）。
     默认值：15。
 - key: Battleground.RewardWinnerArenaLast
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardWinnerArenaLast
+  section: 战场
+  name_zh: 获胜非首场竞技场点奖励
   description_zh: |
     描述：随机战场/号召作战奖励（获胜非首场竞技场点）。
     默认值：0。
 - key: Battleground.RewardLoserHonorFirst
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardLoserHonorFirst
+  section: 战场
+  name_zh: 失败首场荣誉奖励
   description_zh: |
     描述：随机战场/号召作战奖励（失败首场荣誉）。
     默认值：5。
 - key: Battleground.RewardLoserHonorLast
-  section: BATTLEGROUND
-  name_zh: Battleground.RewardLoserHonorLast
+  section: 战场
+  name_zh: 失败非首场荣誉奖励
   description_zh: |
     描述：随机战场/号召作战奖励（失败非首场荣誉）。
     默认值：5。
 - key: Battleground.PlayerRespawn
-  section: BATTLEGROUND
-  name_zh: Battleground.PlayerRespawn
+  section: 战场
+  name_zh: 战场玩家复活间隔
   description_zh: |
     描述：战场玩家复活间隔（秒）。
     默认值：30。
 - key: Battleground.RestorationBuffRespawn
-  section: BATTLEGROUND
-  name_zh: Battleground.RestorationBuffRespawn
+  section: 战场
+  name_zh: 战场恢复增益刷新
   description_zh: |
     描述：战场恢复增益刷新时间（秒）。
     默认值：20（建议 10+）。
 - key: Battleground.BerserkingBuffRespawn
-  section: BATTLEGROUND
-  name_zh: Battleground.BerserkingBuffRespawn
+  section: 战场
+  name_zh: 战场狂暴增益刷新
   description_zh: |
     描述：战场狂暴增益刷新时间（秒）。
     默认值：120（建议 10+）。
 - key: Battleground.SpeedBuffRespawn
-  section: BATTLEGROUND
-  name_zh: Battleground.SpeedBuffRespawn
+  section: 战场
+  name_zh: 战场速度增益刷新
   description_zh: |
     描述：战场速度增益刷新时间（秒）。
     默认值：150（建议 10+）。
 - key: Battleground.Override.LowLevels.MinPlayers
-  section: BATTLEGROUND
-  name_zh: Battleground.Override.LowLevels.MinPlayers
+  section: 战场
+  name_zh: 低等级战场最小人数覆盖
   description_zh: |
     描述：为所有低于 MaxPlayerLevel 的等级覆盖每队最小人数。
     默认值：0（禁用）。
 - key: Battleground.Warsong.Flags
-  section: BATTLEGROUND
-  name_zh: Battleground.Warsong.Flags
+  section: 战场
+  name_zh: 战歌峡谷获胜旗帜数
   description_zh: |
     描述：战歌峡谷获胜所需旗帜数。
     默认值：3（原版）；1（最小）。
 - key: Battleground.Arathi.CapturePoints
-  section: BATTLEGROUND
-  name_zh: Battleground.Arathi.CapturePoints
+  section: 战场
+  name_zh: 阿拉希盆地获胜分数
   description_zh: |
     描述：阿拉希盆地获胜所需据点分数。
     默认值：1600（巫妖王之怒）；2000（经典旧世）。
 - key: Battleground.Alterac.Reinforcements
-  section: BATTLEGROUND
-  name_zh: Battleground.Alterac.Reinforcements
+  section: 战场
+  name_zh: 奥特兰克增援数量
   description_zh: |
     描述：奥特兰克山谷每阵营总增援数量（修改后需重启服务器）。
     默认值：600（WotLK）；500（经典旧世）；0（早期版本，仅击杀首领取胜）。
 - key: Battleground.Alterac.ReputationOnBossDeath
-  section: BATTLEGROUND
-  name_zh: Battleground.Alterac.ReputationOnBossDeath
+  section: 战场
+  name_zh: 奥特兰克击杀首领声望
   description_zh: |
     描述：奥特兰克山谷击杀首领获得的声望点数（修改后需重启服务器）。
     默认值：350（WotLK）；389（经典旧世）。
 - key: Battleground.EyeOfTheStorm.CapturePoints
-  section: BATTLEGROUND
-  name_zh: Battleground.EyeOfTheStorm.CapturePoints
+  section: 战场
+  name_zh: 风暴之眼获胜分数
   description_zh: |
     描述：风暴之眼获胜所需据点分数。
     说明：若不改客户端，UI 最大分数可能不匹配该值。
     默认值：1600（WotLK，UI 匹配）；2000（TBC，UI 不匹配）。
 - key: Arena.PrepTime
-  section: ARENA
-  name_zh: Arena.PrepTime
+  section: 竞技场
+  name_zh: 竞技场准备时间
   description_zh: |
     描述：竞技场准备阶段持续时间（秒）。
     默认值：60。
 - key: Arena.MaxRatingDifference
-  section: ARENA
-  name_zh: Arena.MaxRatingDifference
+  section: 竞技场
+  name_zh: 最大评分差
   description_zh: |
     描述：排位赛两队允许的最大评分差距。
     默认值：150（启用）；0（禁用）。
 - key: Arena.RatingDiscardTimer
-  section: ARENA
-  name_zh: Arena.RatingDiscardTimer
+  section: 竞技场
+  name_zh: 评分差忽略等待
   description_zh: |
     描述：忽略评分差异的等待时间（毫秒）。
     默认值：600000（10 分钟）；0（禁用）。
 - key: Arena.PreviousOpponentsDiscardTimer
-  section: ARENA
-  name_zh: Arena.PreviousOpponentsDiscardTimer
+  section: 竞技场
+  name_zh: 忽略上场对手时间
   description_zh: |
     描述：忽略上一场对手的时间窗口（毫秒）。
     默认值：120000（2 分钟，原版）；0（禁用）。
 - key: Arena.AutoDistributePoints
-  section: ARENA
-  name_zh: Arena.AutoDistributePoints
+  section: 竞技场
+  name_zh: 自动发放竞技场点数
   description_zh: |
     描述：是否自动发放竞技场点数。
     默认值：0（禁用）；1（启用）。
 - key: Arena.AutoDistributeInterval
-  section: ARENA
-  name_zh: Arena.AutoDistributeInterval
+  section: 竞技场
+  name_zh: 点数发放周期
   description_zh: |
     描述：自动发放竞技场点数的周期（天）。
     默认值：7（每周）。
 - key: Arena.GamesRequired
-  section: ARENA
-  name_zh: Arena.GamesRequired
+  section: 竞技场
+  name_zh: 点数发放所需场次
   description_zh: |
     描述：获得竞技场点数发放资格所需参与的比赛场次。
     默认值：10。
 - key: Arena.QueueAnnouncer.Enable
-  section: ARENA
-  name_zh: Arena.QueueAnnouncer.Enable
+  section: 竞技场
+  name_zh: 竞技场排队公告开关
   description_zh: |
     描述：是否公告竞技场排队状态。
     默认值：0（禁用）；1（启用）。
 - key: Arena.QueueAnnouncer.PlayerOnly
-  section: ARENA
-  name_zh: Arena.QueueAnnouncer.PlayerOnly
+  section: 竞技场
+  name_zh: 排队公告仅排队玩家
   description_zh: |
     描述：竞技场排队公告的显示范围。
     默认值：0（系统消息，所有人可见）；1（私密，仅排队玩家可见）。
 - key: Arena.QueueAnnouncer.Detail
-  section: ARENA
-  name_zh: Arena.QueueAnnouncer.Detail
+  section: 竞技场
+  name_zh: 排队公告详细程度
   description_zh: |
     描述：竞技场排队公告的详细程度。
     默认值：3（队伍名称与评分）；2（仅队伍名称）；1（仅评分）；0（不公告）。
 - key: Arena.ArenaStartRating
-  section: ARENA
-  name_zh: Arena.ArenaStartRating
+  section: 竞技场
+  name_zh: 队伍初始评分
   description_zh: |
     描述：新竞技场队伍初始评分（第 6 赛季及之后）。
     默认值：0。
 - key: Arena.LegacyArenaStartRating
-  section: ARENA
-  name_zh: Arena.LegacyArenaStartRating
+  section: 竞技场
+  name_zh: 经典赛季初始评分
   description_zh: |
     描述：新竞技场队伍初始评分（第 1-5 赛季）。
     默认值：1500。
 - key: Arena.ArenaStartPersonalRating
-  section: ARENA
-  name_zh: Arena.ArenaStartPersonalRating
+  section: 竞技场
+  name_zh: 个人初始评分
   description_zh: |
     描述：加入队伍时的个人初始评分。
     默认值：0。
 - key: Arena.ArenaStartMatchmakerRating
-  section: ARENA
-  name_zh: Arena.ArenaStartMatchmakerRating
+  section: 竞技场
+  name_zh: 匹配评分初始值
   description_zh: |
     描述：玩家匹配评分（MMR）初始值。
     默认值：1500。
 - key: Arena.ArenaWinRatingModifier1
-  section: ARENA
-  name_zh: Arena.ArenaWinRatingModifier1
+  section: 竞技场
+  name_zh: 低评分胜方评分增量修正
   description_zh: |
     描述：胜方评分 <1300 时的评分增量修正值。
     说明：1000-1300 区间会逐步衰减（提高该值可获得更多评分）。
     默认值：48。
 - key: Arena.ArenaWinRatingModifier2
-  section: ARENA
-  name_zh: Arena.ArenaWinRatingModifier2
+  section: 竞技场
+  name_zh: 高评分胜方评分增量修正
   description_zh: |
     描述：胜方评分 ≥1300 时的评分增量修正值（提高该值可获得更多评分）。
     默认值：24。
 - key: Arena.ArenaLoseRatingModifier
-  section: ARENA
-  name_zh: Arena.ArenaLoseRatingModifier
+  section: 竞技场
+  name_zh: 败方评分扣除修正
   description_zh: |
     描述：败方评分扣除修正值（提高该值将扣更多分）。
     默认值：24。
 - key: Arena.ArenaMatchmakerRatingModifier
-  section: ARENA
-  name_zh: Arena.ArenaMatchmakerRatingModifier
+  section: 竞技场
+  name_zh: 匹配评分修正值
   description_zh: |
     描述：匹配评分（MMR）修正值。
     默认值：24。
 - key: ArenaTeam.CharterCost.2v2
-  section: ARENA
-  name_zh: ArenaTeam.CharterCost.2v2
+  section: 竞技场
+  name_zh: 2v2队伍契约费用
   description_zh: |
     描述：2v2 竞技场队伍契约费用（铜币）。
     默认值：800000（80 金）。
 - key: ArenaTeam.CharterCost.3v3
-  section: ARENA
-  name_zh: ArenaTeam.CharterCost.3v3
+  section: 竞技场
+  name_zh: 3v3队伍契约费用
   description_zh: |
     描述：3v3 竞技场队伍契约费用（铜币）。
     默认值：1200000（120 金）。
 - key: ArenaTeam.CharterCost.5v5
-  section: ARENA
-  name_zh: ArenaTeam.CharterCost.5v5
+  section: 竞技场
+  name_zh: 5v5队伍契约费用
   description_zh: |
     描述：5v5 竞技场队伍契约费用（铜币）。
     默认值：2000000（200 金）。
 - key: MaxAllowedMMRDrop
-  section: ARENA
-  name_zh: MaxAllowedMMRDrop
+  section: 竞技场
+  name_zh: 允许最大MMR下跌
   description_zh: |
     描述：允许从历史最高 MMR 下跌的最大幅度，防止刷分降级匹配弱队。
     示例：最高 2400，MaxAllowedMMRDrop=500 时最低不低于 1900。
     默认值：500。
 - key: MailDeliveryDelay
-  section: MAIL
-  name_zh: MailDeliveryDelay
+  section: 邮件
+  name_zh: 邮件投递延迟
   description_zh: |
     描述：发送物品邮件时的投递延迟（秒）。
     默认值：3600（1 小时）。
 - key: LevelReq.Mail
-  section: MAIL
-  name_zh: LevelReq.Mail
+  section: 邮件
+  name_zh: 邮件最低等级
   description_zh: |
     描述：发送和接收邮件的最低等级。
     默认值：1。
 - key: IsContinentTransport.Enabled
-  section: TRANSPORT
-  name_zh: IsContinentTransport.Enabled
+  section: 交通工具
+  name_zh: 启用大陆交通工具
   description_zh: |
     描述：是否启用大陆交通工具（船、飞艇等）。
     默认值：1（启用）。
 - key: IsPreloadedContinentTransport.Enabled
-  section: TRANSPORT
-  name_zh: IsPreloadedContinentTransport.Enabled
+  section: 交通工具
+  name_zh: 预加载大陆交通工具
   description_zh: |
     描述：是否预加载大陆交通工具。
     说明：低配服务器不建议启用，会增加约 100% 内存占用。
     默认值：0（禁用）。
 - key: StrictChannelNames
-  section: CHAT CHANNEL
-  name_zh: StrictChannelNames
+  section: 聊天频道
+  name_zh: 频道名称字符限制
   description_zh: |
     描述：限制聊天频道名称为特定语言字符集。
     默认值：0（禁用，仅受服务器时区相关的客户端检查）。
     取值：1（启用，仅基础拉丁字符）；2（启用，严格按 RealmZone；需客户端字体支持，非官方本地化需将自定义字体放到 clientdir/Fonts）；3（启用，基础拉丁 + 服务器时区相关）。
 - key: AddonChannel
-  section: CHAT CHANNEL
-  name_zh: AddonChannel
+  section: 聊天频道
+  name_zh: 插件频道开关
   description_zh: |
     描述：是否启用服务器端插件频道（部分插件在禁用时无法正常工作）。
     默认值：1（启用）；0（禁用）。
 - key: ChatFakeMessagePreventing
-  section: CHAT CHANNEL
-  name_zh: ChatFakeMessagePreventing
+  section: 聊天频道
+  name_zh: 防聊天伪造空格
   description_zh: |
     描述：防止通过空格伪造聊天消息，连续空白会被折叠为单个空格。
     说明：不作用于插件语言，可能影响使用普通聊天消息传输数据的旧插件。
     默认值：1（启用，原版）；0（禁用）。
 - key: ChatStrictLinkChecking.Severity
-  section: CHAT CHANNEL
-  name_zh: ChatStrictLinkChecking.Severity
+  section: 聊天频道
+  name_zh: 链接严格校验级别
   description_zh: |
     描述：检查聊天中的物品/法术/任务等链接的严格程度。
     默认值：0（仅验证链接数据与颜色，不校验文本）；1（额外校验链接文本与数据一致）；-1（仅验证链接数据，允许自定义颜色）。
     注意：设为 1 时需提供服务器使用的所有客户端语言对应的 .dbc 文件，否则该语言的链接消息可能被阻止。
 - key: ChatStrictLinkChecking.Kick
-  section: CHAT CHANNEL
-  name_zh: ChatStrictLinkChecking.Kick
+  section: 聊天频道
+  name_zh: 非法控制字符处理
   description_zh: |
     描述：收到包含非法控制字符的消息时的处理方式。
     默认值：0（静默忽略）；1（忽略并踢出玩家）。
 - key: ChatFlood.MessageCount
-  section: CHAT CHANNEL
-  name_zh: ChatFlood.MessageCount
+  section: 聊天频道
+  name_zh: 聊天刷屏消息数阈值
   description_zh: |
     描述：触发聊天刷屏惩罚的消息数量阈值。
     默认值：10（启用）；0（禁用）。
 - key: ChatFlood.MessageDelay
-  section: CHAT CHANNEL
-  name_zh: ChatFlood.MessageDelay
+  section: 聊天频道
+  name_zh: 聊天刷屏消息间隔
   description_zh: |
     描述：计入 ChatFlood.MessageCount 的消息间隔（秒）。
     默认值：1。
 - key: ChatFlood.AddonMessageCount
-  section: CHAT CHANNEL
-  name_zh: ChatFlood.AddonMessageCount
+  section: 聊天频道
+  name_zh: 插件刷屏消息数阈值
   description_zh: |
     描述：触发插件消息刷屏惩罚的消息数量阈值。
     默认值：100（启用）；0（禁用）。
 - key: ChatFlood.AddonMessageDelay
-  section: CHAT CHANNEL
-  name_zh: ChatFlood.AddonMessageDelay
+  section: 聊天频道
+  name_zh: 插件刷屏消息间隔
   description_zh: |
     描述：计入 ChatFlood.AddonMessageCount 的插件消息间隔（秒）。
     默认值：1。
 - key: ChatFlood.MuteTime
-  section: CHAT CHANNEL
-  name_zh: ChatFlood.MuteTime
+  section: 聊天频道
+  name_zh: 刷屏禁言时长
   description_zh: |
     描述：违反刷屏限制时被禁言的时间（秒）。
     默认值：10。
 - key: Chat.MuteFirstLogin
-  section: CHAT CHANNEL
-  name_zh: Chat.MuteFirstLogin
+  section: 聊天频道
+  name_zh: 首次登录禁言
   description_zh: |
     描述：首次登录是否启用禁言（达到指定分钟后才可发言）。
     说明：期间仍可使用队伍与公会聊天。
     默认值：0（禁用）；1（启用）。
 - key: Chat.MuteTimeFirstLogin
-  section: CHAT CHANNEL
-  name_zh: Chat.MuteTimeFirstLogin
+  section: 聊天频道
+  name_zh: 首次登录禁言时长
   description_zh: |
     描述：首次登录禁言持续时间（分钟）。
     默认值：120。
 - key: Channel.RestrictedLfg
-  section: CHAT CHANNEL
-  name_zh: Channel.RestrictedLfg
+  section: 聊天频道
+  name_zh: 限制LFG频道
   description_zh: |
     描述：限制“寻求组队”频道仅 LFG 注册角色可加入。
     默认值：1（启用，仅注册后可加入）；0（禁用，随时可加入）。
 - key: Channel.SilentlyGMJoin
-  section: CHAT CHANNEL
-  name_zh: Channel.SilentlyGMJoin
+  section: 聊天频道
+  name_zh: GM静默加入频道
   description_zh: |
     描述：GM 是否静默加入频道。
     说明：启用后 GM 的踢/封命令不会广播。
     默认值：0（禁用，有加入提示）；1（启用，无加入提示）。
 - key: Channel.ModerationGMLevel
-  section: CHAT CHANNEL
-  name_zh: Channel.ModerationGMLevel
+  section: 聊天频道
+  name_zh: 频道管理GM等级
   description_zh: |
     描述：在频道中执行管理员命令所需的 GM 最低安全等级。
     说明：也会绕过需要密码的频道的密码提示。
     默认值：1（版主及以上）；0（仅频道管理员权限）。
 - key: ChatLevelReq.Channel
-  section: CHAT CHANNEL
-  name_zh: ChatLevelReq.Channel
+  section: 聊天频道
+  name_zh: 频道聊天最低等级
   description_zh: |
     描述：在聊天频道发言的最低等级。
     默认值：1。
 - key: ChatLevelReq.Whisper
-  section: CHAT CHANNEL
-  name_zh: ChatLevelReq.Whisper
+  section: 聊天频道
+  name_zh: 密语最低等级
   description_zh: |
     描述：使用密语的最低等级。
     默认值：1。
 - key: ChatLevelReq.Say
-  section: CHAT CHANNEL
-  name_zh: ChatLevelReq.Say
+  section: 聊天频道
+  name_zh: 说/喊/表情最低等级
   description_zh: |
     描述：使用说/喊/表情的最低等级。
     默认值：1。
 - key: PartyLevelReq
-  section: CHAT CHANNEL
-  name_zh: PartyLevelReq
+  section: 聊天频道
+  name_zh: 组队邀请最低等级
   description_zh: |
     描述：邀请组队的最低等级（不在邀请好友名单的玩家）。
     说明：在邀请好友名单中的玩家可无视该限制。
     默认值：1。
 - key: PreserveCustomChannels
-  section: CHAT CHANNEL
-  name_zh: PreserveCustomChannels
+  section: 聊天频道
+  name_zh: 保存自定义频道
   description_zh: |
     描述：是否保存自定义频道设置（密码、自动转移所有权、封禁列表等）到数据库。
     说明：需启用才能保存关闭“自动转移所有权”的世界/交易等频道设置。
     默认值：0（禁用，原版：最后一人离开即丢失设置）；1（启用）。
 - key: PreserveCustomChannelDuration
-  section: CHAT CHANNEL
-  name_zh: PreserveCustomChannelDuration
+  section: 聊天频道
+  name_zh: 自定义频道保留时长
   description_zh: |
     描述：清理自定义频道的时间阈值（天）。
     说明：仅清理启用了自动转移所有权（默认行为）的频道。
     默认值：14（启用，14 天未使用即清理）；0（禁用，永久保存）。
 - key: AllowTwoSide.Accounts
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Accounts
+  section: 阵营交互
+  name_zh: 同账号双阵营
   description_zh: |
     描述：是否允许同一账号创建双方阵营角色。
     默认值：1（启用）；0（禁用）。
 - key: AllowTwoSide.Interaction.Calendar
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Calendar
+  section: 阵营交互
+  name_zh: 跨阵营日历邀请
   description_zh: |
     描述：是否允许跨阵营日历邀请。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Chat
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Chat
+  section: 阵营交互
+  name_zh: 跨阵营说话聊天
   description_zh: |
     描述：是否允许跨阵营“说话”聊天。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Emote
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Emote
+  section: 阵营交互
+  name_zh: 跨阵营表情
   description_zh: |
     描述：是否允许跨阵营表情消息（如 /e looks into the sky）。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Channel
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Channel
+  section: 阵营交互
+  name_zh: 跨阵营频道聊天
   description_zh: |
     描述：是否允许跨阵营频道聊天。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Group
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Group
+  section: 阵营交互
+  name_zh: 跨阵营组队
   description_zh: |
     描述：是否允许跨阵营组队。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Guild
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Guild
+  section: 阵营交互
+  name_zh: 跨阵营公会
   description_zh: |
     描述：是否允许跨阵营加入公会。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Arena
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Arena
+  section: 阵营交互
+  name_zh: 跨阵营竞技场队伍
   description_zh: |
     描述：是否允许跨阵营加入竞技场队伍。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Auction
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Auction
+  section: 阵营交互
+  name_zh: 跨阵营拍卖
   description_zh: |
     描述：是否允许跨阵营拍卖。
     说明：启用后所有拍卖行视为中立，并会收取中立拍卖行税率。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Interaction.Mail
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Interaction.Mail
+  section: 阵营交互
+  name_zh: 跨阵营邮寄
   description_zh: |
     描述：是否允许跨阵营邮寄。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.WhoList
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.WhoList
+  section: 阵营交互
+  name_zh: /who显示双方阵营
   description_zh: |
     描述：/who 列表是否显示双方阵营角色。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.AddFriend
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.AddFriend
+  section: 阵营交互
+  name_zh: 跨阵营添加好友
   description_zh: |
     描述：是否允许跨阵营添加好友。
     默认值：0（禁用）；1（启用）。
 - key: AllowTwoSide.Trade
-  section: FACTION INTERACTION
-  name_zh: AllowTwoSide.Trade
+  section: 阵营交互
+  name_zh: 跨阵营交易
   description_zh: |
     描述：是否允许跨阵营交易。
     默认值：0（禁用）；1（启用）。
 - key: TalentsInspecting
-  section: FACTION INTERACTION
-  name_zh: TalentsInspecting
+  section: 阵营交互
+  name_zh: 查看敌对阵营天赋
   description_zh: |
     描述：是否允许查看敌对阵营角色天赋。
     说明：不影响 GM 模式角色。
     默认值：1（启用）；0（禁用）。
 - key: ChangeFaction.MaxMoney
-  section: FACTION INTERACTION
-  name_zh: ChangeFaction.MaxMoney
+  section: 阵营交互
+  name_zh: 转阵营最大携带金币
   description_zh: |
     描述：角色进行阵营转换允许携带的最大金币（铜币）。
     默认值：0（禁用限制）。
     示例：设置为 10000 表示最多 1 金。
 - key: RecruitAFriend.MaxLevel
-  section: RECRUIT A FRIEND
-  name_zh: RecruitAFriend.MaxLevel
+  section: 招募好友
+  name_zh: 招募好友加成最高等级
   description_zh: |
     描述：招募好友经验加成生效的最高等级。
     默认值：60。
 - key: RecruitAFriend.MaxDifference
-  section: RECRUIT A FRIEND
-  name_zh: RecruitAFriend.MaxDifference
+  section: 招募好友
+  name_zh: 招募好友最大等级差
   description_zh: |
     描述：招募者与好友之间可享受加成的最大等级差。
     默认值：4。
 - key: MaxRecruitAFriendBonusDistance
-  section: RECRUIT A FRIEND
-  name_zh: MaxRecruitAFriendBonusDistance
+  section: 招募好友
+  name_zh: 招募好友加成最大距离
   description_zh: |
     描述：队伍内获得招募好友经验加成的最大距离。
     默认值：100。
 - key: Calendar.DeleteOldEventsHour
-  section: CALENDAR
-  name_zh: Calendar.DeleteOldEventsHour
+  section: 日历
+  name_zh: 清理过期日历事件小时
   description_zh: |
     描述：每日清理过期日历事件的小时（0-23）。
     默认值：6（06:00）。
 - key: Event.Announce
-  section: GAME EVENT
-  name_zh: Event.Announce
+  section: 游戏事件
+  name_zh: 公告游戏事件
   description_zh: |
     描述：是否公告游戏事件。
     默认值：0（禁用）；1（启用）。
 - key: Sunsreach.CounterMax
-  section: WORLD STATE
-  name_zh: Sunsreach.CounterMax
+  section: 世界状态
+  name_zh: 太阳城夺回计数阈值
   description_zh: |
     描述：太阳之井夺回事件的阶段转换计数阈值。
     默认值：10000。
 - key: ScourgeInvasion.CounterFirst
-  section: WORLD STATE
-  name_zh: ScourgeInvasion.CounterFirst
+  section: 世界状态
+  name_zh: 天灾入侵第一阶段阈值
   description_zh: |
     描述：天灾入侵事件第一阶段计数阈值。
     默认值：50。
 - key: ScourgeInvasion.CounterSecond
-  section: WORLD STATE
-  name_zh: ScourgeInvasion.CounterSecond
+  section: 世界状态
+  name_zh: 天灾入侵第二阶段阈值
   description_zh: |
     描述：天灾入侵事件第二阶段计数阈值。
     默认值：100。
 - key: ScourgeInvasion.CounterThird
-  section: WORLD STATE
-  name_zh: ScourgeInvasion.CounterThird
+  section: 世界状态
+  name_zh: 天灾入侵第三阶段阈值
   description_zh: |
     描述：天灾入侵事件第三阶段计数阈值。
     默认值：150。
 - key: AuctionHouse.WorkerThreads
-  section: AUCTION HOUSE
-  name_zh: AuctionHouse.WorkerThreads
+  section: 拍卖行
+  name_zh: 拍卖行搜索线程
   description_zh: |
     描述：拍卖行搜索工作线程数量。
     默认值：1。
 - key: LevelReq.Auction
-  section: AUCTION HOUSE
-  name_zh: LevelReq.Auction
+  section: 拍卖行
+  name_zh: 拍卖行最低等级
   description_zh: |
     描述：使用拍卖行的最低等级。
     默认值：1。
 - key: Rate.Auction.Time
-  section: AUCTION HOUSE
-  name_zh: Rate.Auction.Time
+  section: 拍卖行
+  name_zh: 拍卖时长倍率
   description_zh: |
     描述：拍卖时长倍率。
     默认值：1。
 - key: Rate.Auction.Deposit
-  section: AUCTION HOUSE
-  name_zh: Rate.Auction.Deposit
+  section: 拍卖行
+  name_zh: 拍卖押金倍率
   description_zh: |
     描述：拍卖押金倍率（拍卖开始时收取）。
     默认值：1。
 - key: Rate.Auction.Cut
-  section: AUCTION HOUSE
-  name_zh: Rate.Auction.Cut
+  section: 拍卖行
+  name_zh: 拍卖手续费倍率
   description_zh: |
     描述：拍卖手续费倍率（拍卖结束时收取）。
     默认值：1。
 - key: PlayerDump.DisallowPaths
-  section: PLAYER DUMP
-  name_zh: PlayerDump.DisallowPaths
+  section: 玩家导出
+  name_zh: 禁止导出路径
   description_zh: |
     描述：禁止在 PlayerDump 输出文件中使用路径。
     默认值：1。
 - key: PlayerDump.DisallowOverwrite
-  section: PLAYER DUMP
-  name_zh: PlayerDump.DisallowOverwrite
+  section: 玩家导出
+  name_zh: 禁止覆盖导出文件
   description_zh: |
     描述：禁止 PlayerDump 覆盖已有文件。
     默认值：1。
 - key: ICC.Buff.Horde
-  section: CUSTOM
-  name_zh: ICC.Buff.Horde
+  section: 自定义
+  name_zh: ICC部落增益光环ID
   description_zh: |
     描述：冰冠堡垒（ICC）部落增益光环的法术 ID。
     说明：修改后需重启服务器。
     默认值：73822（30% 部落增益）。
 - key: ICC.Buff.Alliance
-  section: CUSTOM
-  name_zh: ICC.Buff.Alliance
+  section: 自定义
+  name_zh: ICC联盟增益光环ID
   description_zh: |
     描述：冰冠堡垒（ICC）联盟增益光环的法术 ID。
     说明：修改后需重启服务器。
     默认值：73828（30% 联盟增益）。
 - key: WipeGunshipBlizzlike.Enable
-  section: CUSTOM
-  name_zh: WipeGunshipBlizzlike.Enable
+  section: 自定义
+  name_zh: 飞艇战斗无玩家强制团灭
   description_zh: |
     描述：若飞艇战斗甲板上没有玩家则强制团灭（原版行为）。
     默认值：1（启用）。
 - key: Minigob.Manabonk.Enable
-  section: CUSTOM
-  name_zh: Minigob.Manabonk.Enable
+  section: 自定义
+  name_zh: 小地精法力邦克
   description_zh: |
     描述：启用/禁用小地精“法力邦克”。
     默认值：1。
 - key: Calculate.Creature.Zone.Area.Data
-  section: CUSTOM
-  name_zh: Calculate.Creature.Zone.Area.Data
+  section: 自定义
+  name_zh: 计算生物区域数据
   description_zh: |
     描述：加载时计算生物的 zoneId/areaId 并保存到 creature 表。
     警告：会显著降低世界服务器启动速度，仅用于调试。
     默认值：0（不启用）。
 - key: Calculate.Gameoject.Zone.Area.Data
-  section: CUSTOM
-  name_zh: Calculate.Gameoject.Zone.Area.Data
+  section: 自定义
+  name_zh: 计算游戏对象区域数据
   description_zh: |
     描述：加载时计算游戏对象的 zoneId/areaId 并保存到 gameobject 表。
     警告：会显著降低世界服务器启动速度，仅用于调试。
     默认值：0（不启用）。
 - key: TeleportTimeoutNear
-  section: CUSTOM
-  name_zh: TeleportTimeoutNear
+  section: 自定义
+  name_zh: 近距离传送超时
   description_zh: |
     描述：近距离传送超时阈值。
     默认值：25。
 - key: TeleportTimeoutFar
-  section: CUSTOM
-  name_zh: TeleportTimeoutFar
+  section: 自定义
+  name_zh: 远距离传送超时
   description_zh: |
     描述：远距离传送超时阈值。
     默认值：45。
 - key: DailyRBGArenaPoints.MinLevel
-  section: CUSTOM
-  name_zh: DailyRBGArenaPoints.MinLevel
+  section: 自定义
+  name_zh: 评级战场胜利点数最低等级
   description_zh: |
     描述：在等级达到该值时，首次胜利的评级战场可获得竞技场点数。
     默认值：71（原版）。
 - key: MunchingBlizzlike.Enabled
-  section: CUSTOM
-  name_zh: MunchingBlizzlike.Enabled
+  section: 自定义
+  name_zh: 原版Munching机制
   description_zh: |
     描述：启用原版“munching”机制（如战士撕裂、法师点燃）。
     默认值：1（原版）。
 - key: Daze.Enabled
-  section: CUSTOM
-  name_zh: Daze.Enabled
+  section: 自定义
+  name_zh: 近战致晕开关
   description_zh: |
     描述：是否启用怪物近战致晕（Daze）几率。
     默认值：1（原版）。
 - key: InfiniteAmmo.Enabled
-  section: CUSTOM
-  name_zh: InfiniteAmmo.Enabled
+  section: 自定义
+  name_zh: 无限弹药
   description_zh: |
     描述：是否禁用远程/投掷武器弹药消耗。
     默认值：0（原版）。
 - key: Debug.Battleground
-  section: DEBUG
-  name_zh: Debug.Battleground
+  section: 调试
+  name_zh: 战场调试模式
   description_zh: |
     描述：启用/禁用战场 1v0 调试模式（启用后游戏内命令不可用）。
     默认值：0（禁用）；1（启用）。
 - key: Debug.Arena
-  section: DEBUG
-  name_zh: Debug.Arena
+  section: 调试
+  name_zh: 竞技场调试模式
   description_zh: |
     描述：启用/禁用竞技场 1v1 调试模式（启用后游戏内命令不可用）。
     默认值：0（禁用）；1（启用）。
 - key: Respawn.DynamicRateCreature
-  section: DYNAMIC RESPAWN SETTINGS
-  name_zh: Respawn.DynamicRateCreature
+  section: 动态刷新设置
+  name_zh: 生物动态刷新倍率
   description_zh: |
     描述：根据区域玩家数量动态调整生物刷新时间。
     说明：玩家数超过阈值后按比例缩短刷新时间；不影响副本、首领或任务 NPC。
     公式：adjustFactor = rate / playerCount，RespawnTime = RespawnTime × adjustFactor。
     默认值：1（禁用）。
 - key: Respawn.DynamicMinimumCreature
-  section: DYNAMIC RESPAWN SETTINGS
-  name_zh: Respawn.DynamicMinimumCreature
+  section: 动态刷新设置
+  name_zh: 生物动态最小刷新时间
   description_zh: |
     描述：动态缩放下生物的最小刷新时间（秒）。
     默认值：10。
 - key: Respawn.DynamicRateGameObject
-  section: DYNAMIC RESPAWN SETTINGS
-  name_zh: Respawn.DynamicRateGameObject
+  section: 动态刷新设置
+  name_zh: 物件动态刷新倍率
   description_zh: |
     描述：根据区域玩家数量动态调整游戏对象刷新时间。
     说明：玩家数超过阈值后按比例缩短刷新时间；不影响副本或任务对象。
     公式：adjustFactor = rate / playerCount，RespawnTime = RespawnTime × adjustFactor。
     默认值：1（禁用）。
 - key: Respawn.DynamicMinimumGameObject
-  section: DYNAMIC RESPAWN SETTINGS
-  name_zh: Respawn.DynamicMinimumGameObject
+  section: 动态刷新设置
+  name_zh: 物件动态最小刷新时间
   description_zh: |
     描述：动态缩放下游戏对象的最小刷新时间（秒）。
     默认值：10。
 - key: NpcBot.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable
+  section: 机器人配置
+  name_zh: 启用机器人系统
   description_zh: |
     描述：启用 NpcBot 系统。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.LogToDB
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.LogToDB
+  section: 机器人配置
+  name_zh: 机器人日志写入数据库
   description_zh: |
     描述：将机器人事件调试信息记录到数据库（最多保留 30 天）。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.MaxBots
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MaxBots
+  section: 机器人配置
+  name_zh: 机器人数量上限
   description_zh: |
     描述：按等级段限制玩家可使用的机器人数量（0-9、10-19、…、70-79、80+）。
     默认值：1,1,1,1,1,1,1,1,1（每段 1 个）；0,1,2,3,4,5,6,7,8（每 10 级 +1）。
     最大值：39。
 - key: NpcBot.MaxBotsPerClass
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MaxBotsPerClass
+  section: 机器人配置
+  name_zh: 每职业机器人上限
   description_zh: |
     描述：每个职业允许的机器人数量上限。
     默认值：0（不限制）。
 - key: NpcBot.MaxBotsPerAccount
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MaxBotsPerAccount
+  section: 机器人配置
+  name_zh: 每账号机器人上限
   description_zh: |
     描述：每个账号允许雇佣的机器人总数量上限。
     默认值：0（不限制）；9（最多 9 个）。
 - key: NpcBot.Botgiver.FilterRaces
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Botgiver.FilterRaces
+  section: 机器人配置
+  name_zh: Botgiver按阵营筛选
   description_zh: |
     描述：使 botgiver 仅提供与玩家阵营一致的机器人（常规职业）。
     默认值：0（禁用）。
 - key: NpcBot.SharedOwnership.Options
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.SharedOwnership.Options
+  section: 机器人配置
+  name_zh: 共享所有权选项
   description_zh: |
     描述：共享机器人所有权的选项位掩码。
     警告：共享所有权可能导致漏洞，请自行承担风险。
     取值：0（完全禁用）；1（允许共享）；2（共享装备管理，含灵魂绑定）；4（允许被共享者继续共享）；8（允许被共享者移除其他共享者）。
     说明：仅所有者可添加共享者；共享者不能移除所有者或解雇机器人；租金到期与共享到期的处理如配置注释所述。
 - key: NpcBot.SharedOwnership.MaxOwners
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.SharedOwnership.MaxOwners
+  section: 机器人配置
+  name_zh: 共享所有权最大人数
   description_zh: |
     描述：机器人可共享给的最大玩家数量（不含所有者）。
     警告：共享所有权可能导致漏洞，请自行承担风险。
     默认值：0；最大值：39。
 - key: NpcBot.BaseFollowDistance
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.BaseFollowDistance
+  section: 机器人配置
+  name_zh: 机器人跟随距离
   description_zh: |
     描述：机器人默认跟随距离。
     说明：影响队形大小与追击/攻击距离；该值在玩家登录时为每位玩家设置。
     默认值：30。
 - key: NpcBot.XpReduction.Amount
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.XpReduction.Amount
+  section: 机器人配置
+  name_zh: 机器人经验惩罚比例
   description_zh: |
     描述：机器人带来的经验惩罚百分比（从 StartingNumber 开始计算）。
     说明：总体经验惩罚上限为 90%。
     默认值：0。
 - key: NpcBot.XpReduction.StartingNumber
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.XpReduction.StartingNumber
+  section: 机器人配置
+  name_zh: 经验惩罚起始机器人数量
   description_zh: |
     描述：从第几个机器人开始计入经验惩罚。
     默认值：2。
 - key: NpcBot.XpReduction.Blizzlike.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.XpReduction.Blizzlike.Enable
+  section: 机器人配置
+  name_zh: 启用原版经验惩罚
   description_zh: |
     描述：启用原版按队伍规模计算的经验惩罚（可与机器人惩罚叠乘）。
     默认值：1。
 - key: NpcBot.XpReduction.Blizzlike.GroupOnly
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.XpReduction.Blizzlike.GroupOnly
+  section: 机器人配置
+  name_zh: 原版惩罚仅队伍机器人
   description_zh: |
     描述：原版经验惩罚是否仅统计队伍中的机器人。
     默认值：0。
 - key: NpcBot.MoneyShare.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MoneyShare.Enable
+  section: 机器人配置
+  name_zh: 与机器人共享金币
   description_zh: |
     描述：是否与机器人共享金币掉落（降低玩家获得的金额）。
     示例：5 人队含 3 机器人拾取 100 铜，每人 20 铜。
     默认值：0。
 - key: NpcBot.MoneyShare.GroupOnly
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MoneyShare.GroupOnly
+  section: 机器人配置
+  name_zh: 金币共享仅队伍机器人
   description_zh: |
     描述：金币共享是否仅对队伍中的机器人生效。
     默认值：0。
 - key: NpcBot.MountLevel.60
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MountLevel.60
+  section: 机器人配置
+  name_zh: 地面坐骑60%最低等级
   description_zh: |
     描述：机器人可使用地面坐骑的最低等级（速度 60%）。
     默认值：20。
 - key: NpcBot.MountLevel.100
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.MountLevel.100
+  section: 机器人配置
+  name_zh: 地面坐骑100%最低等级
   description_zh: |
     描述：机器人可使用地面坐骑的最低等级（速度 100%）。
     默认值：40。
 - key: NpcBot.HealTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HealTargetIconMask
+  section: 机器人配置
+  name_zh: 治疗目标标记掩码
   description_zh: |
     描述：机器人用于寻找治疗目标的标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.TankTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.TankTargetIconMask
+  section: 机器人配置
+  name_zh: 坦克目标标记掩码
   description_zh: |
     描述：机器人用于寻找坦克目标的标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.OffTankTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.OffTankTargetIconMask
+  section: 机器人配置
+  name_zh: 副坦目标标记掩码
   description_zh: |
     描述：机器人用于寻找副坦目标的标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.DPSTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.DPSTargetIconMask
+  section: 机器人配置
+  name_zh: 主输出目标标记掩码
   description_zh: |
     描述：机器人用于寻找主输出目标的标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.RangedDPSTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.RangedDPSTargetIconMask
+  section: 机器人配置
+  name_zh: 远程输出目标标记掩码
   description_zh: |
     描述：机器人用于寻找远程输出目标的标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.NoDPSTargetIconMask
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.NoDPSTargetIconMask
+  section: 机器人配置
+  name_zh: 禁止输出目标标记掩码
   description_zh: |
     描述：机器人用于寻找“不要输出”的目标标记图标位掩码。
     说明：示例 41=1+8+32（星、三角、方块）；0 表示禁用。
     取值：1 星、2 圆、4 菱形、8 三角、16 月、32 方块、64 十字、128 骷髅。
 - key: NpcBot.Mult.Damage.Physical
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Physical
+  section: 机器人配置
+  name_zh: 机器人物理伤害倍率
   description_zh: |
     描述：机器人物理伤害倍率。
     说明：仅影响普通生成的机器人与战场游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Spell
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Spell
+  section: 机器人配置
+  name_zh: 机器人法术伤害倍率
   description_zh: |
     描述：机器人法术伤害倍率。
     说明：仅影响普通生成的机器人与战场游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Healing
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Healing
+  section: 机器人配置
+  name_zh: 机器人治疗倍率
   description_zh: |
     描述：机器人治疗量倍率。
     说明：仅影响普通生成的机器人与战场游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.HP
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.HP
+  section: 机器人配置
+  name_zh: 机器人生命值倍率
   description_zh: |
     描述：机器人生命值倍率。
     说明：仅影响普通生成的机器人与战场游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Wanderer.Damage
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Wanderer.Damage
+  section: 机器人配置
+  name_zh: 游荡机器人伤害倍率
   description_zh: |
     描述：游荡机器人伤害倍率。
     说明：仅影响开放世界中的游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Wanderer.Healing
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Wanderer.Healing
+  section: 机器人配置
+  name_zh: 游荡机器人治疗倍率
   description_zh: |
     描述：游荡机器人治疗倍率。
     说明：仅影响开放世界中的游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Wanderer.HP
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Wanderer.HP
+  section: 机器人配置
+  name_zh: 游荡机器人生命值倍率
   description_zh: |
     描述：游荡机器人生命值倍率。
     说明：仅影响开放世界中的游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Wanderer.Speed
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Wanderer.Speed
+  section: 机器人配置
+  name_zh: 游荡机器人速度倍率
   description_zh: |
     描述：游荡机器人移动速度倍率。
     说明：仅影响开放世界中的游荡机器人。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Warrior
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Warrior
+  section: 机器人配置
+  name_zh: 战士机器人伤害倍率
   description_zh: |
     描述：战士机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Paladin
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Paladin
+  section: 机器人配置
+  name_zh: 圣骑士机器人伤害倍率
   description_zh: |
     描述：圣骑士机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Hunter
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Hunter
+  section: 机器人配置
+  name_zh: 猎人机器人伤害倍率
   description_zh: |
     描述：猎人机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Rogue
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Rogue
+  section: 机器人配置
+  name_zh: 盗贼机器人伤害倍率
   description_zh: |
     描述：盗贼机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Priest
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Priest
+  section: 机器人配置
+  name_zh: 牧师机器人伤害倍率
   description_zh: |
     描述：牧师机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.DeathKnight
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.DeathKnight
+  section: 机器人配置
+  name_zh: 死亡骑士机器人伤害倍率
   description_zh: |
     描述：死亡骑士机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Shaman
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Shaman
+  section: 机器人配置
+  name_zh: 萨满机器人伤害倍率
   description_zh: |
     描述：萨满机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Mage
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Mage
+  section: 机器人配置
+  name_zh: 法师机器人伤害倍率
   description_zh: |
     描述：法师机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Warlock
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Warlock
+  section: 机器人配置
+  name_zh: 术士机器人伤害倍率
   description_zh: |
     描述：术士机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Druid
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Druid
+  section: 机器人配置
+  name_zh: 德鲁伊机器人伤害倍率
   description_zh: |
     描述：德鲁伊机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Blademaster
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Blademaster
+  section: 机器人配置
+  name_zh: 剑圣机器人伤害倍率
   description_zh: |
     描述：剑圣机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.ObsidianDestroyer
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.ObsidianDestroyer
+  section: 机器人配置
+  name_zh: 黑曜石毁灭者伤害倍率
   description_zh: |
     描述：黑曜石毁灭者机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Archmage
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Archmage
+  section: 机器人配置
+  name_zh: 大法师机器人伤害倍率
   description_zh: |
     描述：大法师机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Dreadlord
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Dreadlord
+  section: 机器人配置
+  name_zh: 恐惧魔王机器人伤害倍率
   description_zh: |
     描述：恐惧魔王机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.SpellBreaker
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.SpellBreaker
+  section: 机器人配置
+  name_zh: 破法者机器人伤害倍率
   description_zh: |
     描述：破法者机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.DarkRanger
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.DarkRanger
+  section: 机器人配置
+  name_zh: 黑暗游侠机器人伤害倍率
   description_zh: |
     描述：黑暗游侠机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Necromancer
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Necromancer
+  section: 机器人配置
+  name_zh: 死灵法师机器人伤害倍率
   description_zh: |
     描述：死灵法师机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.SeaWitch
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.SeaWitch
+  section: 机器人配置
+  name_zh: 海巫机器人伤害倍率
   description_zh: |
     描述：海巫机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.CryptLord
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.CryptLord
+  section: 机器人配置
+  name_zh: 地穴领主机器人伤害倍率
   description_zh: |
     描述：地穴领主机器人伤害倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Damage.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Damage.Levels
+  section: 机器人配置
+  name_zh: 按等级段伤害倍率
   description_zh: |
     描述：按等级段设置机器人伤害倍率（0-9、10-19…70-79、80+）。
     默认值：1.0；每段至少 9 个值（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.Healing.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.Healing.Levels
+  section: 机器人配置
+  name_zh: 按等级段治疗倍率
   description_zh: |
     描述：按等级段设置机器人治疗倍率（0-9、10-19…70-79、80+）。
     默认值：1.0；每段至少 9 个值（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.HP.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.HP.Levels
+  section: 机器人配置
+  name_zh: 按等级段生命值倍率
   description_zh: |
     描述：按等级段设置机器人生命值倍率（0-9、10-19…70-79、80+）。
     默认值：1.0；每段至少 9 个值（最小 0.1，最大 10.0）。
 - key: NpcBot.Mult.MP.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Mult.MP.Levels
+  section: 机器人配置
+  name_zh: 按等级段法力倍率
   description_zh: |
     描述：按等级段设置机器人法力值倍率（0-9、10-19…70-79、80+）。
     默认值：1.0；每段至少 9 个值（最小 0.1，最大 10.0）。
 - key: NpcBot.Enable.Dungeon
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable.Dungeon
+  section: 机器人配置
+  name_zh: 允许进入地下城
   description_zh: |
     描述：允许机器人进入地下城（PvE）。
     默认值：1。
 - key: NpcBot.Enable.Raid
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable.Raid
+  section: 机器人配置
+  name_zh: 允许进入团队副本
   description_zh: |
     描述：允许机器人进入团队副本。
     默认值：0。
 - key: NpcBot.Enable.BG
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable.BG
+  section: 机器人配置
+  name_zh: 允许进入战场
   description_zh: |
     描述：允许机器人进入战场。
     默认值：0。
 - key: NpcBot.Enable.Arena
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable.Arena
+  section: 机器人配置
+  name_zh: 允许进入竞技场
   description_zh: |
     描述：允许机器人进入竞技场。
     默认值：0。
 - key: NpcBot.Enable.DungeonFinder
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Enable.DungeonFinder
+  section: 机器人配置
+  name_zh: 允许参与随机副本
   description_zh: |
     描述：允许机器人参与随机副本查询（LFG）。
     默认值：1。
 - key: NpcBot.DisableInstances
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.DisableInstances
+  section: 机器人配置
+  name_zh: 禁用副本列表
   description_zh: |
     描述：当允许进入地下城/团队时，排除指定副本地图 ID。
     默认值：""（无）。
     示例："509,531"（禁用安其拉 20/40）。
 - key: NpcBot.Limit.Dungeon
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Limit.Dungeon
+  section: 机器人配置
+  name_zh: 地下城人数限制
   description_zh: |
     描述：是否启用机器人地下城人数限制规则。
     默认值：1。
 - key: NpcBot.Limit.Raid
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Limit.Raid
+  section: 机器人配置
+  name_zh: 团队人数限制
   description_zh: |
     描述：是否启用机器人团队副本人数限制规则。
     默认值：1。
 - key: NpcBot.HideSpawns
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HideSpawns
+  section: 机器人配置
+  name_zh: 隐藏机器人刷新点
   description_zh: |
     描述：防止未雇佣的机器人进入世界。
     说明：botgiver 将成为唯一雇佣方式；仅 GM 在场时会临时显示刷新点。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.Cost.Hire
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Cost.Hire
+  section: 机器人配置
+  name_zh: 机器人雇佣费用
   description_zh: |
     描述：雇佣机器人一次性费用（铜币）。
     说明：以 80 级为基准，低等级会大幅降低。
     默认值：1000000（100 金）。
 - key: NpcBot.Cost.Rent
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Cost.Rent
+  section: 机器人配置
+  name_zh: 机器人租金
   description_zh: |
     描述：机器人每小时租金（铜币）。
     说明：每 10 分钟扣一次，余额不足将自动解雇。
     默认值：0。
 - key: NpcBot.UpdateDelay.Base
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.UpdateDelay.Base
+  section: 机器人配置
+  name_zh: AI更新基础延迟
   description_zh: |
     描述：机器人 AI 更新基础延迟（毫秒）。
     说明：用于降低反应速度、平衡 PvP；该值叠加在已有随机延迟之上。
     默认值：0（无额外延迟）。
 - key: NpcBot.EngageDelay.DPS
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EngageDelay.DPS
+  section: 机器人配置
+  name_zh: DPS接战延迟
   description_zh: |
     描述：坦克接战后，首个非坦克伤害的延迟（毫秒）。
     说明：除 PvP 外对所有战斗生效；对玩家拥有的机器人生效并在登录时设置。
     默认值：0；1000（1 秒）。
 - key: NpcBot.EngageDelay.Heal
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EngageDelay.Heal
+  section: 机器人配置
+  name_zh: 治疗接战延迟
   description_zh: |
     描述：坦克接战后，首个治疗的延迟（毫秒）。
     说明：除 PvP 外对所有战斗生效；对玩家拥有的机器人生效并在登录时设置。
     默认值：0；1000（1 秒）。
 - key: NpcBot.PvP
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.PvP
+  section: 机器人配置
+  name_zh: 机器人攻击玩家开关
   description_zh: |
     描述：允许机器人攻击玩家控制单位（玩家/宠物/机器人等）。
     说明：仅对玩家拥有的机器人有效。
     默认值：1。
 - key: NpcBot.Movements.InterruptFood
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Movements.InterruptFood
+  section: 机器人配置
+  name_zh: 移动打断进食
   description_zh: |
     描述：移动时是否打断进食/饮水效果。
     说明：机器人静止时才会使用食物/饮料。
     默认值：0（不打断）；1（打断）。
 - key: NpcBot.EquipmentDisplay.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EquipmentDisplay.Enable
+  section: 机器人配置
+  name_zh: 显示机器人装备外观
   description_zh: |
     描述：是否显示机器人除武器外的装备外观。
     说明：客户端外观更新限制与风险见配置注释；修改该项需重启服务器。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.EquipmentDisplay.ShowCloak
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EquipmentDisplay.ShowCloak
+  section: 机器人配置
+  name_zh: 显示披风
   description_zh: |
     描述：是否显示机器人披风外观。
     默认值：1。
 - key: NpcBot.EquipmentDisplay.ShowHelm
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EquipmentDisplay.ShowHelm
+  section: 机器人配置
+  name_zh: 显示头盔
   description_zh: |
     描述：是否显示机器人头盔外观。
     默认值：1。
 - key: NpcBot.Transmog.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Transmog.Enable
+  section: 机器人配置
+  name_zh: 启用机器人幻化
   description_zh: |
     描述：是否启用机器人幻化。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.Transmog.MixArmorClasses
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Transmog.MixArmorClasses
+  section: 机器人配置
+  name_zh: 允许护甲类型混幻
   description_zh: |
     描述：是否允许不同护甲类型间互相幻化（如板甲→皮甲）。
     默认值：0。
 - key: NpcBot.Transmog.MixWeaponClasses
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Transmog.MixWeaponClasses
+  section: 机器人配置
+  name_zh: 允许武器类型混幻
   description_zh: |
     描述：是否允许不同武器类型间互相幻化（如斧→锤）。
     默认值：0。
 - key: NpcBot.Transmog.MixWeaponInventoryTypes
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Transmog.MixWeaponInventoryTypes
+  section: 机器人配置
+  name_zh: 允许武器槽位类型混幻
   description_zh: |
     描述：是否允许不同武器装备槽位类型间互相幻化（如匕首→长柄）。
     默认值：0。
 - key: NpcBot.Transmog.UseEquipmentSlots
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Transmog.UseEquipmentSlots
+  section: 机器人配置
+  name_zh: 幻化按装备槽位
   description_zh: |
     描述：幻化基于装备槽位而非物品 ID，并强制启用其他幻化选项。
     默认值：0。
 - key: NpcBot.Gossip.ShowEquipmentListItems
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Gossip.ShowEquipmentListItems
+  section: 机器人配置
+  name_zh: 对话发送装备列表
   description_zh: |
     描述：在装备对话菜单中以私聊发送可点击装备列表。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.GearBank.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.GearBank.Enable
+  section: 机器人配置
+  name_zh: 启用装备仓库
   description_zh: |
     描述：启用机器人装备仓库（通过对话菜单访问，每个玩家独立）。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.GearBank.Capacity
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.GearBank.Capacity
+  section: 机器人配置
+  name_zh: 装备仓库容量
   description_zh: |
     描述：机器人装备仓库可存放的最大物品数量（仅影响存入能力）。
     默认值：40；0（无限制）。
 - key: NpcBot.GearBank.EquipmentSets
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.GearBank.EquipmentSets
+  section: 机器人配置
+  name_zh: 装备套装数量
   description_zh: |
     描述：允许玩家创建机器人装备套装，便于快速切换。
     默认值：0（禁用）；10（启用，最多 10 套）；30（硬上限）。
 - key: NpcBot.Classes.Warrior.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Warrior.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣战士
   description_zh: |
     描述：是否允许雇佣战士机器人。
     默认值：1。
 - key: NpcBot.Classes.Paladin.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Paladin.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣圣骑士
   description_zh: |
     描述：是否允许雇佣圣骑士机器人。
     默认值：1。
 - key: NpcBot.Classes.Hunter.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Hunter.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣猎人
   description_zh: |
     描述：是否允许雇佣猎人机器人。
     默认值：1。
 - key: NpcBot.Classes.Rogue.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Rogue.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣盗贼
   description_zh: |
     描述：是否允许雇佣盗贼机器人。
     默认值：1。
 - key: NpcBot.Classes.Priest.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Priest.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣牧师
   description_zh: |
     描述：是否允许雇佣牧师机器人。
     默认值：1。
 - key: NpcBot.Classes.DeathKnight.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.DeathKnight.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣死亡骑士
   description_zh: |
     描述：是否允许雇佣死亡骑士机器人。
     默认值：1。
 - key: NpcBot.Classes.Shaman.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Shaman.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣萨满
   description_zh: |
     描述：是否允许雇佣萨满机器人。
     默认值：1。
 - key: NpcBot.Classes.Mage.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Mage.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣法师
   description_zh: |
     描述：是否允许雇佣法师机器人。
     默认值：1。
 - key: NpcBot.Classes.Warlock.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Warlock.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣术士
   description_zh: |
     描述：是否允许雇佣术士机器人。
     默认值：1。
 - key: NpcBot.Classes.Druid.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Druid.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣德鲁伊
   description_zh: |
     描述：是否允许雇佣德鲁伊机器人。
     默认值：1。
 - key: NpcBot.Classes.Blademaster.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Blademaster.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣剑圣
   description_zh: |
     描述：是否允许雇佣剑圣机器人。
     默认值：1。
 - key: NpcBot.Classes.ObsidianDestroyer.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.ObsidianDestroyer.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣黑曜石毁灭者
   description_zh: |
     描述：是否允许雇佣黑曜石毁灭者机器人。
     默认值：1。
 - key: NpcBot.Classes.Archmage.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Archmage.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣大法师
   description_zh: |
     描述：是否允许雇佣大法师机器人。
     默认值：1。
 - key: NpcBot.Classes.Dreadlord.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Dreadlord.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣恐惧魔王
   description_zh: |
     描述：是否允许雇佣恐惧魔王机器人。
     默认值：1。
 - key: NpcBot.Classes.SpellBreaker.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.SpellBreaker.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣破法者
   description_zh: |
     描述：是否允许雇佣破法者机器人。
     默认值：1。
 - key: NpcBot.Classes.DarkRanger.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.DarkRanger.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣黑暗游侠
   description_zh: |
     描述：是否允许雇佣黑暗游侠机器人。
     默认值：1。
 - key: NpcBot.Classes.Necromancer.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.Necromancer.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣死灵法师
   description_zh: |
     描述：是否允许雇佣死灵法师机器人。
     默认值：1。
 - key: NpcBot.Classes.SeaWitch.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.SeaWitch.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣海巫
   description_zh: |
     描述：是否允许雇佣海巫机器人。
     默认值：1。
 - key: NpcBot.Classes.CryptLord.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Classes.CryptLord.Enable
+  section: 机器人配置
+  name_zh: 允许雇佣地穴领主
   description_zh: |
     描述：是否允许雇佣地穴领主机器人。
     默认值：1。
 - key: NpcBot.Stats.Limits.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Stats.Limits.Enable
+  section: 机器人配置
+  name_zh: 启用机器人属性上限
   description_zh: |
     描述：启用或禁用机器人属性上限。
     默认值：0（禁用）。
 - key: NpcBot.Stats.Limits.Dodge
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Stats.Limits.Dodge
+  section: 机器人配置
+  name_zh: 机器人闪避上限
   description_zh: |
     描述：机器人闪避百分比上限。
     默认值：95.0（95%）。
 - key: NpcBot.Stats.Limits.Parry
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Stats.Limits.Parry
+  section: 机器人配置
+  name_zh: 机器人招架上限
   description_zh: |
     描述：机器人招架百分比上限。
     默认值：95.0（95%）。
 - key: NpcBot.Stats.Limits.Block
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Stats.Limits.Block
+  section: 机器人配置
+  name_zh: 机器人格挡上限
   description_zh: |
     描述：机器人格挡百分比上限。
     默认值：95.0（95%）。
 - key: NpcBot.Stats.Limits.Crit
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Stats.Limits.Crit
+  section: 机器人配置
+  name_zh: 机器人暴击上限
   description_zh: |
     描述：机器人暴击百分比上限。
     默认值：95.0（95%）。
 - key: NpcBot.InfoPacketsLimit
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.InfoPacketsLimit
+  section: 机器人配置
+  name_zh: 机器人信息包上限
   description_zh: |
     描述：用于规避已知问题 #5 的镜像数据请求包上限覆盖值。
     说明：大量机器人密集会触发 AntiDOS 踢出；此项仅临时缓解，建议分散刷新点。
     默认值：-1（使用默认上限）；500（示例：500 机器人不会被踢）。
 - key: NpcBot.OwnershipExpireTime
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.OwnershipExpireTime
+  section: 机器人配置
+  name_zh: 所有权过期时间
   description_zh: |
     描述：机器人所有权自动过期时间（秒）。
     说明：仅在玩家离线后才会生效；物品会按常规邮件返还。
     默认值：0（禁用）；604800（7 天）。
 - key: NpcBot.OwnershipExpireMode
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.OwnershipExpireMode
+  section: 机器人配置
+  name_zh: 所有权过期模式
   description_zh: |
     描述：所有权过期计时模式。
     默认值：0（玩家离线后计时，重新上线会重置）；1（雇佣后即开始计时，不重置）。
 - key: NpcBot.EnrageOnDismiss
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.EnrageOnDismiss
+  section: 机器人配置
+  name_zh: 解雇触发狂暴
   description_zh: |
     描述：解雇机器人时是否触发狂暴并产生敌对反应。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.WanderingBots.Continents.Count
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Continents.Count
+  section: 机器人配置
+  name_zh: 大陆游荡机器人数量
   description_zh: |
     描述：大陆地图游荡机器人目标数量。
     说明：游荡机器人不写入数据库，会保持网格加载并增加资源占用；需要足够的未生成机器人模板。
     默认值：0（禁用）。
 - key: NpcBot.WanderingBots.Continents.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Continents.Levels
+  section: 机器人配置
+  name_zh: 大陆游荡机器人等级比例
   description_zh: |
     描述：大陆游荡机器人按等级段生成比例（0-9、10-19…70-79、80+）。
     说明：总比例必须等于 100；部分职业可能忽略此设置。
     默认值：25,15,15,10,5,10,20,0,0。
 - key: NpcBot.WanderingBots.Continents.Maps
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Continents.Maps
+  section: 机器人配置
+  name_zh: 大陆游荡机器人地图列表
   description_zh: |
     描述：允许生成游荡机器人的大陆地图 ID 列表。
     说明：机器人不会超过地图等级上限。
     默认值：0,1,530,571（东部王国、卡利姆多、外域、诺森德）。
 - key: NpcBot.WanderingBots.Continents.XPGain
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Continents.XPGain
+  section: 机器人配置
+  name_zh: 游荡机器人经验倍率
   description_zh: |
     描述：游荡机器人经验获取倍率（影响升级速度）。
     默认值：1.0（100%）；0.1（10%）。
     范围：0.0-100.0。
 - key: NpcBot.WanderingBots.KillReward.Money
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.KillReward.Money
+  section: 机器人配置
+  name_zh: 击杀游荡机器人金币掉落
   description_zh: |
     描述：击杀游荡机器人掉落金币基准值（铜币，80 级基准）。
     默认值：0。
 - key: NpcBot.WanderingBots.KillReward.ItemCount
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.KillReward.ItemCount
+  section: 机器人配置
+  name_zh: 击杀游荡机器人掉落数量
   description_zh: |
     描述：击杀游荡机器人掉落物品最大数量。
     说明：物品来源于机器人装备；范围 0..18。
     默认值：0。
 - key: NpcBot.WanderingBots.KillReward.ItemQuality
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.KillReward.ItemQuality
+  section: 机器人配置
+  name_zh: 游荡机器人掉落品质上限
   description_zh: |
     描述：击杀游荡机器人掉落物品的最高品质。
     说明：多数机器人装备品质为 2/3/4（绿/蓝/紫），范围 0..7。
     默认值：0。
 - key: NpcBot.WanderingBots.MaxItemLevel.Levels
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.MaxItemLevel.Levels
+  section: 机器人配置
+  name_zh: 游荡机器人装等上限
   description_zh: |
     描述：游荡机器人按等级段生成物品的最大装等（0-9、10-19…70-79、80+）。
     说明：若因装等限制生成失败，将忽略限制重试。
     默认值：0,0,0,0,0,0,0,0,0。
 - key: NpcBot.WanderingBots.BG.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.Enable
+  section: 机器人配置
+  name_zh: 战场游荡机器人开关
   description_zh: |
     描述：是否允许在战场生成游荡机器人。
     说明：机器人从未生成池中临时借用。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.WanderingBots.BG.CapLevel
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.CapLevel
+  section: 机器人配置
+  name_zh: 战场机器人等级上限限制
   description_zh: |
     描述：战场机器人等级上限遵循 Expansion 与 MaxPlayerLevel 限制。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.WanderingBots.BG.CapLevelByFirstPlayer
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.CapLevelByFirstPlayer
+  section: 机器人配置
+  name_zh: 战场机器人等级随首名玩家
   description_zh: |
     描述：战场机器人等级不高于触发生成的玩家等级。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AV
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AV
+  section: 机器人配置
+  name_zh: 奥山每队目标人数
   description_zh: |
     描述：奥特兰克山谷每队目标玩家数量（用于生成战场机器人）。
     默认值：30。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.WS
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.WS
+  section: 机器人配置
+  name_zh: 战歌峡谷每队目标人数
   description_zh: |
     描述：战歌峡谷每队目标玩家数量（用于生成战场机器人）。
     默认值：8。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AB
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.AB
+  section: 机器人配置
+  name_zh: 阿拉希盆地每队目标人数
   description_zh: |
     描述：阿拉希盆地每队目标玩家数量（用于生成战场机器人）。
     默认值：12。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.EY
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.EY
+  section: 机器人配置
+  name_zh: 风暴之眼每队目标人数
   description_zh: |
     描述：风暴之眼每队目标玩家数量（用于生成战场机器人）。
     默认值：12。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.SA
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.SA
+  section: 机器人配置
+  name_zh: 远古海滩每队目标人数
   description_zh: |
     描述：远古海滩每队目标玩家数量（用于生成战场机器人）。
     默认值：0（未实现/禁用）。
 - key: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.IC
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.BG.TargetTeamPlayersCount.IC
+  section: 机器人配置
+  name_zh: 征服之岛每队目标人数
   description_zh: |
     描述：征服之岛每队目标玩家数量（用于生成战场机器人）。
     默认值：0（未实现/禁用）。
 - key: NpcBot.WanderingBots.Classes.Warrior.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Warrior.Enable
+  section: 机器人配置
+  name_zh: 允许生成战士游荡机器人
   description_zh: |
     描述：是否允许生成战士游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Paladin.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Paladin.Enable
+  section: 机器人配置
+  name_zh: 允许生成圣骑士游荡机器人
   description_zh: |
     描述：是否允许生成圣骑士游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Hunter.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Hunter.Enable
+  section: 机器人配置
+  name_zh: 允许生成猎人游荡机器人
   description_zh: |
     描述：是否允许生成猎人游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Rogue.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Rogue.Enable
+  section: 机器人配置
+  name_zh: 允许生成盗贼游荡机器人
   description_zh: |
     描述：是否允许生成盗贼游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Priest.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Priest.Enable
+  section: 机器人配置
+  name_zh: 允许生成牧师游荡机器人
   description_zh: |
     描述：是否允许生成牧师游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.DeathKnight.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.DeathKnight.Enable
+  section: 机器人配置
+  name_zh: 允许生成死亡骑士游荡机器人
   description_zh: |
     描述：是否允许生成死亡骑士游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Shaman.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Shaman.Enable
+  section: 机器人配置
+  name_zh: 允许生成萨满游荡机器人
   description_zh: |
     描述：是否允许生成萨满游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Mage.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Mage.Enable
+  section: 机器人配置
+  name_zh: 允许生成法师游荡机器人
   description_zh: |
     描述：是否允许生成法师游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Warlock.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Warlock.Enable
+  section: 机器人配置
+  name_zh: 允许生成术士游荡机器人
   description_zh: |
     描述：是否允许生成术士游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Druid.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Druid.Enable
+  section: 机器人配置
+  name_zh: 允许生成德鲁伊游荡机器人
   description_zh: |
     描述：是否允许生成德鲁伊游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Blademaster.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Blademaster.Enable
+  section: 机器人配置
+  name_zh: 允许生成剑圣游荡机器人
   description_zh: |
     描述：是否允许生成剑圣游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.ObsidianDestroyer.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.ObsidianDestroyer.Enable
+  section: 机器人配置
+  name_zh: 允许生成黑曜石毁灭者游荡机器人
   description_zh: |
     描述：是否允许生成黑曜石毁灭者游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Archmage.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Archmage.Enable
+  section: 机器人配置
+  name_zh: 允许生成大法师游荡机器人
   description_zh: |
     描述：是否允许生成大法师游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Dreadlord.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Dreadlord.Enable
+  section: 机器人配置
+  name_zh: 允许生成恐惧魔王游荡机器人
   description_zh: |
     描述：是否允许生成恐惧魔王游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.SpellBreaker.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.SpellBreaker.Enable
+  section: 机器人配置
+  name_zh: 允许生成破法者游荡机器人
   description_zh: |
     描述：是否允许生成破法者游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.DarkRanger.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.DarkRanger.Enable
+  section: 机器人配置
+  name_zh: 允许生成黑暗游侠游荡机器人
   description_zh: |
     描述：是否允许生成黑暗游侠游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.Necromancer.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.Necromancer.Enable
+  section: 机器人配置
+  name_zh: 允许生成死灵法师游荡机器人
   description_zh: |
     描述：是否允许生成死灵法师游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.SeaWitch.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.SeaWitch.Enable
+  section: 机器人配置
+  name_zh: 允许生成海巫游荡机器人
   description_zh: |
     描述：是否允许生成海巫游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.Classes.CryptLord.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.Classes.CryptLord.Enable
+  section: 机器人配置
+  name_zh: 允许生成地穴领主游荡机器人
   description_zh: |
     描述：是否允许生成地穴领主游荡机器人。
     默认值：1。
 - key: NpcBot.WanderingBots.SkipTarget.Questgiver
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.SkipTarget.Questgiver
+  section: 机器人配置
+  name_zh: 游荡机器人跳过任务NPC
   description_zh: |
     描述：游荡机器人选择攻击目标时是否跳过任务 NPC。
     默认值：0。
 - key: NpcBot.WanderingBots.SkipTarget.Flightmaster
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.WanderingBots.SkipTarget.Flightmaster
+  section: 机器人配置
+  name_zh: 游荡机器人跳过飞行管理员
   description_zh: |
     描述：游荡机器人选择攻击目标时是否跳过飞行管理员。
     默认值：0。
 - key: NpcBot.HK.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HK.Enable
+  section: 机器人配置
+  name_zh: 击杀机器人计为荣誉击杀
   description_zh: |
     描述：将击杀机器人计为荣誉击杀。
     默认值：1（启用）；0（禁用）。
 - key: NpcBot.HK.Message.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HK.Message.Enable
+  section: 机器人配置
+  name_zh: 显示HK提示
   description_zh: |
     描述：显示“HK: <rank>”提示信息。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.HK.Achievements.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HK.Achievements.Enable
+  section: 机器人配置
+  name_zh: 击杀机器人计入成就
   description_zh: |
     描述：将击杀机器人计入 PvP 成就。
     默认值：0（禁用）；1（启用）。
 - key: NpcBot.HK.Rate.Honor
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.HK.Rate.Honor
+  section: 机器人配置
+  name_zh: 击杀机器人荣誉倍率
   description_zh: |
     描述：击杀机器人获得的荣誉倍率。
     默认值：1.0（最小 0.1，最大 10.0）。
 - key: NpcBot.Premade.Enable
-  section: NPCBOT CONFIGURATION
-  name_zh: NpcBot.Premade.Enable
+  section: 机器人配置
+  name_zh: 预组队携带机器人
   description_zh: |
     描述：允许携带机器人以预组队形式进入战场。
     说明：预组队不会触发战场机器人生成。
