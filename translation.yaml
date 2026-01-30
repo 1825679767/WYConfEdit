@@ -1,0 +1,201 @@
+# translation.yaml (batch 1: 50)
+- key: RealmID
+  section: 数据库与连接
+  name_zh: 服务器标识ID
+  description_zh: 
+- key: WorldServerPort
+  section: 数据库与连接
+  name_zh: 世界服端口
+  description_zh: 
+- key: BindIP
+  section: 数据库与连接
+  name_zh: 绑定IP
+  description_zh: 
+- key: LoginDatabaseInfo
+  section: 数据库与连接
+  name_zh: 认证库连接
+  description_zh: 
+- key: WorldDatabaseInfo
+  section: 数据库与连接
+  name_zh: 世界库连接
+  description_zh: 
+- key: CharacterDatabaseInfo
+  section: 数据库与连接
+  name_zh: 角色库连接
+  description_zh: 
+- key: LoginDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 认证库工作线程
+  description_zh: 
+- key: WorldDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 世界库工作线程
+  description_zh: 
+- key: CharacterDatabase.WorkerThreads
+  section: 数据库与连接
+  name_zh: 角色库工作线程
+  description_zh: 
+- key: LoginDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: 认证库同步连接数
+  description_zh: 
+- key: WorldDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: WorldDatabase.SynchThreads
+  description_zh: 
+- key: CharacterDatabase.SynchThreads
+  section: 数据库与连接
+  name_zh: CharacterDatabase.SynchThreads
+  description_zh: 
+- key: MaxPingTime
+  section: 数据库与连接
+  name_zh: MaxPingTime
+  description_zh: 
+- key: Database.Reconnect.Seconds
+  section: 数据库与连接
+  name_zh: Database.Reconnect.Seconds
+  description_zh: 
+- key: Database.Reconnect.Attempts
+  section: 数据库与连接
+  name_zh: Database.Reconnect.Attempts
+  description_zh: 
+- key: DataDir
+  section: 目录
+  name_zh: DataDir
+  description_zh: 
+- key: LogsDir
+  section: 目录
+  name_zh: LogsDir
+  description_zh: 
+- key: TempDir
+  section: 目录
+  name_zh: TempDir
+  description_zh: 
+- key: CMakeCommand
+  section: 目录
+  name_zh: CMakeCommand
+  description_zh: 
+- key: BuildDirectory
+  section: 目录
+  name_zh: BuildDirectory
+  description_zh: 
+- key: SourceDirectory
+  section: 目录
+  name_zh: SourceDirectory
+  description_zh: 
+- key: MySQLExecutable
+  section: 目录
+  name_zh: MySQLExecutable
+  description_zh: 
+- key: PidFile
+  section: 目录
+  name_zh: PidFile
+  description_zh: 
+- key: Console.Enable
+  section: 控制台
+  name_zh: Console.Enable
+  description_zh: 
+- key: BeepAtStart
+  section: 控制台
+  name_zh: BeepAtStart
+  description_zh: 
+- key: FlashAtStart
+  section: 控制台
+  name_zh: FlashAtStart
+  description_zh: 
+- key: Updates.EnableDatabases
+  section: 自动更新
+  name_zh: Updates.EnableDatabases
+  description_zh: 
+- key: Updates.AutoSetup
+  section: 自动更新
+  name_zh: Updates.AutoSetup
+  description_zh: 
+- key: Updates.Redundancy
+  section: 自动更新
+  name_zh: Updates.Redundancy
+  description_zh: 
+- key: Updates.ArchivedRedundancy
+  section: 自动更新
+  name_zh: Updates.ArchivedRedundancy
+  description_zh: 
+- key: Updates.AllowRehash
+  section: 自动更新
+  name_zh: Updates.AllowRehash
+  description_zh: 
+- key: Updates.CleanDeadRefMaxCount
+  section: 自动更新
+  name_zh: Updates.CleanDeadRefMaxCount
+  description_zh: 
+- key: Updates.ExceptionShutdownDelay
+  section: 自动更新
+  name_zh: Updates.ExceptionShutdownDelay
+  description_zh: 
+- key: Network.Threads
+  section: 网络
+  name_zh: Network.Threads
+  description_zh: 
+- key: Network.OutKBuff
+  section: 网络
+  name_zh: Network.OutKBuff
+  description_zh: 
+- key: Network.OutUBuff
+  section: 网络
+  name_zh: Network.OutUBuff
+  description_zh: 
+- key: Network.TcpNodelay
+  section: 网络
+  name_zh: Network.TcpNodelay
+  description_zh: 
+- key: Network.EnableProxyProtocol
+  section: 网络
+  name_zh: Network.EnableProxyProtocol
+  description_zh: 
+- key: Network.UseSocketActivation
+  section: 网络
+  name_zh: Network.UseSocketActivation
+  description_zh: 
+- key: Ra.Enable
+  section: 远程访问
+  name_zh: Ra.Enable
+  description_zh: 
+- key: Ra.IP
+  section: 远程访问
+  name_zh: Ra.IP
+  description_zh: 
+- key: Ra.Port
+  section: 远程访问
+  name_zh: Ra.Port
+  description_zh: 
+- key: Ra.MinLevel
+  section: 远程访问
+  name_zh: Ra.MinLevel
+  description_zh: 
+- key: SOAP.Enabled
+  section: 远程访问
+  name_zh: SOAP.Enabled
+  description_zh: 
+- key: SOAP.IP
+  section: SOAP.IP
+  name_zh: SOAP.IP
+  description_zh: 
+- key: SOAP.Port
+  section: SOAP.IP
+  name_zh: SOAP.Port
+  description_zh: 
+- key: TOTPMasterSecret
+  section: 加密
+  name_zh: TOTPMasterSecret
+  description_zh: 
+- key: ThreadPool
+  section: 性能
+  name_zh: ThreadPool
+  description_zh: 
+- key: UseProcessors
+  section: 性能
+  name_zh: UseProcessors
+  description_zh: 
+- key: ProcessPriority
+  section: 性能
+  name_zh: ProcessPriority
+  description_zh: 
