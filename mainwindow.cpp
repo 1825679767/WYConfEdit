@@ -26,6 +26,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    setWindowTitle("WY配置编辑器");
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     buildUi();
@@ -76,6 +77,12 @@ void MainWindow::buildUi()
     m_filePathLabel = new QLabel(this);
     m_filePathLabel->setObjectName("FilePathLabel");
     topBarLayout->addWidget(m_filePathLabel);
+
+    topBarLayout->addStretch();
+
+    QLabel *adLabel = new QLabel("WY技术交流群:738942437", this);
+    adLabel->setObjectName("AdLabel");
+    topBarLayout->addWidget(adLabel);
 
     topBarLayout->addStretch();
 

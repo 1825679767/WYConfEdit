@@ -1,49 +1,36 @@
-# GitHub Copilot 自定义指令
+# GitHub Copilot Custom Instructions
 
-## 项目概述
 
-这是一个基于 Qt/C++ 的配置文件编辑器 (ConfEdit)，用于编辑 AzerothCore World Server 的配置文件。
 
-## 语言要求
+## Language Requirements
 
-- **所有 Git commit 消息必须使用中文**
-- 代码注释优先使用中文
-- UI 界面文本使用中文
+- **All Git commit messages must be in Chinese**
+All Git commit messages must be in Chinese
+- Code comments should preferably be in Chinese
+- UI text should be in Chinese
 
-## Commit 消息规范
+## Commit Message Convention
 
-提交消息格式：
+Commit message format:
 ```
-<类型>: <简短描述>
+<type>: <short description>
 
-<详细说明（可选）>
+<details (optional)>
 ```
 
-类型包括：
-- `功能`: 新功能
-- `修复`: Bug 修复
-- `优化`: 代码优化或重构
-- `样式`: UI/样式调整
-- `文档`: 文档更新
-- `构建`: 构建配置修改
+Types include:
+- `功能`: New feature
+- `修复`: Bug fix
+- `优化`: Code optimization or refactor
+- `样式`: UI/style adjustment
+- `文档`: Documentation update
+- `构建`: Build configuration change
 
-示例：
+Example:
 ```
 功能: 添加配置项搜索功能
 
 实现了基于关键字的配置项搜索，支持按键名和描述搜索。
 ```
 
-## 代码风格
 
-- 使用 C++17 标准
-- 遵循 Qt 编码规范
-- 类名使用 PascalCase
-- 函数名使用 camelCase
-- 成员变量使用 m_ 前缀
-
-## 技术栈
-
-- Qt 5.x Widgets
-- C++17
-- qmake 构建系统
