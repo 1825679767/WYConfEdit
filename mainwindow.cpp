@@ -588,19 +588,16 @@ void MainWindow::mergeTranslations()
 void MainWindow::refreshSectionFilter()
 {
     QSet<QString> sections;
-    for (const TranslationItem &item : m_translations.allItems())
-    {
-        if (!item.section.isEmpty())
-            sections.insert(item.section);
-    }
-
     bool hasUncategorized = false;
     for (const ConfigEntry &entry : m_parser.entries())
     {
         if (entry.section.isEmpty())
         {
             hasUncategorized = true;
-            break;
+        }
+        else
+        {
+            sections.insert(entry.section);
         }
     }
 
@@ -808,7 +805,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
         QPushButton *saveBtn = msgBox.addButton("保存", QMessageBox::AcceptRole);
         QPushButton *discardBtn = msgBox.addButton("不保存", QMessageBox::DestructiveRole);
-        QPushButton *cancelBtn = msgBox.addButton("取消", QMessageBox::RejectRole);
+        msgBox.addButton("取消", QMessageBox::RejectRole);
         msgBox.setDefaultButton(saveBtn);
 
         msgBox.exec();
