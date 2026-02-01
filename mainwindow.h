@@ -14,6 +14,7 @@ class QTableView;
 class QPushButton;
 class EditEntryDialog;
 class QLabel;
+class QComboBox;
 
 class MainWindow : public QMainWindow
 {
@@ -34,6 +35,7 @@ private slots:
     void onTableDoubleClicked(const QModelIndex &index);
     void onOpenConfig();
     void onSaveAll();
+    void onVersionChanged(int index);
 
 private:
     void buildUi();
@@ -64,6 +66,7 @@ private:
     QListWidget *m_sectionList = nullptr;
     QTableView *m_table = nullptr;
     QLabel *m_filePathLabel = nullptr;
+    QComboBox *m_versionCombo = nullptr;
 
     // Window dragging
     QWidget *m_topBar = nullptr;

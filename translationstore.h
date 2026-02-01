@@ -18,11 +18,17 @@ public:
     bool load(const QString &path, QString *error);
     bool save(const QString &path, QString *error) const;
 
+    QStringList availableVersions() const;
+    QString currentVersion() const;
+    bool setCurrentVersion(const QString &version);
+
     bool contains(const QString &key) const;
     TranslationItem item(const QString &key) const;
     void upsert(const TranslationItem &item);
     QVector<TranslationItem> allItems() const;
 
 private:
-    QHash<QString, TranslationItem> m_items;
+    QHash<QString, QHash<QString, TranslationItem>> m_versions;
+    QStringList m_versionOrder;
+    QString m_currentVersion;
 };

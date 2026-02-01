@@ -48,7 +48,9 @@ static bool parseKeyValue(const QString &line, QString *keyOut, QString *valueOu
 
 bool TranslationStore::load(const QString &path, QString *error)
 {
-    m_items.clear();
+    m_versions.clear();
+    m_versionOrder.clear();
+    m_currentVersion.clear();
 
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -65,24 +67,24 @@ bool TranslationStore::load(const QString &path, QString *error)
     bool inMultilineDesc = false;
     int multilineIndent = 0;
     QStringList multilineLines;
+    bool inVersions = false;
+    bool inItems = false;
+    bool inLegacyList = false;
+    QString currentVersion;
 
     while (!in.atEnd())
     {
         QString line = in.readLine();
         QString trimmed = line.trimmed();
+        int leadingSpaces = 0;
+        while (leadingSpaces < line.size() && line[leadingSpaces] == ' ')
+            leadingSpaces++;
 
         // Handle multiline description continuation
         if (inMultilineDesc)
         {
             // Check if this line is still part of the multiline block
-            int indent = 0;
-            for (int i = 0; i < line.length(); ++i)
-            {
-                if (line[i] == ' ')
-                    indent++;
-                else
-                    break;
-            }
+            int indent = leadingSpaces;
 
             // If line is empty or has sufficient indentation, it's part of the block
             if (trimmed.isEmpty() || indent >= multilineIndent)
@@ -102,10 +104,54 @@ bool TranslationStore::load(const QString &path, QString *error)
         if (trimmed.isEmpty() || trimmed.startsWith('#'))
             continue;
 
+        if (trimmed == "versions:")
+        {
+            inVersions = true;
+            inItems = false;
+            inLegacyList = false;
+            continue;
+        }
+
+        if (inVersions)
+        {
+            if (trimmed.endsWith(':') && trimmed != "items:")
+            {
+                currentVersion = stripQuotes(trimmed.left(trimmed.size() - 1).trimmed());
+                if (!currentVersion.isEmpty() && !m_versions.contains(currentVersion))
+                {
+                    m_versions.insert(currentVersion, QHash<QString, TranslationItem>());
+                    m_versionOrder.append(currentVersion);
+                }
+                inItems = false;
+                continue;
+            }
+            if (trimmed == "items:")
+            {
+                inItems = true;
+                continue;
+            }
+        }
+
         if (trimmed.startsWith('-'))
         {
+            if (!inVersions)
+            {
+                if (!inLegacyList)
+                {
+                    currentVersion = "default";
+                    m_versions.insert(currentVersion, QHash<QString, TranslationItem>());
+                    m_versionOrder.append(currentVersion);
+                    inLegacyList = true;
+                }
+                inItems = true;
+            }
+            else if (!inItems)
+            {
+                continue;
+            }
+
             if (inItem && !current.key.isEmpty())
-                m_items.insert(current.key, current);
+                m_versions[currentVersion].insert(current.key, current);
 
             current = TranslationItem();
             inItem = true;
@@ -144,7 +190,7 @@ bool TranslationStore::load(const QString &path, QString *error)
             {
                 // Start multiline block
                 inMultilineDesc = true;
-                multilineIndent = 4; // Assume 4 spaces indentation
+                multilineIndent = leadingSpaces + 2; // YAML block indent is parent indent + 2
                 multilineLines.clear();
             }
             else
@@ -161,7 +207,10 @@ bool TranslationStore::load(const QString &path, QString *error)
     }
 
     if (inItem && !current.key.isEmpty())
-        m_items.insert(current.key, current);
+        m_versions[currentVersion].insert(current.key, current);
+
+    if (!m_versionOrder.isEmpty())
+        m_currentVersion = m_versionOrder.first();
 
     return true;
 }
@@ -178,30 +227,50 @@ bool TranslationStore::save(const QString &path, QString *error) const
 
     QTextStream out(&file);
     out.setCodec("UTF-8");
-    QVector<TranslationItem> items = allItems();
 
-    for (const TranslationItem &item : items)
+    out << "versions:\n";
+
+    QStringList versions = m_versionOrder;
+    if (versions.isEmpty())
+        versions = m_versions.keys();
+
+    for (const QString &version : versions)
     {
-        out << "- key: " << formatYamlValue(item.key) << "\n";
-        if (!item.section.isEmpty())
-            out << "  section: " << formatYamlValue(item.section) << "\n";
-        if (!item.nameZh.isEmpty())
-            out << "  name_zh: " << formatYamlValue(item.nameZh) << "\n";
-        if (!item.descriptionZh.isEmpty())
+        if (!m_versions.contains(version))
+            continue;
+        out << "  " << formatYamlValue(version) << ":\n";
+        out << "    items:\n";
+
+        QVector<TranslationItem> items;
+        items.reserve(m_versions[version].size());
+        for (const TranslationItem &item : m_versions[version])
+            items.push_back(item);
+        std::sort(items.begin(), items.end(), [](const TranslationItem &a, const TranslationItem &b) {
+            return a.key < b.key;
+        });
+
+        for (const TranslationItem &item : items)
         {
-            // Check if description contains newlines
-            if (item.descriptionZh.contains('\n'))
+            out << "    - key: " << formatYamlValue(item.key) << "\n";
+            if (!item.section.isEmpty())
+                out << "      section: " << formatYamlValue(item.section) << "\n";
+            if (!item.nameZh.isEmpty())
+                out << "      name_zh: " << formatYamlValue(item.nameZh) << "\n";
+            if (!item.descriptionZh.isEmpty())
             {
-                out << "  description_zh: |\n";
-                QStringList lines = item.descriptionZh.split('\n');
-                for (const QString &line : lines)
+                if (item.descriptionZh.contains('\n'))
                 {
-                    out << "    " << line << "\n";
+                    out << "      description_zh: |\n";
+                    QStringList lines = item.descriptionZh.split('\n');
+                    for (const QString &line : lines)
+                    {
+                        out << "        " << line << "\n";
+                    }
                 }
-            }
-            else
-            {
-                out << "  description_zh: " << formatYamlValue(item.descriptionZh) << "\n";
+                else
+                {
+                    out << "      description_zh: " << formatYamlValue(item.descriptionZh) << "\n";
+                }
             }
         }
     }
@@ -209,28 +278,61 @@ bool TranslationStore::save(const QString &path, QString *error) const
     return true;
 }
 
+QStringList TranslationStore::availableVersions() const
+{
+    if (!m_versionOrder.isEmpty())
+        return m_versionOrder;
+    return m_versions.keys();
+}
+
+QString TranslationStore::currentVersion() const
+{
+    return m_currentVersion;
+}
+
+bool TranslationStore::setCurrentVersion(const QString &version)
+{
+    if (!m_versions.contains(version))
+        return false;
+    m_currentVersion = version;
+    return true;
+}
+
 bool TranslationStore::contains(const QString &key) const
 {
-    return m_items.contains(key);
+    return m_versions.contains(m_currentVersion) && m_versions[m_currentVersion].contains(key);
 }
 
 TranslationItem TranslationStore::item(const QString &key) const
 {
-    return m_items.value(key);
+    if (!m_versions.contains(m_currentVersion))
+        return TranslationItem();
+    return m_versions[m_currentVersion].value(key);
 }
 
 void TranslationStore::upsert(const TranslationItem &item)
 {
     if (item.key.isEmpty())
         return;
-    m_items.insert(item.key, item);
+    if (m_currentVersion.isEmpty())
+    {
+        m_currentVersion = "default";
+        if (!m_versions.contains(m_currentVersion))
+            m_versions.insert(m_currentVersion, QHash<QString, TranslationItem>());
+        if (!m_versionOrder.contains(m_currentVersion))
+            m_versionOrder.append(m_currentVersion);
+    }
+    m_versions[m_currentVersion].insert(item.key, item);
 }
 
 QVector<TranslationItem> TranslationStore::allItems() const
 {
     QVector<TranslationItem> items;
-    items.reserve(m_items.size());
-    for (const TranslationItem &item : m_items)
+    if (!m_versions.contains(m_currentVersion))
+        return items;
+
+    items.reserve(m_versions[m_currentVersion].size());
+    for (const TranslationItem &item : m_versions[m_currentVersion])
         items.push_back(item);
 
     std::sort(items.begin(), items.end(), [](const TranslationItem &a, const TranslationItem &b) {

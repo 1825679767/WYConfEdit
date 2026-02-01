@@ -3,6 +3,7 @@
 
 #include <QApplication>
 #include <QCloseEvent>
+#include <QComboBox>
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -79,6 +80,17 @@ void MainWindow::buildUi()
     topBarLayout->addWidget(m_filePathLabel);
 
     topBarLayout->addStretch();
+
+    QLabel *versionLabel = new QLabel("版本", this);
+    versionLabel->setObjectName("VersionLabel");
+    topBarLayout->addWidget(versionLabel);
+
+    m_versionCombo = new QComboBox(this);
+    m_versionCombo->setObjectName("VersionCombo");
+    m_versionCombo->setCursor(Qt::PointingHandCursor);
+    topBarLayout->addWidget(m_versionCombo);
+
+    topBarLayout->addSpacing(12);
 
     QLabel *adLabel = new QLabel("WY技术交流群:738942437", this);
     adLabel->setObjectName("AdLabel");
@@ -205,6 +217,8 @@ void MainWindow::buildUi()
             this, &MainWindow::onSearchChanged);
     connect(m_sectionList, &QListWidget::currentItemChanged,
             this, &MainWindow::onSectionChanged);
+    connect(m_versionCombo, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onVersionChanged);
     connect(m_table, &QTableView::doubleClicked,
             this, &MainWindow::onTableDoubleClicked);
     connect(openButton, &QPushButton::clicked,
@@ -242,6 +256,33 @@ void MainWindow::applyGlobalStyles()
             color: rgba(80, 60, 80, 0.5);
             font-size: 13px;
             margin-left: 12px;
+        }
+        QLabel#VersionLabel {
+            color: rgba(80, 60, 80, 0.7);
+            font-size: 13px;
+            margin-right: 6px;
+        }
+        QComboBox#VersionCombo {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 6px 10px;
+            color: rgba(80, 60, 80, 0.9);
+            font-size: 13px;
+            min-width: 120px;
+        }
+        QComboBox#VersionCombo:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        QComboBox#VersionCombo::drop-down {
+            border: none;
+            width: 18px;
+        }
+        QComboBox#VersionCombo QAbstractItemView {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(210, 153, 194, 0.4);
+            selection-background-color: rgba(210, 153, 194, 0.25);
+            selection-color: rgba(80, 60, 80, 0.95);
         }
         QPushButton#WindowButton {
             background-color: rgba(80, 60, 80, 0.08);
@@ -564,6 +605,27 @@ void MainWindow::loadTranslation(const QString &path)
     }
     m_translationPath = path;
     m_translationDirty = false;
+
+    if (m_versionCombo)
+    {
+        QStringList versions = m_translations.availableVersions();
+        QSettings settings("WY", "ConfEdit");
+        QString preferred = settings.value("translationVersion").toString();
+        QString selected = versions.contains(preferred) ? preferred : (versions.isEmpty() ? QString() : versions.first());
+
+        m_versionCombo->blockSignals(true);
+        m_versionCombo->clear();
+        for (const QString &ver : versions)
+            m_versionCombo->addItem(ver, ver);
+        if (!selected.isEmpty())
+        {
+            m_translations.setCurrentVersion(selected);
+            int index = m_versionCombo->findData(selected);
+            if (index >= 0)
+                m_versionCombo->setCurrentIndex(index);
+        }
+        m_versionCombo->blockSignals(false);
+    }
 }
 
 void MainWindow::mergeTranslations()
@@ -753,6 +815,25 @@ void MainWindow::onSaveAll()
     }
 
     QMessageBox::information(this, "保存", "所有更改已保存成功。");
+}
+
+void MainWindow::onVersionChanged(int index)
+{
+    if (!m_versionCombo)
+        return;
+    QString version = m_versionCombo->itemData(index).toString();
+    if (version.isEmpty())
+        version = m_versionCombo->currentText();
+    if (version.isEmpty())
+        return;
+    if (!m_translations.setCurrentVersion(version))
+        return;
+
+    QSettings settings("WY", "ConfEdit");
+    settings.setValue("translationVersion", version);
+
+    mergeTranslations();
+    refreshSectionFilter();
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
