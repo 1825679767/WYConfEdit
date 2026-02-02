@@ -114,18 +114,47 @@ bool TranslationStore::load(const QString &path, QString *error)
 
         if (inVersions)
         {
-            if (trimmed.endsWith(':') && trimmed != "items:")
+            // Version keys are only valid at indent level 2: "  'version':"
+            if (leadingSpaces == 2 && trimmed.endsWith(':') && trimmed != "items:")
             {
-                currentVersion = stripQuotes(trimmed.left(trimmed.size() - 1).trimmed());
-                if (!currentVersion.isEmpty() && !m_versions.contains(currentVersion))
+                if (inItem && !current.key.isEmpty() && !currentVersion.isEmpty())
                 {
-                    m_versions.insert(currentVersion, QHash<QString, TranslationItem>());
-                    m_versionOrder.append(currentVersion);
+                    m_versions[currentVersion].insert(current.key, current);
+                    current = TranslationItem();
+                    inItem = false;
                 }
-                inItems = false;
-                continue;
+                // Validate that the next meaningful line is "items:" at indent 4
+                qint64 lastPos = in.pos();
+                QString nextLine;
+                while (!in.atEnd())
+                {
+                    nextLine = in.readLine();
+                    QString nextTrimmed = nextLine.trimmed();
+                    if (nextTrimmed.isEmpty() || nextTrimmed.startsWith('#'))
+                        continue;
+                    int nextLeading = 0;
+                    while (nextLeading < nextLine.size() && nextLine[nextLeading] == ' ')
+                        nextLeading++;
+                    bool validItems = (nextLeading == 4 && nextTrimmed == "items:");
+                    in.seek(lastPos);
+                    if (!validItems)
+                        nextLine.clear();
+                    break;
+                }
+                if (!nextLine.isEmpty())
+                {
+                    currentVersion = stripQuotes(trimmed.left(trimmed.size() - 1).trimmed());
+                    if (!currentVersion.isEmpty() && !m_versions.contains(currentVersion))
+                    {
+                        m_versions.insert(currentVersion, QHash<QString, TranslationItem>());
+                        m_versionOrder.append(currentVersion);
+                    }
+                    inItems = false;
+                    continue;
+                }
             }
-            if (trimmed == "items:")
+            // "items:" is only valid under a version at indent level 4
+            if (leadingSpaces == 4 && trimmed == "items:")
             {
                 inItems = true;
                 continue;

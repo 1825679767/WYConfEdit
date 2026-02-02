@@ -22,7 +22,20 @@
 #include <QSet>
 #include <QSettings>
 #include <QTableView>
+#include <QTimer>
 #include <QVBoxLayout>
+#include <QFutureWatcher>
+#include <QtConcurrent>
+
+namespace {
+struct TranslationLoadResult
+{
+    TranslationStore store;
+    QString error;
+    QString path;
+    bool ok = false;
+};
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,7 +45,11 @@ MainWindow::MainWindow(QWidget *parent)
     setAttribute(Qt::WA_TranslucentBackground);
     buildUi();
     applyGlobalStyles();
-    loadDefaultFiles();
+    QTimer::singleShot(0, this, [this]() {
+        raise();
+        activateWindow();
+    });
+    QTimer::singleShot(200, this, &MainWindow::loadDefaultFiles);
 }
 
 void MainWindow::buildUi()
@@ -566,18 +583,8 @@ void MainWindow::loadDefaultFiles()
     QString base = QDir::currentPath();
     m_translationPath = QDir(base).filePath("translation.yaml");
 
-    // Load translation file
-    loadTranslation(m_translationPath);
-
-    // Try to load last opened config file
-    QString lastFile = loadLastOpenedFile();
-    if (!lastFile.isEmpty() && QFileInfo::exists(lastFile))
-    {
-        loadConfig(lastFile);
-        mergeTranslations();
-        refreshSectionFilter();
-        updateFilePathLabel();
-    }
+    // Load translation file asynchronously to avoid blocking UI
+    loadTranslationAsync(m_translationPath);
 }
 
 void MainWindow::loadConfig(const QString &path)
@@ -626,6 +633,83 @@ void MainWindow::loadTranslation(const QString &path)
         }
         m_versionCombo->blockSignals(false);
     }
+}
+
+void MainWindow::loadTranslationAsync(const QString &path)
+{
+    if (m_versionCombo)
+    {
+        m_versionCombo->blockSignals(true);
+        m_versionCombo->clear();
+        m_versionCombo->addItem("加载中...", "");
+        m_versionCombo->blockSignals(false);
+    }
+
+    auto watcher = new QFutureWatcher<TranslationLoadResult>(this);
+    connect(watcher, &QFutureWatcher<TranslationLoadResult>::finished, this, [this, watcher]() {
+        TranslationLoadResult result = watcher->result();
+        watcher->deleteLater();
+
+        if (!result.ok)
+        {
+            QMessageBox::warning(this, "加载翻译", result.error);
+            return;
+        }
+
+        m_translations = result.store;
+        m_translationPath = result.path;
+        m_translationDirty = false;
+
+        if (m_versionCombo)
+        {
+            QStringList versions = m_translations.availableVersions();
+            QSettings settings("WY", "ConfEdit");
+            QString preferred = settings.value("translationVersion").toString();
+            QString selected = versions.contains(preferred) ? preferred : (versions.isEmpty() ? QString() : versions.first());
+
+            m_versionCombo->blockSignals(true);
+            m_versionCombo->clear();
+            for (const QString &ver : versions)
+                m_versionCombo->addItem(ver, ver);
+            if (!selected.isEmpty())
+            {
+                m_translations.setCurrentVersion(selected);
+                int index = m_versionCombo->findData(selected);
+                if (index >= 0)
+                    m_versionCombo->setCurrentIndex(index);
+            }
+            m_versionCombo->blockSignals(false);
+        }
+
+        // Try to load last opened config file
+        QString lastFile = loadLastOpenedFile();
+        if (!lastFile.isEmpty() && QFileInfo::exists(lastFile))
+        {
+            loadConfig(lastFile);
+            mergeTranslations();
+            refreshSectionFilter();
+            updateFilePathLabel();
+        }
+    });
+
+    QFuture<TranslationLoadResult> future = QtConcurrent::run([path]() {
+        TranslationLoadResult result;
+        result.path = path;
+        QString error;
+        TranslationStore store;
+        if (store.load(path, &error))
+        {
+            result.ok = true;
+            result.store = store;
+        }
+        else
+        {
+            result.ok = false;
+            result.error = error;
+        }
+        return result;
+    });
+    watcher->setFuture(future);
 }
 
 void MainWindow::mergeTranslations()

@@ -43,6 +43,7 @@ private:
     void loadDefaultFiles();
     void loadConfig(const QString &path);
     void loadTranslation(const QString &path);
+    void loadTranslationAsync(const QString &path);
     void mergeTranslations();
     void refreshSectionFilter();
     void openEditDialog(int sourceRow);
