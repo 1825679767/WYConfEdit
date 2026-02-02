@@ -1,4 +1,4 @@
-QT += widgets concurrent
+QT += widgets concurrent sql
 CONFIG += c++17
 
 TEMPLATE = app

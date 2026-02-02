@@ -3,6 +3,16 @@
 #include <algorithm>
 #include <QFile>
 #include <QTextStream>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QUuid>
+
+static bool isSqlitePath(const QString &path)
+{
+    QString lower = path.toLower();
+    return lower.endsWith(".db") || lower.endsWith(".sqlite") || lower.endsWith(".sqlite3");
+}
 
 static QString stripQuotes(const QString &value)
 {
@@ -46,7 +56,204 @@ static bool parseKeyValue(const QString &line, QString *keyOut, QString *valueOu
     return true;
 }
 
-bool TranslationStore::load(const QString &path, QString *error)
+static bool ensureSqliteSchema(QSqlDatabase &db, QString *error)
+{
+    QSqlQuery q(db);
+    if (!q.exec("CREATE TABLE IF NOT EXISTS versions (name TEXT PRIMARY KEY, ord INTEGER)"))
+    {
+        if (error)
+            *error = q.lastError().text();
+        return false;
+    }
+    if (!q.exec("CREATE TABLE IF NOT EXISTS items (version TEXT NOT NULL, key TEXT NOT NULL, section TEXT, name_zh TEXT, description_zh TEXT, PRIMARY KEY(version, key))"))
+    {
+        if (error)
+            *error = q.lastError().text();
+        return false;
+    }
+    if (!q.exec("CREATE INDEX IF NOT EXISTS idx_items_version ON items(version)"))
+    {
+        if (error)
+            *error = q.lastError().text();
+        return false;
+    }
+    return true;
+}
+
+bool TranslationStore::loadFromSqlite(const QString &path, QString *error)
+{
+    m_versions.clear();
+    m_versionOrder.clear();
+    m_currentVersion.clear();
+
+    const QString connName = QString("translation_%1").arg(QUuid::createUuid().toString(QUuid::WithoutBraces));
+    {
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connName);
+        db.setDatabaseName(path);
+        if (!db.open())
+        {
+            if (error)
+                *error = db.lastError().text();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        if (!ensureSqliteSchema(db, error))
+        {
+            db.close();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        QSqlQuery q(db);
+        if (!q.exec("SELECT name FROM versions ORDER BY ord ASC, name ASC"))
+        {
+            if (error)
+                *error = q.lastError().text();
+            db.close();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        while (q.next())
+        {
+            QString version = q.value(0).toString();
+            if (!version.isEmpty() && !m_versions.contains(version))
+            {
+                m_versions.insert(version, QHash<QString, TranslationItem>());
+                m_versionOrder.append(version);
+            }
+        }
+
+        for (const QString &version : m_versionOrder)
+        {
+            QSqlQuery qi(db);
+            qi.prepare("SELECT key, section, name_zh, description_zh FROM items WHERE version = ? ORDER BY key ASC");
+            qi.addBindValue(version);
+            if (!qi.exec())
+            {
+                if (error)
+                    *error = qi.lastError().text();
+                db.close();
+                QSqlDatabase::removeDatabase(connName);
+                return false;
+            }
+            while (qi.next())
+            {
+                TranslationItem item;
+                item.key = qi.value(0).toString();
+                item.section = qi.value(1).toString();
+                item.nameZh = qi.value(2).toString();
+                item.descriptionZh = qi.value(3).toString();
+                if (!item.key.isEmpty())
+                    m_versions[version].insert(item.key, item);
+            }
+        }
+
+        if (!m_versionOrder.isEmpty())
+            m_currentVersion = m_versionOrder.first();
+
+        db.close();
+    }
+    QSqlDatabase::removeDatabase(connName);
+    return true;
+}
+
+bool TranslationStore::saveToSqlite(const QString &path, QString *error) const
+{
+    const QString connName = QString("translation_save_%1").arg(QUuid::createUuid().toString(QUuid::WithoutBraces));
+    {
+        QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connName);
+        db.setDatabaseName(path);
+        if (!db.open())
+        {
+            if (error)
+                *error = db.lastError().text();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        if (!ensureSqliteSchema(db, error))
+        {
+            db.close();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        QSqlQuery clear(db);
+        if (!clear.exec("DELETE FROM items"))
+        {
+            if (error)
+                *error = clear.lastError().text();
+            db.close();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+        if (!clear.exec("DELETE FROM versions"))
+        {
+            if (error)
+                *error = clear.lastError().text();
+            db.close();
+            QSqlDatabase::removeDatabase(connName);
+            return false;
+        }
+
+        QSqlQuery insertVersion(db);
+        insertVersion.prepare("INSERT INTO versions(name, ord) VALUES(?, ?)");
+        int order = 0;
+        QStringList versions = m_versionOrder;
+        if (versions.isEmpty())
+            versions = m_versions.keys();
+
+        for (const QString &version : versions)
+        {
+            if (!m_versions.contains(version))
+                continue;
+            insertVersion.addBindValue(version);
+            insertVersion.addBindValue(order++);
+            if (!insertVersion.exec())
+            {
+                if (error)
+                    *error = insertVersion.lastError().text();
+                db.close();
+                QSqlDatabase::removeDatabase(connName);
+                return false;
+            }
+        }
+
+        QSqlQuery insertItem(db);
+        insertItem.prepare("INSERT INTO items(version, key, section, name_zh, description_zh) VALUES(?, ?, ?, ?, ?)");
+        for (const QString &version : versions)
+        {
+            if (!m_versions.contains(version))
+                continue;
+            for (const TranslationItem &item : m_versions[version])
+            {
+                if (item.key.isEmpty())
+                    continue;
+                insertItem.addBindValue(version);
+                insertItem.addBindValue(item.key);
+                insertItem.addBindValue(item.section);
+                insertItem.addBindValue(item.nameZh);
+                insertItem.addBindValue(item.descriptionZh);
+                if (!insertItem.exec())
+                {
+                    if (error)
+                        *error = insertItem.lastError().text();
+                    db.close();
+                    QSqlDatabase::removeDatabase(connName);
+                    return false;
+                }
+            }
+        }
+
+        db.close();
+    }
+    QSqlDatabase::removeDatabase(connName);
+    return true;
+}
+
+bool TranslationStore::loadFromYaml(const QString &path, QString *error)
 {
     m_versions.clear();
     m_versionOrder.clear();
@@ -244,7 +451,7 @@ bool TranslationStore::load(const QString &path, QString *error)
     return true;
 }
 
-bool TranslationStore::save(const QString &path, QString *error) const
+bool TranslationStore::saveToYaml(const QString &path, QString *error) const
 {
     QFile file(path);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -305,6 +512,20 @@ bool TranslationStore::save(const QString &path, QString *error) const
     }
 
     return true;
+}
+
+bool TranslationStore::load(const QString &path, QString *error)
+{
+    if (isSqlitePath(path))
+        return loadFromSqlite(path, error);
+    return loadFromYaml(path, error);
+}
+
+bool TranslationStore::save(const QString &path, QString *error) const
+{
+    if (isSqlitePath(path))
+        return saveToSqlite(path, error);
+    return saveToYaml(path, error);
 }
 
 QStringList TranslationStore::availableVersions() const

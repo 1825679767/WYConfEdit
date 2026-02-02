@@ -581,7 +581,7 @@ void MainWindow::applyGlobalStyles()
 void MainWindow::loadDefaultFiles()
 {
     QString base = QDir::currentPath();
-    m_translationPath = QDir(base).filePath("translation.yaml");
+    m_translationPath = QDir(base).filePath("translation.db");
 
     // Load translation file asynchronously to avoid blocking UI
     loadTranslationAsync(m_translationPath);
@@ -697,15 +697,52 @@ void MainWindow::loadTranslationAsync(const QString &path)
         result.path = path;
         QString error;
         TranslationStore store;
-        if (store.load(path, &error))
+        QFileInfo info(path);
+        QString lower = path.toLower();
+        bool isSqlite = lower.endsWith(".db") || lower.endsWith(".sqlite") || lower.endsWith(".sqlite3");
+        if (info.exists())
         {
-            result.ok = true;
-            result.store = store;
+            if (store.load(path, &error))
+            {
+                result.ok = true;
+                result.store = store;
+            }
+            else
+            {
+                result.ok = false;
+                result.error = error;
+            }
+        }
+        else if (isSqlite)
+        {
+            QString yamlPath = QDir(info.absolutePath()).filePath("translation.yaml");
+            if (QFileInfo::exists(yamlPath))
+            {
+                if (store.load(yamlPath, &error))
+                {
+                    QString saveError;
+                    store.save(path, &saveError);
+                    if (!saveError.isEmpty())
+                        error = saveError;
+                    result.ok = true;
+                    result.store = store;
+                }
+                else
+                {
+                    result.ok = false;
+                    result.error = error;
+                }
+            }
+            else
+            {
+                result.ok = false;
+                result.error = QString("Translation not found: %1").arg(path);
+            }
         }
         else
         {
             result.ok = false;
-            result.error = error;
+            result.error = QString("Translation not found: %1").arg(path);
         }
         return result;
     });

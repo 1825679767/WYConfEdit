@@ -28,6 +28,11 @@ public:
     QVector<TranslationItem> allItems() const;
 
 private:
+    bool loadFromYaml(const QString &path, QString *error);
+    bool loadFromSqlite(const QString &path, QString *error);
+    bool saveToYaml(const QString &path, QString *error) const;
+    bool saveToSqlite(const QString &path, QString *error) const;
+
     QHash<QString, QHash<QString, TranslationItem>> m_versions;
     QStringList m_versionOrder;
     QString m_currentVersion;
