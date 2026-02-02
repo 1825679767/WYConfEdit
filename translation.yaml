@@ -8087,133 +8087,133 @@ versions:
       name_zh: 日志数据库工作线程
       description_zh:
     - key: MaxPingTime
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 最大Ping间隔
       description_zh: |
         MaxPingTime
         数据库心跳最大间隔设置。
     - key: WorldServerPort
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 世界服务器端口
       description_zh: |
         WorldServerPort
         服务器监听的端口。
     - key: BindIP
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 绑定IP
       description_zh: |
         BindIP
         用于在默认端口上在不同 IP 运行多个 worldd/realmd 实例。
     - key: UseProcessors
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 使用处理器掩码
       description_zh: |
         UseProcessors
         多处理器系统的处理器掩码。（仅 Windows）
     - key: ProcessPriority
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 进程优先级
       description_zh: |
         ProcessPriority
         进程优先级设置。（仅 Windows）
     - key: Compression
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 数据包压缩等级
       description_zh: |
         Compression
         发送给客户端的更新包压缩等级（1-9）。
     - key: PlayerLimit
-      section: 数据库工作线程
+      section: 登录队列
       name_zh: 玩家上限
       description_zh: |
         PlayerLimit
         初始服务器容量。（不含版主、GM、管理员）
     - key: PlayerHardLimit
-      section: 数据库工作线程
+      section: 登录队列
       name_zh: 玩家硬上限
       description_zh: |
         PlayerHardLimit
         通过 LoginPerTick 提升 PlayerLimit 后，世界内玩家数量上限。
     - key: LoginQueue.GracePeriodSecs
-      section: 数据库工作线程
+      section: 登录队列
       name_zh: 登录队列宽限时间(秒)
       description_zh: |
         LoginQueue.GracePeriodSecs
         上次登出后可跳过排队的秒数。
     - key: LoginPerTick
-      section: 数据库工作线程
+      section: 登录队列
       name_zh: 每Tick登录数
       description_zh: |
         LoginPerTick
         每个世界更新 tick 允许从队列登录的最大人数。（约每 100 ms）
     - key: CharacterScreenMaxIdleTime
-      section: 数据库工作线程
+      section: 登录队列
       name_zh: 角色选择界面最大空闲时间
       description_zh: |
         CharacterScreenMaxIdleTime
         角色选择界面允许停留的秒数，超时断开。
     - key: SaveRespawnTimeImmediately
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 立即保存复活时间
       description_zh: |
         SaveRespawnTimeImmediately
         生物死亡和物体使用时立即保存重生时间。
     - key: MaxOverspeedPings
-      section: 数据库工作线程
+      section: 服务器基础
       name_zh: 最大超速Ping数
       description_zh: |
         MaxOverspeedPings
         超速 ping 次数上限，超过则踢出。
     - key: GridUnload
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 网格卸载
       description_zh: |
         GridUnload
         卸载网格。（内存充足可禁用以加快二次进入新格）
     - key: CleanupTerrain
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 地形清理
       description_zh: |
         CleanupTerrain
         启用/禁用地形清理。
     - key: GridCleanUpDelay
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 网格清理延迟
       description_zh: |
         GridCleanUpDelay
         网格清理延迟。
     - key: MapUpdateInterval
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 地图更新间隔
       description_zh: |
         MapUpdateInterval
         地图更新间隔。
     - key: ChangeWeatherInterval
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 天气变化间隔
       description_zh: |
         ChangeWeatherInterval
         天气更新间隔。
     - key: PlayerSave.Interval
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 玩家保存间隔
       description_zh: |
         PlayerSave.Interval
         玩家保存间隔。
     - key: PlayerSave.Stats.MinLevel
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 玩家保存统计最小等级
       description_zh: |
         PlayerSave.Stats.MinLevel
         保存角色统计到数据库供外部使用的最低等级。
     - key: PlayerSave.Stats.SaveOnlyOnLogout
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 仅登出时保存统计
       description_zh: |
         PlayerSave.Stats.SaveOnlyOnLogout
         仅在登出时保存角色统计开关。
     - key: Terrain.Preload.Continents
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 预加载大陆地形
       description_zh: |
         Terrain.Preload.Continents
@@ -8221,76 +8221,76 @@ versions:
         启用/禁用在服务器启动时加载全部地形数据。
         推荐值：1。否则当 "MapUpdate.Threads" > 1 时可能崩溃。
     - key: Terrain.Preload.Instances
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 预加载副本地形
       description_zh:
     - key: vmap.enableLOS
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: VMap视线检测
       description_zh: |
         vmap.enableLOS
         vmap.enableHeight
         启用/禁用 VMaps 对视线与高度计算的支持。
     - key: vmap.enableHeight
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: VMap高度检测
       description_zh:
     - key: vmap.ignoreSpellIds
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: VMap忽略法术ID
       description_zh: |
         vmap.ignoreSpellIds
         这些法术在视线计算时被忽略。（ID 列表，分隔符为 ,）
     - key: vmap.enableIndoorCheck
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: VMap室内检测
       description_zh: |
         vmap.enableIndoorCheck
         启用/禁用基于 VMap 的室内检测，用于移除仅室外光环。
     - key: vmap.petLOS
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: VMap宠物视线
       description_zh:
     - key: mmap.enabled
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: MMap寻路开关
       description_zh: |
         mmap.enabled
         启用/禁用使用 mmaps 的寻路。
     - key: Collision.Models.Unload
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: 碰撞模型卸载
       description_zh: |
         Collision.Models.Unload
         当无人使用时释放模型。
     - key: DetectPosCollision
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: 位置碰撞检测
       description_zh: |
         DetectPosCollision
         检查最终移动位置、召唤位置等，与其他物体或墙体的可见碰撞。
     - key: TargetPosRecalculateRange
-      section: 数据库工作线程
+      section: 寻路与碰撞
       name_zh: 目标位置重算范围
       description_zh: |
         TargetPosRecalculateRange
         当与移动目标点（+移动单位尺寸）以及目标对象（+尺寸）的距离超过该值时，重新计算目标移动点。最大：近战攻击距离（5），最小：接触距离（0.5）。
         距离越大性能越好；距离越小对目标移动反应更敏感。
     - key: UpdateUptimeInterval
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 运行时间更新间隔
       description_zh: |
         UpdateUptimeInterval
         更新 realm 运行时长并保存到 "uptime" 表的周期。（必须 > 0）
     - key: MaxCoreStuckTime
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 核心卡死最大时间
       description_zh: |
         MaxCoreStuckTime
         定期检查进程是否卡死，如卡死则在指定秒数后强制崩溃。
         必须 > 0。建议 > 10 秒。
     - key: BanListReloadTimer
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 封禁列表重载计时
       description_zh: |
         BanListReloadTimer
@@ -8303,58 +8303,58 @@ versions:
         启用/禁用通过服务器使用插件频道。
         （部分客户端插件在禁用插件频道时可能无法正常工作）
     - key: CleanCharacterDB
-      section: 数据库工作线程
+      section: 地图与更新
       name_zh: 清理角色数据库
       description_zh: |
         CleanCharacterDB
         启动时执行角色库清理。
     - key: Continents.Instanciate
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 大陆实例化
       description_zh: |
         Continents & MapUpdate
     - key: Continents.InactivePlayers.SkipUpdates
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 非活跃玩家跳过更新
       description_zh:
     - key: MapUpdate.ReduceGridActivationDist.Tick
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 降低网格激活距离Tick
       description_zh:
     - key: MapUpdate.IncreaseGridActivationDist.Tick
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 提高网格激活距离Tick
       description_zh:
     - key: MapUpdate.MinGridActivationDistance
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 最小网格激活距离
       description_zh:
     - key: MapUpdate.ReduceVisDist.Tick
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 降低可视距离Tick
       description_zh:
     - key: MapUpdate.IncreaseVisDist.Tick
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 提高可视距离Tick
       description_zh:
     - key: MapUpdate.MinVisibilityDistance
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 最小可视距离
       description_zh:
     - key: MapUpdate.Empty.UpdateTime
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 空地图更新时间
       description_zh: |
         MapUpdate.Empty.UpdateTime
         没有玩家超过 $UpdateTime（毫秒）的地图将不再更新。
     - key: MapUpdate.Instanced.UpdateThreads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 副本地图更新线程
       description_zh: |
         MapUpdate.Instanced.UpdateThreads
         每个地图的线程数。
     - key: MapUpdate.ObjectsUpdate.MaxThreads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 物体更新最大线程
       description_zh: |
         MapUpdate.ObjectsUpdate.MaxThreads
@@ -8363,19 +8363,19 @@ versions:
         MapUpdate.VisibilityUpdate.Timeout
         每个地图的子线程数。（不用于副本地图）
     - key: MapUpdate.ObjectsUpdate.Timeout
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 物体更新超时
       description_zh:
     - key: MapUpdate.VisibilityUpdate.MaxThreads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 可视更新最大线程
       description_zh:
     - key: MapUpdate.VisibilityUpdate.Timeout
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 可视更新超时
       description_zh:
     - key: MapUpdate.UpdatePacketsDiff
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 更新包差值
       description_zh: |
         MapUpdate.UpdatePacketsDiff
@@ -8383,51 +8383,51 @@ versions:
         MapUpdate.UpdateCellsDiff
         硬编码的多线程选项。
     - key: MapUpdate.UpdatePlayersDiff
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 更新玩家差值
       description_zh:
     - key: MapUpdate.UpdateCellsDiff
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 更新区域差值
       description_zh:
     - key: MapUpdate.Continents.MTCells.Threads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 大陆多线程网格线程数
       description_zh: |
         MapUpdate.Continents.MTCells.Threads
         同时更新的不同格子数量。
     - key: MapUpdate.Continents.MTCells.SafeDistance
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 大陆多线程网格安全距离
       description_zh: |
         MapUpdate.Continents.MTCells.SafeDistance
         两个格子距离小于该值时不会同时更新。（避免线程竞争）
     - key: Continents.MotionUpdate.Threads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 大陆移动更新线程
       description_zh: |
         Continents.MotionUpdate.Threads
         同一地图内格子的并行执行。
     - key: AsyncTasks.Threads
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 异步任务线程数
       description_zh: |
         AsyncTasks.Threads
         AsyncQueriesTickTimeout
         异步任务线程数。（/who、拍卖行列表等）
     - key: AsyncQueriesTickTimeout
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 异步查询Tick超时
       description_zh:
     - key: Movement.RelocationVmapsCheckDelay
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 移动重定位VMap检测延迟
       description_zh: |
         Movement.RelocationVmapsCheckDelay
         Movement.MaxPointsPerPacket
         延迟位置重校验。（坐骑室内/游泳等）
     - key: Movement.MaxPointsPerPacket
-      section: 大陆与地图更新
+      section: 地图与更新
       name_zh: 每包最大移动点数
       description_zh:
     - key: Movement.Interpolation
@@ -8436,291 +8436,291 @@ versions:
       description_zh: |
         Movement interpolation system - not stable now
     - key: Anticrash.Options
-      section: 移动插值系统（不稳定）
+      section: 防崩溃
       name_zh: 防崩溃选项
       description_zh: |
         Anticrash.Options
         标志位：1 公告，2 保存全部，4 崩溃副本，8 崩溃大陆，16 生成 coredump。
     - key: Anticrash.Rearm.Timer
-      section: 移动插值系统（不稳定）
+      section: 防崩溃
       name_zh: 防崩溃复位计时
       description_zh: |
         Anticrash.Rearm.Timer
         两次崩溃之间受防崩溃保护的间隔。
     - key: WowPatch
-      section: 移动插值系统（不稳定）
+      section: 补丁与进度
       name_zh: 魔兽补丁版本
       description_zh: |
         WowPatch
         服务器用于判定任务/NPC/副本与团队副本可用性的目标补丁版本。
     - key: PvP.AccurateEquipRequirements
-      section: 移动插值系统（不稳定）
+      section: PVP系统
       name_zh: PVP 精确装备需求
       description_zh: |
         PvP.AccurateEquipRequirements
         是否执行类官方的 PVP 军衔装备要求（1.6 之前）。
     - key: PvP.AccuratePurchaseRequirements
-      section: 移动插值系统（不稳定）
+      section: PVP系统
       name_zh: PVP 精确购买需求
       description_zh: |
         PvP.AccuratePurchaseRequirements
         是否执行类官方的 PVP 军衔购买要求（终身或当前军衔）。
     - key: PvP.AccurateTimeline
-      section: 移动插值系统（不稳定）
+      section: PVP系统
       name_zh: PVP 精确时间线
       description_zh: |
         PvP.AccurateTimeline
         是否执行准确的 PVP 时间线，例如荣誉系统在 1.4 之前不存在。
         启用后，玩家在对应补丁前无法获得军衔。
     - key: PvP.AccurateRewards
-      section: 移动插值系统（不稳定）
+      section: PVP系统
       name_zh: PVP 精确奖励
       description_zh: |
         PvP.AccurateRewards
         是否根据补丁调整 PVP 声望与荣誉击杀奖励（多次变更）。
     - key: PvP.DishonorableKills
-      section: 移动插值系统（不稳定）
+      section: PVP系统
       name_zh: PVP 不荣誉击杀
       description_zh: |
         PvP.DishonorableKills
         是否对击杀平民的玩家给予不荣誉击杀。
     - key: Progression.RestoreDeletedItems
-      section: 进度/恢复已删物品
+      section: 进度系统
       name_zh: 进度-恢复已删物品
       description_zh: |
         Progression.RestoreDeletedItems
         是否自动恢复曾因该内容补丁下不存在模板而被删除的物品。
         物品加入游戏后会通过邮件返还给玩家。
     - key: Progression.AccuratePetStatistics
-      section: 进度/精确宠物统计
+      section: 进度系统
       name_zh: 进度-精确宠物统计
       description_zh: |
         Progression.AccuratePetStatistics
         是否启用暴雪风格的宠物属性成长（伤害、速度、抗性）。
     - key: Progression.AccurateLFGAvailability
-      section: 进度/精确LFG可用性
+      section: 进度系统
       name_zh: 进度-精确LFG可用性
       description_zh: |
         Progression.AccurateLFGAvailability
         如果启用，则在 1.3 之前禁用 LFG 系统。
     - key: Progression.AccuratePVEEvents
-      section: 进度/精确 PVE 事件
+      section: 进度系统
       name_zh: 进度-精确 PVE 事件
       description_zh: |
         Progression.AccuratePVEEvents
         是否应用 PVE 事件的版本推进变化（非首领脚本）。这些事件会影响任务与其他脚本场景。
     - key: Progression.AccurateSpellEffects
-      section: 进度/精确法术效果
+      section: 进度系统
       name_zh: 进度-精确法术效果
       description_zh: |
         Progression.AccurateSpellEffects
         是否准确表现法术效果的版本变化（例如变异鱼）。不适用于功能变化或数值在补丁间变动的效果。
         仅影响客户端仍存在、但效果有新增/移除的法术。
     - key: Progression.NoRespecPriceDecay
-      section: 进度/恢复已删物品
+      section: 进度系统
       name_zh: 进度-天赋重置费用不衰减
       description_zh: |
         Progression.NoRespecPriceDecay
         启用后，天赋重置费用在 1.11 之前不会随时间降低（该补丁才加入月度减免）。
     - key: Progression.NoQuestXpToGold
-      section: 进度/恢复已删物品
+      section: 进度系统
       name_zh: 进度-任务经验不转金币
       description_zh: |
         Progression.NoQuestXpToGold
         启用后，满级任务经验在 1.10 之前不会转换为金币（该补丁才加入此机制）。
     - key: Progression.UnlinkedAuctionHouses
-      section: 进度/恢复已删物品
+      section: 进度系统
       name_zh: 进度-拍卖行不互通
       description_zh: |
         Progression.UnlinkedAuctionHouses
         启用后，1.9 之前每个拍卖行相互独立。地精拍卖行不受影响。
     - key: DebuffLimit
-      section: 进度/恢复已删物品
+      section: 战斗规则
       name_zh: 负面效果上限
       description_zh: |
         DebuffLimit
         目标身上可同时存在的减益数量上限。
     - key: LogSQL
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 记录SQL日志
       description_zh: |
         LogSQL
         启用 GM 命令日志记录。（所有 SQL 代码会写入日志文件）
         新的一天开始（00:00:00）会创建新文件，旧文件不会删除。
     - key: PidFile
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 进程PID文件
       description_zh: |
         PidFile
         世界进程 PID 文件。
     - key: LogLevel
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 日志等级
       description_zh: |
         LogLevel
         服务器控制台日志级别。
         0=最少；1=基础&错误；2=详细；3=完整/调试
     - key: LogTime
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 记录日志时间
       description_zh: |
         LogTime
         在控制台输出中包含时间。
     - key: LogFile
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 日志文件
       description_zh: |
         LogFile
         日志文件名。
     - key: LogTimestamp
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 日志时间戳
       description_zh: |
         LogTimestamp
         日志文件名包含服务器启动时间戳。
     - key: LogFileLevel
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 日志文件等级
       description_zh: |
         LogFileLevel
         服务器文件日志级别。
         0=最少；1=错误；2=详细；3=完整/调试
     - key: HonorLogFile
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 荣誉日志文件
       description_zh: |
         HonorLogFile
         荣誉日志文件名。
     - key: HonorLogTimestamp
-      section: 进度/恢复已删物品
+      section: 日志
       name_zh: 荣誉日志时间戳
       description_zh: |
         HonorLogTimestamp
         荣誉日志文件名包含服务器启动时间戳。
     - key: LogFilter_TransportMoves
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-运输移动
       description_zh: |
         LogFilter
         日志过滤器。
     - key: LogFilter_CreatureMoves
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-生物移动
       description_zh:
     - key: LogFilter_VisibilityChanges
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-可视变化
       description_zh:
     - key: LogFilter_DbStrictedCheck
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-数据库限制检查
       description_zh:
     - key: LogFilter_Honor
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-荣誉
       description_zh:
     - key: LogFilter_PlayerStats
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-玩家属性
       description_zh:
     - key: LogFilter_SQLText
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-SQL文本
       description_zh:
     - key: LogFilter_PlayerMoves
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-玩家移动
       description_zh:
     - key: LogFilter_PeriodicAffects
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-周期性效果
       description_zh:
     - key: LogFilter_AIAndMovegens
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-AI与移动生成器
       description_zh:
     - key: LogFilter_Damage
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-伤害
       description_zh:
     - key: LogFilter_Combat
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-战斗
       description_zh:
     - key: LogFilter_SpellCast
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-施法
       description_zh:
     - key: LogFilter_Pathfinding
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-寻路
       description_zh:
     - key: LogFilter_Weather
-      section: 日志过滤
+      section: 日志
       name_zh: 日志过滤-天气
       description_zh:
     - key: AnticheatLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 反作弊日志文件
       description_zh: |
         AnticheatLogFile
         反作弊检测结果日志文件。
     - key: AnticheatLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 反作弊日志时间戳
       description_zh: |
         AnticheatLogTimestamp
         反作弊日志文件名包含服务器启动时间戳。
     - key: WardenLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 守护者日志文件
       description_zh: |
         WardenLogFile
         Warden 检测结果日志文件。
     - key: WardenLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 守护者日志时间戳
       description_zh: |
         WardenLogTimestamp
         Warden 日志文件名包含服务器启动时间戳。
     - key: WorldLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 世界日志文件
       description_zh: |
         WorldLogFile
         世界服务器数据包日志文件。
     - key: WorldLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 世界日志时间戳
       description_zh: |
         WorldLogTimestamp
         世界服务器日志文件名包含服务器启动时间戳。
     - key: DBErrorLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 数据库错误日志文件
       description_zh: |
         DBErrorLogFile
         服务器运行时检测到的数据库错误日志文件。
     - key: DBErrorFixFile
-      section: 日志过滤
+      section: 日志
       name_zh: 数据库错误修复文件
       description_zh: |
         DBErrorFixFile
         用于修复检测到的数据库错误的 SQL 请求日志文件。
     - key: CharLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 角色日志文件
       description_zh: |
         CharLogFile
         角色操作日志文件名。
     - key: CharLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 角色日志时间戳
       description_zh: |
         CharLogTimestamp
         角色日志文件名包含服务器启动时间戳。
     - key: CharLogDump
-      section: 日志过滤
+      section: 日志
       name_zh: 角色日志导出
       description_zh: |
         CharLogDump
@@ -8728,160 +8728,160 @@ versions:
         恢复时，从日志中截取从 "== START DUMP ==" 到 "== END DUMP ==" 的内容（不含标记行），
         并使用 loadpdump 命令导入。
     - key: ChatLogEnable
-      section: 日志过滤
+      section: 日志
       name_zh: 聊天日志开关
       description_zh: |
         ChatLogEnable
         启用或禁用玩家聊天日志。
     - key: ChatLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 聊天日志文件
       description_zh: |
         ChatLogFile
         玩家聊天日志文件。
     - key: ChatLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 聊天日志时间戳
       description_zh: |
         ChatLogTimestamp
         聊天日志增加时间戳。
     - key: BgLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 战场日志文件
       description_zh: |
         BgLogFile
         战场系统日志文件。
     - key: BgLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 战场日志时间戳
       description_zh: |
         BgLogTimestamp
         战场日志增加时间戳。
     - key: GmLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: GM日志文件
       description_zh: |
         GmLogFile
         GM 命令日志文件。
     - key: GmLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: GM日志时间戳
       description_zh: |
         GmLogTimestamp
         GM 日志文件名包含服务器启动时间戳。
     - key: GmLogPerAccount
-      section: 日志过滤
+      section: 日志
       name_zh: 按账号记录GM日志
       description_zh: |
         GmLogPerAccount
         GM 日志文件名包含 GM 账号 ID。（注意：未设置 GmLogFile 时不会生成日志）
     - key: CriticalCommandsLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 关键命令日志文件
       description_zh: |
         CriticalCommandsLogFile
         记录被标记为关键、且对自身角色使用的命令日志。（例如同 IP）
     - key: ExploitsLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 漏洞日志文件
       description_zh: |
         ExploitsLogFile
         用于滥用检测的潜在漏洞日志文件。
     - key: ClientIdsLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 客户端ID日志文件
       description_zh: |
         ClientIdsLogFile
         客户端流量日志文件。
     - key: LootsLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 掉落日志文件
       description_zh: |
         LootsLogFile
         掉落日志文件。
     - key: RareLootsLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 稀有掉落日志文件
       description_zh:
     - key: LevelupLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 升级日志文件
       description_zh: |
         LevelupLogFile
         升级日志文件。
     - key: LogMoneyTrades
-      section: 日志过滤
+      section: 日志
       name_zh: 记录金币交易
       description_zh: |
         LogMoneyTrades
         LogMoneyTreshold
         交易日志文件。
     - key: LogMoneyTreshold
-      section: 日志过滤
+      section: 日志
       name_zh: 金币记录阈值
       description_zh:
     - key: NostalriusLogFile
-      section: 日志过滤
+      section: 日志
       name_zh: 诺斯特里乌斯日志文件
       description_zh: |
         NostalriusLogFile
         多种日志的汇总日志文件。
     - key: NostalriusLogTimestamp
-      section: 日志过滤
+      section: 日志
       name_zh: 诺斯特里乌斯日志时间戳
       description_zh: |
         NostalriusLogTimestamp
         Nostalrius 日志文件名包含服务器启动时间戳。
     - key: PerformanceLog.File
-      section: 性能日志
+      section: 日志
       name_zh: 性能日志文件
       description_zh: |
         PerformanceLog
         性能日志文件。
     - key: PerformanceLog.SlowWorldUpdate
-      section: 性能日志
+      section: 日志
       name_zh: 慢世界更新日志
       description_zh:
     - key: PerformanceLog.SlowMapSystemUpdate
-      section: 性能日志
+      section: 日志
       name_zh: 慢地图系统更新日志
       description_zh:
     - key: PerformanceLog.SlowSessionsUpdate
-      section: 性能日志
+      section: 日志
       name_zh: 慢会话更新日志
       description_zh:
     - key: PerformanceLog.SlowUniqueSessionUpdate
-      section: 性能日志
+      section: 日志
       name_zh: 慢独立会话更新日志
       description_zh:
     - key: PerformanceLog.SlowMapUpdate
-      section: 性能日志
+      section: 日志
       name_zh: 慢地图更新日志
       description_zh:
     - key: PerformanceLog.SlowAsynQueries
-      section: 性能日志
+      section: 日志
       name_zh: 慢异步查询日志
       description_zh:
     - key: PerformanceLog.SlowPackets
-      section: 性能日志
+      section: 日志
       name_zh: 慢封包日志
       description_zh:
     - key: PerformanceLog.SlowMapPackets
-      section: 性能日志
+      section: 日志
       name_zh: 慢地图封包日志
       description_zh:
     - key: PerformanceLog.SlowPacketBroadcast
-      section: 性能日志
+      section: 日志
       name_zh: 慢封包广播日志
       description_zh:
     - key: RaLogFile
-      section: 性能日志
+      section: 日志
       name_zh: RA日志文件
       description_zh: |
         RaLogFile
         RA 命令日志文件。
     - key: LogColors
-      section: 性能日志
+      section: 日志
       name_zh: 日志颜色
       description_zh: |
         LogColors
@@ -8889,377 +8889,377 @@ versions:
         颜色：0-黑，1-红，2-绿，3-棕，4-蓝，5-洋红，6-青，7-灰，
         8-黄，9-浅红，10-浅绿，11-浅蓝，12-浅洋红，13-浅青，14-白
     - key: GameType
-      section: 性能日志
+      section: 服务器规则
       name_zh: 游戏类型
       description_zh: |
         GameType
         服务器类型。
         0=普通；1=PVP；4=普通；6=RP；8=RPPVP；16=自由PVP
     - key: RealmZone
-      section: 性能日志
+      section: 服务器规则
       name_zh: 服务器区域
       description_zh: |
         RealmZone
         服务器区域（影响角色名等允许字符）。另见 Strict*Names 选项。
         修改该项需谨慎，可能导致部分客户端无法显示该服务器。
     - key: TimeZoneOffset
-      section: 性能日志
+      section: 服务器规则
       name_zh: 时区偏移
       description_zh: |
         TimeZoneOffset
         时区偏移（小时）。
     - key: KalimdorTimeOffset
-      section: 性能日志
+      section: 杂项
       name_zh: 卡利姆多时间偏移
       description_zh:
     - key: DBC.Locale
-      section: 性能日志
+      section: 服务器规则
       name_zh: DBC本地化
       description_zh: |
         DBC.Locale
         DBC 语言设置。
         0=英文；1=韩文；2=法文；3=德文；4=中文；5=繁体中文；6=西班牙文
     - key: StrictPlayerNames
-      section: 性能日志
+      section: 命名规则
       name_zh: 严格玩家命名
       description_zh: |
         StrictPlayerNames
         限制玩家名为指定语言字符集；不允许创建违规名字；并对违规名字设置改名请求并断开。
     - key: StrictCharterNames
-      section: 性能日志
+      section: 命名规则
       name_zh: 严格公会章程命名
       description_zh: |
         StrictCharterNames
         限制公会章程名称为指定语言字符集；不允许创建含非法字符的章程。
     - key: StrictPetNames
-      section: 性能日志
+      section: 命名规则
       name_zh: 严格宠物命名
       description_zh: |
         StrictPetNames
         限制宠物名为指定语言字符集。
     - key: MinPlayerName
-      section: 性能日志
+      section: 命名规则
       name_zh: 玩家名最小长度
       description_zh: |
         MinPlayerName
         玩家名最小长度。（1-12）
     - key: MinCharterName
-      section: 性能日志
+      section: 命名规则
       name_zh: 章程名最小长度
       description_zh: |
         MinCharterName
         章程名最小长度。（1-24）
     - key: MinPetName
-      section: 性能日志
+      section: 命名规则
       name_zh: 宠物名最小长度
       description_zh: |
         MinPetName
         宠物名最小长度。（1-12）
     - key: CharactersCreatingDisabled
-      section: 性能日志
+      section: 角色基础
       name_zh: 禁止创建角色
       description_zh: |
         CharactersCreatingDisabled
         对指定阵营或全部禁用创建角色。
     - key: CharactersPerAccount
-      section: 性能日志
+      section: 角色基础
       name_zh: 每账号角色数
       description_zh: |
         CharactersPerAccount
         每个账号最多角色数。
     - key: CharactersPerRealm
-      section: 性能日志
+      section: 角色基础
       name_zh: 每服务器角色数
       description_zh: |
         CharactersPerRealm
         每个服务器每账号最多角色数。（范围 1-10）
     - key: SkipCinematics
-      section: 性能日志
+      section: 角色基础
       name_zh: 跳过过场动画
       description_zh: |
         SkipCinematics
         首次登录角色时跳过开场动画。
     - key: ShowHealthValues
-      section: 性能日志
+      section: 角色基础
       name_zh: 显示生命值数值
       description_zh: |
         ShowHealthValues
         显示 NPC/玩家真实血量数值而非百分比。
     - key: MaxPlayerLevel
-      section: 性能日志
+      section: 角色基础
       name_zh: 玩家最高等级
       description_zh: |
         MaxPlayerLevel
         玩家可达的最高等级。（1-255）
     - key: StartPlayerLevel
-      section: 性能日志
+      section: 角色基础
       name_zh: 角色初始等级
       description_zh: |
         StartPlayerLevel
         新建角色的初始等级。
     - key: StartPlayerMoney
-      section: 性能日志
+      section: 角色基础
       name_zh: 初始金币
       description_zh: |
         StartPlayerMoney
         新建角色初始金币数量（铜币）。
     - key: MaxHonorPoints
-      section: 性能日志
+      section: 荣誉系统
       name_zh: 荣誉点上限
       description_zh: |
         MaxHonorPoints
         玩家可拥有的最大荣誉点数。
     - key: StartHonorPoints
-      section: 性能日志
+      section: 荣誉系统
       name_zh: 初始荣誉点
       description_zh: |
         StartHonorPoints
         新建角色初始荣誉点数。
     - key: MinHonorKills
-      section: 性能日志
+      section: 荣誉系统
       name_zh: 最小荣誉击杀数
       description_zh: |
         MinHonorKills
         进入每周荣誉结算所需的最少击杀数。
     - key: MaintenanceDay
-      section: 性能日志
+      section: 服务器规则
       name_zh: 维护日
       description_zh: |
         MaintenanceDay
         服务器维护执行的星期。
     - key: InstantLogout
-      section: 性能日志
+      section: 服务器规则
       name_zh: 立即登出
       description_zh: |
         InstantLogout
         对指定安全等级（0-4）或更高启用/禁用立即登出。
     - key: AutoHonorRestart
-      section: 性能日志
+      section: 荣誉系统
       name_zh: 荣誉自动重置
       description_zh: |
         AutoHonorRestart
         到达 PVP 军衔结算时间时，服务器自动安排重启。
     - key: AllFlightPaths
-      section: 性能日志
+      section: 玩法设置
       name_zh: 解锁全部飞行点
       description_zh: |
         AllFlightPaths
         玩家出生时解锁全部飞行点。
     - key: AlwaysMaxSkillForLevel
-      section: 性能日志
+      section: 玩法设置
       name_zh: 始终最大技能等级
       description_zh: |
         AlwaysMaxSkillForLevel
         玩家登录/升级时自动获得与等级对应的最大武器/防御技能。
     - key: ActivateWeather
-      section: 性能日志
+      section: 玩法设置
       name_zh: 启用天气
       description_zh: |
         ActivateWeather
         启用天气系统。
     - key: CastUnstuck
-      section: 性能日志
+      section: 玩法设置
       name_zh: 解除卡死施法
       description_zh: |
         CastUnstuck
         允许通过 .start 或客户端“帮助”施放 Unstuck（脱困）法术。
     - key: MaxSpellCastsInChain
-      section: 性能日志
+      section: 玩法设置
       name_zh: 法术连发上限
       description_zh: |
         MaxSpellCastsInChain
         单个施法者触发的连锁施法上限，用于防止栈溢出崩溃。
         值过低会导致部分正常触发施法失败。
     - key: Instance.IgnoreLevel
-      section: 性能日志
+      section: 副本
       name_zh: 副本忽略等级限制
       description_zh: |
         Instance.IgnoreLevel
         进入副本时忽略等级要求。
     - key: Instance.IgnoreRaid
-      section: 性能日志
+      section: 副本
       name_zh: 副本忽略团队限制
       description_zh: |
         Instance.IgnoreRaid
         进入副本时忽略团队要求。
     - key: Instance.ResetTimeHour
-      section: 性能日志
+      section: 副本
       name_zh: 副本重置时间(小时)
       description_zh: |
         Instance.ResetTimeHour
         全局副本重置发生的小时（0-23）。
     - key: Instance.UnloadDelay
-      section: 性能日志
+      section: 副本
       name_zh: 副本卸载延迟
       description_zh: |
         Instance.UnloadDelay
         副本内无人时，延迟一段时间后从内存卸载。
     - key: Item.InstantSaveQuality
-      section: 性能日志
+      section: 物品
       name_zh: 物品即时保存品质阈值
       description_zh: |
         Item.InstantSaveQuality
         获得达到该品质或更高的物品时立即保存背包。
     - key: Item.PreventDataMining
-      section: 性能日志
+      section: 物品
       name_zh: 防止物品数据挖掘
       description_zh: |
         Item.PreventDataMining
         禁止查询从未获得过的物品信息。
     - key: Quests.LowLevelHideDiff
-      section: 性能日志
+      section: 任务
       name_zh: 任务低等级隐藏差值
       description_zh: |
         Quests.LowLevelHideDiff
         等级差达到该值时隐藏 NPC 上方的任务标记。
     - key: Quests.HighLevelHideDiff
-      section: 性能日志
+      section: 任务
       name_zh: 任务高等级隐藏差值
       description_zh: |
         Quests.HighLevelHideDiff
         等级差达到该值时隐藏 NPC 上方的任务标记。
     - key: Quests.IgnoreRaid
-      section: 性能日志
+      section: 任务
       name_zh: 任务忽略团队限制
       description_zh: |
         Quests.IgnoreRaid
         团队中允许非团队任务。
     - key: Group.OfflineLeaderDelay
-      section: 性能日志
+      section: 小队
       name_zh: 队长离线延迟
       description_zh: |
         Group.OfflineLeaderDelay
         队长离线后在移交队长前允许其重连的宽限时间。
     - key: Guild.EventLogRecordsCount
-      section: 性能日志
+      section: 公会
       name_zh: 公会事件日志记录数
       description_zh: |
         Guild.EventLogRecordsCount
         公会事件日志在 guild_eventlog 表中保存的记录数。
         提高可保存更多事件，但可能降低性能；过高可避免旧记录被覆盖。
     - key: TimerBar.Fatigue.GMLevel
-      section: 性能日志
+      section: 计时条
       name_zh: 疲劳计时条GM等级
       description_zh: |
         TimerBar.Fatigue.GMLevel
         对指定安全等级（0-4）或更高启用/禁用疲劳计时条。
     - key: TimerBar.Fatigue.Max
-      section: 性能日志
+      section: 计时条
       name_zh: 疲劳计时条最大值
       description_zh: |
         TimerBar.Fatigue.Max
         疲劳计时条最大值。
     - key: TimerBar.Breath.GMLevel
-      section: 性能日志
+      section: 计时条
       name_zh: 憋气计时条GM等级
       description_zh: |
         TimerBar.Breath.GMLevel
         对指定安全等级（0-4）或更高启用/禁用憋气计时条。
     - key: TimerBar.Breath.Max
-      section: 性能日志
+      section: 计时条
       name_zh: 憋气计时条最大值
       description_zh: |
         TimerBar.Breath.Max
         憋气计时条最大值。
     - key: TimerBar.Fire.GMLevel
-      section: 性能日志
+      section: 计时条
       name_zh: 火焰计时条GM等级
       description_zh: |
         TimerBar.Fire.GMLevel
         对指定安全等级（0-4）或更高启用/禁用熔岩/火焰伤害计时条。
     - key: TimerBar.Fire.Max
-      section: 性能日志
+      section: 计时条
       name_zh: 火焰计时条最大值
       description_zh: |
         TimerBar.Fire.Max
         熔岩伤害延迟计时条最大值。
     - key: MaxPrimaryTradeSkill
-      section: 性能日志
+      section: 专业
       name_zh: 主专业上限
       description_zh: |
         MaxPrimaryTradeSkill
         可学习的主专业数量上限。（最大 10）
     - key: MinPetitionSigns
-      section: 性能日志
+      section: 公会
       name_zh: 最少签名数
       description_zh: |
         MinPetitionSigns
         创建公会所需的最少签名数。（0-9）
     - key: MaxGroupXPDistance
-      section: 性能日志
+      section: 经验
       name_zh: 小队经验距离上限
       description_zh: |
         MaxGroupXPDistance
         队伍成员在怪物死亡时获得经验的最远距离。
     - key: MailDeliveryDelay
-      section: 性能日志
+      section: 邮件
       name_zh: 邮件投递延迟
       description_zh: |
         MailDeliveryDelay
         邮件物品投递延迟时间。
     - key: Mails.COD.ForceTag.MaxLevel
-      section: 性能日志
+      section: 邮件
       name_zh: 货到付款强制标记等级上限
       description_zh: |
         Mails.COD.ForceTag.MaxLevel
         通过在邮件主题前加 "COD" 来防止货到付款诈骗。
         仅影响低于指定等级的发送者。
     - key: MassMailer.SendPerTick
-      section: 性能日志
+      section: 邮件
       name_zh: 群发邮件每次发送数量
       description_zh: |
         MassMailer.SendPerTick
         群发邮件每个 tick 从待发送列表中处理的最大邮件数。
     - key: PetUnsummonAtMount
-      section: 性能日志
+      section: 宠物
       name_zh: 上马时解散宠物
       description_zh: |
         PetUnsummonAtMount
         玩家上马时，永久宠物会被收回。
     - key: PetDefaultLoyalty
-      section: 性能日志
+      section: 宠物
       name_zh: 宠物默认忠诚度
       description_zh: |
         PetDefaultLoyalty
         新驯服宠物的初始忠诚度等级。
     - key: PlayerCommands
-      section: 性能日志
+      section: 系统
       name_zh: 玩家指令
       description_zh: |
         PlayerCommands
         是否解析玩家聊天中的 GM 命令。
     - key: Event.Announce
-      section: 性能日志
+      section: 系统
       name_zh: 事件公告
       description_zh: |
         Event.Announce
         在全服聊天中公告游戏事件。
     - key: BeepAtStart
-      section: 性能日志
+      section: 系统
       name_zh: 启动提示音
       description_zh: |
         BeepAtStart
         mangosd 启动完成时蜂鸣提示。（Linux 系统）
     - key: ShowProgressBars
-      section: 性能日志
+      section: 系统
       name_zh: 显示进度条
       description_zh: |
         ShowProgressBars
         控制服务器启动加载步骤的进度条显示。
     - key: WaitAtStartupError
-      section: 性能日志
+      section: 系统
       name_zh: 启动错误等待
       description_zh: |
         WaitAtStartupError
         启动报错后等待 <Enter> 或等待一段时间再继续。
     - key: Motd
-      section: 性能日志
+      section: 系统
       name_zh: 每日公告
       description_zh: |
         Motd
         每日公告（MOTD），在世界登录时显示（"@" 表示换行）。
     - key: AllowTwoSide.Accounts
-      section: 性能日志
+      section: 双阵营互动
       name_zh: 允许双阵营同账号
       description_zh: |
         AllowTwoSide.Accounts
@@ -9307,202 +9307,202 @@ versions:
         AllowTwoSide.AddFriend
         允许跨阵营添加好友。
     - key: GM.JoinOppositeFactionChannels
-      section: 双阵营互动
+      section: GM设置
       name_zh: GM加入敌对阵营频道
       description_zh: |
         GM.JoinOppositeFactionChannels
         允许 GM 加入双方阵营频道。
     - key: ThreatRadius
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 仇恨半径
       description_zh: |
         ThreatRadius
         生物脱战回避半径（被拉离战斗起点时）。
         若该值小于仇恨半径，则使用仇恨半径。
     - key: MaxCreaturesAttackRadius
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物攻击半径上限
       description_zh: |
         MaxCreaturesAttackRadius
         生物不会搜索超过该距离的目标。
     - key: MaxPlayersStealthDetectRange
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 玩家潜行侦测距离上限
       description_zh: |
         MaxPlayersStealthDetectRange
         玩家不会搜索超过该距离的潜行单位。
     - key: MaxCreaturesStealthDetectRange
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物潜行侦测距离上限
       description_zh: |
         MaxCreaturesStealthDetectRange
         生物不会搜索超过该距离的潜行单位。
     - key: MaxCreatureSummonLimit
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物召唤数量上限
       description_zh: |
         MaxCreatureSummonLimit
         游戏对象（以及其他生物）召唤生物数量上限。
     - key: Rate.Creature.Aggro
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物仇恨倍率
       description_zh: |
         Rate.Creature.Aggro
         仇恨半径倍率（或关闭）。
     - key: CreatureFamilyFleeAssistanceRadius
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物族群逃跑求援半径
       description_zh: |
         CreatureFamilyFleeAssistanceRadius
         生物逃跑时寻求附近同族支援的半径。生物会逃向该支援。
     - key: CreatureFamilyAssistanceRadius
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物族群求援半径
       description_zh: |
         CreatureFamilyAssistanceRadius
         生物呼叫支援的半径（不移动）。
     - key: CreatureFamilyAssistanceDelay
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物族群求援延迟
       description_zh: |
         CreatureFamilyAssistanceDelay
         生物呼叫支援的反应时间。
     - key: CreatureFamilyFleeDelay
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 生物族群逃跑延迟
       description_zh: |
         CreatureFamilyFleeDelay
         未找到支援时，生物可逃跑的持续时间。
     - key: WorldBossLevelDiff
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 世界首领等级差阈值
       description_zh: |
         WorldBossLevelDiff
         世界首领与目标的动态等级差。
     - key: SendLootRollUponReconnect
-      section: 双阵营互动
+      section: 仇恨与生物
       name_zh: 重连后发送掷骰
       description_zh: |
         SendLootRollUponReconnect
         玩家重连时发送正在进行的掷骰窗口。
     - key: Corpse.EmptyLootShow
-      section: 双阵营互动
+      section: 死亡与尸体
       name_zh: 尸体空拾取显示
       description_zh: |
         Corpse.EmptyLootShow
         目标可掉落/可剥皮但未生成战利品时仍显示拾取窗口。
     - key: Corpse.Decay.NORMAL
-      section: 尸体腐烂
+      section: 死亡与尸体
       name_zh: 普通尸体消失时间
       description_zh: |
         Corpse.Decay
         生物尸体在未拾取/未剥皮时的消失秒数。
     - key: Corpse.Decay.RARE
-      section: 尸体腐烂
+      section: 死亡与尸体
       name_zh: 稀有尸体消失时间
       description_zh:
     - key: Corpse.Decay.ELITE
-      section: 尸体腐烂
+      section: 死亡与尸体
       name_zh: 精英尸体消失时间
       description_zh:
     - key: Corpse.Decay.RAREELITE
-      section: 尸体腐烂
+      section: 死亡与尸体
       name_zh: 稀有精英尸体消失时间
       description_zh:
     - key: Corpse.Decay.WORLDBOSS
-      section: 尸体腐烂
+      section: 死亡与尸体
       name_zh: 世界首领尸体消失时间
       description_zh:
     - key: Rate.Corpse.Decay.Looted
-      section: 尸体腐烂
+      section: 速率
       name_zh: 已拾取尸体消失倍率
       description_zh: |
         Rate.Corpse.Decay.Looted
         已拾取尸体保留时间倍率，基于 Corpse.Decay.* 配置。
     - key: Rate.Creature.Normal.Damage
-      section: 速率/生物
+      section: 速率
       name_zh: 普通生物伤害倍率
       description_zh: |
         Rate.Creature
         生物伤害倍率。
     - key: Rate.Creature.Elite.Elite.Damage
-      section: 速率/生物
+      section: 速率
       name_zh: 精英生物伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.RAREELITE.Damage
-      section: 速率/生物
+      section: 速率
       name_zh: 稀有精英生物伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.WORLDBOSS.Damage
-      section: 速率/生物
+      section: 速率
       name_zh: 世界首领伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.RARE.Damage
-      section: 速率/生物
+      section: 速率
       name_zh: 稀有生物伤害倍率
       description_zh:
     - key: Rate.Creature.Normal.SpellDamage
-      section: 生物法术伤害倍率
+      section: 速率
       name_zh: 普通生物法术伤害倍率
       description_zh: |
         Creature Spell Damage Rates.
     - key: Rate.Creature.Elite.Elite.SpellDamage
-      section: 生物法术伤害倍率
+      section: 速率
       name_zh: 精英生物法术伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.RAREELITE.SpellDamage
-      section: 生物法术伤害倍率
+      section: 速率
       name_zh: 稀有精英生物法术伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.WORLDBOSS.SpellDamage
-      section: 生物法术伤害倍率
+      section: 速率
       name_zh: 世界首领法术伤害倍率
       description_zh:
     - key: Rate.Creature.Elite.RARE.SpellDamage
-      section: 生物法术伤害倍率
+      section: 速率
       name_zh: 稀有生物法术伤害倍率
       description_zh:
     - key: Rate.Creature.Normal.HP
-      section: 生物生命修正
+      section: 速率
       name_zh: 普通生物生命倍率
       description_zh: |
         Creature Health Ammount Modifier.
     - key: Rate.Creature.Elite.Elite.HP
-      section: 生物生命修正
+      section: 速率
       name_zh: 精英生物生命倍率
       description_zh:
     - key: Rate.Creature.Elite.RAREELITE.HP
-      section: 生物生命修正
+      section: 速率
       name_zh: 稀有精英生物生命倍率
       description_zh:
     - key: Rate.Creature.Elite.WORLDBOSS.HP
-      section: 生物生命修正
+      section: 速率
       name_zh: 世界首领生命倍率
       description_zh:
     - key: Rate.Creature.Elite.RARE.HP
-      section: 生物生命修正
+      section: 速率
       name_zh: 稀有生物生命倍率
       description_zh:
     - key: ListenRange.Say
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 说话监听距离
       description_zh: |
         ListenRange.Say
         玩家能听到 /say 的距离。
     - key: ListenRange.TextEmote
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 文字表情监听距离
       description_zh: |
         ListenRange.TextEmote
         玩家能看到 /emote 的距离。
     - key: ListenRange.Yell
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 大喊监听距离
       description_zh: |
         ListenRange.Yell
         玩家能听到 /yell 的距离。
     - key: GuidReserveSize.Creature
-      section: 生物生命修正
+      section: GUID
       name_zh: 生物GUID预留量
       description_zh: |
         GuidReserveSize.Creature
@@ -9511,66 +9511,66 @@ versions:
         这些命令仅能使用预留区 GUID；若预留区用尽需重启服务器。
         预留值越小，留给动态刷新的 GUID 越多。
     - key: GuidReserveSize.GameObject
-      section: 生物生命修正
+      section: GUID
       name_zh: 游戏对象GUID预留量
       description_zh:
     - key: ChatFakeMessagePreventing
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 伪造聊天防护
       description_zh: |
         ChatFakeMessagePreventing
         防止利用大量空格（或其他不可见符号）伪造聊天信息。
         对插件语言消息不生效，但可能影响使用普通语言传输数据的旧插件。
     - key: ChatStrictLinkChecking.Severity
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 聊天链接严格检查级别
       description_zh: |
         ChatStrictLinkChecking.Severity
         检查聊天中法术、物品、任务、成就等游戏内链接。
     - key: ChatStrictLinkChecking.Kick
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 聊天链接严格检查踢出
       description_zh: |
         ChatStrictLinkChecking.Kick
         定义当消息包含无效管道命令时的处理方式。
     - key: ChatFlood.MessageCount
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 聊天刷屏消息数
       description_zh: |
         ChatFlood.MessageCount
         聊天防刷屏：触发防护所需的消息数量。
     - key: ChatFlood.MessageDelay
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 聊天刷屏间隔
       description_zh: |
         ChatFlood.MessageDelay
         聊天防刷屏：计算消息的最小间隔。
     - key: ChatFlood.MuteTime
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 聊天刷屏禁言时长
       description_zh: |
         ChatFlood.MuteTime
         聊天防刷屏：触发后禁言时长。
     - key: Channel.SilentlyGMJoin
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: GM静默加入频道
       description_zh: |
         Channel.SilentlyGMJoin
         版主或更高权限加入频道时是否公告。
     - key: Channel.StrictLatinInGeneral
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 综合频道限制拉丁字符
       description_zh: |
         Channel.StrictLatinInGeneral
         过滤综合频道中使用非拉丁字符的消息。
     - key: WorldChan.MinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 世界频道最低等级
       description_zh: |
         WorldChan.MinLevel
         使用世界频道的最低等级。
     - key: WorldChan.Cooldown
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 世界频道冷却时间
       description_zh: |
         WorldChan.Cooldown
@@ -9578,923 +9578,923 @@ versions:
         WorldChan.CooldownScaling
         世界频道消息间隔冷却时间。
     - key: WorldChan.CooldownMaxLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 世界频道冷却最大等级
       description_zh:
     - key: WorldChan.CooldownScaling
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 世界频道冷却等级缩放
       description_zh:
     - key: WhisperDiffZone.MinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 跨区域密语最低等级
       description_zh: |
         WhisperDiffZone.MinLevel
         跨区域密语的最低等级。
     - key: WhisperTargets.MaxTargets
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 密语目标上限
       description_zh:
     - key: WhisperTargets.DecayTime
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 密语目标衰减时间
       description_zh:
     - key: WhisperTargets.BypassLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 密语目标绕过等级
       description_zh:
     - key: Account.ShowWarningAge
-      section: 生物生命修正
+      section: 账号
       name_zh: 登录警告显示天数
       description_zh: |
         Account.ShowWarningAge
         警告从下发之日起在玩家登录时显示的天数。
         默认：3
     - key: Account.HighLevelCharacter
-      section: 生物生命修正
+      section: 账号
       name_zh: 高等级角色阈值
       description_zh: |
         Account.HighLevelCharacter
         低等级角色排队设置。
         默认：30
     - key: YellMinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 大喊最低等级
       description_zh: |
         YellMinLevel
         聊天中使用 /yell 的最低等级。
     - key: YellRange.LinearScale.MaxLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 大喊范围线性缩放最大等级
       description_zh: |
         YellRange.LinearScale.MaxLevel
         YellRange.QuadraticScale.MaxLevel
         基于等级限制喊话范围。
     - key: YellRange.QuadraticScale.MaxLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 大喊范围二次缩放最大等级
       description_zh:
     - key: ChannelInvite.MinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 频道邀请最低等级
       description_zh: |
         ChannelInvite.MinLevel
         邀请玩家加入私有频道的最低等级。
     - key: PublicChansMute.BypassLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 公共频道禁言绕过等级
       description_zh: |
         PublicChansMute.BypassLevel
         账号内角色达到该等级可绕过所有聊天限制。
     - key: WhisperRestriction
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 密语限制
       description_zh: |
         WhisperRestriction
         允许玩家使用 .wr 命令拒绝被密语。
     - key: SayMinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 说话最低等级
       description_zh: |
         SayMinLevel
         聊天中使用 /say 的最低等级。
     - key: SayEmoteMinLevel
-      section: 生物生命修正
+      section: 聊天与频道
       name_zh: 表情最低等级
       description_zh: |
         SayEmoteMinLevel
         聊天中使用 /emote 的最低等级。
     - key: Antiflood.Sanction
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反刷屏处罚
       description_zh: |
         Antiflood.Sanction
         当玩家发送过多数据包时施加的处罚。
     - key: Warden.WinEnabled
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden(反外挂) Windows启用
       description_zh: |
         Warden.WinEnabled
         对 Windows 客户端启用 Warden 检测。
     - key: Warden.OSXEnabled
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden(反外挂) OSX启用
       description_zh: |
         Warden.OSXEnabled
         对 OSX 客户端启用 Warden 检测。
     - key: Warden.PlayersOnly
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden仅玩家
       description_zh: |
         Warden.PlayersOnly
         忽略 GM 账号。
     - key: Warden.NumMemChecks
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden内存检查数量
       description_zh: |
         Warden.NumMemChecks
         每个周期发送给客户端的 Warden 内存检查数量。
     - key: Warden.NumOtherChecks
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden其他检查数量
       description_zh: |
         Warden.NumOtherChecks
         每个周期加入的非内存类 Warden 检查数量。
     - key: Warden.ClientResponseDelay
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden客户端响应延迟
       description_zh: |
         Warden.ClientResponseDelay
         客户端未响应前的等待时间（秒），超时将断开。
     - key: Warden.ClientCheckHoldOff
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden客户端检查延迟
       description_zh: |
         Warden.ClientCheckHoldOff
         发送下一次检测前的等待时间（秒）。
         值过小会增加客户端和服务器的流量与负载。
     - key: Warden.DefaultPenalty
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden默认处罚
       description_zh: |
         Warden.DefaultPenalty
         客户端检测失败时的默认处理。可在 warden_checks 表中按检查 ID 自定义处罚。
     - key: Warden.BanDuration
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden封禁时长
       description_zh: |
         Warden.BanDuration
         当处罚为封禁时，账号封禁时长（秒）。
     - key: Warden.DebugLog
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden调试日志
       description_zh: |
         Warden.DebugLog
         输出额外的检测调试信息。
     - key: Warden.DBLogLevel
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden数据库日志级别
       description_zh: |
         Warden.DBLogLevel
         记录到 realmd.warden_log 表的最小 WardenActions 值。
     - key: Warden.ModuleDir
-      section: 生物生命修正
+      section: 反作弊
       name_zh: Warden模块目录
       description_zh: |
         Warden.ModuleDir
         Warden 模块存放目录。
     - key: Anticheat.Enable
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊启用
       description_zh: |
         Anticheat.Enable
         启用玩家移动反作弊检测。
     - key: Anticheat.PlayersOnly
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊仅玩家
       description_zh: |
         Anticheat.PlayersOnly
         忽略 GM 账号。
     - key: Anticheat.NotifyCheaters
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊通知作弊者
       description_zh: |
         Anticheat.NotifyCheaters
         当玩家未通过移动检测时进行提示。
     - key: Anticheat.BanDuration
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊封禁时长
       description_zh: |
         Anticheat.BanDuration
         当处罚为封禁时，账号封禁时长（秒）。
     - key: Anticheat.LogData
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊记录数据
       description_zh: |
         Anticheat.LogData
         将每次反作弊 tick 的结果保存到数据库。
     - key: Anticheat.MaxAllowedDesync
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊允许最大时序偏差
       description_zh: |
         Anticheat.MaxAllowedDesync
         移动插值时允许的客户端时间不同步上限。
     - key: Anticheat.ReverseTime.Enable
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间倒退检测启用
       description_zh: |
         Anticheat.ReverseTime.Enable
         检测玩家时间回退。
     - key: Anticheat.ReverseTime.Threshold
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间倒退阈值
       description_zh: |
         Anticheat.ReverseTime.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.ReverseTime.Penalty
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间倒退处罚
       description_zh: |
         Anticheat.ReverseTime.Penalty
         未通过该检测时的处理。
     - key: Anticheat.NullTime.Enable
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间为零检测启用
       description_zh: |
         Anticheat.NullTime.Enable
         检测玩家发送的时间戳为 0。
     - key: Anticheat.NullTime.Threshold
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间为零阈值
       description_zh: |
         Anticheat.NullTime.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.NullTime.Penalty
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊时间为零处罚
       description_zh: |
         Anticheat.NullTime.Penalty
         未通过该检测时的处理。
     - key: Anticheat.SkippedHeartbeats.Enable
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 反作弊心跳丢失检测启用
       description_zh: |
         Anticheat.SkippedHeartbeats.Enable
         检测玩家遗漏心跳包。
     - key: Anticheat.SkippedHeartbeats.Threshold.Tick
-      section: 生物生命修正
+      section: 反作弊
       name_zh: 心跳丢失每tick阈值
       description_zh: |
         Anticheat.SkippedHeartbeats.Threshold.Tick
         单个 tick 内触发处罚所需的检测次数。
     - key: Anticheat.SkippedHeartbeats.Total
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 心跳丢失总阈值
       description_zh: |
         Anticheat.SkippedHeartbeats.Threshold.Total
         累计触发处罚所需的检测次数。
     - key: Anticheat.SkippedHeartbeats.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 心跳丢失处罚
       description_zh: |
         Anticheat.SkippedHeartbeats.Penalty
         未通过该检测时的处理。
     - key: Anticheat.TimeDesync.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 时间不同步检测启用
       description_zh: |
         Anticheat.TimeDesync.Enable
         检测玩家声称的时间流逝超过服务器时间。
     - key: Anticheat.TimeDesync.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 时间不同步阈值
       description_zh: |
         Anticheat.TimeDesync.Threshold
         允许的时间差（毫秒）。
     - key: Anticheat.TimeDesync.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 时间不同步处罚
       description_zh: |
         Anticheat.TimeDesync.Penalty
         未通过该检测时的处理。
     - key: Anticheat.NumDesyncs.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不同步次数检测启用
       description_zh: |
         Anticheat.NumDesyncs.Enable
         检测玩家声称的时间流逝超过服务器时间。
     - key: Anticheat.NumDesyncs.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不同步次数阈值
       description_zh: |
         Anticheat.NumDesyncs.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.NumDesyncs.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不同步次数处罚
       description_zh: |
         Anticheat.NumDesyncs.Penalty
         未通过该检测时的处理。
     - key: Anticheat.SpeedHack.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 加速外挂检测启用
       description_zh: |
         Anticheat.SpeedHack.Enable
         通过推算检测玩家移动过快（加速外挂）。
     - key: Anticheat.OverpspeedDistance.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速距离检测启用
       description_zh: |
         Anticheat.OverpspeedDistance.Enable
         检测玩家声称的移动距离超过可能值。
     - key: Anticheat.OverpspeedDistance.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速距离阈值
       description_zh: |
         Anticheat.OverpspeedDistance.Threshold
         超过可能值的距离（码）。
     - key: Anticheat.OverpspeedDistance.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速距离处罚
       description_zh: |
         Anticheat.OverpspeedDistance.Penalty
         未通过该检测时的处理。
     - key: Anticheat.OverspeedJump.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速跳跃检测启用
       description_zh: |
         Anticheat.OverspeedJump.Enable
         检测跳跃时移动过快。
     - key: Anticheat.OverspeedJump.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速跳跃拒绝
       description_zh: |
         Anticheat.OverspeedJump.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.OverspeedJump.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速跳跃阈值
       description_zh: |
         Anticheat.OverspeedJump.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.OverspeedJump.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 超速跳跃处罚
       description_zh: |
         Anticheat.OverspeedJump.Penalty
         未通过该检测时的处理。
     - key: Anticheat.JumpSpeedChange.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 跳跃速度变化检测启用
       description_zh: |
         Anticheat.JumpSpeedChange.Enable
         检测跳跃中途速度变化。
     - key: Anticheat.JumpSpeedChange.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 跳跃速度变化拒绝
       description_zh: |
         Anticheat.JumpSpeedChange.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.JumpSpeedChange.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 跳跃速度变化阈值
       description_zh: |
         Anticheat.JumpSpeedChange.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.JumpSpeedChange.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 跳跃速度变化处罚
       description_zh: |
         Anticheat.JumpSpeedChange.Penalty
         未通过该检测时的处理。
     - key: Anticheat.MultiJump.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 多段跳检测启用
       description_zh: |
         Anticheat.MultiJump.Enable
         检测玩家在空中仍进行跳跃。
     - key: Anticheat.MultiJump.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 多段跳拒绝
       description_zh: |
         Anticheat.MultiJump.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.MultiJump.Threshold.Tick
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 多段跳每tick阈值
       description_zh: |
         Anticheat.MultiJump.Threshold.Tick
         单个 tick 内触发处罚所需的检测次数。
     - key: Anticheat.MultiJump.Threshold.Total
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 多段跳总阈值
       description_zh: |
         Anticheat.MultiJump.Threshold.Total
         累计触发处罚所需的检测次数。
     - key: Anticheat.MultiJump.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 多段跳处罚
       description_zh: |
         Anticheat.MultiJump.Penalty
         未通过该检测时的处理。
     - key: Anticheat.WallClimb.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙检测启用
       description_zh: |
         Anticheat.WallClimb.Enable
         检测玩家攀爬过陡的表面。
     - key: Anticheat.WallClimb.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙拒绝
       description_zh: |
         Anticheat.WallClimb.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.WallClimb.Angle
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙角度
       description_zh: |
         Anticheat.WallClimb.Angle
         玩家可攀爬的两点间垂直夹角（弧度）。
     - key: Anticheat.WallClimb.Threshold.Tick
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙每tick阈值
       description_zh: |
         Anticheat.WallClimb.Threshold.Tick
         单个 tick 内触发处罚所需的检测次数。
     - key: Anticheat.WallClimb.Threshold.Total
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙总阈值
       description_zh: |
         Anticheat.WallClimb.Threshold.Total
         累计触发处罚所需的检测次数。
     - key: Anticheat.WallClimb.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 爬墙处罚
       description_zh: |
         Anticheat.WallClimb.Penalty
         未通过该检测时的处理。
     - key: Anticheat.Unreachable.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不可达检测启用
       description_zh: |
         Anticheat.Unreachable.Enable
         检测玩家与无法到达的生物进行战斗。
     - key: Anticheat.Unreachable.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不可达阈值
       description_zh: |
         Anticheat.Unreachable.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.Unreachable.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 不可达处罚
       description_zh: |
         Anticheat.Unreachable.Penalty
         未通过该检测时的处理。
     - key: Anticheat.FlyHack.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 飞行外挂检测启用
       description_zh: |
         Anticheat.FlyHack.Enable
         检测玩家飞行行为。
     - key: Anticheat.FlyHack.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 飞行外挂拒绝
       description_zh: |
         Anticheat.FlyHack.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.FlyHack.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 飞行外挂阈值
       description_zh: |
         Anticheat.FlyHack.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.FlyHack.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 飞行外挂处罚
       description_zh: |
         Anticheat.FlyHack.Penalty
         未通过该检测时的处理。
     - key: Anticheat.NoFallTime.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 无摔落时间检测启用
       description_zh: |
         Anticheat.NoFallTime.Enable
         检测玩家在空中行走（无摔落时间）。
     - key: Anticheat.NoFallTime.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 无摔落时间拒绝
       description_zh: |
         Anticheat.NoFallTime.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.NoFallTime.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 无摔落时间阈值
       description_zh: |
         Anticheat.NoFallTime.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.NoFallTime.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 无摔落时间处罚
       description_zh: |
         Anticheat.NoFallTime.Penalty
         未通过该检测时的处理。
     - key: Anticheat.Teleport.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 瞬移检测启用
       description_zh: |
         Anticheat.Teleport.Enable
         检测玩家远距离瞬移。
     - key: Anticheat.Teleport.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 瞬移拒绝
       description_zh: |
         Anticheat.Teleport.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.Teleport.Distance
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 瞬移距离
       description_zh: |
         Anticheat.Teleport.Distance
         单个包允许移动的距离（码）。设置过低会在高速移动时误报。
     - key: Anticheat.Teleport.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 瞬移阈值
       description_zh: |
         Anticheat.Teleport.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.Teleport.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 瞬移处罚
       description_zh: |
         Anticheat.Teleport.Penalty
         未通过该检测时的处理。
     - key: Anticheat.TeleportToTransport.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 传送到交通工具检测启用
       description_zh: |
         Anticheat.TeleportToTransport.Enable
         检测玩家传送到交通工具。
     - key: Anticheat.TeleportToTransport.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 传送到交通工具拒绝
       description_zh: |
         Anticheat.TeleportToTransport.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.TeleportToTransport.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 传送到交通工具阈值
       description_zh: |
         Anticheat.TeleportToTransport.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.TeleportToTransport.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 传送到交通工具处罚
       description_zh: |
         Anticheat.TeleportToTransport.Penalty
         未通过该检测时的处理。
     - key: Anticheat.FakeTransport.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 虚假交通工具检测启用
       description_zh: |
         Anticheat.FakeTransport.Enable
         检测玩家声称登上不存在的交通工具。
     - key: Anticheat.FakeTransport.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 虚假交通工具阈值
       description_zh: |
         Anticheat.FakeTransport.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.FakeTransport.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 虚假交通工具处罚
       description_zh: |
         Anticheat.FakeTransport.Penalty
         未通过该检测时的处理。
     - key: Anticheat.WaterWalk.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 水上行走检测启用
       description_zh: |
         Anticheat.WaterWalk.Enable
         检测玩家无水上行走增益却在水上行走。
     - key: Anticheat.WaterWalk.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 水上行走拒绝
       description_zh: |
         Anticheat.WaterWalk.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.WaterWalk.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 水上行走阈值
       description_zh: |
         Anticheat.WaterWalk.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.WaterWalk.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 水上行走处罚
       description_zh: |
         Anticheat.WaterWalk.Penalty
         未通过该检测时的处理。
     - key: Anticheat.SlowFall.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 缓落检测启用
       description_zh: |
         Anticheat.SlowFall.Enable
         检测玩家无缓落增益却缓慢下落。
     - key: Anticheat.SlowFall.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 缓落拒绝
       description_zh: |
         Anticheat.SlowFall.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.SlowFall.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 缓落阈值
       description_zh: |
         Anticheat.SlowFall.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.SlowFall.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 缓落处罚
       description_zh: |
         Anticheat.SlowFall.Penalty
         未通过该检测时的处理。
     - key: Anticheat.Hover.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 悬浮检测启用
       description_zh: |
         Anticheat.Hover.Enable
         检测玩家无悬浮增益却悬浮。
     - key: Anticheat.Hover.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 悬浮拒绝
       description_zh: |
         Anticheat.Hover.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.Hover.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 悬浮阈值
       description_zh: |
         Anticheat.Hover.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.Hover.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 悬浮处罚
       description_zh: |
         Anticheat.Hover.Penalty
         未通过该检测时的处理。
     - key: Anticheat.FixedZ.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 固定高度检测启用
       description_zh: |
         Anticheat.FixedZ.Enable
         检测玩家 Z 轴高度固定不变。
     - key: Anticheat.FixedZ.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 固定高度拒绝
       description_zh: |
         Anticheat.FixedZ.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.FixedZ.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 固定高度阈值
       description_zh: |
         Anticheat.FixedZ.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.FixedZ.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 固定高度处罚
       description_zh: |
         Anticheat.FixedZ.Penalty
         未通过该检测时的处理。
     - key: Anticheat.RootMove.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 定身移动检测启用
       description_zh: |
         Anticheat.RootMove.Enable
         检测玩家在被定身时仍然移动。
     - key: Anticheat.RootMove.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 定身移动拒绝
       description_zh: |
         Anticheat.RootMove.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.RootMove.Threshold.Tick
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 定身移动每tick阈值
       description_zh: |
         Anticheat.RootMove.Threshold.Tick
         单个 tick 内触发处罚所需的检测次数。
     - key: Anticheat.RootMove.Threshold.Total
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 定身移动总阈值
       description_zh: |
         Anticheat.RootMove.Threshold.Total
         累计触发处罚所需的检测次数。
     - key: Anticheat.RootMove.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 定身移动处罚
       description_zh: |
         Anticheat.RootMove.Penalty
         未通过该检测时的处理。
     - key: Anticheat.SelfRoot.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 自我定身检测启用
       description_zh: |
         Anticheat.SelfRoot.Enable
         检测玩家被标记为定身但不应定身。
     - key: Anticheat.SelfRoot.Reject
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 自我定身拒绝
       description_zh: |
         Anticheat.SelfRoot.Reject
         不接受该移动信息并传送回旧位置。
     - key: Anticheat.SelfRoot.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 自我定身阈值
       description_zh: |
         Anticheat.SelfRoot.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.SelfRoot.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 自我定身处罚
       description_zh: |
         Anticheat.SelfRoot.Penalty
         未通过该检测时的处理。
     - key: Anticheat.WrongAckData.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK数据错误检测启用
       description_zh: |
         Anticheat.WrongAckData.Enable
         检测 ACK 包中的数据错误。
     - key: Anticheat.WrongAckData.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK数据错误阈值
       description_zh: |
         Anticheat.WrongAckData.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.WrongAckData.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK数据错误处罚
       description_zh: |
         Anticheat.WrongAckData.Penalty
         未通过该检测时的处理。
     - key: Anticheat.PendingAckDelay.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK延迟检测启用
       description_zh: |
         Anticheat.PendingAckDelay.Enable
         检测强制移动变更未被确认的情况。
     - key: Anticheat.PendingAckDelay.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK延迟阈值
       description_zh: |
         Anticheat.PendingAckDelay.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.PendingAckDelay.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: ACK延迟处罚
       description_zh: |
         Anticheat.PendingAckDelay.Penalty
         未通过该检测时的处理。
     - key: Anticheat.ExploreArea.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索区域检测启用
       description_zh: |
         Anticheat.ExploreArea.Enable
         检测玩家过快探索低等级区域。
     - key: Anticheat.ExploreArea.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索区域阈值
       description_zh: |
         Anticheat.ExploreArea.Threshold
         本次会话探索区域的数量。
     - key: Anticheat.ExploreArea.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索区域处罚
       description_zh: |
         Anticheat.ExploreArea.Penalty
         未通过该检测时的处理。
     - key: Anticheat.ExploreHighLevelArea.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索高等级区域检测启用
       description_zh: |
         Anticheat.ExploreHighLevelArea.Enable
         检测玩家过快探索高等级区域。
     - key: Anticheat.ExploreHighLevelArea.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索高等级区域阈值
       description_zh: |
         Anticheat.ExploreHighLevelArea.Threshold
         本次会话探索区域的数量。
     - key: Anticheat.ExploreHighLevelArea.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 探索高等级区域处罚
       description_zh: |
         Anticheat.ExploreHighLevelArea.Penalty
         未通过该检测时的处理。
     - key: Anticheat.ForbiddenArea.Enable
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 禁入区域检测启用
       description_zh: |
         Anticheat.ForbiddenArea.Enable
         检测玩家进入禁入区域。
     - key: Anticheat.ForbiddenArea.Threshold
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 禁入区域阈值
       description_zh: |
         Anticheat.ForbiddenArea.Threshold
         触发处罚所需的检测次数。
     - key: Anticheat.ForbiddenArea.Penalty
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 禁入区域处罚
       description_zh: |
         Anticheat.ForbiddenArea.Penalty
         未通过该检测时的处理。
     - key: Movement.PendingAckResponseTime
-      section: 反作弊/心跳丢失阈值
+      section: 反作弊
       name_zh: 移动ACK响应超时
       description_zh: |
         Movement.PendingAckResponseTime
         等待移动变更 ACK 的时间。
     - key: GM.LoginState
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM登录状态
       description_zh: |
         GM.LoginState
         登录时的 GM 模式。
     - key: GM.Visible
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM可见
       description_zh: |
         GM.Visible
         登录时的 GM 可见性。
     - key: GM.AcceptTickets
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM受理工单
       description_zh: |
         GM.AcceptTickets
         GM 默认是否接受玩家工单。
     - key: GM.Chat
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM聊天
       description_zh: |
         GM.Chat
         登录时的 GM 聊天模式。
     - key: GM.WhisperingTo
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM密语目标
       description_zh: |
         GM.WhisperingTo
         GM 默认是否接受玩家密语。
     - key: GM.InGMList.Level
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM列表显示等级
       description_zh: |
         GM.InGMList.Level
         非 GM 状态（.gm off）下 GM 列表显示的最大 GM 等级（可见时）。
     - key: GM.InWhoList.Level
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: /谁列表显示等级
       description_zh: |
         GM.InWhoList.Level
         /who 列表显示的最大 GM 等级（可见时）。
     - key: GM.LogTrade
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM交易记录
       description_zh: |
         GM.LogTrade
         启用 GM 日志时，记录 GM 交易及交易栏附魔操作。
     - key: GM.StartLevel
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM初始等级
       description_zh: |
         GM.StartLevel
         GM 初始等级（1-255）。
     - key: GM.LowerSecurity
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM降低权限
       description_zh: |
         GM.LowerSecurity
         禁止低权限成员通过命令与高权限成员交互。
     - key: GM.CreditOnDie
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM .die 奖励
       description_zh: |
         GM.CreditOnDie
         使用 .die 命令时给予战利品/金币/声望。
     - key: GM.AllowTrades
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM允许交易
       description_zh: |
         GM.AllowTrades
         允许交易、邮件和使用拍卖行。
     - key: GM.AllowPublicChannels
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM允许公共频道
       description_zh: |
         GM.AllowPublicChannels
         允许在综合/世界频道发言。
     - key: GMTickets.Enable
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM工单启用
       description_zh: |
         GMTickets.Enable
         允许提交支持工单。
     - key: GMTickets.MinLevel
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM工单最低等级
       description_zh: |
         GMTickets.MinLevel
         提交工单的最低角色等级。
     - key: GMTickets.Admin.Security
-      section: 反作弊/心跳丢失阈值
+      section: GM设置
       name_zh: GM工单管理员权限
       description_zh: |
         GMTickets.Admin.Security
         升级队列分配工单所需的权限等级。
     - key: Visibility.GroupMode
-      section: 反作弊/心跳丢失阈值
+      section: 可视距离
       name_zh: 小队可视模式
       description_zh: |
         Visibility.GroupMode
@@ -10593,177 +10593,177 @@ versions:
         Rate.Skill.Discovery
         技能领悟倍率。
     - key: Rate.Drop.Item.Poor
-      section: 速率/掉落
+      section: 速率
       name_zh: 垃圾物品掉率
       description_zh: |
         Rate.Drop
         掉落倍率。（按物品品质与金币）
     - key: Rate.Drop.Item.Normal
-      section: 速率/掉落
+      section: 速率
       name_zh: 普通物品掉率
       description_zh:
     - key: Rate.Drop.Item.Uncommon
-      section: 速率/掉落
+      section: 速率
       name_zh: 优秀物品掉率
       description_zh:
     - key: Rate.Drop.Item.Rare
-      section: 速率/掉落
+      section: 速率
       name_zh: 精良物品掉率
       description_zh:
     - key: Rate.Drop.Item.Epic
-      section: 速率/掉落
+      section: 速率
       name_zh: 史诗物品掉率
       description_zh:
     - key: Rate.Drop.Item.Legendary
-      section: 速率/掉落
+      section: 速率
       name_zh: 传说物品掉率
       description_zh:
     - key: Rate.Drop.Item.Artifact
-      section: 速率/掉落
+      section: 速率
       name_zh: 神器物品掉率
       description_zh:
     - key: Rate.Drop.Item.Referenced
-      section: 速率/掉落
+      section: 速率
       name_zh: 引用物品掉率
       description_zh:
     - key: Rate.Drop.Money
-      section: 速率/掉落
+      section: 速率
       name_zh: 金币掉率
       description_zh:
     - key: Rate.XP.Kill
-      section: 速率/经验
+      section: 速率
       name_zh: 击杀经验倍率
       description_zh: |
         Rate.XP
         击杀经验倍率。
     - key: Rate.XP.Quest
-      section: 速率/经验
+      section: 速率
       name_zh: 任务经验倍率
       description_zh:
     - key: Rate.XP.Explore
-      section: 速率/经验
+      section: 速率
       name_zh: 探索经验倍率
       description_zh:
     - key: Rate.Rest.InGame
-      section: 速率/休息
+      section: 速率
       name_zh: 在线休息奖励倍率
       description_zh: |
         Rate.Rest
         休息值增长倍率。（1=标准，2=双倍，0.5=一半）
     - key: Rate.Rest.Offline.InTavernOrCity
-      section: 速率/休息
+      section: 速率
       name_zh: 离线休息(旅店/主城)倍率
       description_zh:
     - key: Rate.Rest.Offline.InWilderness
-      section: 速率/休息
+      section: 速率
       name_zh: 离线休息(野外)倍率
       description_zh:
     - key: Rate.Damage.Fall
-      section: 速率/休息
+      section: 速率
       name_zh: 坠落伤害倍率
       description_zh: |
         Rate.Damage.Fall
         坠落伤害倍率。（1=标准，2=双倍，0.5=一半）
     - key: Rate.Auction.Time
-      section: 速率/拍卖
+      section: 速率
       name_zh: 拍卖时间倍率
       description_zh: |
         Rate.Auction
         拍卖倍率。（拍卖时间、起拍保证金、成交抽成）
     - key: Rate.Auction.Deposit
-      section: 速率/拍卖
+      section: 速率
       name_zh: 拍卖保证金倍率
       description_zh:
     - key: Rate.Auction.Cut
-      section: 速率/拍卖
+      section: 速率
       name_zh: 拍卖行抽成倍率
       description_zh:
     - key: Auction.Deposit.Min
-      section: 速率/拍卖
+      section: 拍卖
       name_zh: 拍卖最低保证金
       description_zh: |
         Auction.Deposit.Min
         拍卖最低保证金（铜）。
     - key: Auction.AccountConcurrentLimit
-      section: 速率/拍卖
+      section: 拍卖
       name_zh: 账号同时拍卖上限
       description_zh: |
         Auction.AccountConcurrentLimit
         单账号在拍卖行同时上架的最大数量（每个拍卖行含共享）。
         例：100 表示联盟拍卖行 100、中立拍卖行 100。
     - key: Rate.Honor
-      section: 速率/拍卖
+      section: 速率
       name_zh: 荣誉获取倍率
       description_zh: |
         Rate.Honor
         荣誉获取倍率。
     - key: Rate.Mining.Amount
-      section: 速率/拍卖
+      section: 速率
       name_zh: 采矿产量倍率
       description_zh: |
         Rate.Mining.Amount
         Rate.Mining.Next
         采矿倍率（Amount 影响矿脉最小/最大可采次数；Next 影响追加一次采集的概率）。
     - key: Rate.Mining.Next
-      section: 速率/拍卖
+      section: 速率
       name_zh: 采矿刷新倍率
       description_zh:
     - key: Rate.Talent
-      section: 速率/拍卖
+      section: 速率
       name_zh: 天赋点获得倍率
       description_zh: |
         Rate.Talent
         天赋点获取倍率。
     - key: Rate.RespecBaseCost
-      section: 速率/拍卖
+      section: 速率
       name_zh: 重置天赋基础费用倍率
       description_zh: |
         Rate.RespecBaseCost
         重置天赋最低费用。（金币）
     - key: Rate.RespecMultiplicativeCost
-      section: 速率/拍卖
+      section: 速率
       name_zh: 重置天赋递增费用倍率
       description_zh: |
         Rate.RespecMultiplicativeCost
         重置天赋费用=基础费用×倍率。（金币）
     - key: Rate.RespecMaxMultiplier
-      section: 速率/拍卖
+      section: 速率
       name_zh: 重置天赋最大倍率
       description_zh: |
         Rate.RespecMaxMultiplier
         重置天赋最大费用=RespecMultiplicativeCost×RespecMaxMultiplier。（金币）
     - key: Rate.RespecMinMultiplier
-      section: 速率/拍卖
+      section: 速率
       name_zh: 重置天赋最小倍率
       description_zh: |
         Rate.RespecMinMultiplier
         玩家超过该倍率后将无法再低于该值。
     - key: Rate.Reputation.Gain
-      section: 速率/拍卖
+      section: 速率
       name_zh: 声望获取倍率
       description_zh: |
         Rate.Reputation.Gain
         声望获取倍率。
     - key: Rate.Reputation.LowLevel.Kill
-      section: 速率/拍卖
+      section: 速率
       name_zh: 低等级击杀声望倍率
       description_zh: |
         Rate.Reputation.LowLevel.Kill
         低等级击杀声望倍率。（灰色怪物）
     - key: Rate.Reputation.LowLevel.Quest
-      section: 速率/拍卖
+      section: 速率
       name_zh: 低等级任务声望倍率
       description_zh: |
         Rate.Reputation.LowLevel.Quest
         低等级任务声望倍率。
     - key: Rate.InstanceResetTime
-      section: 速率/拍卖
+      section: 速率
       name_zh: 副本重置时间倍率
       description_zh: |
         Rate.InstanceResetTime
         团队/英雄副本全局重置间隔天数倍率。
     - key: SkillGain.Crafting
-      section: 速率/拍卖
+      section: 技能
       name_zh: 制造技能提升倍率
       description_zh: |
         SkillGain.Crafting
@@ -10772,19 +10772,19 @@ versions:
         SkillGain.Weapon
         制造/防御/采集/武器技能成长倍率。
     - key: SkillGain.Defense
-      section: 速率/拍卖
+      section: 技能
       name_zh: 防御技能提升倍率
       description_zh:
     - key: SkillGain.Gathering
-      section: 速率/拍卖
+      section: 技能
       name_zh: 采集技能提升倍率
       description_zh:
     - key: SkillGain.Weapon
-      section: 速率/拍卖
+      section: 技能
       name_zh: 武器技能提升倍率
       description_zh:
     - key: SkillChance.Orange
-      section: 速率/拍卖
+      section: 技能
       name_zh: 技能橙色几率
       description_zh: |
         SkillChance.Orange
@@ -10793,320 +10793,320 @@ versions:
         SkillChance.Grey
         技能提升几率。（0-100）
     - key: SkillChance.Yellow
-      section: 速率/拍卖
+      section: 技能
       name_zh: 技能黄色几率
       description_zh:
     - key: SkillChance.Green
-      section: 速率/拍卖
+      section: 技能
       name_zh: 技能绿色几率
       description_zh:
     - key: SkillChance.Grey
-      section: 速率/拍卖
+      section: 技能
       name_zh: 技能灰色几率
       description_zh:
     - key: SkillChance.MiningSteps
-      section: 速率/拍卖
+      section: 技能
       name_zh: 采矿等级分段
       description_zh: |
         SkillChance.MiningSteps
         SkillChance.SkinningSteps
         采矿/剥皮随技能等级的几率衰减。
     - key: SkillChance.SkinningSteps
-      section: 速率/拍卖
+      section: 技能
       name_zh: 剥皮等级分段
       description_zh:
     - key: SkillFail.Loot.Fishing
-      section: 速率/拍卖
+      section: 技能
       name_zh: 钓鱼失败仍可拾取
       description_zh: |
         SkillFail.Loot.Fishing
         钓鱼失败时改为产出垃圾战利品。
     - key: SkillFail.Gain.Fishing
-      section: 速率/拍卖
+      section: 技能
       name_zh: 钓鱼失败也涨技能
       description_zh: |
         SkillFail.Gain.Fishing
         钓鱼失败也可获得技能点。
     - key: SkillFail.Possible.FishingPool
-      section: 速率/拍卖
+      section: 技能
       name_zh: 渔点可失败
       description_zh: |
         SkillFail.Possible.FishingPool
         默认情况下渔点不会因技能过低而失败。
     - key: DurabilityLossChance.Damage
-      section: 速率/拍卖
+      section: 耐久
       name_zh: 受伤耐久损耗几率
       description_zh: |
         DurabilityLossChance.Damage
         受到/造成伤害时装备耐久损耗 1 点的几率。
     - key: DurabilityLossChance.Absorb
-      section: 速率/拍卖
+      section: 耐久
       name_zh: 吸收耐久损耗几率
       description_zh: |
         DurabilityLossChance.Absorb
         伤害被吸收时护甲耐久损耗 1 点的几率。
     - key: DurabilityLossChance.Parry
-      section: 速率/拍卖
+      section: 耐久
       name_zh: 招架耐久损耗几率
       description_zh: |
         DurabilityLossChance.Parry
         招架时武器耐久损耗 1 点的几率。
     - key: DurabilityLossChance.Block
-      section: 速率/拍卖
+      section: 耐久
       name_zh: 格挡耐久损耗几率
       description_zh: |
         DurabilityLossChance.Block
         格挡时盾牌耐久损耗 1 点的几率。
     - key: Death.SicknessLevel
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 复活虚弱等级
       description_zh: |
         Death.SicknessLevel
         达到该等级及以上开始获得复活虚弱。
     - key: Death.CorpseReclaimDelay.PvP
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: PVP 取尸延迟
       description_zh: |
         Death.CorpseReclaimDelay.PvP
         Death.CorpseReclaimDelay.PvE
         频繁 PVP/PVE 死亡时，是否启用取尸延迟增加。
     - key: Death.CorpseReclaimDelay.PvE
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: PVE 取尸延迟
       description_zh:
     - key: Death.Bones.World
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 世界骨骸生成
       description_zh: |
         Death.Bones.World
         Death.Bones.Battleground
         复活时是否生成骨骸而非尸体。（普通区域/副本与战场）
     - key: Death.Bones.Battleground
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 战场骨骸生成
       description_zh:
     - key: Death.Ghost.RunSpeed.World
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 世界幽灵跑速
       description_zh: |
         Death.Ghost.RunSpeed.World
         Death.Ghost.RunSpeed.Battleground
         调整玩家灵魂速度，复活后移除，不会保存；适用于非战场与战场地图。
     - key: Death.Ghost.RunSpeed.Battleground
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 战场幽灵跑速
       description_zh:
     - key: Corpses.UpdateMinutes
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 尸体更新间隔(分钟)
       description_zh: |
         Corpses.UpdateMinutes
     - key: Bones.ExpireMinutes
-      section: 速率/拍卖
+      section: 死亡与尸体
       name_zh: 骨骸消失时间(分钟)
       description_zh: |
         Bones.ExpireMinutes
     - key: Rate.WarEffortResourceComplete
-      section: 速率/拍卖
+      section: 速率
       name_zh: 战备资源完成倍率
       description_zh: |
         Rate.WarEffortResourceComplete
     - key: WarEffortResourceCompletePeriod
-      section: 速率/拍卖
+      section: 杂项
       name_zh: 战备资源完成周期
       description_zh: |
         WarEffortResourceCompletePeriod
     - key: Battleground.CastDeserter
-      section: 速率/拍卖
+      section: 战场
       name_zh: 战场施加逃亡者
       description_zh: |
         Battleground.CastDeserter
         对中途离开战场的玩家施放逃亡者。
     - key: Battleground.QueueAnnouncer.Join
-      section: 速率/拍卖
+      section: 战场
       name_zh: 战场入队提示
       description_zh: |
         Battleground.QueueAnnouncer.Join
         进队时在聊天中发布队列公告。
     - key: Battleground.QueueAnnouncer.Start
-      section: 速率/拍卖
+      section: 战场
       name_zh: 战场开场提示
       description_zh: |
         Battleground.QueueAnnouncer.Start
         战场开始时在聊天中发布队列公告。
     - key: BattleGround.QueuesCount
-      section: 战场队列数量
+      section: 战场
       name_zh: 战场队列数量
       description_zh: |
         Battleground.QueuesCount
         玩家可同时加入的战场队列数量上限。
     - key: Battleground.InvitationType
-      section: 战场队列数量
+      section: 战场
       name_zh: 战场邀请方式
       description_zh: |
         Battleground.InvitationType
         设置战场邀请方式。
     - key: BattleGround.PrematureFinishTimer
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场提前结束计时
       description_zh: |
         Battleground.PrematureFinishTimer
         若一方人数低于 MinPlayersPerTeam，战场在该时间后结束。
     - key: BattleGround.PremadeGroupWaitForMatch
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场预组等待匹配
       description_zh: |
         BattleGround.PremadeGroupWaitForMatch
         预组队伍在战场队列中等待对方预组的时间。（毫秒）
     - key: BattleGround.RandomizeQueues
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场队列随机化
       description_zh: |
         BattleGround.RandomizeQueues
         随机化排队顺序。
     - key: BattleGround.GroupQueueLimit
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场组队排队限制
       description_zh: |
         BattleGround.GroupQueueLimit
         允许组队排队的最大人数。超过则按单人排队。
     - key: Alterac.MinPlayersInQueue
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 奥特兰克最低排队人数
       description_zh: |
         Alterac.MinPlayersInQueue
         每个阵营开始匹配所需的最小排队人数。
     - key: Alterac.InitMaxPlayers
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 奥特兰克初始最大人数
       description_zh: |
         Alterac.InitMaxPlayers
         奥特兰克山谷开场最大人数。
     - key: BattleGround.PremadeQueue.MinGroupSize
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场预组最小队伍规模
       description_zh: |
         BattleGround.PremadeQueue.MinGroupSize
     - key: BattleGround.TagInBattleGrounds
-      section: 战场提前结束计时
+      section: 战场
       name_zh: 战场标记显示
       description_zh: |
         BattleGround.TagInBattleGrounds
     - key: OutdoorPvp.SIEnabled
-      section: 战场提前结束计时
+      section: 野外PVP
       name_zh: 野外 PVP（希利苏斯）启用
       description_zh: |
         OutdoorPvp.SIEnabled
         启用希利苏斯野外 PVP。
     - key: OutdoorPvp.EPEnabled
-      section: 战场提前结束计时
+      section: 野外PVP
       name_zh: 野外 PVP（东瘟疫）启用
       description_zh: |
         OutdoorPvp.EPEnabled
         启用东瘟疫之地野外 PVP。
     - key: Network.Threads
-      section: 战场提前结束计时
+      section: 网络
       name_zh: 网络线程数
       description_zh: |
         Network.Threads
         网络线程数，建议每 1000 个连接 1 个线程。
     - key: Network.OutKBuff
-      section: 战场提前结束计时
+      section: 网络
       name_zh: 网络输出缓冲(KB)
       description_zh: |
         Network.OutKBuff
         输出内核缓冲区大小（SO_SNDBUF socket 选项，见 TCP 手册）。
     - key: Network.OutUBuff
-      section: 战场提前结束计时
+      section: 网络
       name_zh: 网络输出缓冲(单位)
       description_zh: |
         Network.OutUBuff
         用户态输出缓冲区大小，每个连接预留的内存。
     - key: Network.TcpNodelay
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: TCP NoDelay
       description_zh: |
         Network.TcpNoDelay:
         TCP Nagle 算法设置。
     - key: Network.KickOnBadPacket
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: 异常数据包踢出
       description_zh: |
         Network.KickOnBadPacket
         收到错误格式的数据包时踢出玩家。
     - key: Network.PacketBroadcast.Threads
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: 广播线程数
       description_zh: |
         Network.PacketBroadcast.Threads
         数据包广播线程数。
     - key: Network.PacketBroadcast.Frequency
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: 广播频率
       description_zh: |
         Network.PacketBroadcast.Frequency
         数据包广播线程运行频率（毫秒）。
     - key: Network.Interval
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: 网络间隔
       description_zh: |
         Network.Interval
         ACE 发送客户端输出包缓冲区的频率。
     - key: Network.PacketBroadcast.ReduceVisDistance.DiffAbove
-      section: 网络TcpNoDelay
+      section: 网络
       name_zh: 广播降视距差值
       description_zh: |
         Network.PacketBroadcast.ReduceVisDistance.DiffAbove
     - key: Console.Enable
-      section: 网络TcpNoDelay
+      section: 控制台
       name_zh: 控制台启用
       description_zh: |
         Console.Enable
         启用控制台。
     - key: CharDelete.Method
-      section: 网络TcpNoDelay
+      section: 角色删除
       name_zh: 角色删除方式
       description_zh: |
         CharDelete.Method
         角色删除方式。
     - key: CharDelete.MinLevel
-      section: 网络TcpNoDelay
+      section: 角色删除
       name_zh: 角色删除最低等级
       description_zh: |
         CharDelete.MinLevel
         当角色等级低于该值时，使用 CharDelete.Method=0 进行删除。
     - key: CharDelete.KeepDays
-      section: 网络TcpNoDelay
+      section: 角色删除
       name_zh: 角色保留天数
       description_zh: |
         CharDelete.KeepDays
         角色在数据库中保留的天数，超过后删除。
     - key: BeginnersGuilds
-      section: 网络TcpNoDelay
+      section: 新手公会
       name_zh: 新手公会启用
       description_zh: |
         BeginnersGuilds
         自动邀请新玩家加入新手公会，方便结识同为新手的玩家。
         当玩家达到 15 级后将被移出公会。
     - key: BeginnersGuildHorde
-      section: 网络TcpNoDelay
+      section: 新手公会
       name_zh: 部落新手公会
       description_zh: |
         BeginnersGuildHorde
         BeginnersGuildAlliance
         指定两个阵营的新手公会 ID。
     - key: BeginnersGuildAlliance
-      section: 网络TcpNoDelay
+      section: 新手公会
       name_zh: 联盟新手公会
       description_zh:
     - key: AutoBroadcast.Timer
-      section: 网络TcpNoDelay
+      section: 自动广播
       name_zh: 自动广播间隔
       description_zh: |
         AutoBroadcast.Timer
         在玩家聊天中输出广播消息。
     - key: Transmog.Enable
-      section: 网络TcpNoDelay
+      section: 幻化
       name_zh: 幻化启用
       description_zh: |
         Transmog.Enable
@@ -11114,19 +11114,19 @@ versions:
         默认：0（关闭）
         1（开启）
     - key: Transmog.ReqItemID
-      section: 网络TcpNoDelay
+      section: 幻化
       name_zh: 幻化所需物品ID
       description_zh: |
         Transmog.ReqItemID
         添加/禁用物品成本。
     - key: Transmog.ReqItemCount
-      section: 网络TcpNoDelay
+      section: 幻化
       name_zh: 幻化所需物品数量
       description_zh: |
         Transmog.ReqItemCount
         所需物品数量。
     - key: Transmog.ReqMoneyRate
-      section: 网络TcpNoDelay
+      section: 幻化
       name_zh: 幻化花费倍率
       description_zh: |
         Transmog.ReqMoneyRate
@@ -11157,87 +11157,87 @@ versions:
       name_zh: 你好
       description_zh:
     - key: PlayerBot.Enable
-      section: 杂项
+      section: 玩家机器人
       name_zh: 玩家机器人启用
       description_zh:
     - key: PlayerBot.Debug
-      section: 杂项
+      section: 玩家机器人
       name_zh: 玩家机器人调试
       description_zh:
     - key: PlayerBot.UpdateMs
-      section: 杂项
+      section: 玩家机器人
       name_zh: 玩家机器人更新间隔
       description_zh:
     - key: PlayerBot.MinBots
-      section: 杂项
+      section: 玩家机器人
       name_zh: 最少机器人数量
       description_zh:
     - key: PlayerBot.MaxBots
-      section: 杂项
+      section: 玩家机器人
       name_zh: 最多机器人数量
       description_zh:
     - key: PlayerBot.Refresh
-      section: 杂项
+      section: 玩家机器人
       name_zh: 机器人刷新
       description_zh:
     - key: PlayerBot.ForceLogoutDelay
-      section: 杂项
+      section: 玩家机器人
       name_zh: 机器人强制下线延迟
       description_zh:
     - key: MailSpam.ExpireSecs
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏过期秒
       description_zh:
     - key: MailSpam.MaxMails
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏最大封数
       description_zh:
     - key: MailSpam.Level
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏等级
       description_zh:
     - key: MailSpam.AccountCharLevel
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏账号角色等级
       description_zh:
     - key: MailSpam.Money
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏金币
       description_zh:
     - key: MailSpam.Item
-      section: 杂项
+      section: 邮件
       name_zh: 邮件反刷屏物品
       description_zh:
     - key: DynamicRespawn.Range
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生范围
       description_zh:
     - key: DynamicRespawn.PercentPerPlayer
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生每玩家百分比
       description_zh:
     - key: DynamicRespawn.MaxReductionRate
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生最大缩短率
       description_zh:
     - key: DynamicRespawn.MinRespawnTime
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生最小重生时间
       description_zh:
     - key: DynamicRespawn.AffectRespawnTimeBelow
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生影响时间阈值
       description_zh:
     - key: DynamicRespawn.AffectLevelBelow
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生影响等级阈值
       description_zh:
     - key: DynamicRespawn.PlayersThreshold
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生玩家阈值
       description_zh:
     - key: DynamicRespawn.PlayersMaxLevelDiff
-      section: 杂项
+      section: 动态刷新
       name_zh: 动态重生玩家等级差
       description_zh:
     - key: Spells.CCDelay
